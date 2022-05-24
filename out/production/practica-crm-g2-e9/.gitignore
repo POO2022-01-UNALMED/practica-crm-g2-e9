@@ -1,8 +1,0 @@
-build/
-.gradle/
-/bin/
-.classpath
-.project
-.settings
-.idea/
-*__pycache__*
