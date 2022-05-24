@@ -139,6 +139,7 @@ public class main {
         int opcion1;
         
                
+        
         do {
             try {
                 System.out.print("\t MENU CLIENTES " + "\n1. Consultar Clientes: " + "\n2. Clientes Potenciales: " + "\n3. Consultar Ventas: "+ "\n4. Servicio de Clientes: " + "\n5. Salir \n");
