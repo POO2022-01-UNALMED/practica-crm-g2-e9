@@ -1,42 +1,40 @@
 package gestionApp;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
-public class Empleado {
-    private String nombre;
-    private String cedula;
-    private int cel;
+public class Empleado  extends Persona{
+    private String correo;
+    private int celular;
+    private String fechaInicioContrato;
     private ArrayList <Productos> Productos = new ArrayList <>();
 
-    public Empleado(String nombre, String cedula, int cel){
-        this.nombre = nombre;
-        this.cedula = cedula;
-        this.cel = cel;
+    public Empleado(String nombre, String apellido, int cedula, int edad, String correo, int celular, String fechaInicioContrato){
+        super(nombre, apellido, cedula, edad);
+        this.nombre = correo;
+        this.celular = celular;
+        this.fechaInicioContrato = fechaInicioContrato;
     }
 
-    public String getNombre(){
-        return nombre;
-    }
-    
-    public void setNombre(String nombre){
-        this.nombre = nombre;
-    }
+    public String getNombre(){return nombre;}
+    public void setNombre(String nombre){this.nombre = nombre;}
 
-    public String getCedula(){
-        return cedula;
-    }
+    public String getApellido(){return apellido;}
+    public void setApellido(String apellido){this.apellido = apellido;}
 
-    public void setCedula(String cedula){
-        this.cedula = cedula;
-    }
+    public int getEdad(){return edad;}
+    public void setEdad(int edad){this.edad = edad;}
 
-    public int getCel(){
-        return cel;
-    }
+    public int getCedula(){return cedula;}
+    public void setCedula(int cedula){this.cedula = cedula;}
 
-    public void setCel(int cel){
-        this.cel = cel;
-    }
+    public int getCelular(){return this.celular;}
+    public void setCelular(int celular){this.celular = celular;}
 
+    public String getFechaInicioContrato(){return fechaInicioContrato;}
+    public void setFechaInicioContrato(String fechaInicioContrato){this.fechaInicioContrato = fechaInicioContrato;}
+
+    public ArrayList<Productos> getProductos(){return Productos;}
+    public void setProductos(ArrayList<Productos> Productos){this.Productos = Productos;}
     
 }
