@@ -7,7 +7,7 @@ public class Empleado  extends Persona{
     private String correo;
     private int celular;
     private String fechaInicioContrato;
-    private ArrayList <Productos> Productos = new ArrayList <>();
+    private ArrayList<Servicios> Servicios = new ArrayList<Servicios>();
 
     public Empleado(String nombre, String apellido, int cedula, int edad, String correo, int celular, String fechaInicioContrato){
         super(nombre, apellido, cedula, edad);
@@ -34,7 +34,7 @@ public class Empleado  extends Persona{
     public String getFechaInicioContrato(){return fechaInicioContrato;}
     public void setFechaInicioContrato(String fechaInicioContrato){this.fechaInicioContrato = fechaInicioContrato;}
 
-    public ArrayList<Productos> getProductos(){return Productos;}
-    public void setProductos(ArrayList<Productos> Productos){this.Productos = Productos;}
+    public ArrayList<Servicios> getServicios(){return Servicios;}
+    public void setServicios(ArrayList<Servicios> Servicios){this.Servicios = Servicios;}
     
 }
