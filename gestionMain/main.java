@@ -2,12 +2,10 @@ package gestionMain;
 
 import java.util.Scanner;
 
+import gestionApp.Cliente;
 import gestionApp.Evento;
 import gestionApp.Registro;
-import gestionApp.Cliente.Clientes_Potenciales;
-import gestionApp.Clientes.ConsultarClientes;
-import gestionApp.Clientes.ConsultarVentas;
-import gestionApp.Clientes.ServiciosClientes;
+
 
 
 public class main {
@@ -148,16 +146,16 @@ public class main {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1: 
-                        ConsultarClientes.consultarClientes();
+                        Cliente.consultarClientes();
                         break;
                     case 2: 
-                        ClientesPotenciales.clientesPotenciales();
+                        Cliente.clientesPotenciales();
                         break;
                     case 3: 
-                        ConsultarVentas.consultarVentas();
+                        Cliente.consultarVentas();
                         break;
                     case 4: 
-                        ServiciosClientes.serviciosClientes();
+                        Cliente.consultarClientes();
                         break;
 
                 }
