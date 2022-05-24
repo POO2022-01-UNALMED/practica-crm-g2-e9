@@ -1,7 +1,7 @@
 package gestionApp;
 
 public class Evento {
-    public static void añadirEvento(){
+    public static void anadirEvento(){
         
     }
     public static void cursoEvento(){
