@@ -111,11 +111,11 @@ public class main {
                
         do {
             try {
-                System.out.print("\t MENU EVENTOS " + "\n1. Añadir Eventos: " + "\n2. Estado de Eventos: " + "\n3. Modificar Eventos: " + "\n4. Salir \n");
+                System.out.print("\t MENU EVENTOS " + "\n1. Anadir Eventos: " + "\n2. Estado de Eventos: " + "\n3. Modificar Eventos: " + "\n4. Salir \n");
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1: 
-                        Evento.añadirEvento();
+                        Evento.anadirEvento();
                         break;
                     case 2: 
                         Evento.cursoEvento();
@@ -139,7 +139,7 @@ public class main {
         int opcion1;
         
                
-        
+
         do {
             try {
                 System.out.print("\t MENU CLIENTES " + "\n1. Consultar Clientes: " + "\n2. Clientes Potenciales: " + "\n3. Consultar Ventas: "+ "\n4. Servicio de Clientes: " + "\n5. Salir \n");
