@@ -2,7 +2,7 @@ package gestionApp;
 
 import java.util.ArrayList;
 
-public class Empleado {
+public class Empleado<Productos> extends Persona {
     private String nombre;
     private String cedula;
     private int cel;
@@ -36,6 +36,42 @@ public class Empleado {
 
     public void setCel(int cel){
         this.cel = cel;
+    }
+
+    @Override
+    public String getApellido() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public void setApellido(String apellido) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public int getDNI() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void setDNI(int DNI) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public int getEdad() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void setEdad(int Edad) {
+        // TODO Auto-generated method stub
+        
     }
 
     
