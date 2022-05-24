@@ -5,7 +5,7 @@ import java.util.Scanner;
 import gestionApp.Evento;
 import gestionApp.Registro;
 import gestionApp.Cliente.Clientes_Potenciales;
-import gestionApp.Cliente.ConsultarClientes;
+import gestionApp.Clientes.ConsultarClientes;
 import gestionApp.Clientes.ConsultarVentas;
 import gestionApp.Clientes.ServiciosClientes;
 

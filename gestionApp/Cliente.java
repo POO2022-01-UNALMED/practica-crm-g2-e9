@@ -59,23 +59,23 @@ public class Cliente {
 	
 	// las que eliminamos que pueden ir en toStrings
 	
-	public void Clientes_Potenciales() {
+	public static void clientesPotenciales() {
 
 	}
 
-	public void ConsultarClientes() {
-
-	}
-	
-	public void ConsultarOportunidades() {
+	public static void consultarClientes() {
 
 	}
 	
-	public void ConsultarVentas() {
+	public static void consultarOportunidades() {
 
 	}
 	
-	public void ServiciosClientes() {
+	public static void consultarVentas() {
+
+	}
+	
+	public static void serviciosClientes() {
 
 	}
 
