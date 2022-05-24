@@ -34,7 +34,7 @@ public class Empleado<Productos> extends Persona {
         return cel;
     }
 
-    public void setCel(int cel){
+    public  void setCel(int cel){
         this.cel = cel;
     }
 
