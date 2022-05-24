@@ -80,7 +80,7 @@ public class main {
                         Registro.registrarContacto();
                         break;
                     case 2: 
-                        Registro.registrarEmpleado();;
+                        Registro.registrarEmpleado();
                         break;
                     
                     case 3: 
