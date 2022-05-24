@@ -1,4 +1,4 @@
-package gestionMain.Eventos;
+package gestionApp.Eventos;
 
 public class EstadoEvento {
     public static void cursoEvento(){
