@@ -1,4 +1,4 @@
-package gestionApp.Registro;
+package gestionApp;
 
 public class Registro {
     

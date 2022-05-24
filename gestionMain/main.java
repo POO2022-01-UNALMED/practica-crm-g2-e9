@@ -2,12 +2,12 @@ package gestionMain;
 
 import java.util.Scanner;
 
+import gestionApp.Evento;
+import gestionApp.Registro;
 import gestionApp.Clientes.ClientesPotenciales;
 import gestionApp.Clientes.ConsultarClientes;
 import gestionApp.Clientes.ConsultarVentas;
 import gestionApp.Clientes.ServiciosClientes;
-import gestionApp.Eventos.Evento;
-import gestionApp.Registro.Registro;
 
 
 public class main {
