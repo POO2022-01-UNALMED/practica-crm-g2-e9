@@ -6,9 +6,7 @@ import gestionApp.Clientes.ClientesPotenciales;
 import gestionApp.Clientes.ConsultarClientes;
 import gestionApp.Clientes.ConsultarVentas;
 import gestionApp.Clientes.ServiciosClientes;
-import gestionApp.Eventos.AñadirEvento;
-import gestionApp.Eventos.EstadoEvento;
-import gestionApp.Eventos.ModificarEvento;
+import gestionApp.Eventos.Evento;
 import gestionApp.Registro.Registro;
 
 
@@ -120,13 +118,13 @@ public class main {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1: 
-                        AñadirEvento.añadirEvento();
+                        Evento.añadirEvento();
                         break;
                     case 2: 
-                        EstadoEvento.cursoEvento();
+                        Evento.cursoEvento();
                         break;
                     case 3: 
-                        ModificarEvento.modificarEvento();
+                        Evento.modificarEvento();
                         break;
                     case 4: break;
 
