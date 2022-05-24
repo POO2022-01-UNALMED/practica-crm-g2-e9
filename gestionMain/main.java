@@ -9,11 +9,7 @@ import gestionApp.Clientes.ServiciosClientes;
 import gestionApp.Eventos.AñadirEvento;
 import gestionApp.Eventos.EstadoEvento;
 import gestionApp.Eventos.ModificarEvento;
-import gestionApp.Registro.RegistroEmpleado;
-import gestionApp.Registro.RegistroEmpresa;
-import gestionApp.Registro.RegistroPromocion;
-import gestionApp.Registro.RegistroServicios;
-
+import gestionApp.Registro.Registro;
 
 
 public class main {
@@ -82,23 +78,26 @@ public class main {
                
         do {
             try {
-                System.out.print("\t MENU REGISTRO " + "\n1. Registrar Empleados " + "\n2. Registrar Empresa " + "\n3. Registrar Servicios: " + "\n4. Registrar Promocion: "+ "\n5. Salir \n");
+                System.out.print("\t MENU REGISTRO " + "\n1. Registrar Contacto " + "\n2. Registrar Empleados " + "\n3. Registrar Empresa " + "\n4. Registrar Servicios: " + "\n5. Registrar Promocion: "+ "\n6. Salir \n");
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1: 
-                        RegistroEmpleado.registrarEmpleado();
+                        Registro.registrarContacto();
                         break;
                     case 2: 
-                        RegistroEmpresa.registrarEmpresa();
+                        Registro.registrarEmpleado();;
                         break;
                     
                     case 3: 
-                        RegistroServicios.registrarServicios();
+                        Registro.registrarEmpresa();;
                         break;
                     case 4:
-                        RegistroPromocion.registrarProcion();
+                        Registro.registrarServicios();;
                         break;
                     case 5:
+                        Registro.registrarPromocion();
+                        break;
+                    case 6:
                         break;
 
                 }
@@ -106,7 +105,7 @@ public class main {
                 System.out.print("Ingrese una opcion nuevamente: ");
                 opcion1 = scan.nextInt();
             }
-        } while (opcion1 != 5);
+        } while (opcion1 != 6);
     
 
     }
