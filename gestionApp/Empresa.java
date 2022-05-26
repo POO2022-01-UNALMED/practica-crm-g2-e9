@@ -1,92 +1,49 @@
 package gestionApp;
 
+import java.util.ArrayList;
+
 public class Empresa {
-    private String cargo;
-    private String negociosAbiertos;
-    private String negociosCerrados;
-    private String etapaVenta;
-    private String valor;
-    private Servicios servicios;
+
+	private String nombre;
+	private int NIT;
+	private String descripcion;
+
+	private ArrayList<Contacto> contactos;
+	private final ArrayList<Negocio> negociosAbiertos;
+	private final ArrayList<Venta> ventas;
+	private static ArrayList<Empresa> empresas;
+
     
-    
-    
-	public Empresa(String cargo, String negociosAbiertos, String negociosCerrados, String etapaVenta, String valor) {
-		this.cargo = cargo;
-		this.negociosAbiertos = negociosAbiertos;
-		this.negociosCerrados = negociosCerrados;
-		this.etapaVenta = etapaVenta;
-		this.valor = valor; 
-		
-		
+	public Empresa(String nombre,int NIT, String descripcion) {
+		this.nombre = nombre;
+		this.NIT = NIT;
+		this.descripcion = descripcion;
+		this.negociosAbiertos = new ArrayList<>();
+		this.ventas = new ArrayList<>();
 	}
 
-
-	
 	// getters y setters 
-	public String getCargo() {
-		return cargo;
-	}
+	public String getNombre() {return nombre;}
+	public void setNombre(String nombre) {this.nombre = nombre;}
+
+	public int getNIT() {return NIT;}
+	public void setNIT(int NIT) {this.NIT = NIT;}
+
+	public String getDescripcion() {return descripcion;}
+	public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
+
+	public ArrayList<Contacto> getContactos() {return contactos;}
+	public void setContacto(Contacto nuevoContacto) {this.contactos.add(nuevoContacto);}
+
+	public ArrayList<Negocio> getNegociosAbiertos() {return negociosAbiertos;}
+	public void setNegociosAbiertos(Negocio nuevoContacto) {this.negociosAbiertos.add(nuevoContacto);}
+
+	public ArrayList<Venta> getVentas() {return ventas;}
+	public void setVenta(Venta nuevaVenta) {this.ventas.add(nuevaVenta);}
+
+	public static ArrayList<Empresa> getEmpresas() {return empresas;}
+	public static void setEmpresas(Empresa nuevaEmpresa) {Empresa.empresas.add(nuevaEmpresa);}
 
 
-
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
-	}
-
-
-
-	public String getNegociosAbiertos() {
-		return negociosAbiertos;
-	}
-
-
-
-	public void setNegociosAbiertos(String negociosAbiertos) {
-		this.negociosAbiertos = negociosAbiertos;
-	}
-
-
-
-	public String getNegociosCerrados() {
-		return negociosCerrados;
-	}
-
-
-
-	public void setNegociosCerrados(String negociosCerrados) {
-		this.negociosCerrados = negociosCerrados;
-	}
-
-
-
-	public String getEtapaVenta() {
-		return etapaVenta;
-	}
-
-
-
-	public void setEtapaVenta(String etapaVenta) {
-		this.etapaVenta = etapaVenta;
-	}
-
-
-
-	public String getValor() {
-		return valor;
-	}
-
-
-
-	public void setValor(String valor) {
-		this.valor = valor;
-	}
-
-
-
-
-
-
-	
-
-    
+	//FUNCIONALIDADES
 }

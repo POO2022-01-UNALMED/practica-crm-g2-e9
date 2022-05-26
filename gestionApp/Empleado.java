@@ -5,17 +5,19 @@ import java.util.ArrayList;
 public class Empleado  extends Persona{
     private int cedula;
     private int edad;
+    private String cargo;
     private final String fechaInicioContrato;
-    private ArrayList<Servicios> Servicios = new ArrayList<>();
-    private ArrayList<Negocio> negociosAbiertos = new ArrayList<>();
-    private ArrayList<Venta> ventas = new ArrayList<>();
+    private final ArrayList<Servicios> servicios;
+    private final ArrayList<Negocio> negociosAbiertos;
+    private final ArrayList<Venta> ventas;
 
-    public Empleado(String nombre, String apellido, int telefono, int cedula, String correo, int edad, String fechaInicioContrato){
+    public Empleado(String nombre, String apellido, int telefono, String correo, int cedula, int edad, String cargo, String fechaInicioContrato){
         super(nombre, apellido, telefono, correo);
         this.cedula = cedula;
         this.edad = edad;
+        this.cargo = cargo;
         this.fechaInicioContrato = fechaInicioContrato;
-        this.Servicios = new ArrayList<>();
+        this.servicios = new ArrayList<>();
         this.negociosAbiertos = new ArrayList<>();
         this.ventas = new ArrayList<>();
     }
@@ -41,10 +43,13 @@ public class Empleado  extends Persona{
     public int getEdad(){return edad;}
     public void setEdad(int edad){this.edad = edad;}
 
+    public String getCargo(){return cargo;}
+    public void setCargo(String cargo){this.cargo = cargo;}
+
     public String getFechaInicioContrato (){return this.fechaInicioContrato;}
 
-    public ArrayList<Servicios> getServicios(){return Servicios;}
-    public void setServicios(Servicios nuevoServicio){this.Servicios.add(nuevoServicio);}
+    public ArrayList<Servicios> getServicios(){return servicios;}
+    public void setServicios(Servicios nuevoServicio){this.servicios.add(nuevoServicio);}
 
     public ArrayList<Negocio> getNegociosAbiertos(){return negociosAbiertos;}
     public void setNegociosAbiertos(Negocio nuevoNegocio){this.negociosAbiertos.add(nuevoNegocio);}

@@ -7,17 +7,17 @@ public class Contacto extends Persona{
 	private int ID;
 	private Empresa empresa;
 	private String cargo;
-	private Boolean negociosActivos;
+	private Boolean activo;
 
-	private ArrayList<Negocio> listaNegociosActivos;
+	private ArrayList<Negocio> negociosActivos;
 	private ArrayList<Evento> listaEventos;
 
-	public Contacto(String nombre, String apellido, int telefono, String correo, int ID, Empresa empresa, String cargo, Boolean negociosActivos){
+	public Contacto(String nombre, String apellido, int telefono, String correo, int ID, Empresa empresa, String cargo, Boolean activo){
 		super(nombre, apellido, telefono, correo);
 		this.ID = ID;
 		this.empresa = empresa;
 		this.cargo = cargo;
-		this.negociosActivos = negociosActivos;
+		this.activo = activo;
 		this.listaEventos = new ArrayList<>();
 		this.listaEventos = new ArrayList<>();
 	}
@@ -48,11 +48,11 @@ public class Contacto extends Persona{
 	public String getCargo(){return cargo;}
 	public void setCargo(String cargo){this.cargo = cargo;}
 
-	public Boolean isNegociosActivos(){return  this.negociosActivos;}
-	public void setNegociosActivos(Boolean estado){this.negociosActivos = estado;}
+	public Boolean isActivo(){return  this.activo;}
+	public void setActivo(Boolean estado){this.activo = estado;}
 
-	public ArrayList<Negocio> getListaNegociosActivos(){return this.listaNegociosActivos;}
-	public void setAgregarNegocio(Negocio nuevoNegocio){this.listaNegociosActivos.add(nuevoNegocio);}
+	public ArrayList<Negocio> getNegociosActivos(){return this.negociosActivos;}
+	public void setNegociosActivos(Negocio nuevoNegocio){this.negociosActivos.add(nuevoNegocio);}
 
 	public ArrayList<Evento> getListaEventos(){return this.listaEventos;}
 	public void setAgregarEvento(Evento nuevoEvento){this.listaEventos.add(nuevoEvento);}
