@@ -6,15 +6,18 @@ public class Empleado  extends Persona{
     private int cedula;
     private int edad;
     private final String fechaInicioContrato;
-    private ArrayList<Servicios> Servicios = new ArrayList<Servicios>();
-    private ArrayList<Negocio> negociosAbiertos = new ArrayList<Negocio>();
-    private ArrayList<Venta> ventas = new ArrayList<Venta>();
+    private ArrayList<Servicios> Servicios = new ArrayList<>();
+    private ArrayList<Negocio> negociosAbiertos = new ArrayList<>();
+    private ArrayList<Venta> ventas = new ArrayList<>();
 
     public Empleado(String nombre, String apellido, int telefono, int cedula, String correo, int edad, String fechaInicioContrato){
         super(nombre, apellido, telefono, correo);
         this.cedula = cedula;
         this.edad = edad;
         this.fechaInicioContrato = fechaInicioContrato;
+        this.Servicios = new ArrayList<>();
+        this.negociosAbiertos = new ArrayList<>();
+        this.ventas = new ArrayList<>();
     }
 
     //---------------Metodos Heredados---------------

@@ -1,12 +1,12 @@
 package gestionApp;
 
-public class Empresa<Productos> {
+public class Empresa {
     private String cargo;
     private String negociosAbiertos;
     private String negociosCerrados;
     private String etapaVenta;
     private String valor;
-    private Productos producto;
+    private Servicios servicios;
     
     
     

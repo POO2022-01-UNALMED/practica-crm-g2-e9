@@ -9,8 +9,8 @@ public class Contacto extends Persona{
 	private String cargo;
 	private Boolean negociosActivos;
 
-	private ArrayList<Negocio> listaNegociosActivos = new ArrayList<Negocio>();
-	private ArrayList<Evento> listaEventos = new ArrayList<Evento>();
+	private ArrayList<Negocio> listaNegociosActivos;
+	private ArrayList<Evento> listaEventos;
 
 	public Contacto(String nombre, String apellido, int telefono, String correo, int ID, Empresa empresa, String cargo, Boolean negociosActivos){
 		super(nombre, apellido, telefono, correo);
@@ -18,6 +18,8 @@ public class Contacto extends Persona{
 		this.empresa = empresa;
 		this.cargo = cargo;
 		this.negociosActivos = negociosActivos;
+		this.listaEventos = new ArrayList<>();
+		this.listaEventos = new ArrayList<>();
 	}
 
 
@@ -49,6 +51,11 @@ public class Contacto extends Persona{
 	public Boolean isNegociosActivos(){return  this.negociosActivos;}
 	public void setNegociosActivos(Boolean estado){this.negociosActivos = estado;}
 
+	public ArrayList<Negocio> getListaNegociosActivos(){return this.listaNegociosActivos;}
+	public void setAgregarNegocio(Negocio nuevoNegocio){this.listaNegociosActivos.add(nuevoNegocio);}
+
+	public ArrayList<Evento> getListaEventos(){return this.listaEventos;}
+	public void setAgregarEvento(Evento nuevoEvento){this.listaEventos.add(nuevoEvento);}
 
 
 	// las que eliminamos que pueden ir en toStrings
