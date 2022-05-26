@@ -2,9 +2,8 @@ MARCAR CON ✔ o ✘
 
 ✘    ●      SERIALIZAR
 ✘    ●      Implementar dos paquetes minimo dentro de clase gestionApp
-✘    ●      2 clases nuevas que implementen la herencia (2 clases deben heredar de una tercera.
-✘           Esta tercera puede ser una nueva
-✘    ●      clase o una de las ya propuestas inicialmente)
+✔    ●      2 clases nuevas que implementen la herencia (2 clases deben heredar de una tercera.
+            Esta tercera puede ser una nueva clase o una de las ya propuestas inicialmente)
 ✘    ●     Implementar 5 funcionalidades diferentes de CRUD (En la implementación de cada una de estas
             funcionalidades deberán intervenir varios objetos de diferentes clases mediante sus respectivos
             métodos y sus respectivos pasos de mensajes)
