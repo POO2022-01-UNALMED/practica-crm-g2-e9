@@ -77,17 +77,17 @@ public class main {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1: 
-                        Registro.registrarContacto();
+                        //Registro.registrarCliente(id, nombre, cedula, cel_num)
                         break;
                     case 2: 
-                        Registro.registrarEmpleado();
+                        //Registro.registrarEmpleado(nombre, apellido, cedula, edad, correo, celular, fechaInicioContrato)
                         break;
                     
                     case 3: 
-                        Registro.registrarEmpresa();;
+                        //Registro.registrarEmpresa(cargo, negociosAbiertos, negociosCerrados, etapaVenta, valor)
                         break;
                     case 4:
-                        Registro.registrarServicios();;
+                        //Registro.registrarEmpresa(cargo, negociosAbiertos, negociosCerrados, etapaVenta, valor)
                         break;
                     case 5:
                         Registro.registrarPromocion();
