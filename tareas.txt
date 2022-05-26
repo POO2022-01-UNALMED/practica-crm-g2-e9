@@ -1,0 +1,26 @@
+MARCAR CON ✔ o ✘
+
+✘    ●      SERIALIZAR
+✘    ●      Implementar dos paquetes minimo dentro de clase gestionApp
+✘    ●      2 clases nuevas que implementen la herencia (2 clases deben heredar de una tercera.
+✘           Esta tercera puede ser una nueva
+✘    ●      clase o una de las ya propuestas inicialmente)
+✘    ●     Implementar 5 funcionalidades diferentes de CRUD (En la implementación de cada una de estas
+            funcionalidades deberán intervenir varios objetos de diferentes clases mediante sus respectivos
+            métodos y sus respectivos pasos de mensajes)
+
+
+--------------------------------------- FUNCIONALIDADES ---------------------------------------
+
+✔    ●  Clases Abstracta (1) y Métodos Abstractos (1)
+✘    ●  Interfaces (1) diferentes a los utilizados para serializar los objetos en el punto de la persistencia. Deberá ser
+        propio del dominio a implementar.
+✔    ●  Herencia (1)
+✘    ●  Ligadura dinámica (2) asociadas al modelo lógico de la aplicación.
+✔    ●  Atributos de clase (1) y métodos de clase (1)
+✔?   ●  Uso de constante (1 caso)
+✘    ●  Encapsulamiento (private, protected y public).
+✔    ●  Los siguientes conceptos asociados a la POO:
+            -sobrecarga de métodos (1 casos mínimo) y constructores (2 casos mínimo) o
+            -Manejo de referencias this para desambiguar y this() entre otras. 2 casos mínimo para cada caso
+            -Implementación de un caso de enumeración
