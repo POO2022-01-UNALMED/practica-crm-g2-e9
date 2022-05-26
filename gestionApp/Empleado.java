@@ -10,7 +10,7 @@ public class Empleado  extends Persona{
     private ArrayList<Negocio> negociosAbiertos = new ArrayList<Negocio>();
     private ArrayList<Venta> ventas = new ArrayList<Venta>();
 
-    public Empleado(String nombre, String apellido, int telefono, String correo, int cedula, int edad, String fechaInicioContrato){
+    public Empleado(String nombre, String apellido, int telefono, int cedula, String correo, int edad, String fechaInicioContrato){
         super(nombre, apellido, telefono, correo);
         this.cedula = cedula;
         this.edad = edad;

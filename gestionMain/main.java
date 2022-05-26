@@ -3,6 +3,7 @@ package gestionMain;
 import java.util.Scanner;
 
 import gestionApp.Cliente;
+import gestionApp.Contacto;
 import gestionApp.Evento;
 import gestionApp.Registro;
 
@@ -77,7 +78,7 @@ public class main {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1: 
-                        //Registro.registrarCliente(id, nombre, cedula, cel_num)
+                        //Registro.registrarCliente(id, nombre, cedula, cel_num);
                         break;
                     case 2: 
                         //Registro.registrarEmpleado(nombre, apellido, cedula, edad, correo, celular, fechaInicioContrato)
@@ -90,7 +91,7 @@ public class main {
                         //Registro.registrarEmpresa(cargo, negociosAbiertos, negociosCerrados, etapaVenta, valor)
                         break;
                     case 5:
-                        Registro.registrarPromocion();
+                        //Registro.registrarPromocion();
                         break;
                     case 6:
                         break;
@@ -146,16 +147,16 @@ public class main {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1: 
-                        Cliente.consultarClientes();
+                        Contacto.consultarClientes();
                         break;
                     case 2: 
-                        Cliente.clientesPotenciales();
+                        Contacto.clientesPotenciales();
                         break;
                     case 3: 
-                        Cliente.consultarVentas();
+                        Contacto.consultarVentas();
                         break;
                     case 4: 
-                        Cliente.serviciosClientes();
+                        Contacto.serviciosClientes();
                         break;
 
                 }

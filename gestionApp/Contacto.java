@@ -6,17 +6,21 @@ public class Contacto extends Persona{
 
 	private int Empresa;
 	private int Cargo;
-	private
+	private int id;
 	private final String fechaInicioContrato;
 	private ArrayList<Servicios> Servicios = new ArrayList<Servicios>();
 	private ArrayList<Negocio> negociosAbiertos = new ArrayList<Negocio>();
 	private ArrayList<Venta> ventas = new ArrayList<Venta>();
+	private int cedula;
+	private int edad;
 
-	public Empleado(String nombre, String apellido, int telefono, String correo, int cedula, int edad, String fechaInicioContrato){
+
+	public Contacto(String nombre, String apellido, int telefono, String correo, int cedula, int edad, String fechaInicioContrato,int id ){
 		super(nombre, apellido, telefono, correo);
 		this.cedula = cedula;
 		this.edad = edad;
 		this.fechaInicioContrato = fechaInicioContrato;
+		this.id = id;
 	}
 
 	//---------------Metodos Heredados---------------
@@ -43,46 +47,11 @@ public class Contacto extends Persona{
 	
 	//Setters y Getters 
 
-	public int getId() {
-		return id;
-	}
+	public int getId() {return id;}
 
 
-	public void setId(int id) {
-		this.id = id;
-	}
+	public void setId(int id) {this.id = id;}
 
-
-	public String getNombre() {
-		return nombre;
-	}
-
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
-	public int getCedula() {
-		return cedula;
-	}
-
-
-	public void setCedula(int cedula) {
-		this.cedula = cedula;
-	}
-
-
-	public String getCel_num() {
-		return cel_num;
-	}
-
-
-	public void setCel_num(String cel_num) {
-		this.cel_num = cel_num;
-	}
-	
-	
 	// las que eliminamos que pueden ir en toStrings
 	
 	public static void clientesPotenciales() {
@@ -107,40 +76,6 @@ public class Contacto extends Persona{
 
 
 
-	public String getApellido() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	public void setApellido(String apellido) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public int getDNI() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public void setDNI(int DNI) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	public int getEdad() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-	public void setEdad(int Edad) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
 	
 
 
