@@ -1,15 +1,16 @@
 package gestionApp;
 
 public abstract class Persona {
-    String nombre;
-    String apellido;
-    int cedula;
-    int edad;
+    protected String nombre;
+    protected String apellido;
+    protected int telefono;
+    protected String correo;
 
-    public Persona(String nombre, String apellido, int cedula, int edad) {
+    public Persona(String nombre, String apellido, int telefono, String correo) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.cedula = cedula;
+        this.telefono = telefono;
+        this.correo = correo;
     }
 
     public abstract String getNombre();
@@ -18,11 +19,11 @@ public abstract class Persona {
     public abstract String getApellido();
     public abstract void setApellido(String apellido);
 
-    public abstract int getCedula();
-    public abstract void setCedula(int cedula);
+    public abstract int getTelefono();
+    public abstract void setTelefono(int telefono);
 
-    public abstract int getEdad();
-    public abstract void setEdad(int Edad);
+    public abstract String getCorreo();
+    public abstract void setCorreo(String correo);
 
 }
 
