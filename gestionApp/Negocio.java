@@ -4,39 +4,41 @@ import java.util.ArrayList;
 
 public class Negocio {
 	
-	private int id;
+	private int ID;
+	public Empleado empleadoEncargado;
+	public Empresa empresaVinculada;
 	private String etapa;
 	private int valorVenta;
 	private String fechaCreacion;
 	private String fechaCerrada;
-	public Empleado empleadoEncargado;
-	public Empresa empresaVinculada;
-    private ArrayList<Servicios> Servicios = new ArrayList<Servicios>();
-	
+
+	private ArrayList<Servicios> servicios;
+	private ArrayList<Evento> eventos;
+
+	private static final ArrayList<Negocio> negociosActivos = new ArrayList<>();
+
     
-    public Negocio(int id, String etapa, int valorVenta, String fechaCreacion, String fechaCerrada,
-			Empleado empleadoEncargado, Empresa empresaVinculada, ArrayList<gestionApp.Servicios> servicios) {
-		
-		this.id = id;
+    public Negocio(int ID, Empleado empleadoEncargado, Empresa empresaVinculada, String etapa, int valorVenta, String fechaCreacion, String fechaCerrada) {
+		this.ID = ID;
+		this.empleadoEncargado = empleadoEncargado;
+		this.empresaVinculada = empresaVinculada;
 		this.etapa = etapa;
 		this.valorVenta = valorVenta;
 		this.fechaCreacion = fechaCreacion;
 		this.fechaCerrada = fechaCerrada;
-		this.empleadoEncargado = empleadoEncargado;
-		this.empresaVinculada = empresaVinculada;
-		Servicios = servicios;
-	}
+		this.servicios = new ArrayList<>();
+		this.eventos = new ArrayList<>();
 
+		Negocio.negociosActivos.add(this);
+	}
 
     
     // setters y getters
 	public int getId() {
-		return id;
+		return ID;
 	}
-
-
 	public void setId(int id) {
-		this.id = id;
+		this.ID = id;
 	}
 
 
