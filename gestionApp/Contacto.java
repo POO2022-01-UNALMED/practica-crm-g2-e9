@@ -4,24 +4,22 @@ import java.util.ArrayList;
 
 public class Contacto extends Persona{
 
-	private int Empresa;
-	private int Cargo;
-	private int id;
-	private final String fechaInicioContrato;
-	private ArrayList<Servicios> Servicios = new ArrayList<Servicios>();
-	private ArrayList<Negocio> negociosAbiertos = new ArrayList<Negocio>();
-	private ArrayList<Venta> ventas = new ArrayList<Venta>();
-	private int cedula;
-	private int edad;
+	private int ID;
+	private Empresa empresa;
+	private String cargo;
+	private Boolean negociosActivos;
 
+	private ArrayList<Negocio> listaNegociosActivos = new ArrayList<Negocio>();
+	private ArrayList<Evento> listaEventos = new ArrayList<Evento>();
 
-	public Contacto(String nombre, String apellido, int telefono, String correo, int cedula, int edad, String fechaInicioContrato,int id ){
+	public Contacto(String nombre, String apellido, int telefono, String correo, int ID, Empresa empresa, String cargo, Boolean negociosActivos){
 		super(nombre, apellido, telefono, correo);
-		this.cedula = cedula;
-		this.edad = edad;
-		this.fechaInicioContrato = fechaInicioContrato;
-		this.id = id;
+		this.ID = ID;
+		this.empresa = empresa;
+		this.cargo = cargo;
+		this.negociosActivos = negociosActivos;
 	}
+
 
 	//---------------Metodos Heredados---------------
 	public String getNombre(){return nombre;}
@@ -38,19 +36,20 @@ public class Contacto extends Persona{
 
 
 	//---------------Metodos Propios---------------
-	public int getCedula(){return cedula;}
-	public void setCedula(int cedula){this.cedula = cedula;}
 
-	public int getEdad(){return edad;}
-	public void setEdad(int edad){this.edad = edad;}
+	public int getID(){return this.ID;}
+	public void setID(int ID){this.ID = ID;}
 
-	
-	//Setters y Getters 
+	public Empresa getEmpresa(){return empresa;}
+	public void setEmpresa(Empresa empresa){this.empresa = empresa;}
 
-	public int getId() {return id;}
+	public String getCargo(){return cargo;}
+	public void setCargo(String cargo){this.cargo = cargo;}
+
+	public Boolean isNegociosActivos(){return  this.negociosActivos;}
+	public void setNegociosActivos(Boolean estado){this.negociosActivos = estado;}
 
 
-	public void setId(int id) {this.id = id;}
 
 	// las que eliminamos que pueden ir en toStrings
 	
