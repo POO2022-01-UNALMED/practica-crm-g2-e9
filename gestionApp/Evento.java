@@ -1,6 +1,7 @@
 package gestionApp;
 
 public class Evento {
+
     public static void anadirEvento(){
         
     }

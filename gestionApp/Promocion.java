@@ -2,11 +2,11 @@ package gestionApp;
 
 import java.util.ArrayList;
 
-public class Promociones {
+public class Promocion {
 	private int id;
 	private double descuento;
-	private ArrayList<Servicios> Servicios = new ArrayList<Servicios>();
-	public Promociones(int id, double descuento, ArrayList<gestionApp.Servicios> servicios) {
+	private ArrayList<Servicio> Servicios = new ArrayList<Servicio>();
+	public Promocion(int id, double descuento, ArrayList<Servicio> servicios) {
 		super();
 		this.id = id;
 		this.descuento = descuento;

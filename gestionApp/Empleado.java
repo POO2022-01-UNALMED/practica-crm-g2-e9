@@ -7,7 +7,7 @@ public class Empleado  extends Persona{
     private int edad;
     private String cargo;
     private final String fechaInicioContrato;
-    private final ArrayList<Servicios> servicios;
+    private final ArrayList<Servicio> servicios;
     private final ArrayList<Negocio> negociosAbiertos;
     private final ArrayList<Venta> ventas;
 
@@ -48,8 +48,8 @@ public class Empleado  extends Persona{
 
     public String getFechaInicioContrato (){return this.fechaInicioContrato;}
 
-    public ArrayList<Servicios> getServicios(){return servicios;}
-    public void setServicios(Servicios nuevoServicio){this.servicios.add(nuevoServicio);}
+    public ArrayList<Servicio> getServicios(){return servicios;}
+    public void setServicios(Servicio nuevoServicio){this.servicios.add(nuevoServicio);}
 
     public ArrayList<Negocio> getNegociosAbiertos(){return negociosAbiertos;}
     public void setNegociosAbiertos(Negocio nuevoNegocio){this.negociosAbiertos.add(nuevoNegocio);}

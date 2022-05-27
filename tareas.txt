@@ -26,3 +26,8 @@ MARCAR CON ✔ o ✘
             -sobrecarga de métodos (1 casos mínimo) y constructores (2 casos mínimo) o
             -Manejo de referencias this para desambiguar y this() entre otras. 2 casos mínimo para cada caso
             -Implementación de un caso de enumeración
+
+
+
+propuestas:
+    -Agregar atributo carisma a la clase empleado, un dato de tipo int aleatorio que dinamiza al momento de mandar a un empleado.

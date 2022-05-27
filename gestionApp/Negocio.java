@@ -12,9 +12,8 @@ public class Negocio {
 	private String fechaCreacion;
 	private String fechaCerrada;
 
-	private ArrayList<Servicios> servicios;
+	private ArrayList<Servicio> servicios;
 	private ArrayList<Evento> eventos;
-
 	private static final ArrayList<Negocio> negociosActivos = new ArrayList<>();
 
     

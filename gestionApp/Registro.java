@@ -6,7 +6,7 @@ public class Registro {
 	private static ArrayList<Empleado> empleados= new ArrayList<Empleado>();
 	private static ArrayList<Cliente> clientes= new ArrayList<Cliente>();
 	private static ArrayList<Empresa> empresas= new ArrayList<Empresa>();
-	private static ArrayList<Servicios> servicios= new ArrayList<Servicios>();
+	private static ArrayList<Servicio> servicios= new ArrayList<Servicio>();
 	
 	
 	//registros 
@@ -32,8 +32,8 @@ public class Registro {
     public static void registrarPromocion(){
 
     }
-    public static Servicios registrarServicios(String nombreServicios, int valorProducto, String tipo, String descripcion){
-        Servicios servicio = new Servicios (nombreServicios,valorProducto, tipo, descripcion);
+    public static Servicio registrarServicios(String nombreServicios, int valorProducto, String tipo, String descripcion){
+        Servicio servicio = new Servicio(nombreServicios,valorProducto, tipo, descripcion);
         servicios.add(servicio);
         return servicio;
     }
