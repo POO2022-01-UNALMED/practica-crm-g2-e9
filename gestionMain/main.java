@@ -168,6 +168,26 @@ public class main {
     
 
     }
-    
-    
+    public static void Funcionalidades(){
+        Scanner scan = new Scanner(System.in);
+        int opcion1;
+        do {
+            try {
+                System.out.print("\t MENU FUNCIONALIDADES " + "\n1. Match: " + "\n5. Salir \n");
+                opcion1 = scan.nextInt();
+                switch (opcion1) {
+                    case 1: 
+                    //Funcion que permita match entre clientes y Empresa o empleado
+                    break;
+
+                }
+            } catch (Exception e) {
+                System.out.print("Ingrese una opcion nuevamente: ");
+                opcion1 = scan.nextInt();
+            }
+        } while (opcion1 != 5);
+
+    }
+
 }
+
