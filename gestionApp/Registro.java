@@ -8,7 +8,7 @@ public class Registro {
 	private static ArrayList<Empresa> empresas= new ArrayList<Empresa>();
 	private static ArrayList<Servicio> servicios= new ArrayList<Servicio>();
 	
-	
+	/*
 	//registros 
    
     public static Empleado registrarEmpleado(String nombre, String apellido, int cedula, int edad, String correo, int celular, String fechaInicioContrato) {
@@ -39,5 +39,5 @@ public class Registro {
     }
 
 
-    
+    */
 }
