@@ -10,7 +10,7 @@ public class Negocio {
 	private String etapa;
 	private int valorVenta;
 	private String fechaCreacion;
-	private String fechaCerrada;
+	private String fechaFinalizacion;
 
 	private ArrayList<Servicio> servicios;
 	private ArrayList<Evento> eventos;
@@ -24,7 +24,7 @@ public class Negocio {
 		this.etapa = etapa;
 		this.valorVenta = valorVenta;
 		this.fechaCreacion = fechaCreacion;
-		this.fechaCerrada = fechaCerrada;
+		this.fechaFinalizacion = fechaCerrada;
 		this.servicios = new ArrayList<>();
 		this.eventos = new ArrayList<>();
 
@@ -71,13 +71,13 @@ public class Negocio {
 	}
 
 
-	public String getFechaCerrada() {
-		return fechaCerrada;
+	public String getFechaFinalizacion() {
+		return fechaFinalizacion;
 	}
 
 
-	public void setFechaCerrada(String fechaCerrada) {
-		this.fechaCerrada = fechaCerrada;
+	public void setFechaFinalizacion(String fechaFinalizacion) {
+		this.fechaFinalizacion = fechaFinalizacion;
 	}
     
     

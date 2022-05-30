@@ -5,23 +5,25 @@ import java.util.ArrayList;
 public class Evento {
 
     int ID;
-    Empleado empleadoEncargado;
-    Empresa empresaVinculada;
-    Cliente contacto;
-    ArrayList<Servicio> listaServicios;
+    Negocio negocio;
     String tipoInteraccion;
     String descripcion;
     String fecha;
     String respuesta;
 
-    public Evento(int ID, Empleado empleadoEncargado, Empresa empresaVinculada, Cliente contacto, String tipoInteraccion, String descripcion, String fecha){
+    public Evento(int ID, Negocio negocio, String tipoInteraccion, String descripcion){
         this.ID = ID;
-        this.empleadoEncargado = empleadoEncargado;
-        this.empresaVinculada = empresaVinculada;
-        this.contacto = contacto;
+        this.negocio = negocio;
         this.tipoInteraccion = tipoInteraccion;
         this.descripcion = descripcion;
-        this.fecha = fecha;
+        this.fecha = "00/00/0000";
+        this.respuesta = this.darRespuesta();
+
+        //ejecucion de metodo para dar respuesta;
+    }
+
+    private String darRespuesta(){
+        return "ziks";
     }
 
 
@@ -30,20 +32,11 @@ public class Evento {
     public int getID() {return ID;}
     public void setID(int ID) {this.ID = ID;}
 
-    public Empleado getEmpleadoEncargado() {return empleadoEncargado;}
-    public void setEmpleadoEncargado(Empleado empleadoEncargado) {this.empleadoEncargado = empleadoEncargado;}
-
-    public Empresa getEmpresaVinculada() {return empresaVinculada;}
-    public void setEmpresaVinculada(Empresa empresaVinculada) {this.empresaVinculada = empresaVinculada;}
-
-    public Cliente getContacto() {return contacto;}
-    public void setContacto(Cliente contacto) {this.contacto = contacto;}
-
-    public ArrayList<Servicio> getListaServicios() {return listaServicios;}
-    public void setListServicios(ArrayList<Servicio> listaServicios) {this.listaServicios = listaServicios;}
-
     public String getTipoInteraccion() {return tipoInteraccion;}
     public void setTipoInteraccion(String tipoInteraccion) {this.tipoInteraccion = tipoInteraccion;}
+
+    public Negocio getNegocio() {return negocio;}
+    public void setNegocio(Negocio negocio) {this.negocio = negocio;}
 
     public String getDescripcion() {return descripcion;}
     public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
@@ -54,6 +47,8 @@ public class Evento {
     public String getRespuesta() {return respuesta;}
     public void setRespuesta(String respuesta) {this.respuesta = respuesta;}
 
+
+    //Metodo para elegir si una respuesta cambia la etapa del negocio
 
 
 
@@ -66,6 +61,12 @@ public class Evento {
     }
     public static void modificarEvento(){
         
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Hola!");
+        int numero = (int)(Math.random()*10+1);
+        System.out.println(numero);
     }
     
 }

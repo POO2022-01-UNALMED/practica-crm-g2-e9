@@ -12,6 +12,7 @@ public class Empresa {
 	private final ArrayList<Negocio> negociosAbiertos;
 	private final ArrayList<Venta> ventas;
 	private static ArrayList<Empresa> empresas;
+	private final ArrayList<Servicio> serviciosDeInteres;
 
     
 	public Empresa(String nombre,int nit, String descripcion) {
@@ -20,6 +21,7 @@ public class Empresa {
 		this.descripcion = descripcion;
 		this.negociosAbiertos = new ArrayList<>();
 		this.ventas = new ArrayList<>();
+		this.serviciosDeInteres = new ArrayList<>();
 	}
 
 	// getters y setters 

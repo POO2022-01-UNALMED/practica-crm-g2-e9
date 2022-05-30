@@ -58,6 +58,8 @@ public class Cliente extends Persona{
 	public void setAgregarEvento(Evento nuevoEvento){this.listaEventos.add(nuevoEvento);}
 
 
+
+
 	// las que eliminamos que pueden ir en toStrings
 	
 	public static void clientesPotenciales() {
