@@ -2,13 +2,9 @@ package gestionMain;
 
 import java.util.Scanner;
 
-import javax.print.event.PrintEvent;
-
-import gestionApp.Cliente;
+import gestionApp.personas.Cliente;
 import gestionApp.Empresa;
-import gestionApp.Cliente;
 import gestionApp.Evento;
-import gestionApp.Registro;
 
 
 public class main {

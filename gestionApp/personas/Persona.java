@@ -1,4 +1,4 @@
-package gestionApp;
+package gestionApp.personas;
 
 public abstract class Persona {
     protected String nombre;

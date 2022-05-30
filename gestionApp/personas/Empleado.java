@@ -1,4 +1,8 @@
-package gestionApp;
+package gestionApp.personas;
+
+import gestionApp.Negocio;
+import gestionApp.servicios.Servicio;
+import gestionApp.Venta;
 
 import java.util.ArrayList;
 
