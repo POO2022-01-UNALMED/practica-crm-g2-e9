@@ -8,6 +8,8 @@ public class Servicio {
     private String tipo;
     private String descripcion;
     private boolean promocion;
+    private String asdfa;
+
 
 
 
