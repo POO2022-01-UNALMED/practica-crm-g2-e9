@@ -12,14 +12,14 @@ public class Contacto extends Persona{
 	private ArrayList<Negocio> negociosActivos;
 	private ArrayList<Evento> listaEventos;
 
-	public Contacto(String nombre, String apellido, int telefono, String correo, int ID, Empresa empresa, String cargo, Boolean activo){
-		super(nombre, apellido, telefono, correo);
+	public Contacto(String nombre, int cedula, String cel, String correo, int ID, Empresa empresa, String cargo, Boolean activo){
+		super(nombre, cedula, cel, correo);
 		this.ID = ID;
 		this.empresa = empresa;
 		this.cargo = cargo;
 		this.activo = activo;
 		this.listaEventos = new ArrayList<>();
-		this.listaEventos = new ArrayList<>();
+
 	}
 
 
@@ -27,11 +27,11 @@ public class Contacto extends Persona{
 	public String getNombre(){return nombre;}
 	public void setNombre(String nombre){this.nombre = nombre;}
 
-	public String getApellido(){return apellido;}
-	public void setApellido(String apellido){this.apellido = apellido;}
+	public int getCedula(){return cedula;}
+	public void setCedula(int cedula){this.cedula = cedula;}
 
-	public int getTelefono(){return this.telefono;}
-	public void setTelefono(int telefono){this.telefono = telefono;}
+	public String getCel(){return this.cel;}
+	public void setCel(String cel){this.cel = cel;}
 
 	public String getCorreo(){return correo;}
 	public void setCorreo(String correo){this.correo = correo;}
@@ -65,7 +65,7 @@ public class Contacto extends Persona{
 	}
 
 	public static void consultarClientes() {
-
+		
 	}
 	
 	public static void consultarOportunidades() {

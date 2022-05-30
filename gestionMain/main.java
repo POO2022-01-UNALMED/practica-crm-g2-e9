@@ -2,6 +2,8 @@ package gestionMain;
 
 import java.util.Scanner;
 
+import javax.print.event.PrintEvent;
+
 import gestionApp.Cliente;
 import gestionApp.Contacto;
 import gestionApp.Evento;
@@ -78,7 +80,8 @@ public class main {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1: 
-                        //Registro.registrarCliente(id, nombre, cedula, cel_num);
+                        Cliente cliente01 = new Cliente("Miguel Restrepo", 1036688863, "3006718392", "miguel@gmail.com", 1001);
+                        System.out.println(cliente01);
                         break;
                     case 2: 
                         //Registro.registrarEmpleado(nombre, apellido, cedula, edad, correo, celular, fechaInicioContrato)

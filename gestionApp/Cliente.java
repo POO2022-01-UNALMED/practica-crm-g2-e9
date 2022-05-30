@@ -1,18 +1,28 @@
 package gestionApp;
 
-public class Cliente{
+public class Cliente extends Persona{
 	private int id;
-	private String nombre;
-	private int cedula;
-	private String cel_num;
+
 	
 	
-	public Cliente(int id, String nombre, int cedula, String cel_num) {
+	public Cliente(String nombre, int cedula, String cel, String correo, int id) {
+		super(nombre, cedula, cel, correo);
 		this.id = id;
-		this.nombre = nombre;
-		this.cedula = cedula;
-		this.cel_num = cel_num;
+
 	}
+
+	public String getNombre(){return nombre;}
+	public void setNombre(String nombre){this.nombre = nombre;}
+
+	public int getCedula(){return cedula;}
+	public void setCedula(int cedula){this.cedula = cedula;}
+
+	public String getCel(){return this.cel;}
+	public void setCel(String cel){this.cel = cel;}
+
+	public String getCorreo(){return correo;}
+	public void setCorreo(String correo){this.correo = correo;}
+
 
 	
 	//Setters y Getters 
@@ -21,40 +31,13 @@ public class Cliente{
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
 
 
-	public String getNombre() {
-		return nombre;
-	}
 
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
-	public int getCedula() {
-		return cedula;
-	}
-
-
-	public void setCedula(int cedula) {
-		this.cedula = cedula;
-	}
-
-
-	public String getCel_num() {
-		return cel_num;
-	}
-
-
-	public void setCel_num(String cel_num) {
-		this.cel_num = cel_num;
-	}
 	
 	
 	// las que eliminamos que pueden ir en toStrings
@@ -81,38 +64,4 @@ public class Cliente{
 
 
 
-	public String getApellido() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	public void setApellido(String apellido) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public int getDNI() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public void setDNI(int DNI) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	public int getEdad() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-	public void setEdad(int Edad) {
-		// TODO Auto-generated method stub
-		
-	}
 }
-
-	
