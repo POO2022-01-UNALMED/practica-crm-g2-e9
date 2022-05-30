@@ -6,7 +6,7 @@ public class Negocio {
 	
 	private int ID;
 	public Empleado empleadoEncargado;
-	public Empresa empresaVinculada;
+	public Cliente cliente;
 	private String etapa;
 	private int valorVenta;
 	private String fechaCreacion;
@@ -17,10 +17,10 @@ public class Negocio {
 	private static final ArrayList<Negocio> negociosActivos = new ArrayList<>();
 
     
-    public Negocio(int ID, Empleado empleadoEncargado, Empresa empresaVinculada, String etapa, int valorVenta, String fechaCreacion, String fechaCerrada) {
+    public Negocio(int ID, Empleado empleadoEncargado, Cliente cliente, String etapa, int valorVenta, String fechaCreacion, String fechaCerrada) {
 		this.ID = ID;
 		this.empleadoEncargado = empleadoEncargado;
-		this.empresaVinculada = empresaVinculada;
+		this.cliente = cliente;
 		this.etapa = etapa;
 		this.valorVenta = valorVenta;
 		this.fechaCreacion = fechaCreacion;
@@ -33,6 +33,14 @@ public class Negocio {
 
     
     // setters y getters
+
+
+	public Empleado getEmpleadoEncargado() {return empleadoEncargado;}
+	public void setEmpleadoEncargado(Empleado empleadoEncargado) {this.empleadoEncargado = empleadoEncargado;}
+
+	public Cliente getCliente() {return cliente;}
+	public void setCliente(Cliente cliente) {this.cliente = cliente;}
+
 	public int getId() {
 		return ID;
 	}

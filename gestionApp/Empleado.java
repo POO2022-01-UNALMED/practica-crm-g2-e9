@@ -7,6 +7,8 @@ public class Empleado  extends Persona{
     private int edad;
     private String cargo;
     private final String fechaInicioContrato;
+    private final float habilidadVenta;
+
     private final ArrayList<Servicio> servicios;
     private final ArrayList<Negocio> negociosAbiertos;
     private final ArrayList<Venta> ventas;
@@ -19,9 +21,11 @@ public class Empleado  extends Persona{
         this.servicios = new ArrayList<>();
         this.negociosAbiertos = new ArrayList<>();
         this.ventas = new ArrayList<>();
+        this.habilidadVenta = (float) (Math.random()*0.4); //numero random entre 0 y 0.4
     }
 
     //---------------Metodos Heredados---------------
+
     public String getNombre(){return nombre;}
     public void setNombre(String nombre){this.nombre = nombre;}
 
@@ -34,9 +38,11 @@ public class Empleado  extends Persona{
     public String getCorreo(){return correo;}
     public void setCorreo(String correo){this.correo = correo;}
 
+    public float getHabilidadVenta() {
+        return habilidadVenta;
+    }
 
     //---------------Metodos Propios---------------
-
 
     public int getEdad(){return edad;}
     public void setEdad(int edad){this.edad = edad;}

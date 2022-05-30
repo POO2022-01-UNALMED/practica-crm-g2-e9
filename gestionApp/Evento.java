@@ -23,7 +23,27 @@ public class Evento {
     }
 
     private String darRespuesta(){
-        return "ziks";
+        float probabilidadDeInteres = (float) 0.3;
+        if (negocio.getEtapa().equals("Presentación")){
+            float probabilidad =    negocio.getEmpleadoEncargado().getHabilidadVenta()+
+                    negocio.cliente.getProbCompra()+ probabilidadDeInteres;
+
+            if (probabilidad >= 0.7 ){return "Si";
+            } else if (probabilidad <= 0.3) {return "No";}
+            else {return "Interes";}
+        }
+
+        if (negocio.getEtapa().equals("Negociación")){
+            float valorEsperado = (float) (Math.random()*0.5+0.5);
+            if (valorEsperado >= 0.75){return "Compra";
+            }else if (valorEsperado >= 0.6 && valorEsperado <0.75){
+                return "No compra, sigue interesado";
+            }else {return "No compra";}
+        }
+
+
+
+        return "a";
     }
 
 
@@ -65,8 +85,9 @@ public class Evento {
 
     public static void main(String[] args) {
         System.out.println("Hola!");
-        int numero = (int)(Math.random()*10+1);
-        System.out.println(numero);
+        float a = (float) (Math.random()*0.4);
+        float valorEsperado = (float) (Math.random()*0.5+0.5);
+        System.out.println(valorEsperado);
     }
     
 }
