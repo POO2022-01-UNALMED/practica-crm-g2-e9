@@ -1,7 +1,5 @@
 package gestionApp;
 
-import java.util.ArrayList;
-
 public class Evento {
 
     int ID;

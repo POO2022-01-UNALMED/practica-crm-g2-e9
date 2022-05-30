@@ -17,7 +17,7 @@ public class Servicio {
         this.precio = valorProducto;
         this.tipo = tipo;
         this.descripcion = descripcion;
-        Servicio.listaServicios.add(this);
+        //Servicio.listaServicios.add(this);
 	}
 
     public String getNombre(){return nombre;}

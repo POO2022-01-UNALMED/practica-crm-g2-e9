@@ -1,5 +1,9 @@
 package gestionApp;
 
+import gestionApp.personas.Cliente;
+import gestionApp.personas.Empleado;
+import gestionApp.servicios.Servicio;
+
 import java.util.ArrayList;
 
 public class Negocio {
@@ -27,7 +31,6 @@ public class Negocio {
 		this.fechaFinalizacion = fechaCerrada;
 		this.servicios = new ArrayList<>();
 		this.eventos = new ArrayList<>();
-
 		Negocio.negociosActivos.add(this);
 	}
 
@@ -66,9 +69,13 @@ public class Negocio {
 	void agregarEvento (Evento nuevoEvento){this.eventos.add(nuevoEvento);}
 	void eliminarEvento(int indice){this.eventos.remove(indice);}
 
-
 	public static ArrayList<Negocio> getNegociosActivos() {return Negocio.negociosActivos;}
 	public static void setNegociosActivos(ArrayList<Negocio> negociosActivos) {Negocio.negociosActivos = negociosActivos;}
 	public static void agregarNegocio(Negocio nuevoNegocio){Negocio.negociosActivos.add(nuevoNegocio);}
 	public static void eliminarNegocio(int indice){Negocio.negociosActivos.remove(indice);}
+
+
+	//METODOS FUNCIONALES
+
+
 }

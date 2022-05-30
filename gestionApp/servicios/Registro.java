@@ -1,11 +1,16 @@
-package gestionApp;
+package gestionApp.servicios;
+
+import gestionApp.Empresa;
+import gestionApp.personas.Cliente;
+import gestionApp.personas.Empleado;
+import gestionApp.servicios.Servicio;
 
 import java.util.ArrayList;
 
 public class Registro {
 	private static ArrayList<Empleado> empleados= new ArrayList<Empleado>();
-	private static ArrayList<Cliente> clientes= new ArrayList<Cliente>();
-	private static ArrayList<Empresa> empresas= new ArrayList<Empresa>();
+	private static ArrayList<Cliente> clientes= new ArrayList<>();
+	private static ArrayList<Empresa> empresas= new ArrayList<>();
 	private static ArrayList<Servicio> servicios= new ArrayList<Servicio>();
 	
 	
@@ -21,7 +26,6 @@ public class Registro {
     public   Cliente registrarCliente(String nombre, int cedula, String cel, String correo, int id, Empresa empresa, String cargo, Boolean activo) {
     	Cliente cliente = new Cliente (nombre, cedula, cel, correo, id, empresa, cargo, activo);
     	clientes.add(cliente);
-
     	return  cliente;
     }
     public  Empresa registrarEmpresa(String nombre, int nit, String descripcion){
@@ -42,5 +46,11 @@ public class Registro {
     // }
 
 
-    
+    public static ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public static void setClientes(ArrayList<Cliente> clientes) {
+        Registro.clientes = clientes;
+    }
 }
