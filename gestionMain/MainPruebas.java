@@ -47,6 +47,9 @@ import gestionApp.Evento;
 
 public class MainPruebas {
     public static void main(String[] args) {
+
+
+
         Scanner scan = new Scanner(System.in);
         int opcion1;
 
