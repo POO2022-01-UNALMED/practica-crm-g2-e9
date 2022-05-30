@@ -18,17 +18,17 @@ public class Registro {
     // }
     
     
-    public   Cliente registrarCliente(String nombre, int cedula, String cel, String correo, int id) {
-    	Cliente cliente = new Cliente (nombre, cedula, cel, correo, id);
+    public   Cliente registrarCliente(String nombre, int cedula, String cel, String correo, int id, Empresa empresa, String cargo, Boolean activo) {
+    	Cliente cliente = new Cliente (nombre, cedula, cel, correo, id, empresa, cargo, activo);
     	clientes.add(cliente);
 
     	return  cliente;
     }
-    // public  Empresa registrarEmpresa(String cargo, String negociosAbiertos, String negociosCerrados, String etapaVenta, String valor){
-    //     Empresa empresa= new Empresa ( cargo, negociosAbiertos,negociosCerrados, etapaVenta, valor);
-    //     empresas.add(empresa);
-    //     return empresa;
-    // }
+    public  Empresa registrarEmpresa(String nombre, int nit, String descripcion){
+        Empresa empresa= new Empresa (nombre, nit, descripcion);
+        empresas.add(empresa);
+        return empresa;
+    }
 
 
   

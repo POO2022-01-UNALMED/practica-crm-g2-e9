@@ -5,7 +5,8 @@ import java.util.Scanner;
 import javax.print.event.PrintEvent;
 
 import gestionApp.Cliente;
-import gestionApp.Contacto;
+import gestionApp.Empresa;
+import gestionApp.Cliente;
 import gestionApp.Evento;
 import gestionApp.Registro;
 
@@ -14,7 +15,8 @@ public class main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int opcion1;
-    
+        
+        
 
         do {
             try {
@@ -72,7 +74,7 @@ public class main {
     public static  void registro() {
         Scanner scan = new Scanner(System.in);
         int opcion1;
-        
+        Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
                
         do {
             try {
@@ -80,7 +82,7 @@ public class main {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1: 
-                        Cliente cliente01 = new Cliente("Miguel Restrepo", 1036688863, "3006718392", "miguel@gmail.com", 1001);
+                        Cliente cliente01 = new Cliente("Miguel Restrepo", 1036688863, "3006718392", "miguel@gmail.com", 1001, empresa01 ,"Mi propio jefe", true);
                         System.out.println(cliente01);
                         break;
                     case 2: 
@@ -150,16 +152,16 @@ public class main {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1: 
-                        Contacto.consultarClientes();
+                        Cliente.consultarClientes();
                         break;
                     case 2: 
-                        Contacto.clientesPotenciales();
+                        Cliente.clientesPotenciales();
                         break;
                     case 3: 
-                        Contacto.consultarVentas();
+                        Cliente.consultarVentas();
                         break;
                     case 4: 
-                        Contacto.serviciosClientes();
+                        Cliente.serviciosClientes();
                         break;
 
                 }

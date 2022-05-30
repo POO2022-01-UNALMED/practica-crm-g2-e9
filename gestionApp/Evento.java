@@ -7,14 +7,14 @@ public class Evento {
     int ID;
     Empleado empleadoEncargado;
     Empresa empresaVinculada;
-    Contacto contacto;
+    Cliente contacto;
     ArrayList<Servicio> listaServicios;
     String tipoInteraccion;
     String descripcion;
     String fecha;
     String respuesta;
 
-    public Evento(int ID, Empleado empleadoEncargado, Empresa empresaVinculada, Contacto contacto, String tipoInteraccion, String descripcion, String fecha){
+    public Evento(int ID, Empleado empleadoEncargado, Empresa empresaVinculada, Cliente contacto, String tipoInteraccion, String descripcion, String fecha){
         this.ID = ID;
         this.empleadoEncargado = empleadoEncargado;
         this.empresaVinculada = empresaVinculada;
@@ -36,8 +36,8 @@ public class Evento {
     public Empresa getEmpresaVinculada() {return empresaVinculada;}
     public void setEmpresaVinculada(Empresa empresaVinculada) {this.empresaVinculada = empresaVinculada;}
 
-    public Contacto getContacto() {return contacto;}
-    public void setContacto(Contacto contacto) {this.contacto = contacto;}
+    public Cliente getContacto() {return contacto;}
+    public void setContacto(Cliente contacto) {this.contacto = contacto;}
 
     public ArrayList<Servicio> getListaServicios() {return listaServicios;}
     public void setListServicios(ArrayList<Servicio> listaServicios) {this.listaServicios = listaServicios;}
