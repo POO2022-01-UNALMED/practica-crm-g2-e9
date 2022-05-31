@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Llamada extends Evento{
 
-    double duracionLlamada;
+    private double duracionLlamada;
 
     public Llamada(int ID, Negocio negocio, String descripcion){
         super(ID, negocio, descripcion, LocalDateTime.now());
@@ -23,8 +23,8 @@ public class Llamada extends Evento{
         }
 
     }
- 
 
+    public double getDuracionLlamada(){return duracionLlamada;}
 
 
 }

@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 public class Correo extends Evento{
     
-    double cantidadPalabras;
+    private double cantidadPalabras;
 
     public Correo(int ID, Negocio negocio, String descripcion){
         super(ID, negocio, descripcion, LocalDateTime.now());
@@ -24,5 +24,5 @@ public class Correo extends Evento{
         }
 
     }
-
+    public double getCantidadPalabras(){return cantidadPalabras;}
 }

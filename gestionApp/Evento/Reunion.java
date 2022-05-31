@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 public class Reunion extends Evento{
     
-    double duracionReunion;
+    private double duracionReunion;
 
     public Reunion(int ID, Negocio negocio, String descripcion){
         super(ID, negocio, descripcion, LocalDateTime.now());
@@ -22,4 +22,7 @@ public class Reunion extends Evento{
             super.respuesta = "No interesado";
         }
     }
+
+    public double getDuracionReunion(){return duracionReunion;}
+
 }

@@ -1,4 +1,4 @@
-package Evento;
+package gestionApp.Evento;
 import gestionApp.Negocio;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -40,7 +40,7 @@ public class Evento {
     protected LocalDateTime getFecha() {return fecha;}
     protected void setFecha(LocalDateTime fecha) {this.fecha = fecha;}
 
-    protected String getRespuesta() {return respuesta;}
+    public String getRespuesta() {return respuesta;}
     protected void setRespuesta(String respuesta) {this.respuesta = respuesta;}
 
     //Metodo para elegir si una respuesta cambia la etapa del negocio
