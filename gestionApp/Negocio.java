@@ -1,12 +1,11 @@
 package gestionApp;
 
+import gestionApp.Evento.Evento;
 import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
 import gestionApp.servicios.Servicio;
 
 import java.util.ArrayList;
-
-import Evento.Evento;
 
 public class Negocio {
 	
@@ -23,14 +22,14 @@ public class Negocio {
 	private static ArrayList<Negocio> negociosActivos = new ArrayList<>();
 
     
-    public Negocio(int ID, Empleado empleadoEncargado, Cliente cliente, String etapa, int valorVenta, String fechaCreacion, String fechaCerrada) {
+    public Negocio(int ID, Empleado empleadoEncargado, Cliente cliente, String etapa, int valorVenta, String fechaCreacion, String fechaFinalizacion) {
 		this.ID = ID;
 		this.empleadoEncargado = empleadoEncargado;
 		this.cliente = cliente;
 		this.etapa = etapa;
 		this.valorVenta = valorVenta;
 		this.fechaCreacion = fechaCreacion;
-		this.fechaFinalizacion = fechaCerrada;
+		this.fechaFinalizacion = fechaFinalizacion;
 		this.servicios = new ArrayList<>();
 		this.eventos = new ArrayList<>();
 		Negocio.negociosActivos.add(this);
@@ -63,8 +62,8 @@ public class Negocio {
 
 	public ArrayList<Servicio> getServicios() {return servicios;}
 	public void setServicios(ArrayList<Servicio> servicios) {this.servicios = servicios;}
-	void agregarServicio (Servicio nuevoServicio){this.servicios.add(nuevoServicio);}
-	void eliminarServicio(int indice){this.servicios.remove(indice);}
+	public void agregarServicio (Servicio nuevoServicio){this.servicios.add(nuevoServicio);}
+	public void eliminarServicio(int indice){this.servicios.remove(indice);}
 
 	public ArrayList<Evento> getEventos() {return eventos;}
 	public void setEventos(ArrayList<Evento> eventos) {this.eventos = eventos;}
@@ -75,9 +74,6 @@ public class Negocio {
 	public static void setNegociosActivos(ArrayList<Negocio> negociosActivos) {Negocio.negociosActivos = negociosActivos;}
 	public static void agregarNegocio(Negocio nuevoNegocio){Negocio.negociosActivos.add(nuevoNegocio);}
 	public static void eliminarNegocio(int indice){Negocio.negociosActivos.remove(indice);}
-
-
-	//METODOS FUNCIONALES
 
 
 }

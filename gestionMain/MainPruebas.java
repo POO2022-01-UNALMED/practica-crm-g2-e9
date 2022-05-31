@@ -42,7 +42,7 @@ import java.util.Scanner;
 
 import gestionApp.personas.Cliente;
 import gestionApp.Empresa;
-import Evento.Evento;
+import gestionApp.Evento.Evento;
 
 
 public class MainPruebas {
