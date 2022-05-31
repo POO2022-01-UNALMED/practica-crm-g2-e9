@@ -2,7 +2,9 @@ package gestionApp.personas;
 
 import gestionApp.Empresa;
 import gestionApp.Negocio;
-import gestionApp.Evento.Evento;
+import Evento.Evento;
+
+
 
 import java.util.ArrayList;
 
@@ -13,6 +15,10 @@ public class Cliente extends Persona{
 	private String cargo;
 	private Boolean activo;
 	private float probCompra;
+
+	Evento a = new Evento();
+
+
 
 	private ArrayList<Negocio> negociosActivos;
 	private ArrayList<Evento> listaEventos;

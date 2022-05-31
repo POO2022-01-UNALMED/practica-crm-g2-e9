@@ -1,6 +1,6 @@
 package gestionApp;
 
-import gestionApp.Evento.Evento;
+import Evento.Evento;
 import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
 import gestionApp.servicios.Servicio;
