@@ -2,9 +2,7 @@ package gestionApp.personas;
 
 import gestionApp.Empresa;
 import gestionApp.Negocio;
-import Evento.Evento;
-
-
+import gestionApp.Evento.Evento;
 
 import java.util.ArrayList;
 
@@ -16,7 +14,7 @@ public class Cliente extends Persona{
 	private Boolean activo;
 	private float probCompra;
 
-	Evento a = new Evento();
+	Evento a = new Evento(id, null, cargo, null);
 
 
 

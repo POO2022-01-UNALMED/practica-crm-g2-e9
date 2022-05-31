@@ -1,13 +1,9 @@
 package gestionApp;
 
-<<<<<<< Updated upstream
-import Evento.Evento;
-=======
-import gestionApp.Evento.Evento;
-import gestionApp.Evento.Reunion;
 import gestionApp.Evento.Correo;
+import gestionApp.Evento.Evento;
 import gestionApp.Evento.Llamada;
->>>>>>> Stashed changes
+import gestionApp.Evento.Reunion;
 import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
 import gestionApp.servicios.Servicio;

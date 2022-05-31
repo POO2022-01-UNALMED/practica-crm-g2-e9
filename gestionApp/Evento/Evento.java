@@ -22,9 +22,6 @@ public class Evento {
         negocio.agregarEvento(this);
     }
 
-    public Evento() {
-
-    }
 
     //---------------Metodos Setter y Getter---------------
 
