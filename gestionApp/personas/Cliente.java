@@ -33,6 +33,8 @@ public class Cliente extends Persona{
 	}
 
 
+
+
 	//---------------Metodos Heredados---------------
 	public String getNombre(){return nombre;}
 	public void setNombre(String nombre){this.nombre = nombre;}
@@ -71,7 +73,7 @@ public class Cliente extends Persona{
 	public void setProbCompra(float probCompra) {this.probCompra = probCompra;}
 
 	// las que eliminamos que pueden ir en toStrings
-	
+
 	public static void clientesPotenciales() {
 
 	}
