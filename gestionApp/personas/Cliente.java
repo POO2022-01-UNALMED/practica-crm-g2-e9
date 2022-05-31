@@ -1,7 +1,7 @@
 package gestionApp.personas;
 
 import gestionApp.Empresa;
-import gestionApp.Evento;
+import Evento.Evento;
 import gestionApp.Negocio;
 
 import java.util.ArrayList;
