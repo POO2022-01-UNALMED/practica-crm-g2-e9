@@ -1,7 +1,7 @@
 MARCAR CON ✔ o ✘
         ●   Implementar metodos toString
 ✘    ●      SERIALIZAR
-✘    ●      Implementar dos paquetes minimo dentro de clase gestionApp
+✔    ●      Implementar dos paquetes minimo dentro de clase gestionApp
 ✔    ●      2 clases nuevas que implementen la herencia (2 clases deben heredar de una tercera.
             Esta tercera puede ser una nueva clase o una de las ya propuestas inicialmente)
 
