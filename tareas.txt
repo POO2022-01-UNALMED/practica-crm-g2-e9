@@ -4,6 +4,9 @@ MARCAR CON ✔ o ✘
 ✔    ●      Implementar dos paquetes minimo dentro de clase gestionApp
 ✔    ●      2 clases nuevas que implementen la herencia (2 clases deben heredar de una tercera.
             Esta tercera puede ser una nueva clase o una de las ya propuestas inicialmente)
+            Agregar toString a a los metodos para organizarlo ya todo para vistas en el menu interfaz
+            Empezar a conectar y implementar los prints para que se muestre lo correspondiente de la base 
+            
 
 
 ---------------------------------------IMPLEMENTACION DE FUNCIONALIDADES------------------------------------------
