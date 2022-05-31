@@ -38,7 +38,7 @@ public class Empresa {
 	public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
 
 	public ArrayList<Cliente> getContactos() {return contactos;}
-	public void setContacto(Cliente nuevoContacto) {this.contactos.add(nuevoContacto);}
+	public void setContactos(Cliente nuevoContacto) {this.contactos.add(nuevoContacto);}
 
 	public ArrayList<Negocio> getNegociosAbiertos() {return negociosAbiertos;}
 	public void setNegociosAbiertos(Negocio nuevoContacto) {this.negociosAbiertos.add(nuevoContacto);}
@@ -49,6 +49,7 @@ public class Empresa {
 	public static ArrayList<Empresa> getEmpresas() {return empresas;}
 	public static void setEmpresas(Empresa nuevaEmpresa) {Empresa.empresas.add(nuevaEmpresa);}
 
+	
 
 	//FUNCIONALIDADES
 

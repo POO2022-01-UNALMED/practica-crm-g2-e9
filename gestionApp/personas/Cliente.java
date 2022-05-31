@@ -21,7 +21,7 @@ public class Cliente extends Persona{
 	private ArrayList<Negocio> negociosActivos;
 	private ArrayList<Evento> listaEventos;
 
-	public Cliente(String nombre, int cedula, String cel, String correo, int id, Empresa empresa, String cargo, Boolean activo){
+	public Cliente(String nombre,Empresa empresa, int cedula, String cel, String correo, int id, String cargo, Boolean activo){
 		super(nombre, cedula, cel, correo);
 		this.id = id;
 		this.empresa = empresa;
@@ -31,6 +31,16 @@ public class Cliente extends Persona{
 		this.probCompra = Math.random();
 
 	}
+	public Cliente(String nombre, int cedula, String cel, String correo, int id, String cargo, Boolean activo){
+		super(nombre, cedula, cel, correo);
+		this.id = id;
+		this.cargo = cargo;
+		this.activo = activo;
+		this.listaEventos = new ArrayList<>();
+		this.probCompra = Math.random();
+
+	}
+	
 
 
 

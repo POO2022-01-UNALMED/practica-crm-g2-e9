@@ -23,19 +23,71 @@ public class Registro {
     }
     
     
-    public static Cliente registrarCliente(String nombre, int cedula, String cel, String correo, int id, Empresa empresa, String cargo, Boolean activo) {
-    	Cliente cliente = new Cliente (nombre, cedula, cel, correo, id, empresa, cargo, activo);
-    	clientes.add(cliente);
-    	return  cliente;
+    public static Cliente registrarCliente(int nit,String nombre, int cedula, String cel, String correo, int id, String cargo, Boolean activo) {
+
+    	Empresa emp =buscarEmpresas(nit);
+    	if (emp != null) {
+    		Cliente cliente = new Cliente(nombre, cedula, cel, correo, id, cargo, activo);
+    		cliente.setEmpresa(emp);
+    		clientes.add(cliente);
+    		//emp.setContactos(cliente);
+    		return  cliente;
+    	}
+    	return  null;
     }
-    public  Empresa registrarEmpresa(String nombre, int nit, String descripcion){
+    public static Empresa registrarEmpresa(String nombre, int nit, String descripcion){
         Empresa empresa= new Empresa (nombre, nit, descripcion);
         empresas.add(empresa);
         return empresa;
     }
 
-
+    public static Empresa buscarEmpresas(int nit){
+    	  
+    	for(int i = 0; i < empresas.size(); i++){
+    		if(empresas.get(i).getNit() == nit)
+    	        //System.out.println(empresas.get(i).getNombre());
+    			return empresas.get(i);
+    		//-------
+    		
+    }
+    	return null;
+    	
+    	    }
+    
+    
+    public static Cliente buscarCliente(int id){
+  	  
+    	for(int i = 0; i < clientes.size(); i++){
+    		if(clientes.get(i).getID() == id)
+    			System.out.println(clientes.get(i).getEmpresa().getNombre());
+    			return clientes.get(i);
+    		//-------
+    		
+    }
+    	return null;
+    	
+    	    }
+    
+    public static void listacEmpresa(int nit){
+    	Empresa empresa = buscarEmpresas(nit);
+    	if(empresa != null) {
+    		for(int i = 0; i < empresa.getContactos().size(); i++){
+    		
+    			System.out.println(empresa.getContactos().get(i).getNombre());
+    			
+    		}
+    	}
+    	
+	    	
+    	
+    		//-------
+    		
+    }
+    	
+   
   
+    		
+    
     // public static void registrarPromocion(){
 
     // }
