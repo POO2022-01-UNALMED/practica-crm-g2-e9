@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import gestionApp.personas.Cliente;
 import gestionApp.Empresa;
-import gestionApp.Evento;
+import Evento.Evento;
 
 
 public class main {
