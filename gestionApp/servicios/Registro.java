@@ -50,7 +50,5 @@ public class Registro {
         return clientes;
     }
 
-    public static void setClientes(ArrayList<Cliente> clientes) {
-        Registro.clientes = clientes;
-    }
+    
 }
