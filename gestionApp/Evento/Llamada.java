@@ -9,13 +9,13 @@ public class Llamada extends Evento{
     public Llamada(int ID, Negocio negocio, String descripcion){
         super(ID, negocio, descripcion, LocalDateTime.now());
         this.duracionLlamada = Math.random();
-
         this.darRespuesta();
+        negocio.definirEtapa();
     }
 
     private void darRespuesta(){
         
-        if ((negocio.getEmpleadoEncargado().getHabilidadVenta() + negocio.cliente.getProbCompra() + this.duracionLlamada)/3> 0.7){
+        if ((negocio.getEmpleadoEncargado().getHabilidadVenta() + negocio.cliente.getProbCompra() + this.duracionLlamada)> 1.4){
             this.respuesta = "Interesado";
         }
         else{

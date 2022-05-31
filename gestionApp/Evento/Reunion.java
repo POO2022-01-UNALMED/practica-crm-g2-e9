@@ -11,11 +11,12 @@ public class Reunion extends Evento{
         super(ID, negocio, descripcion, LocalDateTime.now());
         this.duracionReunion = Math.random();
         this.darRespuesta();
+        negocio.definirEtapa();
     }
 
     private void darRespuesta(){
-        
-        if ((negocio.getEmpleadoEncargado().getHabilidadVenta() + negocio.cliente.getProbCompra() + this.duracionReunion)/3> 0.7){
+
+        if ((negocio.getEmpleadoEncargado().getHabilidadVenta() + negocio.cliente.getProbCompra() + this.duracionReunion) > 1.4){
             super.respuesta = "Interesado";
         }
         else{

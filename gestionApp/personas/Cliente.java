@@ -13,7 +13,7 @@ public class Cliente extends Persona{
 	private Empresa empresa;
 	private String cargo;
 	private Boolean activo;
-	private float probCompra;
+	private double probCompra;
 
 
 
@@ -28,7 +28,7 @@ public class Cliente extends Persona{
 		this.cargo = cargo;
 		this.activo = activo;
 		this.listaEventos = new ArrayList<>();
-		this.probCompra = (float) (Math.random()*0.4);
+		this.probCompra = Math.random();
 
 	}
 
@@ -69,8 +69,8 @@ public class Cliente extends Persona{
 	public ArrayList<Evento> getListaEventos(){return this.listaEventos;}
 	public void setAgregarEvento(Evento nuevoEvento){this.listaEventos.add(nuevoEvento);}
 
-	public float getProbCompra() {return probCompra;}
-	public void setProbCompra(float probCompra) {this.probCompra = probCompra;}
+	public double getProbCompra() {return probCompra;}
+	public void setProbCompra(double probCompra) {this.probCompra = probCompra;}
 
 	// las que eliminamos que pueden ir en toStrings
 

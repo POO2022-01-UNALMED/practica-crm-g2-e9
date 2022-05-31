@@ -10,13 +10,13 @@ public class Correo extends Evento{
     public Correo(int ID, Negocio negocio, String descripcion){
         super(ID, negocio, descripcion, LocalDateTime.now());
         this.cantidadPalabras = Math.random();
-
         this.darRespuesta();
+        negocio.definirEtapa();
     }
 
     private void darRespuesta(){
         
-        if ((negocio.getEmpleadoEncargado().getHabilidadVenta() + negocio.cliente.getProbCompra() + this.cantidadPalabras)/3> 0.7){
+        if ((negocio.getEmpleadoEncargado().getHabilidadVenta() + negocio.cliente.getProbCompra() + this.cantidadPalabras)> 1.4){
             super.respuesta = "Interesado";
         }
         else{

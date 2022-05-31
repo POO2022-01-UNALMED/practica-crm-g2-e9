@@ -35,10 +35,10 @@ public class Negocio {
 		this.cliente = cliente;
 		this.valorVenta = valorVenta;
 		this.fechaCreacion = LocalDateTime.now();
-		//this.fechaFinalizacion = fechaFinalizacion;
 		this.servicios = new ArrayList<>();
 		this.eventos = new ArrayList<>();
 		Negocio.negociosActivos.add(this);
+		this.definirEtapa();
 	}
 
     
@@ -110,7 +110,7 @@ public class Negocio {
 						numLlamadas += 1;
 					} 
 				}
-				calculoMetrica = (numReuniones*tiempoReuniones + tamañoCorreos*numCorreos + tiempoLlamadas * numLlamadas)-2;
+				calculoMetrica = (numReuniones*tiempoReuniones + tamañoCorreos*numCorreos + tiempoLlamadas * numLlamadas)-1.2;
 				if(this.etapa == "Prospeccion"){
 					if (calculoMetrica > 0.7){
 						this.etapa  = "Presentacion";
@@ -133,4 +133,7 @@ public class Negocio {
 
 	}
 
+
+
 }
+

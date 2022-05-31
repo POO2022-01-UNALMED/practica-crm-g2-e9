@@ -19,7 +19,14 @@ public class Evento {
         this.negocio = negocio;
         this.descripcion = descripcion;
         this.fecha = fecha;
-        negocio.agregarEvento(this);
+        if (this.negocio.getEtapa().equals("Finalizado")){
+            System.out.println("No se permiten crear mas Eventos para este negocio, ya que fue cerrado anteriormente");
+        }
+        else{
+            this.negocio.agregarEvento(this);
+        }
+        
+        
     }
 
 
