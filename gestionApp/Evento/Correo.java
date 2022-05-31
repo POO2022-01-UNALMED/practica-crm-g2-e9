@@ -1,4 +1,4 @@
-package Evento;
+package gestionApp.Evento;
 import gestionApp.Negocio;
 import java.time.LocalDateTime;
 
