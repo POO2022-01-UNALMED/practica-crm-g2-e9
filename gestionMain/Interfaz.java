@@ -19,6 +19,7 @@ public class Interfaz {
         Empleado encargado = new Empleado("Cristian Roberto", 100000, "302132132","roberto@gmail.com", 50, "Tocho", "30/05/2022");
         Negocio necocio01 = new Negocio(1, encargado,cliente01, 100000);
         Evento evento01 = new Evento(901, necocio01, "Decripcion" , null);
+        
     }
     public static void main(String[] args) {
 
