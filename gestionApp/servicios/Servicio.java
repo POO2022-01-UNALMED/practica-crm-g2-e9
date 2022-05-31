@@ -28,11 +28,11 @@ public class Servicio {
     public int getPrecio(){return precio;}
     public void setPrecio(int precio){this.precio = precio;}
 
-    public String getTipo(String tipo){return tipo;}
-    public void setTipo(int String){this.tipo = tipo;}
+    public String getTipo(){return tipo;}
+    public void setTipo(String tipo){this.tipo = tipo;}
 
-    public String getDescripcion (String descripcion){return descripcion;}
-    public void setDescripcion (){this.descripcion = descripcion;}
+    public String getDescripcion (){return descripcion;}
+    public void setDescripcion (String descripcion){this.descripcion = descripcion;}
 
     public ArrayList<Servicio> getListaServicios(){return Servicio.listaServicios;}
     public void setServicio(Servicio nuevoServicio){Servicio.listaServicios.add(nuevoServicio);}
