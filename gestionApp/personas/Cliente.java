@@ -7,6 +7,7 @@ import gestionApp.Evento.Evento;
 import java.util.ArrayList;
 
 public class Cliente extends Persona{
+	
 
 	private int id;
 	private Empresa empresa;
@@ -14,7 +15,6 @@ public class Cliente extends Persona{
 	private Boolean activo;
 	private float probCompra;
 
-	Evento a = new Evento(id, null, cargo, null);
 
 
 

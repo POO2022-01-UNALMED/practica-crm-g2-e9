@@ -29,7 +29,7 @@ public class Negocio {
 
 	public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
     
-    public Negocio(int ID, Empleado empleadoEncargado, Cliente cliente, int valorVenta, LocalDateTime fechaCreacion, LocalDateTime fechaFinalizacion) {
+    public Negocio(int ID, Empleado empleadoEncargado, Cliente cliente, int valorVenta) {
 		this.ID = ID;
 		this.empleadoEncargado = empleadoEncargado;
 		this.cliente = cliente;

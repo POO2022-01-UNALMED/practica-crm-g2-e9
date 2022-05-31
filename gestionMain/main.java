@@ -3,7 +3,9 @@ package gestionMain;
 import java.util.Scanner;
 
 import gestionApp.personas.Cliente;
+import gestionApp.personas.Empleado;
 import gestionApp.Empresa;
+import gestionApp.Negocio;
 import gestionApp.Evento.Evento;
 
 
@@ -11,6 +13,7 @@ public class main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int opcion1;
+           
         
         
 
@@ -70,7 +73,7 @@ public class main {
     public static  void registro() {
         Scanner scan = new Scanner(System.in);
         int opcion1;
-        Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
+        
                
         do {
             try {
@@ -78,6 +81,7 @@ public class main {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1: 
+                        Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
                         Cliente cliente01 = new Cliente("Miguel Restrepo", 1036688863, "3006718392", "miguel@gmail.com", 1001, empresa01 ,"Mi propio jefe", true);
                         System.out.println(cliente01);
                         break;
@@ -109,7 +113,9 @@ public class main {
     public static  void eventos() {
         Scanner scan = new Scanner(System.in);
         int opcion1;
-        
+        // Empleado encargado = new Empleado("Cristian Roberto", 100000, "302132132","roberto@gmail.com", 50, "Tocho", "30/05/2022")
+        // Negocio necocio01 = new Negocio(1, encargado, cliente01, valorVenta, fechaCreacion, fechaFinalizacion)
+	    // Evento evento01 = new Evento(901, null, cargo, null);
                
         do {
             try {
@@ -117,6 +123,7 @@ public class main {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1: 
+
                         Evento.anadirEvento();
                         break;
                     case 2: 
