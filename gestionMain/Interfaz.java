@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
+import gestionApp.servicios.Registro;
 import gestionApp.Empresa;
 import gestionApp.Negocio;
 import gestionApp.Evento.Evento;
@@ -12,10 +13,11 @@ import gestionApp.Evento.Evento;
 public class Interfaz {
     //Creacion de objetos
     static {
+    
         Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
         Cliente cliente01 = new Cliente("Miguel Restrepo", 1036688863, "3006718392", "miguel@gmail.com", 1001, empresa01 ,"Mi propio jefe", true);
         Empleado encargado = new Empleado("Cristian Roberto", 100000, "302132132","roberto@gmail.com", 50, "Tocho", "30/05/2022");
-        Negocio necocio01 = new Negocio(1, encargado, cliente01, 100000);
+        Negocio necocio01 = new Negocio(1, encargado,cliente01, 100000);
         Evento evento01 = new Evento(901, necocio01, "Decripcion" , null);
     }
     public static void main(String[] args) {

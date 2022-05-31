@@ -24,7 +24,8 @@ public class Registro {
     
 
     //por que registrar cliente devuelve un cliente?
-    public   Cliente registrarCliente(String nombre, int cedula, String cel, String correo, int id, Empresa empresa, String cargo, Boolean activo) {
+
+    public  Cliente registrarCliente(String nombre, int cedula, String cel, String correo, int id, Empresa empresa, String cargo, Boolean activo) {
     	Cliente cliente = new Cliente (nombre, cedula, cel, correo, id, empresa, cargo, activo);
     	clientes.add(cliente);
     	return  cliente;
