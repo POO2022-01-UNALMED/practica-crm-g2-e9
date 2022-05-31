@@ -6,6 +6,8 @@ import gestionApp.servicios.Servicio;
 
 import java.util.ArrayList;
 
+import Evento.Evento;
+
 public class Negocio {
 	
 	private int ID;
@@ -66,8 +68,8 @@ public class Negocio {
 
 	public ArrayList<Evento> getEventos() {return eventos;}
 	public void setEventos(ArrayList<Evento> eventos) {this.eventos = eventos;}
-	void agregarEvento (Evento nuevoEvento){this.eventos.add(nuevoEvento);}
-	void eliminarEvento(int indice){this.eventos.remove(indice);}
+	public void agregarEvento (Evento nuevoEvento){this.eventos.add(nuevoEvento);}
+	public void eliminarEvento(int indice){this.eventos.remove(indice);}
 
 	public static ArrayList<Negocio> getNegociosActivos() {return Negocio.negociosActivos;}
 	public static void setNegociosActivos(ArrayList<Negocio> negociosActivos) {Negocio.negociosActivos = negociosActivos;}
