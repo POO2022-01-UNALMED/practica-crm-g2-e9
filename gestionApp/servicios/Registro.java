@@ -26,12 +26,18 @@ public class Registro {
     	}
 		else{
 			new Cliente(nombre, cedula, cel, correo, cargo, activo);
-
+			//Acepta los cambios
 		}
     }
     public static Empresa registrarEmpresa(String nombre, int nit, String descripcion){
         Empresa empresa= new Empresa (nombre, nit, descripcion);
         return empresa;
+    }
+
+    
+    public static void registrarPromocion(double descuento , String nombre){
+    	
+
     }
 
     public static Empresa buscarEmpresas(int nit){
@@ -40,7 +46,7 @@ public class Registro {
     		if(Empresa.getAllEmpresas().get(i).getNit() == nit)
     	        //System.out.println(empresas.get(i).getNombre());
     			return Empresa.getAllEmpresas().get(i);
-
+    		//-------
     		
     }
     	return null;
@@ -54,7 +60,7 @@ public class Registro {
     		if(Cliente.getAllClientes().get(i).getId() == id)
     			System.out.println(Cliente.getAllClientes().get(i).getEmpresa().getNombre());
     			return Cliente.getAllClientes().get(i);
-
+    		//-------
     		
     }
     	return null;
@@ -70,14 +76,35 @@ public class Registro {
     			
     		}
     	}
-
+    	
+	    	
+    	
+    		
     }
-
+    
+ //errorsiño 
+    public static Servicio buscarServicios(String nombre){
+  	  
+    	for(int i = 0; i < Servicio.getAllServicio().size(); i++){
+    		if(Servicio.getAllServicio().get(i).getNombre() == nombre)
+    	        
+    			return Servicio.getAllServicio().get(i);
+    		
+    }
+    	return null;
+    	
+    	    }
+    
     	
    
   
     		
-    
+    // public static Servicio registrarServicios(String nombreServicios, int valorProducto, String tipo, String descripcion){
+    //     Servicio servicio = new Servicio(nombreServicios,valorProducto, tipo, descripcion);
+    //     servicios.add(servicio);
+    //     return servicio;
+    // }
+
 
 
     public static ArrayList<Cliente> getClientes() {
