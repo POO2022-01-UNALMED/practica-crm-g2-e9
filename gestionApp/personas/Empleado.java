@@ -68,4 +68,5 @@ public class Empleado  extends Persona{
     public ArrayList<Venta> getVentas(){return ventas;}
     public void setVentas(Venta nuevaVenta){this.ventas.add(nuevaVenta);}
     
+    public static ArrayList<Empleado> getAllEmpleados(){return allEmpleados;}
 }

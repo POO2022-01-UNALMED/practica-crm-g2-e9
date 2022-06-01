@@ -15,7 +15,6 @@ public class Empresa {
 	private ArrayList<Cliente> clientes;
 	private  ArrayList<Negocio> negociosAbiertos;
 	private  ArrayList<Venta> ventas;
-	private static ArrayList<Empresa> empresas;
 	private  ArrayList<Servicio> serviciosDeInteres;
 
 	private static ArrayList<Empresa> allEmpresas = new ArrayList<>();
@@ -56,8 +55,7 @@ public class Empresa {
 	public ArrayList<Venta> getVentas() {return ventas;}
 	public void setVenta(Venta nuevaVenta) {this.ventas.add(nuevaVenta);}
 
-	public static ArrayList<Empresa> getEmpresas() {return empresas;}
-	public static void setEmpresas(Empresa nuevaEmpresa) {Empresa.empresas.add(nuevaEmpresa);}
+	public static ArrayList<Empresa> getAllEmpresas(){return allEmpresas;}
 
 	@Override
 	public  String toString(){

@@ -26,6 +26,7 @@ public class Cliente extends Persona{
 		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
 		this.cargo = cargo;
 		this.activo = activo;
+		this.empresa = empresa;
 		this.listaEventos = new ArrayList<>();
 		this.probCompra = Math.random();
 		empresa.addCliente(this);
@@ -68,7 +69,6 @@ public class Cliente extends Persona{
 
 	public String getId(){return this.id;}
 
-
 	public Empresa getEmpresa(){return empresa;}
 	public void setEmpresa(Empresa empresa){this.empresa = empresa;}
 
@@ -87,7 +87,7 @@ public class Cliente extends Persona{
 	public double getProbCompra() {return probCompra;}
 	public void setProbCompra(double probCompra) {this.probCompra = probCompra;}
 
-	// las que eliminamos que pueden ir en toStrings
+	public static ArrayList<Cliente> getAllClientes(){return allClientes;}
 	
 
 	public static void clientesPotenciales() {

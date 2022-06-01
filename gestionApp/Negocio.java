@@ -73,7 +73,6 @@ public class Negocio {
 	public void eliminarEvento(int indice){this.eventos.remove(indice);}
 
 	public static ArrayList<Negocio> getNegociosActivos() {return Negocio.negociosActivos;}
-	public static void setNegociosActivos(ArrayList<Negocio> negociosActivos) {Negocio.negociosActivos = negociosActivos;}
 	public static void agregarNegocio(Negocio nuevoNegocio){Negocio.negociosActivos.add(nuevoNegocio);}
 	public static void eliminarNegocio(int indice){Negocio.negociosActivos.remove(indice);}
 
