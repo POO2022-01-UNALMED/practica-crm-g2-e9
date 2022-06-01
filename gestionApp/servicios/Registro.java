@@ -51,8 +51,8 @@ public class Registro {
     public static Cliente buscarCliente(String id){
   	  
     	for(int i = 0; i < Cliente.getAllClientes().size(); i++){
-    		if(Cliente.getAllClientes().get(i).getID() == id)
-    			System.out.println(clientes.get(i).getEmpresa().getNombre());
+    		if(Cliente.getAllClientes().get(i).getId() == id)
+    			System.out.println(Cliente.getAllClientes().get(i).getEmpresa().getNombre());
     			return Cliente.getAllClientes().get(i);
     		//-------
     		
