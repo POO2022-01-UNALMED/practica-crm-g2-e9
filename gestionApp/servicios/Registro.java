@@ -46,6 +46,15 @@ public class Registro {
 		}
 
     }
+	
+    public static Servicio registrarServicios(String nombreServicios, int valorProducto, String tipo, String descripcion){
+    	Servicio servicio = new Servicio(nombreServicios,valorProducto, tipo, descripcion);   	
+    	return servicio;
+ }
+
+
+    
+    
 
     
     
