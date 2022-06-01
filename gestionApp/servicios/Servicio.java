@@ -42,4 +42,6 @@ public class Servicio {
     public static ArrayList<Servicio> getAllServicios(){return allServicios;}
     public void addPromocion(Promocion promocion){this.Promociones.add(promocion);}
     
+    public void addServicio(Servicio servicio){this.Servicios.add(servicio);}
+    
 }
