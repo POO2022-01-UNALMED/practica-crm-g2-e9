@@ -18,6 +18,15 @@ public class Promocion {
 		servicio.addPromocion(this);
 	}
 	
+	public Promocion(double descuento) {
+		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
+		this.descuento = descuento;
+		idCounter += 1;
+		
+	}
+	
+	
+	
 	
 	
 //gettters y setters 

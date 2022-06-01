@@ -24,6 +24,8 @@ public class Servicio {
         this.descripcion = descripcion;
         allServicios.add(this);
 	}
+    
+    
 
     public String getNombre(){return nombre;}
     public void setNombre(String nombre){this.nombre = nombre;}

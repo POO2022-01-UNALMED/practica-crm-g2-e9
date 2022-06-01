@@ -85,10 +85,10 @@ public class Registro {
  //errorsiño 
     public static Servicio buscarServicios(String nombre){
   	  
-    	for(int i = 0; i < Servicio.getAllServicio().size(); i++){
-    		if(Servicio.getAllServicio().get(i).getNombre() == nombre)
+    	for(int i = 0; i < Servicio.getAllServicios().size(); i++){
+    		if(Servicio.getAllServicios().get(i).getNombre() == nombre)
     	        
-    			return Servicio.getAllServicio().get(i);
+    			return Servicio.getAllServicios().get(i);
     		
     }
     	return null;
