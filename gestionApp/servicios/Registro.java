@@ -118,16 +118,32 @@ public class Registro {
    
   
     		
-    // public static Servicio registrarServicios(String nombreServicios, int valorProducto, String tipo, String descripcion){
-    //     Servicio servicio = new Servicio(nombreServicios,valorProducto, tipo, descripcion);
-    //     servicios.add(servicio);
-    //     return servicio;
-    // }
 
 
 
     public static ArrayList<Cliente> getClientes() {
         return getClientes();
+    }
+
+
+    public static void eliminarEmpresa() { /////////////////////////////////////// Eliminar Empresa
+    }
+
+
+    public static void buscarClientesEmpresa() {////////////////////////////////////////////////Buscar Clientes por empresa (se ingres NIT) y devulve Clientes asociados a esta empresa
+    }
+
+
+	public static char[] mostrarClientes() {//////////////////////////////////////////////////////Mostrar todos los Clientes solo por ID y Nombre correspondientemente que devuelva Strings para mostrar en el menu
+		return null;
+	}
+
+
+	public static void eliminarCliente(String id) {///////////////////////////Eliminar Cliente por ID
+	}
+
+
+    public static void infoCliente() {
     }
 
     

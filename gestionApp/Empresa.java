@@ -70,6 +70,10 @@ public class Empresa {
 		
 	}
 
+	public static  Object mostrarEmpresas() {
+		return null;
+	}
+
 	
 
 	//FUNCIONALIDADES
