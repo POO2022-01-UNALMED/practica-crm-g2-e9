@@ -7,8 +7,8 @@ public class Correo extends Evento{
     
     private double cantidadPalabras;
 
-    public Correo(int ID, Negocio negocio, String descripcion){
-        super(ID, negocio, descripcion, LocalDateTime.now());
+    public Correo(Negocio negocio, String descripcion){
+        super(negocio, descripcion, LocalDateTime.now());
         this.cantidadPalabras = Math.random();
         this.darRespuesta();
         negocio.definirEtapa();

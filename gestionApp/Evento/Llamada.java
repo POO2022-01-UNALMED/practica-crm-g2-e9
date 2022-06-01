@@ -6,8 +6,8 @@ public class Llamada extends Evento{
 
     private double duracionLlamada;
 
-    public Llamada(int ID, Negocio negocio, String descripcion){
-        super(ID, negocio, descripcion, LocalDateTime.now());
+    public Llamada(Negocio negocio, String descripcion){
+        super(negocio, descripcion, LocalDateTime.now());
         this.duracionLlamada = Math.random();
         this.darRespuesta();
         negocio.definirEtapa();

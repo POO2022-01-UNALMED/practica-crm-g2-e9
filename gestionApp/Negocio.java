@@ -15,22 +15,25 @@ import java.util.ArrayList;
 
 public class Negocio {
 	
-	private int ID;
+	
 	public Empleado empleadoEncargado;
 	public Cliente cliente;
+
+	private String id;
 	private String etapa;
 	private int valorVenta;
 	private LocalDateTime fechaCreacion;
 	private LocalDateTime fechaFinalizacion;
-
 	private ArrayList<Evento> eventos;
 	private ArrayList<Servicio> servicios;
+
+	private static int idCounter = 0;
 	private static ArrayList<Negocio> negociosActivos = new ArrayList<>();
 
 	public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
     
-    public Negocio(int ID, Empleado empleadoEncargado, Cliente cliente, int valorVenta) {
-		this.ID = ID;
+    public Negocio(Empleado empleadoEncargado, Cliente cliente, int valorVenta) {
+		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
 		this.empleadoEncargado = empleadoEncargado;
 		this.cliente = cliente;
 		this.valorVenta = valorVenta;
@@ -39,14 +42,14 @@ public class Negocio {
 		this.eventos = new ArrayList<>();
 		Negocio.negociosActivos.add(this);
 		this.definirEtapa();
+		idCounter += 1;
 	}
 
     
     // setters y getters
 
 
-	public int getID() {return ID;}
-	public void setID(int ID) {this.ID = ID;}
+	public String getId() {return id;}
 
 	public Empleado getEmpleadoEncargado() {return empleadoEncargado;}
 	public void setEmpleadoEncargado(Empleado empleadoEncargado) {this.empleadoEncargado = empleadoEncargado;}

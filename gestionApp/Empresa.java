@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Empresa {
 
+	private String id;
 	private String nombre;
 	private int nit;
 	private String descripcion;
@@ -17,17 +18,22 @@ public class Empresa {
 	private static ArrayList<Empresa> empresas;
 	private final ArrayList<Servicio> serviciosDeInteres;
 
+	private static int idCounter = 0;
     
 	public Empresa(String nombre,int nit, String descripcion) {
+		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
 		this.nombre = nombre;
 		this.nit = nit;
 		this.descripcion = descripcion;
 		this.negociosAbiertos = new ArrayList<>();
 		this.ventas = new ArrayList<>();
 		this.serviciosDeInteres = new ArrayList<>();
+		idCounter += 1;
 	}
 
 	// getters y setters 
+	public String getId(){return this.id;}
+
 	public String getNombre() {return nombre;}
 	public void setNombre(String nombre) {this.nombre = nombre;}
 

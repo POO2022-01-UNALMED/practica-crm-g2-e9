@@ -6,26 +6,28 @@ import gestionApp.servicios.Promocion;
 import gestionApp.servicios.Servicio;
 
 public class Venta {
-    int ID;
-    Negocio negocio;
-    Servicio servicios;
-    int valorVenta;
-    Empleado empleado;
-    Cliente cliente;
-    Promocion promocion;
+    private String id;
+    private Negocio negocio;
+    private Servicio servicios;
+    private int valorVenta;
+    private Empleado empleado;
+    private Cliente cliente;
+    private Promocion promocion;
 
-    Venta(int ID, Negocio negocio, Servicio servicio, int valorVenta, Empleado empleado, Cliente cliente, Promocion promocion){
-        this.ID = ID;
+    private static int idCounter = 0;
+
+    Venta(Negocio negocio, Servicio servicio, int valorVenta, Empleado empleado, Cliente cliente, Promocion promocion){
+        this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
         this.negocio = negocio;
         this.servicios = servicio;
         this.valorVenta = valorVenta;
         this.empleado = empleado;
         this.cliente = cliente;
         this.promocion = promocion;
+        idCounter += 1;
     }
 
-    public int getID() {return ID;}
-    public void setID(int ID) {this.ID = ID;}
+    public String getId() {return id;}
 
     public Negocio getNegocio() {return negocio;}
     public void setNegocio(Negocio negocio) {this.negocio = negocio;}

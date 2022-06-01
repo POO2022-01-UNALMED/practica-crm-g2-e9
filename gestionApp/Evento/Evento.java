@@ -6,16 +6,16 @@ import java.time.format.DateTimeFormatter;
 
 public class Evento {
 
-    protected int ID;
+    protected String id;
     protected Negocio negocio;
     protected String descripcion;
     protected LocalDateTime fecha;
     protected String respuesta;
-
+    private static int idCounter = 0;
     public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
       
-    public Evento(int ID, Negocio negocio, String descripcion, LocalDateTime fecha){
-        this.ID = ID;
+    public Evento(Negocio negocio, String descripcion, LocalDateTime fecha){       
+        this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
         this.negocio = negocio;
         this.descripcion = descripcion;
         this.fecha = fecha;
@@ -25,15 +25,14 @@ public class Evento {
         else{
             this.negocio.agregarEvento(this);
         }
-        
+        idCounter += 1;
         
     }
 
 
     //---------------Metodos Setter y Getter---------------
 
-    protected int getID() {return ID;}
-    protected void setID(int ID) {this.ID = ID;}
+    protected String getId() {return id;}
 
     protected Negocio getNegocio() {return negocio;}
     protected void setNegocio(Negocio negocio) {this.negocio = negocio;}
@@ -45,7 +44,6 @@ public class Evento {
     protected void setFecha(LocalDateTime fecha) {this.fecha = fecha;}
 
     public String getRespuesta() {return respuesta;}
-    protected void setRespuesta(String respuesta) {this.respuesta = respuesta;}
 
     //Metodo para elegir si una respuesta cambia la etapa del negocio
 

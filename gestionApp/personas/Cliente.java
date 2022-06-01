@@ -9,36 +9,36 @@ import java.util.ArrayList;
 public class Cliente extends Persona{
 	
 
-	private int id;
+	private String id;
 	private Empresa empresa;
 	private String cargo;
 	private Boolean activo;
 	private double probCompra;
 
-
-
-
 	private ArrayList<Negocio> negociosActivos;
 	private ArrayList<Evento> listaEventos;
 
-	public Cliente(String nombre,Empresa empresa, int cedula, String cel, String correo, int id, String cargo, Boolean activo){
+	private static int idCounter = 0;
+
+	public Cliente(String nombre,Empresa empresa, int cedula, String cel, String correo,  String cargo, Boolean activo){
 		super(nombre, cedula, cel, correo);
-		this.id = id;
+		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
 		this.empresa = empresa;
 		this.cargo = cargo;
 		this.activo = activo;
 		this.listaEventos = new ArrayList<>();
 		this.probCompra = Math.random();
-
+		idCounter += 1;
 	}
-	public Cliente(String nombre, int cedula, String cel, String correo, int id, String cargo, Boolean activo){
+
+	public Cliente(String nombre, int cedula, String cel, String correo, String cargo, Boolean activo){
 		super(nombre, cedula, cel, correo);
-		this.id = id;
+		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
 		this.cargo = cargo;
 		this.activo = activo;
 		this.listaEventos = new ArrayList<>();
 		this.probCompra = Math.random();
-
+		idCounter += 1;
 	}
 	
 
@@ -61,8 +61,7 @@ public class Cliente extends Persona{
 
 	//---------------Metodos Propios---------------
 
-	public int getID(){return this.id;}
-	public void setID(int id){this.id = id;}
+	public String getId(){return this.id;}
 
 	public Empresa getEmpresa(){return empresa;}
 	public void setEmpresa(Empresa empresa){this.empresa = empresa;}
