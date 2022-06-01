@@ -25,6 +25,7 @@ public class Empresa {
 		this.nombre = nombre;
 		this.nit = nit;
 		this.descripcion = descripcion;
+		this.clientes = new ArrayList<>();
 		this.negociosAbiertos = new ArrayList<>();
 		this.ventas = new ArrayList<>();
 		this.serviciosDeInteres = new ArrayList<>();
@@ -44,6 +45,7 @@ public class Empresa {
 	public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
 
 	public ArrayList<Cliente> getClientes() {return clientes;}
+	public void addCliente(Cliente cliente){this.clientes.add(cliente);}
 	public void setClientes(Cliente nuevoClientes) {this.clientes.add(nuevoClientes);}
 
 	public ArrayList<Negocio> getNegociosAbiertos() {return negociosAbiertos;}
