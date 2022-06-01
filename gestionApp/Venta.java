@@ -13,7 +13,7 @@ public class Venta {
     private Empleado empleado;
     private Cliente cliente;
     private Promocion promocion;
-    final private int IVA; 
+    final private int IVA = 19; 
 
     private static int idCounter = 0;
 
@@ -25,7 +25,6 @@ public class Venta {
         this.empleado = empleado;
         this.cliente = cliente;
         this.promocion = promocion;
-        this.IVA = IVA;
         idCounter += 1;
     }
 
