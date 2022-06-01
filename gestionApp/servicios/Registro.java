@@ -64,7 +64,7 @@ public class Registro {
     	  
     	for(int i = 0; i < Empresa.getAllEmpresas().size(); i++){
     		if(Empresa.getAllEmpresas().get(i).getNit() == nit)
-    	        //System.out.println(empresas.get(i).getNombre());
+    	        System.out.println(Empresa.getAllEmpresas().get(i).getNombre());
     			return Empresa.getAllEmpresas().get(i);
     		//-------
     		
@@ -127,7 +127,17 @@ public class Registro {
     }
 
 
-    public static void eliminarEmpresa() { /////////////////////////////////////// Eliminar Empresa
+    public static void eliminarEmpresa(int nit) { /////////////////////////////////////// Eliminar Empresa
+    	Empresa emp =buscarEmpresas(nit);
+    	int posicion = Empresa.getAllEmpresas().indexOf(emp);
+    	if (!Empresa.getAllEmpresas().isEmpty())
+        	Empresa.getAllEmpresas().remove(posicion);
+    	else
+    		System.out.println("No existe esa empresa");
+    	
+    	
+    	
+    	
     }
 
 
