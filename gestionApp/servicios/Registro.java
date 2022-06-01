@@ -13,34 +13,32 @@ public class Registro {
 	//registros 
    
     public static Empleado registrarEmpleado(String nombre, int cedula, String cel, String correo, int edad, String cargo, String fechaInicioContrato) {
-     	Empleado empleado= new Empleado(nombre,cedula,cel ,correo,edad,cargo,fechaInicioContrato);
-    	empleados.add(empleado);
+     	Empleado empleado = new Empleado(nombre,cedula,cel ,correo,edad,cargo,fechaInicioContrato);
      	return empleado;
     }
     
     
-    public static void registrarCliente(int nit, String nombre, int cedula, String cel, String correo, int id, String cargo, Boolean activo) {
+    public static void registrarCliente(int nit,String nombre, int cedula, String cel, String correo, int id, String cargo, Boolean activo) {
 
     	Empresa emp = buscarEmpresas(nit);
     	if (emp != null) {
-    		new Cliente(nombre, emp, cedula, cel, correo, id, cargo, activo);
+    		new Cliente(nombre, emp, cedula, cel, correo, cargo, cargo, activo);
     	}
 		else{
-			new Cliente(nombre, cedula, cel, correo, id, cargo, activo);
+			new Cliente(nombre, cedula, cel, correo, cargo, activo);
 		}
     }
     public static Empresa registrarEmpresa(String nombre, int nit, String descripcion){
         Empresa empresa= new Empresa (nombre, nit, descripcion);
-        empresas.add(empresa);
         return empresa;
     }
 
     public static Empresa buscarEmpresas(int nit){
     	  
-    	for(int i = 0; i < empresas.size(); i++){
-    		if(empresas.get(i).getNit() == nit)
+    	for(int i = 0; i < Empresa.getEmpresas().size(); i++){
+    		if(Empresa.getEmpresas().get(i).getNit() == nit)
     	        //System.out.println(empresas.get(i).getNombre());
-    			return empresas.get(i);
+    			return Empresa.getEmpresas().get(i);
     		//-------
     		
     }
@@ -49,12 +47,12 @@ public class Registro {
     	    }
     
     
-    public static Cliente buscarCliente(int id){
+    public static Cliente buscarCliente(String id){
   	  
-    	for(int i = 0; i < clientes.size(); i++){
-    		if(clientes.get(i).getID() == id)
-    			System.out.println(clientes.get(i).getEmpresa().getNombre());
-    			return clientes.get(i);
+    	for(int i = 0; i < Cliente.allClientes.size(); i++){
+    		if(Cliente.allClientes.get(i).getId() == id)
+    			System.out.println(Cliente.allClientes.get(i).getEmpresa().getNombre());
+    			return Cliente.allClientes.get(i);
     		//-------
     		
     }
@@ -62,12 +60,12 @@ public class Registro {
     	
     	    }
     
-    public static void listacEmpresa(int nit){
+    public static void listaEmpresa(int nit){
     	Empresa empresa = buscarEmpresas(nit);
     	if(empresa != null) {
-    		for(int i = 0; i < empresa.getContactos().size(); i++){
+    		for(int i = 0; i < empresa.getEmpresas().size(); i++){
     		
-    			System.out.println(empresa.getContactos().get(i).getNombre());
+    			System.out.println(empresa.getClientes().get(i).getNombre());
     			
     		}
     	}
@@ -93,7 +91,7 @@ public class Registro {
 
 
     public static ArrayList<Cliente> getClientes() {
-        return clientes;
+        return getClientes();
     }
 
     

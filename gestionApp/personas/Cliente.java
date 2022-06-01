@@ -17,7 +17,7 @@ public class Cliente extends Persona{
 	private ArrayList<Negocio> negociosActivos;
 	private ArrayList<Evento> listaEventos;
 
-	private static ArrayList<Cliente> allClientes = new ArrayList<>();
+	public static ArrayList<Cliente> allClientes = new ArrayList<>();
 
 	private static int idCounter = 0;
 

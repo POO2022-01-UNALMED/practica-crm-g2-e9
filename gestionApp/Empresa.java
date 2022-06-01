@@ -51,7 +51,7 @@ public class Empresa {
 	public void addCliente(Cliente cliente){this.clientes.add(cliente);}
 
 	public ArrayList<Negocio> getNegociosAbiertos() {return negociosAbiertos;}
-	public void setNegociosAbiertos(Negocio nuevoContacto) {this.negociosAbiertos.add(nuevoContacto);}
+	public void setNegociosAbiertos(Negocio nuevoCliente) {this.negociosAbiertos.add(nuevoCliente);}
 
 	public ArrayList<Venta> getVentas() {return ventas;}
 	public void setVenta(Venta nuevaVenta) {this.ventas.add(nuevaVenta);}
