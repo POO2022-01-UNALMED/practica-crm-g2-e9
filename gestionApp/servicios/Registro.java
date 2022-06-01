@@ -8,10 +8,6 @@ import gestionApp.servicios.Servicio;
 import java.util.ArrayList;
 
 public class Registro {
-	private static ArrayList<Empleado> empleados= new ArrayList<Empleado>();
-	private static ArrayList<Cliente> clientes= new ArrayList<Cliente>();
-	private static ArrayList<Empresa> empresas= new ArrayList<>();
-	private static ArrayList<Servicio> servicios= new ArrayList<Servicio>();
 	
 	
 	//registros 
@@ -23,16 +19,15 @@ public class Registro {
     }
     
     
-    public static Cliente registrarCliente(int nit,String nombre, int cedula, String cel, String correo, String cargo, Boolean activo) {
+    public static void registrarCliente(int nit, String nombre, int cedula, String cel, String correo, int id, String cargo, Boolean activo) {
 
     	Empresa emp = buscarEmpresas(nit);
     	if (emp != null) {
-    		Cliente cliente = new Cliente(nombre, cedula, cel, correo, cargo, activo);
-    		cliente.setEmpresa(emp);
-    		clientes.add(cliente);
-    		return  cliente;
+    		new Cliente(nombre, emp, cedula, cel, correo, id, cargo, activo);
     	}
-    	return  null;
+		else{
+			new Cliente(nombre, cedula, cel, correo, id, cargo, activo);
+		}
     }
     public static Empresa registrarEmpresa(String nombre, int nit, String descripcion){
         Empresa empresa= new Empresa (nombre, nit, descripcion);
@@ -54,10 +49,10 @@ public class Registro {
     	    }
     
     
-    public static Cliente buscarCliente(String id){
+    public static Cliente buscarCliente(int id){
   	  
     	for(int i = 0; i < clientes.size(); i++){
-    		if(clientes.get(i).getId() == id)
+    		if(clientes.get(i).getID() == id)
     			System.out.println(clientes.get(i).getEmpresa().getNombre());
     			return clientes.get(i);
     		//-------
@@ -67,12 +62,12 @@ public class Registro {
     	
     	    }
     
-    public static void listaEmpresa(int nit){
+    public static void listacEmpresa(int nit){
     	Empresa empresa = buscarEmpresas(nit);
     	if(empresa != null) {
-    		for(int i = 0; i < empresa.getClientes().size(); i++){
+    		for(int i = 0; i < empresa.getContactos().size(); i++){
     		
-    			System.out.println(empresa.getClientes().get(i).getNombre());
+    			System.out.println(empresa.getContactos().get(i).getNombre());
     			
     		}
     	}

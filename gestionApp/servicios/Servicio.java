@@ -10,8 +10,8 @@ public class Servicio {
     private boolean promocion;
     private String asdfa;
 
-
-
+    
+    private static ArrayList<Servicio> allServicios= new ArrayList<Servicio>();
 
     private static ArrayList<Servicio> listaServicios;
     public Servicio(String nombreServicios, int valorProducto, String tipo, String descripcion) {
@@ -20,6 +20,7 @@ public class Servicio {
         this.tipo = tipo;
         this.descripcion = descripcion;
         //Servicio.listaServicios.add(this);
+        allServicios.add(this);
 	}
 
     public String getNombre(){return nombre;}

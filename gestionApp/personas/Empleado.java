@@ -17,6 +17,8 @@ public class Empleado  extends Persona{
     private  ArrayList<Negocio> negociosAbiertos;
     private  ArrayList<Venta> ventas;
 
+    private static ArrayList<Empleado> allEmpleados = new ArrayList<>();
+
     public Empleado(String nombre, int cedula, String cel, String correo, int edad, String cargo, String fechaInicioContrato){
         super(nombre, cedula, cel, correo);
         this.edad = edad;
@@ -26,6 +28,7 @@ public class Empleado  extends Persona{
         this.negociosAbiertos = new ArrayList<>();
         this.ventas = new ArrayList<>();
         this.habilidadVenta = Math.random(); //numero random entre 0 y 0.4
+        allEmpleados.add(this);
     }
 
     //---------------Metodos Heredados---------------

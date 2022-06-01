@@ -17,9 +17,11 @@ public class Cliente extends Persona{
 	private ArrayList<Negocio> negociosActivos;
 	private ArrayList<Evento> listaEventos;
 
+	private static ArrayList<Cliente> allClientes = new ArrayList<>();
+
 	private static int idCounter = 0;
 
-	public Cliente(String nombre,Empresa empresa, int cedula, String cel, String correo,String id, String cargo, Boolean activo){
+	public Cliente(String nombre, Empresa empresa, int cedula, String cel, String correo,String id, String cargo, Boolean activo){
 		super(nombre, cedula, cel, correo);
 		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
 		this.cargo = cargo;
@@ -27,6 +29,7 @@ public class Cliente extends Persona{
 		this.listaEventos = new ArrayList<>();
 		this.probCompra = Math.random();
 		empresa.addCliente(this);
+		allClientes.add(this);
 		idCounter += 1;
 
 	
@@ -40,6 +43,7 @@ public class Cliente extends Persona{
 		this.listaEventos = new ArrayList<>();
 		this.probCompra = Math.random();
 		idCounter += 1;
+		allClientes.add(this);
 	}
 	
 

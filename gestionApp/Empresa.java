@@ -18,6 +18,8 @@ public class Empresa {
 	private static ArrayList<Empresa> empresas;
 	private  ArrayList<Servicio> serviciosDeInteres;
 
+	private static ArrayList<Empresa> allEmpresas = new ArrayList<>();
+
 	private static int idCounter = 0;
     
 	public Empresa(String nombre,int nit, String descripcion) {
@@ -29,6 +31,7 @@ public class Empresa {
 		this.negociosAbiertos = new ArrayList<>();
 		this.ventas = new ArrayList<>();
 		this.serviciosDeInteres = new ArrayList<>();
+		allEmpresas.add(this);
 		idCounter += 1;
 	}
 
@@ -46,7 +49,6 @@ public class Empresa {
 
 	public ArrayList<Cliente> getClientes() {return clientes;}
 	public void addCliente(Cliente cliente){this.clientes.add(cliente);}
-	public void setClientes(Cliente nuevoClientes) {this.clientes.add(nuevoClientes);}
 
 	public ArrayList<Negocio> getNegociosAbiertos() {return negociosAbiertos;}
 	public void setNegociosAbiertos(Negocio nuevoContacto) {this.negociosAbiertos.add(nuevoContacto);}
