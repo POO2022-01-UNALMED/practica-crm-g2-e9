@@ -13,7 +13,7 @@ public class Cliente extends Persona{
 	private String cargo;
 	private Boolean activo;
 	private double probCompra;
-
+	public Empresa empresa;
 	private ArrayList<Negocio> negociosActivos;
 	private ArrayList<Evento> listaEventos;
 
@@ -28,6 +28,7 @@ public class Cliente extends Persona{
 		this.probCompra = Math.random();
 		empresa.addCliente(this);
 		idCounter += 1;
+
 	
 	}
 
