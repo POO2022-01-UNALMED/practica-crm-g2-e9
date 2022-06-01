@@ -81,14 +81,6 @@ public class Registro {
   
     		
     
-    // public static void registrarPromocion(){
-
-    // }
-    // public static Servicio registrarServicios(String nombreServicios, int valorProducto, String tipo, String descripcion){
-    //     Servicio servicio = new Servicio(nombreServicios,valorProducto, tipo, descripcion);
-    //     servicios.add(servicio);
-    //     return servicio;
-    // }
 
 
     public static ArrayList<Cliente> getClientes() {
