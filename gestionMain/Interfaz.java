@@ -126,7 +126,7 @@ public class Interfaz {
                     case 3:
                         System.out.print("Ingrese el NIT de la Empresa que desea eliminar: ");
                         nit = FuncionesInterfaz.entradaInt();
-                        Registro.eliminarEmpresa();
+                        Registro.eliminarEmpresa(nit);
         
                         break;
                     case 4:
@@ -146,7 +146,9 @@ public class Interfaz {
                         break;
 
                     case 5:
-                        Registro.buscarClientesEmpresa();
+                        System.out.print("Ingrese el NIT de la Empresa para ver los Empleados asociados: ");
+                        nit = FuncionesInterfaz.entradaInt();
+                        Registro.buscarClientesEmpresa(nit);
                         break;
                     case 6:
 
