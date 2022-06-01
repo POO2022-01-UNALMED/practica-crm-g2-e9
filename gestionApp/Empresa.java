@@ -66,6 +66,7 @@ public class Empresa {
 		 "\nNegocios Abiertos: " + negociosAbiertos +
 		 "\nVentas: " + ventas +
 		 "\nServicios de Interes: " + serviciosDeInteres;
+		
 
 		
 	}

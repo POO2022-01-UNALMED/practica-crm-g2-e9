@@ -4,11 +4,9 @@ import gestionApp.Empresa;
 import gestionApp.Negocio;
 import gestionApp.Evento.Evento;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import baseDatos.Deserializador;
 
-public class Cliente extends Persona implements Serializable {
+public class Cliente extends Persona{
 	
 
 	private String id;
@@ -28,21 +26,22 @@ public class Cliente extends Persona implements Serializable {
 		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
 		this.cargo = cargo;
 		this.activo = activo;
-		this.empresa = empresa;
+		this.empresa = emp;
 		this.listaEventos = new ArrayList<>();
 		this.probCompra = Math.random();
 		idCounter += 1;
 		allClientes.add(this);
+		empresa.addCliente(this);
 	}
 
-	public Cliente(String nombre, int cedula, String cel, String correo,String id, Boolean activo){
+	public Cliente(String nombre, int cedula, String cel, String correo, Boolean activo, String cargo){
 		super(nombre, cedula, cel, correo);
 		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
 		this.cargo = cargo;
 		this.activo = activo;
 		this.listaEventos = new ArrayList<>();
 		this.probCompra = Math.random();
-		empresa.addCliente(this);
+		//empresa.addCliente(this);
 		allClientes.add(this);
 		idCounter += 1;
 
@@ -130,6 +129,7 @@ public class Cliente extends Persona implements Serializable {
 		
 	}
 
+	
 
 
 

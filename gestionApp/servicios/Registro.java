@@ -25,7 +25,7 @@ public class Registro {
     		new Cliente(nombre, emp, cedula, cel, correo, cargo, activo);
     	}
 		else{
-			new Cliente(nombre, cedula, cel, correo, cargo, activo);
+			new Cliente(nombre, cedula, cel, correo, activo,cargo);
 			//Acepta los cambios
 		}
     }
@@ -141,7 +141,26 @@ public class Registro {
     }
 
 
-    public static void buscarClientesEmpresa() {////////////////////////////////////////////////Buscar Clientes por empresa (se ingres NIT) y devulve Clientes asociados a esta empresa
+    public static void buscarClientesEmpresa(int nit) {////////////////////////////////////////////////Buscar Clientes por empresa (se ingres NIT) y devulve Clientes asociados a esta empresa
+    	Empresa empre =buscarEmpresas(nit);
+    	if (empre != null) {
+    		for(int i = 0; i < empre.getClientes().size(); i++) {
+    			
+    			System.out.println(empre.getClientes().get(i).getNombre());
+    			
+    			
+    		}
+    	}
+		else{
+			
+			System.out.println("No existe la empresa");
+		}
+    	
+    	
+    	
+    	
+    	
+    	
     }
 
 
