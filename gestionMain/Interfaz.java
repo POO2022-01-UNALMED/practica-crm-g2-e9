@@ -29,6 +29,7 @@ import java.util.Scanner;
 
 import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
+import gestionApp.servicios.Registro;
 import gestionApp.Empresa;
 import gestionApp.Negocio;
 import gestionApp.Evento.Evento;
@@ -48,7 +49,7 @@ public class Interfaz {
 
 
         Scanner scan = new Scanner(System.in);
-        int opcion1;
+        int opcion;
 
  
 
@@ -64,8 +65,8 @@ public class Interfaz {
                         4. Servicios
                         5. Salir
                         ingrese opción:\s""");
-                opcion1 = scan.nextInt();
-                switch (opcion1) {
+                opcion = scan.nextInt();
+                switch (opcion) {
                     case 1: clientes(cl,empresa01);break; //activa menú cliente
                     case 2: negocios(); break; //activa menú negocios
                     case 3: registros(); break; //activa menú registros
@@ -73,11 +74,11 @@ public class Interfaz {
                     case 5: break; //Salir
 
                 }
-            } catch (Exception e) {
+            }catch (Exception e) {
                 System.out.print("Ingrese una opcion nuevamente: ");
-                opcion1 = scan.nextInt();
+                opcion = scan.nextInt();
             }
-        } while (opcion1 != 5);
+        }while (opcion != 5);
 
 
     }
@@ -87,6 +88,7 @@ public class Interfaz {
     public static  void clientes(Cliente cl,Empresa empresa01) {
         Scanner scan = new Scanner(System.in);
         int opcion1;
+        String id;
 
         do {
             try {
@@ -102,24 +104,30 @@ public class Interfaz {
                         6. Volver\s
                         ingrese opción:\s""");
                 opcion1 = scan.nextInt();
+                
                 switch (opcion1) {
                     case 1:
-                        Cliente.consultarClientes();
-                        break;
+                        Registro.getClientes();
                     case 2:
-                        Cliente.clientesPotenciales();
+                        System.out.print("Buscar Cliente: ");
+                        id = scan.next();
+                        Registro.buscarCliente(id);                        
                         break;
                     case 3:
-                        Cliente.consultarVentas();
+                        Cliente.clientesPotenciales();
                         break;
                     case 4:
-                        Cliente.serviciosClientes();
+                        Cliente.consultarVentas();
                         break;
                     case 5:
+                        Cliente.serviciosClientes();
+                        break;
+                    case 6:
                         System.out.print(cl.toString());
                         System.out.print("\t"+empresa01.toString());
+                        break;
                         
-                    //case 6: break;
+                    case 7: break;
 
                 }
             } catch (Exception e) {

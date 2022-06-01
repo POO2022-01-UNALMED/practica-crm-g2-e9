@@ -26,7 +26,7 @@ public class Registro {
     	}
 		else{
 			new Cliente(nombre, cedula, cel, correo, cargo, activo);
-			//Acepta los cambios
+
 		}
     }
     public static Empresa registrarEmpresa(String nombre, int nit, String descripcion){
@@ -40,7 +40,7 @@ public class Registro {
     		if(Empresa.getAllEmpresas().get(i).getNit() == nit)
     	        //System.out.println(empresas.get(i).getNombre());
     			return Empresa.getAllEmpresas().get(i);
-    		//-------
+
     		
     }
     	return null;
@@ -54,7 +54,7 @@ public class Registro {
     		if(Cliente.getAllClientes().get(i).getId() == id)
     			System.out.println(Cliente.getAllClientes().get(i).getEmpresa().getNombre());
     			return Cliente.getAllClientes().get(i);
-    		//-------
+
     		
     }
     	return null;
@@ -70,12 +70,9 @@ public class Registro {
     			
     		}
     	}
-    	
-	    	
-    	
-    		//-------
-    		
+
     }
+
     	
    
   

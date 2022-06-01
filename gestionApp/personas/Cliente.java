@@ -95,7 +95,10 @@ public class Cliente extends Persona{
 	public static void clientesPotenciales() {
 
 	}
-	public static void mostrarCliente( ) {
+	public static void  mostrarClientes ( ) {
+		for(int i = 0; i < Cliente.getAllClientes().size(); i++){
+			System.out.println("ID: "+getAllClientes().get(i).getId()+" Nombre: "+ getAllClientes().get(i).getNombre());
+		}
 
 
 	}
