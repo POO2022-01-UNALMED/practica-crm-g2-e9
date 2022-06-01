@@ -13,10 +13,11 @@ public class Venta {
     private Empleado empleado;
     private Cliente cliente;
     private Promocion promocion;
+    final private int IVA; 
 
     private static int idCounter = 0;
 
-    Venta(Negocio negocio, Servicio servicio, int valorVenta, Empleado empleado, Cliente cliente, Promocion promocion){
+    Venta(Negocio negocio, Servicio servicio, int valorVenta, Empleado empleado, Cliente cliente, Promocion promocion,int IVA ){
         this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
         this.negocio = negocio;
         this.servicios = servicio;
@@ -24,6 +25,7 @@ public class Venta {
         this.empleado = empleado;
         this.cliente = cliente;
         this.promocion = promocion;
+        this.IVA = IVA;
         idCounter += 1;
     }
 
@@ -46,6 +48,11 @@ public class Venta {
 
     public Promocion getPromocion() {return promocion;}
     public void setPromocion(Promocion promocion) {this.promocion = promocion;}
+
+    public int getIVA() {return IVA;}
+
+
+    
 
 
 }
