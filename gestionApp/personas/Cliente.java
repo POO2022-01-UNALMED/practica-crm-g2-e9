@@ -83,8 +83,13 @@ public class Cliente extends Persona{
 	public void setProbCompra(double probCompra) {this.probCompra = probCompra;}
 
 	// las que eliminamos que pueden ir en toStrings
+	
 
 	public static void clientesPotenciales() {
+
+	}
+	public static void mostrarCliente( ) {
+
 
 	}
 
@@ -102,6 +107,18 @@ public class Cliente extends Persona{
 	
 	public static void serviciosClientes() {
 
+	}
+	@Override
+	public  String toString(){
+		return "\tDatos del Cliente \nCliente: "+ nombre +
+		 "\nIdentificado con el CC." + cedula + 
+		 "\nCelular: " + cel +
+		 "\nCorreo: " + correo +
+		 "\nID: " + id +
+		 "\nCargo: " + cargo +
+		 "\nActivo en la app: " + activo+
+		 "\nDatos de su Empresa: " + empresa;
+		
 	}
 
 	

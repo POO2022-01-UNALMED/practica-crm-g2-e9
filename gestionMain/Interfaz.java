@@ -14,16 +14,16 @@ public class Interfaz {
     //Creacion de objetos
     static {
     
-        Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
-        Cliente cliente01 = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,1001 ,"Mi propio jefe", true);
-        Empleado encargado = new Empleado("Cristian Roberto", 100000, "302132132","roberto@gmail.com", 50, "Tocho", "30/05/2022");
-        Negocio necocio01 = new Negocio(1, encargado,cliente01, 100000);
-        Evento evento01 = new Evento(901, necocio01, "Decripcion" , null);
+        
         
     }
     public static void main(String[] args) {
-
         
+        Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
+        Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,1001 ,"Mi propio jefe", true);
+        Empleado encargado = new Empleado("Cristian Roberto", 100000, "302132132","roberto@gmail.com", 50, "Tocho", "30/05/2022");
+        Negocio necocio01 = new Negocio(1, encargado,cl, 100000);
+        Evento evento01 = new Evento(901, necocio01, "Decripcion" , null);
         Scanner scan = new Scanner(System.in);
         int opcion1;
 
@@ -52,7 +52,7 @@ public class Interfaz {
 
     }
 
-    private static void menuPrincipal() {
+    private static void menuPrincipal( ) {
         {
             Scanner scan = new Scanner(System.in);
             int opcion1;
@@ -157,7 +157,8 @@ public class Interfaz {
         Scanner scan = new Scanner(System.in);
         int opcion1;
         
-               
+        Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
+        Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,1001 ,"Mi propio jefe", true);
 
         do {
             try {
@@ -165,7 +166,8 @@ public class Interfaz {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1: 
-                        Cliente.consultarClientes();
+                        //Cliente.consultarClientes();
+                        System.out.print(cl.toString());
                         break;
                     case 2: 
                         Cliente.clientesPotenciales();
