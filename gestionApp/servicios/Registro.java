@@ -30,7 +30,6 @@ public class Registro {
     		Cliente cliente = new Cliente(nombre, cedula, cel, correo, cargo, activo);
     		cliente.setEmpresa(emp);
     		clientes.add(cliente);
-    		//emp.setContactos(cliente);
     		return  cliente;
     	}
     	return  null;
@@ -68,12 +67,12 @@ public class Registro {
     	
     	    }
     
-    public static void listacEmpresa(int nit){
+    public static void listaEmpresa(int nit){
     	Empresa empresa = buscarEmpresas(nit);
     	if(empresa != null) {
-    		for(int i = 0; i < empresa.getContactos().size(); i++){
+    		for(int i = 0; i < empresa.getClientes().size(); i++){
     		
-    			System.out.println(empresa.getContactos().get(i).getNombre());
+    			System.out.println(empresa.getClientes().get(i).getNombre());
     			
     		}
     	}

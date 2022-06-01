@@ -12,7 +12,7 @@ public class Empresa {
 	private int nit;
 	private String descripcion;
 
-	private ArrayList<Cliente> contactos;
+	private ArrayList<Cliente> clientes;
 	private final ArrayList<Negocio> negociosAbiertos;
 	private final ArrayList<Venta> ventas;
 	private static ArrayList<Empresa> empresas;
@@ -43,8 +43,8 @@ public class Empresa {
 	public String getDescripcion() {return descripcion;}
 	public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
 
-	public ArrayList<Cliente> getContactos() {return contactos;}
-	public void setContactos(Cliente nuevoContacto) {this.contactos.add(nuevoContacto);}
+	public ArrayList<Cliente> getClientes() {return clientes;}
+	public void setClientes(Cliente nuevoClientes) {this.clientes.add(nuevoClientes);}
 
 	public ArrayList<Negocio> getNegociosAbiertos() {return negociosAbiertos;}
 	public void setNegociosAbiertos(Negocio nuevoContacto) {this.negociosAbiertos.add(nuevoContacto);}
