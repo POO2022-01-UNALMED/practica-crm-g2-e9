@@ -30,6 +30,7 @@ import java.util.Scanner;
 import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
 import gestionApp.servicios.Registro;
+import gestionApp.servicios.Servicio;
 import gestionApp.Empresa;
 import gestionApp.Negocio;
 import gestionApp.Evento.Evento;
@@ -132,13 +133,13 @@ public class Interfaz {
                         System.out.print("\tREGISTRAR UNA EMPRESA: \s");
 
                         System.out.print("\nIngrese el Nombre de la Empresa");
-                        String nombreEmpresa = FuncionesInterfaz.entradaS();
+                        String nombreEmpresa = FuncionesInterfaz.entradaString();
 
                         System.out.print("\nIngrese el Nit de la Empresa");
                         int nitEmpresa = FuncionesInterfaz.entradaInt();
 
                         System.out.print("\nIngrese la descripcion");
-                        String descripcionEmpresa = FuncionesInterfaz.entradaS();
+                        String descripcionEmpresa = FuncionesInterfaz.entradaString();
 
                         Registro.registrarEmpresa(nombreEmpresa, nitEmpresa, descripcionEmpresa);
 
@@ -191,31 +192,31 @@ public class Interfaz {
                         System.out.print(Registro.mostrarClientes());
                     case 2:
                         System.out.print("Buscar Cliente por ID: ");
-                        id = FuncionesInterfaz.entradaS();
+                        id = FuncionesInterfaz.entradaString();
                         Registro.buscarCliente(id);                        
                         break;
                     case 3:
                         System.out.print("Eliminar Cliente por ID: ");
-                        id = FuncionesInterfaz.entradaS();
+                        id = FuncionesInterfaz.entradaString();
                         Registro.eliminarCliente(id);      
                         
                         break;
                     case 4:
                         System.out.print("\tREGISTRAR UNA CLIENTE: \s");
                         System.out.print("\nIngrese el Nombre del Cliente: ");
-                        String nombreCliente = FuncionesInterfaz.entradaS();;
+                        String nombreCliente = FuncionesInterfaz.entradaString();;
 
                         System.out.print("\nIngrese Cedula del Cliente: ");
                         int cedulaCliente = FuncionesInterfaz.entradaInt();
 
                         System.out.print("\nIngrese Celular del Cliente: ");
-                        String celCliente = FuncionesInterfaz.entradaS();
+                        String celCliente = FuncionesInterfaz.entradaString();
 
                         System.out.print("\nIngrese Correo del Cliente: ");
-                        String correoCliente = FuncionesInterfaz.entradaS();
+                        String correoCliente = FuncionesInterfaz.entradaString();
 
                         System.out.print("\nIngrese Cargo del Cliente: ");
-                        String cargoCliente = FuncionesInterfaz.entradaS();
+                        String cargoCliente = FuncionesInterfaz.entradaString();
 
                         System.out.print("\n¿El Cliente esta activo o no? Escriba SI o NO: ");
                         boolean activoCliente = FuncionesInterfaz.entradaBool();
@@ -312,36 +313,36 @@ public class Interfaz {
                     case 1:
                         System.out.print("\tREGISTRO EMPRESA\s");
                         System.out.print("\nIngrese el Nombre de la Empresa");
-                        String nombreEmpresa = FuncionesInterfaz.entradaS();
+                        String nombreEmpresa = FuncionesInterfaz.entradaString();
 
                         System.out.print("\nIngrese el Nit de la Empresa");
                         int nitEmpresa = FuncionesInterfaz.entradaInt();
 
                         System.out.print("\nIngrese la descripcion");
-                        String descripcionEmpresa = FuncionesInterfaz.entradaS();
+                        String descripcionEmpresa = FuncionesInterfaz.entradaString();
 
                         Registro.registrarEmpresa(nombreEmpresa, nitEmpresa, descripcionEmpresa);
                         break;
                     case 2:
                         System.out.print("\tREGISTRO CLIENTE\s");
                         System.out.print("\nIngrese el Nombre del Cliente: ");
-                        String nombreCliente = FuncionesInterfaz.entradaS();;
+                        String nombreCliente = FuncionesInterfaz.entradaString();;
 
                         System.out.print("\nIngrese Cedula del Cliente: ");
                         int cedulaCliente = FuncionesInterfaz.entradaInt();
 
                         System.out.print("\nIngrese Celular del Cliente: ");
-                        String celCliente = FuncionesInterfaz.entradaS();
+                        String celCliente = FuncionesInterfaz.entradaString();
 
                         System.out.print("\nIngrese Correo del Cliente: ");
-                        String correoCliente = FuncionesInterfaz.entradaS();
+                        String correoCliente = FuncionesInterfaz.entradaString();
 
                         //El ID SE DEBE GENERAL SOLO
                         // System.out.print("\nIngrese ID del Clente: ");
                         // int idCliente = FuncionesInterfaz.entradaInt();
 
                         System.out.print("\nIngrese Cargo del Cliente: ");
-                        String cargoCliente = FuncionesInterfaz.entradaS();
+                        String cargoCliente = FuncionesInterfaz.entradaString();
 
                         System.out.print("\n¿El Cliente esta activo o no? Escriba SI o NO: ");
                         boolean activoCliente = FuncionesInterfaz.entradaBool();
@@ -356,25 +357,25 @@ public class Interfaz {
                     case 3:
                         System.out.print("\tREGISTRO EMPLEADO\s");
                         System.out.print("\nIngrese el Nombre del Empleado: ");
-                        String nombreEmpleado = FuncionesInterfaz.entradaS();;
+                        String nombreEmpleado = FuncionesInterfaz.entradaString();;
 
                         System.out.print("\nIngrese Cedula del Empleado: ");
                         int cedulaEmpleado = FuncionesInterfaz.entradaInt();
 
                         System.out.print("\nIngrese Celular del Empleado: ");
-                        String celEmpleado = FuncionesInterfaz.entradaS();
+                        String celEmpleado = FuncionesInterfaz.entradaString();
 
                         System.out.print("\nIngrese Correo del Empleado: ");
-                        String correoEmpleado = FuncionesInterfaz.entradaS();
+                        String correoEmpleado = FuncionesInterfaz.entradaString();
 
                         System.out.print("\nIngrese Edad del Empleado: ");
                         int edadEmpleado = FuncionesInterfaz.entradaInt();
 
                         System.out.print("\nIngrese cargo del Empleado: ");
-                        String cargoEmpreado = FuncionesInterfaz.entradaS();
+                        String cargoEmpreado = FuncionesInterfaz.entradaString();
 
                         System.out.print("\nIngrese Fecha en la que incio el contrato dd/mm/aaaa: ");
-                        String fechaInicioContratoEmpleado = FuncionesInterfaz.entradaS();
+                        String fechaInicioContratoEmpleado = FuncionesInterfaz.entradaString();
 
                         Registro.registrarEmpleado(nombreEmpleado, cedulaEmpleado, celEmpleado, correoEmpleado, edadEmpleado, cargoEmpreado, fechaInicioContratoEmpleado);
                         break;
@@ -383,21 +384,32 @@ public class Interfaz {
                     case 4:
                         System.out.print("\tREGISTRO SERVICIOS\s");
                         System.out.print("\nIngrese el Nombre del Servicio: ");
-                        String nombreServicios = FuncionesInterfaz.entradaS();;
+                        String nombreServicio = FuncionesInterfaz.entradaString();;
 
                         System.out.print("\nIngrese Valor del producto del servicio: ");
                         int valorProductoServicios = FuncionesInterfaz.entradaInt();
 
                         System.out.print("\nIngrese tipo de Servicio: ");
-                        String tipoServicio = FuncionesInterfaz.entradaS();
+                        String tipoServicio = FuncionesInterfaz.entradaString();
 
                         System.out.print("\nIngrese descripcion del Servicio: ");
-                        String descripcionServicio = FuncionesInterfaz.entradaS();
+                        String descripcionServicio = FuncionesInterfaz.entradaString();
 
-                        Registro.registrarServicios(nombreServicios, valorProductoServicios, tipoServicio, descripcionServicio);
+                        Registro.registrarServicios(nombreServicio, valorProductoServicios, tipoServicio, descripcionServicio);
                         break;
-                    // case 5:
-                    //     Registro.registrarPromocion();
+                    case 5:
+                        System.out.print("\tREGISTRO PROMOCION\s");
+
+                        System.out.print("\nIngrese el descuento en valor decimal: ");
+                        Double descuento = FuncionesInterfaz.entradaDouble();
+
+                        System.out.print("\nIngrese el Nombre del Servicio para la Promocion: ");
+                        nombreServicio = FuncionesInterfaz.entradaString();;
+
+                        
+
+
+                        Registro.registrarPromocion(descuento,nombreServicio );
                     //     break;
                     // case 6:
                     //     break;

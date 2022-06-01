@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class FuncionesInterfaz {
     public static int opcionInt; 
     public static String opcionString;
+    public static double opcionDouble;
     public static int entradaInt (){
         Scanner scan = new Scanner(System.in);
         try {
@@ -20,7 +21,7 @@ public class FuncionesInterfaz {
         }
         return opcionInt;
     }
-    public static String entradaS (){
+    public static String entradaString (){
         Scanner scan = new Scanner(System.in);
         try {
             opcionString = scan.next();
@@ -49,6 +50,20 @@ public class FuncionesInterfaz {
 
         }
         return false;
+
+    }
+    public static double entradaDouble (){
+        Scanner scan = new Scanner(System.in);
+        try {
+            opcionDouble = scan.nextDouble();
+            return opcionDouble;
+            
+        } catch (Exception e) {
+            System.out.print("Ingrese una opcion nuevamente: ");
+            opcionDouble = scan.nextDouble();
+
+        }
+        return opcionDouble;
 
     }
 
