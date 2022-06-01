@@ -20,10 +20,10 @@ public class Interfaz {
     public static void main(String[] args) {
         
         Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
-        Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,1001 ,"Mi propio jefe", true);
-        Empleado encargado = new Empleado("Cristian Roberto", 100000, "302132132","roberto@gmail.com", 50, "Tocho", "30/05/2022");
-        Negocio necocio01 = new Negocio(1, encargado,cl, 100000);
-        Evento evento01 = new Evento(901, necocio01, "Decripcion" , null);
+        // Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,1001 ,"Mi propio jefe", true);
+        // Empleado encargado = new Empleado("Cristian Roberto", 100000, "302132132","roberto@gmail.com", 50, "Tocho", "30/05/2022");
+        // Negocio necocio01 = new Negocio(1, encargado,cl, 100000);
+        // Evento evento01 = new Evento(901, necocio01, "Decripcion" , null);
         Scanner scan = new Scanner(System.in);
         int opcion1;
 
@@ -158,7 +158,7 @@ public class Interfaz {
         int opcion1;
         
         Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
-        Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,1001 ,"Mi propio jefe", true);
+        Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,"1001" ,"Mi propio jefe", true);
 
         do {
             try {

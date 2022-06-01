@@ -19,7 +19,7 @@ public class Promocion {
 	
 	
 //gettters y setters 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 	public double getDescuento() {

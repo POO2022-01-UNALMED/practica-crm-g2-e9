@@ -20,7 +20,7 @@ public class Cliente extends Persona{
 
 	private static int idCounter = 0;
 
-	public Cliente(String nombre,Empresa empresa, int cedula, String cel, String correo,  String cargo, Boolean activo){
+	public Cliente(String nombre,Empresa empresa, int cedula, String cel, String correo,String id, String cargo, Boolean activo){
 		super(nombre, cedula, cel, correo);
 		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
 		this.empresa = empresa;
@@ -62,6 +62,7 @@ public class Cliente extends Persona{
 	//---------------Metodos Propios---------------
 
 	public String getId(){return this.id;}
+	public void setId(String id){this.id = id;}
 
 	public Empresa getEmpresa(){return empresa;}
 	public void setEmpresa(Empresa empresa){this.empresa = empresa;}

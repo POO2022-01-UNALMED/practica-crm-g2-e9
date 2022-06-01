@@ -23,11 +23,11 @@ public class Registro {
     }
     
     
-    public static Cliente registrarCliente(int nit,String nombre, int cedula, String cel, String correo, int id, String cargo, Boolean activo) {
+    public static Cliente registrarCliente(int nit,String nombre, int cedula, String cel, String correo, String cargo, Boolean activo) {
 
-    	Empresa emp =buscarEmpresas(nit);
+    	Empresa emp = buscarEmpresas(nit);
     	if (emp != null) {
-    		Cliente cliente = new Cliente(nombre, cedula, cel, correo, id, cargo, activo);
+    		Cliente cliente = new Cliente(nombre, cedula, cel, correo, cargo, activo);
     		cliente.setEmpresa(emp);
     		clientes.add(cliente);
     		//emp.setContactos(cliente);
@@ -55,10 +55,10 @@ public class Registro {
     	    }
     
     
-    public static Cliente buscarCliente(int id){
+    public static Cliente buscarCliente(String id){
   	  
     	for(int i = 0; i < clientes.size(); i++){
-    		if(clientes.get(i).getID() == id)
+    		if(clientes.get(i).getId() == id)
     			System.out.println(clientes.get(i).getEmpresa().getNombre());
     			return clientes.get(i);
     		//-------
