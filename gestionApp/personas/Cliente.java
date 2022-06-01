@@ -62,7 +62,7 @@ public class Cliente extends Persona{
 	//---------------Metodos Propios---------------
 
 	public String getId(){return this.id;}
-	public void setId(String id){this.id = id;}
+
 
 	public Empresa getEmpresa(){return empresa;}
 	public void setEmpresa(Empresa empresa){this.empresa = empresa;}
@@ -116,8 +116,8 @@ public class Cliente extends Persona{
 		 "\nCorreo: " + correo +
 		 "\nID: " + id +
 		 "\nCargo: " + cargo +
-		 "\nActivo en la app: " + activo+
-		 "\nDatos de su Empresa: " + empresa;
+		 "\nActivo en la app: " + activo;
+		 
 		
 	}
 

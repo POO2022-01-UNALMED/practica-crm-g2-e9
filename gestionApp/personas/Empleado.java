@@ -10,12 +10,12 @@ public class Empleado  extends Persona{
     private int cedula;
     private int edad;
     private String cargo;
-    private final String fechaInicioContrato;
-    private final double habilidadVenta;
+    private  String fechaInicioContrato;
+    private  double habilidadVenta;
 
-    private final ArrayList<Servicio> servicios;
-    private final ArrayList<Negocio> negociosAbiertos;
-    private final ArrayList<Venta> ventas;
+    private  ArrayList<Servicio> servicios;
+    private  ArrayList<Negocio> negociosAbiertos;
+    private  ArrayList<Venta> ventas;
 
     public Empleado(String nombre, int cedula, String cel, String correo, int edad, String cargo, String fechaInicioContrato){
         super(nombre, cedula, cel, correo);

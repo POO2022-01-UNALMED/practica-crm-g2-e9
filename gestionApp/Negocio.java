@@ -18,7 +18,6 @@ public class Negocio {
 	
 	public Empleado empleadoEncargado;
 	public Cliente cliente;
-
 	private String id;
 	private String etapa;
 	private int valorVenta;
@@ -26,12 +25,11 @@ public class Negocio {
 	private LocalDateTime fechaFinalizacion;
 	private ArrayList<Evento> eventos;
 	private ArrayList<Servicio> servicios;
-
 	private static int idCounter = 0;
 	private static ArrayList<Negocio> negociosActivos = new ArrayList<>();
-
 	public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
     
+
     public Negocio(Empleado empleadoEncargado, Cliente cliente, int valorVenta) {
 		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
 		this.empleadoEncargado = empleadoEncargado;

@@ -13,10 +13,10 @@ public class Empresa {
 	private String descripcion;
 
 	private ArrayList<Cliente> clientes;
-	private final ArrayList<Negocio> negociosAbiertos;
-	private final ArrayList<Venta> ventas;
+	private  ArrayList<Negocio> negociosAbiertos;
+	private  ArrayList<Venta> ventas;
 	private static ArrayList<Empresa> empresas;
-	private final ArrayList<Servicio> serviciosDeInteres;
+	private  ArrayList<Servicio> serviciosDeInteres;
 
 	private static int idCounter = 0;
     
@@ -54,6 +54,19 @@ public class Empresa {
 
 	public static ArrayList<Empresa> getEmpresas() {return empresas;}
 	public static void setEmpresas(Empresa nuevaEmpresa) {Empresa.empresas.add(nuevaEmpresa);}
+
+	@Override
+	public  String toString(){
+		return "\tDatos del Empresa \nEmpresa: "+ nombre +
+		 "\nNit de la empresa: " + nit + 
+		 "\nID: " + id +
+		 "\nDescripcion de la empresa: " + descripcion +
+		 "\nNegocios Abiertos: " + negociosAbiertos +
+		 "\nVentas: " + ventas +
+		 "\nServicios de Interes: " + serviciosDeInteres;
+
+		
+	}
 
 	
 
