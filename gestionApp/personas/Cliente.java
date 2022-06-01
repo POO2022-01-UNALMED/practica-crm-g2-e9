@@ -10,7 +10,6 @@ public class Cliente extends Persona{
 	
 
 	private String id;
-	private Empresa empresa;
 	private String cargo;
 	private Boolean activo;
 	private double probCompra;
@@ -23,12 +22,13 @@ public class Cliente extends Persona{
 	public Cliente(String nombre,Empresa empresa, int cedula, String cel, String correo,String id, String cargo, Boolean activo){
 		super(nombre, cedula, cel, correo);
 		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
-		this.empresa = empresa;
 		this.cargo = cargo;
 		this.activo = activo;
 		this.listaEventos = new ArrayList<>();
 		this.probCompra = Math.random();
+		empresa.addCliente(this);
 		idCounter += 1;
+	
 	}
 
 	public Cliente(String nombre, int cedula, String cel, String correo, String cargo, Boolean activo){
