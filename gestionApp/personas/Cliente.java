@@ -20,13 +20,24 @@ public class Cliente extends Persona{
 	public static ArrayList<Cliente> allClientes = new ArrayList<>();
 
 	private static int idCounter = 0;
-
-	public Cliente(String nombre, Empresa empresa, int cedula, String cel, String correo,String id, String cargo, Boolean activo){
+	
+	public Cliente(String nombre, Empresa emp, int cedula, String cel, String correo, String cargo, Boolean activo){
 		super(nombre, cedula, cel, correo);
 		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
 		this.cargo = cargo;
 		this.activo = activo;
 		this.empresa = empresa;
+		this.listaEventos = new ArrayList<>();
+		this.probCompra = Math.random();
+		idCounter += 1;
+		allClientes.add(this);
+	}
+
+	public Cliente(String nombre, int cedula, String cel, String correo,String id, Boolean activo){
+		super(nombre, cedula, cel, correo);
+		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
+		this.cargo = cargo;
+		this.activo = activo;
 		this.listaEventos = new ArrayList<>();
 		this.probCompra = Math.random();
 		empresa.addCliente(this);
@@ -36,16 +47,7 @@ public class Cliente extends Persona{
 	
 	}
 
-	public Cliente(String nombre, int cedula, String cel, String correo, String cargo, Boolean activo){
-		super(nombre, cedula, cel, correo);
-		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
-		this.cargo = cargo;
-		this.activo = activo;
-		this.listaEventos = new ArrayList<>();
-		this.probCompra = Math.random();
-		idCounter += 1;
-		allClientes.add(this);
-	}
+
 	
 
 

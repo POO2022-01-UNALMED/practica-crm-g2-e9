@@ -41,7 +41,7 @@ public class Interfaz {
         //Creacion de objetos
         Empleado empleadoEncargado = new Empleado("Carlos Encargado", 102110321, "301546564", "Encargado@gmail.com", 60, "Supervisor", "10/9/1999");
         Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
-        Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,"1001" ,"Mi propio jefe", true);
+        Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,"1001" ,true);
         Negocio necocio01 = new Negocio(empleadoEncargado, cl, 1000000);
         Evento evento01 = new Evento(necocio01, "descripcion del negocio" , null);
     

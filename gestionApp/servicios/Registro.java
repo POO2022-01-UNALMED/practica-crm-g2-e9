@@ -18,11 +18,11 @@ public class Registro {
     }
     
     
-    public static void registrarCliente(int nit,String nombre, int cedula, String cel, String correo, int id, String cargo, Boolean activo) {
+    public static void registrarCliente(String nombre, int cedula, String cel, String correo, int id, String cargo, Boolean activo,int nit) {
 
     	Empresa emp = buscarEmpresas(nit);
     	if (emp != null) {
-    		new Cliente(nombre, emp, cedula, cel, correo, cargo, cargo, activo);
+    		new Cliente(nombre, emp, cedula, cel, correo, cargo, activo);
     	}
 		else{
 			new Cliente(nombre, cedula, cel, correo, cargo, activo);
