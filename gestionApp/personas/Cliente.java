@@ -4,9 +4,11 @@ import gestionApp.Empresa;
 import gestionApp.Negocio;
 import gestionApp.Evento.Evento;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import baseDatos.Deserializador;
 
-public class Cliente extends Persona{
+public class Cliente extends Persona implements Serializable {
 	
 
 	private String id;

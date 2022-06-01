@@ -5,7 +5,7 @@ import gestionApp.personas.*;
 import java.io.*;
 
 public class Serializador {
-    private static File rutaTemp = new File("practica-crm-g2-e9\\basedatos\\temp");
+    private static File rutaTemp = new File("practica-crm-g2-e9\\baseDatos\\temp");
     public static void serializar(Cliente cliente){
         FileOutputStream fos;
         ObjectOutputStream oos;

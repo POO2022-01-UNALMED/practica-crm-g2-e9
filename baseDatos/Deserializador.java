@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Deserializador {
-    private static  File rutaTemp = new File("practica-crm-g2-e9\\basedatos\\temp");
+    private static  File rutaTemp = new File("practica-crm-g2-e9\\baseDatos\\temp");
     public static void deserializar(Cliente cliente){
         File[] docs = rutaTemp.listFiles();
         FileInputStream fis;
