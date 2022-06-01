@@ -13,31 +13,20 @@ public class Registro {
 	//registros 
    
     public static Empleado registrarEmpleado(String nombre, int cedula, String cel, String correo, int edad, String cargo, String fechaInicioContrato) {
-<<<<<<< Updated upstream
      	Empleado empleado = new Empleado(nombre,cedula,cel ,correo,edad,cargo,fechaInicioContrato);
-=======
-     	Empleado empleado= new Empleado(nombre,cedula,cel ,correo,edad,cargo,fechaInicioContrato);
->>>>>>> Stashed changes
      	return empleado;
     }
     
     
-<<<<<<< Updated upstream
     public static void registrarCliente(int nit,String nombre, int cedula, String cel, String correo, int id, String cargo, Boolean activo) {
 
     	Empresa emp = buscarEmpresas(nit);
     	if (emp != null) {
     		new Cliente(nombre, emp, cedula, cel, correo, cargo, cargo, activo);
-=======
-    public static Cliente registrarCliente(int nit, String nombre, int cedula, String cel, String correo, int id, String cargo, Boolean activo) {
-
-    	Empresa emp = buscarEmpresas(nit);
-    	if (emp != null) {
-    		new Cliente(nombre, emp, cedula, cel, correo, id, cargo, activo).toString();
->>>>>>> Stashed changes
     	}
 		else{
 			new Cliente(nombre, cedula, cel, correo, cargo, activo);
+			//Acepta los cambios
 		}
     }
     public static Empresa registrarEmpresa(String nombre, int nit, String descripcion){
