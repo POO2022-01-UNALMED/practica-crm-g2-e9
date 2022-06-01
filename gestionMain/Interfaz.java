@@ -157,8 +157,8 @@ public class Interfaz {
                         ---------------------
                         |\t MENÚ CLIENTES\s|
                         ---------------------
-                        1. Consultar Clientes:\s
-                        2. Consultar Clientes Potenciales:\s
+                        1. Mostrar Clientes:\s
+                        2. Buscar Clientes:\s
                         3. Eliminar Cliente:\s
                         4. Agregar Clientes:\s
                         5. Mostrar Informacion Cliente\s
@@ -168,7 +168,8 @@ public class Interfaz {
                 
                 switch (opcion1) {
                     case 1:
-                        Registro.getClientes();
+                        System.out.print("\tLOS CLIENTES ACTUALES SON\s");
+                        System.out.print(Cliente.getAllClientes());
                     case 2:
                         System.out.print("Buscar Cliente: ");
                         id = scan.next();
@@ -291,19 +292,44 @@ public class Interfaz {
                         System.out.print("\nIngrese Edad del Empleado: ");
                         int edadEmpleado = FuncionesInterfaz.entradaInt();
 
-                        System.out.print("\nIngrese Edad del Empleado: ");
+                        System.out.print("\nIngrese cargo del Empleado: ");
                         String cargoEmpreado = FuncionesInterfaz.entradaS();
 
-                        System.out.print("\nIngrese Edad del Empleado: ");
+                        System.out.print("\nIngrese Fecha en la que incio el contrato dd/mm/aaaa: ");
                         String fechaInicioContratoEmpleado = FuncionesInterfaz.entradaS();
 
                         Registro.registrarEmpleado(nombreEmpleado, cedulaEmpleado, celEmpleado, correoEmpleado, edadEmpleado, cargoEmpreado, fechaInicioContratoEmpleado);
 
                         break;
 
-                    // case 3:
-                    //     Registro.registrarEmpresa(cargo, negociosAbiertos, negociosCerrados, etapaVenta, valor)
-                    //     break;
+                    case 3:
+                        System.out.print("\nIngrese el Nombre del Cliente: ");
+                        String nombreCliente = FuncionesInterfaz.entradaS();;
+
+                        System.out.print("\nIngrese Cedula del Cliente: ");
+                        int cedulaCliente = FuncionesInterfaz.entradaInt();
+
+                        System.out.print("\nIngrese Celular del Cliente: ");
+                        String celCliente = FuncionesInterfaz.entradaS();
+
+                        System.out.print("\nIngrese Correo del Cliente: ");
+                        String correoCliente = FuncionesInterfaz.entradaS();
+
+                        //El ID SE DEBE GENERAL SOLO
+                        // System.out.print("\nIngrese ID del Clente: ");
+                        // int idCliente = FuncionesInterfaz.entradaInt();
+
+                        System.out.print("\nIngrese Cargo del Cliente: ");
+                        String cargoCliente = FuncionesInterfaz.entradaS();
+
+                        System.out.print("\n¿El Cliente esta activo o no? Escriba SI o NO: ");
+                        boolean activoCliente = FuncionesInterfaz.entradaBool();
+
+                        System.out.print("\nIngrese nit del Cliente para la Empresa: ");
+                        int nitCliente = FuncionesInterfaz.entradaInt();
+
+                        Registro.registrarCliente(nombreCliente, cedulaCliente, celCliente, correoCliente, cargoCliente, activoCliente, nitCliente);
+                        break;
                     // case 4:
                     //     Registro.registrarEmpresa(cargo, negociosAbiertos, negociosCerrados, etapaVenta, valor)
                     //     break;

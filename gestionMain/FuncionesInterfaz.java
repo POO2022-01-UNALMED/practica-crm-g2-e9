@@ -33,6 +33,24 @@ public class FuncionesInterfaz {
         }
         return opcionString;
     }
+    public static boolean entradaBool (){
+        Scanner scan = new Scanner(System.in);
+        try {
+            opcionString = scan.next();
+            if (opcionString == "SI" || opcionString == "si" || opcionString == "Si")   
+                return true;
+            else
+                return false;
+
+            
+        } catch (Exception e) {
+            System.out.print("Ingreso un dato equivocado: ");
+            
+
+        }
+        return false;
+
+    }
 
     
 }

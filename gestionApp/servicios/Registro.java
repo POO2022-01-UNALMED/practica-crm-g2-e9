@@ -18,7 +18,7 @@ public class Registro {
     }
     
     
-    public static void registrarCliente(String nombre, int cedula, String cel, String correo, int id, String cargo, Boolean activo,int nit) {
+    public static void registrarCliente(String nombre, int cedula, String cel, String correo , String cargo, Boolean activo,int nit) {
 
     	Empresa emp = buscarEmpresas(nit);
     	if (emp != null) {
