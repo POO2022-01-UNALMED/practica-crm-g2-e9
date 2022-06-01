@@ -90,7 +90,7 @@ public class Cliente extends Persona{
 	public void setProbCompra(double probCompra) {this.probCompra = probCompra;}
 
 	public static ArrayList<Cliente> getAllClientes(){return allClientes;}
-	
+	public static void setAllClientes(ArrayList<Cliente> allClientes) {Cliente.allClientes = allClientes;}
 
 	public static void clientesPotenciales() {
 
