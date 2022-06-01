@@ -51,7 +51,8 @@ public class Interfaz {
         Scanner scan = new Scanner(System.in);
         int opcion;
 
- 
+
+    
 
         do {
             try {
@@ -59,26 +60,86 @@ public class Interfaz {
                         ---------------------
                         |\t MENÚ PRINCIPAL\s|
                         ---------------------
+
                         1. Clientes
-                        2. Negocios
-                        3. Registros
-                        4. Servicios
-                        5. Salir
+                        2. Empresa
+                        3. Empleado
+                        4. Registros
+                        5. Negocios
+                        6. Servicios
+                        7. Salir
                         ingrese opción:\s""");
                 opcion = scan.nextInt();
                 switch (opcion) {
                     case 1: clientes(cl,empresa01);break; //activa menú cliente
-                    case 2: negocios(); break; //activa menú negocios
-                    case 3: registros(); break; //activa menú registros
-                    case 4: servicios(); break; //activa menú servicios
-                    case 5: break; //Salir
+                    case 2: empresa(); break;
+                    case 3: empleado(); break;
+                    case 4: registros(); break; //activa menú negocios
+                    case 5: negocios(); break; //activa menú registros
+                    case 6: servicios(); break; //activa menú servicios
+                    case 7: break; //Salir
 
                 }
             }catch (Exception e) {
                 System.out.print("Ingrese una opcion nuevamente: ");
                 opcion = scan.nextInt();
             }
-        }while (opcion != 5);
+        }while (opcion != 7);
+
+
+    }
+    private static void empleado() {
+    }
+    public static  void empresa() {
+        Scanner scan = new Scanner(System.in);
+        int opcion1;
+        String nit;
+
+        do {
+            try {
+                System.out.print("""
+                        ---------------------
+                        |\t MENÚ EMPRESAS\s|
+                        ---------------------
+                        1. Mostrar Empresas:\s
+                        2. Buscar Empresa:\s
+                        3. Eliminar :\s
+                        4. Agregar :\s
+                        5. Mostrar Informacion Cliente\s
+                        6. Volver\s
+                        ingrese opción:\s""");
+                opcion1 = scan.nextInt();
+                
+                switch (opcion1) {
+                    case 1:
+                        System.out.print(Empresa.getAllEmpresas());
+                    case 2:
+                        System.out.print("Buscar Empresa: ");
+                        nit = scan.next();
+                        Registro.buscarCliente(nit);                        
+                        break;
+                    case 3:
+                        //Cliente.clientesPotenciales();
+                        
+                        break;
+                    case 4:
+                        Cliente.consultarVentas();
+                        break;
+                    case 5:
+                        Cliente.serviciosClientes();
+                        break;
+                    case 6:
+
+                        break;
+                        
+                    case 7: break;
+
+                }
+            } catch (Exception e) {
+                System.out.print("Ingrese una opcion nuevamente: ");
+                opcion1 = scan.nextInt();
+            }
+        } while (opcion1 != 6);
 
 
     }
@@ -114,7 +175,8 @@ public class Interfaz {
                         Registro.buscarCliente(id);                        
                         break;
                     case 3:
-                        Cliente.clientesPotenciales();
+                        //Cliente.clientesPotenciales();
+                        
                         break;
                     case 4:
                         Cliente.consultarVentas();
@@ -183,6 +245,7 @@ public class Interfaz {
     public static  void registros() {
         Scanner scan = new Scanner(System.in);
         int opcion1;
+
         Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
         do {
             try {
@@ -190,34 +253,65 @@ public class Interfaz {
                         ---------------------
                         |\t MENÚ REGISTRO\s|
                         ---------------------
-                        1. Consultar registros de la empresa\s
-                        2. Registrar cliente\s
-                        3. Registrar empleado\s
-                        3. Registrar empresa\s
-                        4. Registrar promocion:\s
-                        5. Registrar servicios:\s
+                        1. Registrar Empresa\s
+                        2. Registrar Empleado\s
+                        3. Registrar Cliente\s
+                        3. Registrar \s
+                        4. Registrar :\s
+                        5. Registrar :\s
                         6. Volver\s
                         ingrese opción:\s""");
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1:
+                        System.out.print("\nIngrese el Nombre de la Empresa");
+                        String nombreEmpresa = FuncionesInterfaz.entradaS();
 
+                        System.out.print("\nIngrese el Nit de la Empresa");
+                        int nitEmpresa = FuncionesInterfaz.entradaInt();
+
+                        System.out.print("\nIngrese la descripcion");
+                        String descripcionEmpresa = FuncionesInterfaz.entradaS();
+
+                        Registro.registrarEmpresa(nombreEmpresa, nitEmpresa, descripcionEmpresa);
                         break;
                     case 2:
-                        //Registro.registrarEmpleado(nombre, apellido, cedula, edad, correo, celular, fechaInicioContrato)
+                        System.out.print("\nIngrese el Nombre del Empleado: ");
+                        String nombreEmpleado = FuncionesInterfaz.entradaS();;
+
+                        System.out.print("\nIngrese Cedula del Empleado: ");
+                        int cedulaEmpleado = FuncionesInterfaz.entradaInt();
+
+                        System.out.print("\nIngrese Celular del Empleado: ");
+                        String celEmpleado = FuncionesInterfaz.entradaS();
+
+                        System.out.print("\nIngrese Correo del Empleado: ");
+                        String correoEmpleado = FuncionesInterfaz.entradaS();
+
+                        System.out.print("\nIngrese Edad del Empleado: ");
+                        int edadEmpleado = FuncionesInterfaz.entradaInt();
+
+                        System.out.print("\nIngrese Edad del Empleado: ");
+                        String cargoEmpreado = FuncionesInterfaz.entradaS();
+
+                        System.out.print("\nIngrese Edad del Empleado: ");
+                        String fechaInicioContratoEmpleado = FuncionesInterfaz.entradaS();
+
+                        Registro.registrarEmpleado(nombreEmpleado, cedulaEmpleado, celEmpleado, correoEmpleado, edadEmpleado, cargoEmpreado, fechaInicioContratoEmpleado);
+
                         break;
 
-                    case 3:
-                        //Registro.registrarEmpresa(cargo, negociosAbiertos, negociosCerrados, etapaVenta, valor)
-                        break;
-                    case 4:
-                        //Registro.registrarEmpresa(cargo, negociosAbiertos, negociosCerrados, etapaVenta, valor)
-                        break;
-                    case 5:
-                        //Registro.registrarPromocion();
-                        break;
-                    //case 6:
-                        //break;
+                    // case 3:
+                    //     Registro.registrarEmpresa(cargo, negociosAbiertos, negociosCerrados, etapaVenta, valor)
+                    //     break;
+                    // case 4:
+                    //     Registro.registrarEmpresa(cargo, negociosAbiertos, negociosCerrados, etapaVenta, valor)
+                    //     break;
+                    // case 5:
+                    //     Registro.registrarPromocion();
+                    //     break;
+                    // case 6:
+                    //     break;
 
                 }
             } catch (Exception e) {
@@ -294,6 +388,7 @@ public class Interfaz {
         } while (opcion1 != 5);
 
     }
+
 
 }
 
