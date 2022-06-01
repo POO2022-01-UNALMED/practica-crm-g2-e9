@@ -36,10 +36,20 @@ public class Registro {
 
     
     public static void registrarPromocion(double descuento , String nombre){
-    	
+    	Servicio ser = buscarServicios(nombre);
+    	if (ser != null) {
+    		new Promocion(descuento,ser);
+    	}
+		else{
+			new Promocion(descuento);
+		
+		}
 
     }
 
+    
+    
+    //busquedas
     public static Empresa buscarEmpresas(int nit){
     	  
     	for(int i = 0; i < Empresa.getAllEmpresas().size(); i++){
@@ -82,7 +92,7 @@ public class Registro {
     		
     }
     
- //errorsiño 
+
     public static Servicio buscarServicios(String nombre){
   	  
     	for(int i = 0; i < Servicio.getAllServicios().size(); i++){
