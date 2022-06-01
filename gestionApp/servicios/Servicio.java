@@ -2,6 +2,8 @@ package gestionApp.servicios;
 
 import java.util.ArrayList;
 
+import gestionApp.personas.Cliente;
+
 public class Servicio {
     private String nombre;
     private int precio;
@@ -11,6 +13,9 @@ public class Servicio {
 
     
     private static ArrayList<Servicio> allServicios= new ArrayList<Servicio>();
+    private ArrayList<Servicio> Servicios = new ArrayList<Servicio>();
+    private ArrayList<Promocion> Promociones = new ArrayList<Promocion>();
+    
 
     public Servicio(String nombreServicios, int valorProducto, String tipo, String descripcion) {
 		this.nombre = nombreServicios;
@@ -33,4 +38,6 @@ public class Servicio {
     public void setDescripcion (String descripcion){this.descripcion = descripcion;}
 
     public static ArrayList<Servicio> getAllServicios(){return allServicios;}
+    public void addPromocion(Promocion promocion){this.Promociones.add(promocion);}
+    
 }
