@@ -194,8 +194,8 @@ public class Interfaz {
                 switch (opcion1) {
                     case 1:
                         System.out.print("\tLOS CLIENTES ACTUALES SON\s");
-                        System.out.print(Cliente.getAllClientes());
-                        System.out.print(Registro.mostrarClientes());
+                        Registro.listaClientes();
+
                     case 2:
                         System.out.print("Buscar Cliente por ID: ");
                         id = FuncionesInterfaz.entradaString();

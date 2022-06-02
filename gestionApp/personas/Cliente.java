@@ -116,7 +116,15 @@ public class Cliente extends Persona{
 	public static void serviciosClientes() {
 
 	}
+	public String toStringEmpresa(){
+		return "\n////////////////////////////\n" +
+		"Empresa: " + getEmpresa().getNombre() +
+		"\nNit Empresa: " + getEmpresa().getNit() +
+		"\nDescripcion de la empresa a la que pertenece: \n" +
+		"\n////////////////////////////\n";  
+	}
 	@Override
+	
 	public  String toString(){
 		return "\tDatos del Cliente \nCliente: "+ nombre +
 		 "\nIdentificado con el CC." + cedula + 

@@ -99,6 +99,18 @@ public class Registro {
 			
     		}
     	}
+		public static void listaClientes() {//////////////////////////////////////////////////////Mostrar todos los Clientes solo por ID y Nombre correspondientemente que devuelva Strings para mostrar en el menu
+			ArrayList<Cliente> clientes = Cliente.getAllClientes();
+			for(int i = 0; i < clientes.size(); i++){
+		
+				System.out.println("\nNombre Cliente: "+clientes.get(i).getNombre()+
+				"\nID del Cliente: " + clientes.get(i).getId()+
+				"\nActividad del Cliente: " + clientes.get(i).isActivo()+
+				"\n Empresa a la que pertenece: " + clientes.get(i).toStringEmpresa());
+			}
+				
+		}
+	
     	
 	    	
     	
@@ -162,9 +174,6 @@ public class Registro {
     }
 
 
-	public static char[] mostrarClientes() {//////////////////////////////////////////////////////Mostrar todos los Clientes solo por ID y Nombre correspondientemente que devuelva Strings para mostrar en el menu
-		return null;
-	}
 
 
 	public static void eliminarCliente(String id) {///////////////////////////Eliminar Cliente por ID
@@ -173,9 +182,7 @@ public class Registro {
 
     public static void infoCliente() {
     }
-	public static  Object mostrarEmpresas() {
-		return null;
-	}
+
 
     
 }
