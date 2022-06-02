@@ -124,7 +124,8 @@ public class Cliente extends Persona{
 		 "\nCorreo: " + correo +
 		 "\nID: " + id +
 		 "\nCargo: " + cargo +
-		 "\nActivo en la app: " + activo;
+		 "\nActivo en la app: " + activo +
+		 "\n/////////////////////////////////////////////\n";
 		 
 		
 	}

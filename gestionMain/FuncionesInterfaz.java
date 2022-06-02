@@ -15,8 +15,8 @@ public class FuncionesInterfaz {
             
             
         } catch (Exception e) {
-            System.out.print("Ingrese una opcion nuevamente: ");
-            opcionInt = scan.nextInt();
+            System.out.print("Ingrese un dato invalido: ");
+
 
         }
         return opcionInt;
@@ -28,8 +28,8 @@ public class FuncionesInterfaz {
             return opcionString;
             
         } catch (Exception e) {
-            System.out.print("Ingrese una opcion nuevamente: ");
-            opcionString = scan.next();
+            System.out.print("Ingrese un dato invalido: ");
+            
 
         }
         return opcionString;
@@ -45,7 +45,7 @@ public class FuncionesInterfaz {
 
             
         } catch (Exception e) {
-            System.out.print("Ingreso un dato equivocado: ");
+            System.out.print("Ingrese un dato invalido: ");
             
 
         }
@@ -59,8 +59,7 @@ public class FuncionesInterfaz {
             return opcionDouble;
             
         } catch (Exception e) {
-            System.out.print("Ingrese una opcion nuevamente: ");
-            opcionDouble = scan.nextDouble();
+            System.out.print("Ingrese un dato invalido: ");
 
         }
         return opcionDouble;

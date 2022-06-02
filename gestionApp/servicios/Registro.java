@@ -87,20 +87,23 @@ public class Registro {
     	
     	    }
     
-    public static void listaEmpresa(int nit){
-    	Empresa empresa = buscarEmpresas(nit);
-    	if(empresa != null) {
-    		for(int i = 0; i < empresa.getClientes().size(); i++){
-    		
-    			System.out.println(empresa.getClientes().get(i).getNombre());
-    			
+    public static void listaEmpresas( ){
+    	ArrayList<Empresa> empresas = Empresa.getAllEmpresas();
+
+		for(int i = 0; i < empresas.size(); i++){
+		
+			System.out.println("\nNombre Empresa: "+empresas.get(i).getNombre()+
+			"\nDescripcion Empresa" + empresas.get(i).getDescripcion() +
+			"\nNit Empresa: " + empresas.get(i).getNit());
+			
+			
     		}
     	}
     	
 	    	
     	
     		
-    }
+    
     
 
     public static Servicio buscarServicios(String nombre){
@@ -115,11 +118,6 @@ public class Registro {
     	
     	    }
     
-    	
-   
-  
-    		
-
 
 
     public static ArrayList<Cliente> getClientes() {
@@ -175,6 +173,9 @@ public class Registro {
 
     public static void infoCliente() {
     }
+	public static  Object mostrarEmpresas() {
+		return null;
+	}
 
     
 }

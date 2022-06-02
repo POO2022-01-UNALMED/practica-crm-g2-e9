@@ -42,7 +42,7 @@ public class Interfaz {
     public static void main(String[] args) {
         //Creacion de objetos
         Empleado empleadoEncargado = new Empleado("Carlos Encargado", 102110321, "301546564", "Encargado@gmail.com", 60, "Supervisor", "10/9/1999");
-        Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
+        Empresa empresa01 = new Empresa("Empresa Defaut", 321, "descripcion");
         Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,"1001" ,true);
         Negocio necocio01 = new Negocio(empleadoEncargado, cl, 1000000);
         Evento evento01 = new Evento(necocio01, "descripcion del negocio" , null);
@@ -113,8 +113,12 @@ public class Interfaz {
                 
                 switch (opcion1) {
                     case 1:
-                        System.out.print(Empresa.getAllEmpresas());
-                        System.out.print(Empresa.mostrarEmpresas());
+                        Registro.listaEmpresas();
+                        //System.out.print(Registro.listaEmpresas());
+                        System.out.print("\n ");
+                        
+
+
                         break;
                         
                     case 2:
@@ -132,13 +136,13 @@ public class Interfaz {
                     case 4:
                         System.out.print("\tREGISTRAR UNA EMPRESA: \s");
 
-                        System.out.print("\nIngrese el Nombre de la Empresa");
+                        System.out.print("\nIngrese el Nombre de la Empresa: ");
                         String nombreEmpresa = FuncionesInterfaz.entradaString();
 
-                        System.out.print("\nIngrese el Nit de la Empresa");
+                        System.out.print("\nIngrese el Nit de la Empresa: ");
                         int nitEmpresa = FuncionesInterfaz.entradaInt();
 
-                        System.out.print("\nIngrese la descripcion");
+                        System.out.print("\nIngrese la descripcion: ");
                         String descripcionEmpresa = FuncionesInterfaz.entradaString();
 
                         Registro.registrarEmpresa(nombreEmpresa, nitEmpresa, descripcionEmpresa);
@@ -314,13 +318,13 @@ public class Interfaz {
                 switch (opcion1) {
                     case 1:
                         System.out.print("\tREGISTRO EMPRESA\s");
-                        System.out.print("\nIngrese el Nombre de la Empresa");
+                        System.out.print("\nIngrese el Nombre de la Empresa: ");
                         String nombreEmpresa = FuncionesInterfaz.entradaString();
 
-                        System.out.print("\nIngrese el Nit de la Empresa");
+                        System.out.print("\nIngrese el Nit de la Empresa: ");
                         int nitEmpresa = FuncionesInterfaz.entradaInt();
 
-                        System.out.print("\nIngrese la descripcion");
+                        System.out.print("\nIngrese la descripcion de la Empresa: ");
                         String descripcionEmpresa = FuncionesInterfaz.entradaString();
 
                         Registro.registrarEmpresa(nombreEmpresa, nitEmpresa, descripcionEmpresa);

@@ -65,15 +65,13 @@ public class Empresa {
 		 "\nDescripcion de la empresa: " + descripcion +
 		 "\nNegocios Abiertos: " + negociosAbiertos +
 		 "\nVentas: " + ventas +
-		 "\nServicios de Interes: " + serviciosDeInteres;
+		 "\nServicios de Interes: " + serviciosDeInteres+
+		 "\n/////////////////////////////////////////////\n";
 		
 
 		
 	}
 
-	public static  Object mostrarEmpresas() {
-		return null;
-	}
 
 	
 
