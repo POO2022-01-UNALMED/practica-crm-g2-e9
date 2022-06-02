@@ -120,7 +120,8 @@ public class Cliente extends Persona{
 		return "\n////////////////////////////\n" +
 		"Empresa: " + getEmpresa().getNombre() +
 		"\nNit Empresa: " + getEmpresa().getNit() +
-		"\nDescripcion de la empresa a la que pertenece: \n" +
+		"\nDescripcion de la empresa a la que pertenece: \n" + 
+		getEmpresa().getDescripcion() +
 		"\n////////////////////////////\n";  
 	}
 	@Override
