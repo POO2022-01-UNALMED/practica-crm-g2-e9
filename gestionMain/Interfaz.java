@@ -352,7 +352,6 @@ public class Interfaz {
         Scanner scan = new Scanner(System.in);
         int opcion1;
 
-        Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
         do {
             try {
                 System.out.print("""
