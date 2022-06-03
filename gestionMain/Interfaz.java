@@ -392,10 +392,6 @@ public class Interfaz {
                         System.out.print("\nIngrese Correo del Cliente: ");
                         String correoCliente = FuncionesInterfaz.entradaString();
 
-                        //El ID SE DEBE GENERAL SOLO
-                        // System.out.print("\nIngrese ID del Clente: ");
-                        // int idCliente = FuncionesInterfaz.entradaInt();
-
                         System.out.print("\nIngrese Cargo del Cliente: ");
                         String cargoCliente = FuncionesInterfaz.entradaString();
 
@@ -462,9 +458,7 @@ public class Interfaz {
 
 
                         Registro.registrarPromocion(descuento,nombreServicio );
-                    //     break;
-                    // case 6:
-                    //     break;
+
 
                 }
             } catch (Exception e) {
