@@ -254,6 +254,7 @@ public class Interfaz {
                 switch (opcion1) {
                     case 1:
                         System.out.print("\tLOS EMPLEADOS ACTUALES SON\n");
+                        Empleado.getAllEmpleados();
                         Registro.listaEmpleados();
 
                     case 2:

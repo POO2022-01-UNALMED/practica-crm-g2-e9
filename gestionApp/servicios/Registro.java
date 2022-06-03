@@ -146,7 +146,6 @@ public class Registro implements Serializable {
 		
 				System.out.println("\nNombre Empleados: "+empleados.get(i).getNombre()+
 				"\nID del Empleados: " + empleados.get(i).getId()+
-				"\nNegocios del Empleado: " + empleados.get(i).getNegociosEmpleado()+
 				"\n Empresa a la que pertenece: " + empleados.get(i).toStringEmpresa());
 			}
 				

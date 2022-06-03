@@ -32,7 +32,6 @@ public class Empleado  extends Persona implements Serializable {
         this.habilidadVenta = Math.random(); //numero random entre 0 y 0.4
         idCounter += 1;
         allEmpleados.add(this);
-        idCounter += 1;
     }
 
     //---------------Metodos Heredados---------------
