@@ -68,14 +68,15 @@ public class  Interfaz {
                     case 5: uiNegocio.negocios(); break; //activa menú registros
                     case 6: servicios(); break; //activa menú servicios
                     case 7: uiPromocion.promocion();
-                    case 8: Serializador.serializacion(); break; //Salir
+                    case 8: Serializador.serializacion(); 
+                        break; //Salir
 
                 }
             }catch (Exception e) {
                 System.out.print("Ingrese una opcion nuevamente: ");
                 opcion = scan.nextInt();
             }
-        }while (opcion != 7);
+        }while (opcion != 8);
         Deserializador.serializacion();
 
 
