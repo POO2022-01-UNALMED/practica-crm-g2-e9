@@ -81,20 +81,15 @@ public class Negocio implements Serializable {
 	
 	public  void eliminarNegocio(String id){
 		for(int i = 0; i < allNegocios.get(i).getCliente().getEmpresa().getNegociosAbiertos().size(); i++) {
-			
 			if(allNegocios.get(i).getCliente().getEmpresa().getNegociosAbiertos().get(i).getId().equals(id)) {
 				allNegocios.get(i).getCliente().getEmpresa().eliminarNeg(id);
-			}
-			
+				}
 		}
-				
-		for(int j = 0; j < allNegocios.size(); j++) {
-			if (allNegocios.get(j).getId()==id) {
+		for(int j = 0; j < allNegocios.size(); j++){
+			if (allNegocios.get(j).getId()==id){
 				allNegocios.remove(j);
-		
 				}
 			}
-		
 	}
 
 

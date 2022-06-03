@@ -11,8 +11,6 @@ import java.util.ArrayList;
 
 public class Registro implements Serializable {
 	
-	
-
 		////////////////////////////////////////////////////////////////REGISTRO///////////////////////////////////////////////
    
     public static Empleado registrarEmpleado(String nombre, int cedula, String cel, String correo, String cargo, String fechaInicioContrato) {
@@ -58,11 +56,8 @@ public class Registro implements Serializable {
 		Negocio negocio = new Negocio(empleadoEncargado, cliente, valorVenta);   	
 		return negocio;
 	}
- 	
  		////////////////////////////////////////////////////////////////REGISTRO///////////////////////////////////////////////
 
-
-		////////////////////////////////////////////////////////////////BUSQUEDAS///////////////////////////////////////////////
 		public static Empleado buscarEmpleado(String id) {
 			listaEmpleados();
 			for(int i = 0; i < Empleado.getAllEmpleados().size(); i++){
@@ -117,12 +112,6 @@ public class Registro implements Serializable {
 				}
 
     	////////////////////////////////////////////////////////////////BUSQUEDAS///////////////////////////////////////////////
-    
-		////////////////////////////////////////////////////////////////LISTAS/////////////////////////////////////////////////
-    
-
-    
-
 
     public static void listaEmpresas(){
     	ArrayList<Empresa> empresas = Empresa.getAllEmpresas();
@@ -160,7 +149,6 @@ public class Registro implements Serializable {
 
 		////////////////////////////////////////////////////////////////LISTAS/////////////////////////////////////////////////
 
-
     public static ArrayList<Cliente> getClientes() {
         return getClientes();
     }
@@ -176,12 +164,8 @@ public class Registro implements Serializable {
     	
     }
 
-
-
 	public static void eliminarCliente(int cedula) {
 		
-
-
 			for(int i = 0; i < Cliente.getAllClientes().size(); i++) {
 				if(Cliente.getAllClientes().get(i).getCedula()== cedula) {
 					
@@ -191,74 +175,36 @@ public class Registro implements Serializable {
 						if(empresaAso.getClientes().get(j).getCedula()== cedula) {
 							empresaAso.getClientes().remove(empresaAso.getClientes().get(j));
 						}
-						
-					}
-					
+					}	
 				}
-			}
-					
-					
+			}			
 	}
-
 
     public static void infoCliente(int cedula) {
 		Cliente cliente = buscarCliente(cedula);
 		System.out.println(cliente.toString());
-		
-    
     }
 	
-
-
 	public static void infoEmpleado(String id) {
 		Empleado empleado = buscarEmpleado(id);
 		System.out.println(empleado.toString());
 	}
 
-
-
-
-	public static void eliminarEmpleado(String id) {///////////////////////////////////////////////////////////
+	public static void eliminarEmpleado(String id) {
 		
 		for(int i = 0; i < Empleado.getAllEmpleados().size(); i++) {
 			if(Empleado.getAllEmpleados().get(i).getId()== id) {
-				
 				Empleado.getAllEmpleados().remove(Empleado.getAllEmpleados().get(i));
-				
-			
 				}
-				
-			}
-		
-		
-		
+			}	
 	}
-
-
-
-
-
-   
-
-
-    public static void eliminarNegocio(Cliente cliente) {
-    }
-
 
     public static void negociosEmpresa(int nit) {
     	Empresa emp = buscarEmpresas(nit);
     	
     	for(int i = 0; i < emp.getNegociosAbiertos().size(); i++) {
     		System.out.println(emp.getNegociosAbiertos().get(i).toString());
-    		
-    		
-    	}
-    	
-    	
-    	
+    		}
     }
-
-
-
-    
+  
 }
