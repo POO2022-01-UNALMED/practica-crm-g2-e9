@@ -153,14 +153,14 @@ public class Interfaz {
 
         }
         public static  void buscarServicios() {
-            System.out.print("\nELIMINAR SERVICIOS\s");
+            System.out.print("\n BUSCAR SERVICIO\n");
             System.out.print("\nIngrese el Nombre del Servicio que desea Buscar: ");
             String nombreServicio = FuncionesInterfaz.entradaString();
             Registro.buscarServicios(nombreServicio);
 
         }
         public static void eliminarServicio() {
-            
+            System.out.print("\n ELIMINAR SERVICIO\n");
             System.out.print("\nIngrese el Nombre del Servicio que desea eliminar: ");
             String nombreServicio = FuncionesInterfaz.entradaString();
             Servicio servicioBuscado = Registro.buscarServicios(nombreServicio);
@@ -170,7 +170,7 @@ public class Interfaz {
                 Servicio.getAllServicios().remove(indice);
                 System.out.println("\t El siguiente servicio se a eliminado satisfactoriamente mi rey:\n"+servicioEliminado);}
             else
-                System.out.println("No existe esa empresa");
+                System.out.println("No existe el servicio");
         
         }
     public static void Funcionalidades(){
