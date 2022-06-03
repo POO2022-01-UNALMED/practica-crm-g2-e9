@@ -2,8 +2,10 @@ package gestionApp.Evento;
 import gestionApp.Negocio;
 
 import java.io.Serializable;
+import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+
 
 
 public class Evento implements Tiempo, Serializable {
@@ -54,8 +56,32 @@ public class Evento implements Tiempo, Serializable {
     //Metodo para elegir si una respuesta cambia la etapa del negocio
 
     public static void cursoEvento(){
+    	
+    	
+    	
         
     }
+    
+    ///AGENDA//
+    
+
+    public static void Agenda(){
+    	for(int i = 0; i < allEventos.size(); i++) {
+    		
+    		DayOfWeek  dia=LocalDateTime.parse((CharSequence) allEventos.get(i)).getDayOfWeek();
+    		System.out.println("dia");
+    		allEventos.get(i).toString();
+    		
+    		
+    		
+    		
+    	}
+    	
+    	
+        
+    }
+    
+    
 
 
 }

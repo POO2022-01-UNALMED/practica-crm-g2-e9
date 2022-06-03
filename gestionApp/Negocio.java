@@ -158,6 +158,11 @@ public class Negocio implements Serializable {
 	}
 
 
+
+	
+	
+	
+
 	public  String toStringNegocio(){
 		return "\tDatos del Negocio \nID del Negocio: "+ getId() +
 		 "\nCliente del negocio" + cliente.toString() + 
