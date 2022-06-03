@@ -179,6 +179,10 @@ public class Registro {
 	}
 
 
+	public static void eliminarEmpleado(String id) {
+	}
+
+
 
 
 

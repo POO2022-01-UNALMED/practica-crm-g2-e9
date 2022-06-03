@@ -1,32 +1,6 @@
-
-    // public static void main(String[] args) {
-    //     Empleado Alex = new Empleado("Alex", 1003, "3123", "alex@unale.edu.co",
-    //             25, "Asesor", "30/05/2022" );
-
-    //     ArrayList<Servicio> servicios = new ArrayList<>();
-
-    //     for (int i = 0; i < 10; i++ ){
-    //         servicios.add(new Servicio("A"+i, 100+i*2,"web", "--"));
-    //     }
-
-    //     for (Servicio servicio: servicios){
-    //         System.out.println(servicio.getNombre());
-    //     }
-
-    //     Empresa a = new Empresa( "google", 100,  "descripcion");
-    //     Cliente cliente = new Cliente("Ferxxxo", 100, "3123123", "ferxxo@unal.edu.co", 100, a, "gerente", true );
-
-
-
-
-
-
-
-
 package gestionMain;
 
 import java.util.Scanner;
-
 import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
 import gestionApp.servicios.Registro;
@@ -284,7 +258,7 @@ public class Interfaz {
                     case 3:
                         System.out.print("Eliminar Empleado por ID: ");
                         id = FuncionesInterfaz.entradaString();
-                        Registro.eliminarCliente(id);      
+                        Registro.eliminarEmpleado(id);      
                         
                         break;
                     case 4:
