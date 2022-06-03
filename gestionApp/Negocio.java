@@ -86,7 +86,7 @@ public class Negocio {
 		int numLlamadas = 0;
 		double tiempoLlamadas = 0;
 		int numCorreos = 0;
-		double tamañoCorreos = 0;
+		double tamanoCorreos = 0;
 		int numReuniones = 0;
 		double tiempoReuniones = 0;
 		double calculoMetrica = 0;
@@ -105,7 +105,7 @@ public class Negocio {
 						numReuniones += 1;
 					}
 					else if (this.eventos.get(i) instanceof Correo){
-						tamañoCorreos +=  ((Correo)this.eventos.get(i)).getCantidadPalabras();
+						tamanoCorreos +=  ((Correo)this.eventos.get(i)).getCantidadPalabras();
 						numCorreos += 1;
 					}
 					else if (this.eventos.get(i) instanceof Llamada){
@@ -113,7 +113,7 @@ public class Negocio {
 						numLlamadas += 1;
 					} 
 				}
-				calculoMetrica = (numReuniones*tiempoReuniones + tamañoCorreos*numCorreos + tiempoLlamadas * numLlamadas)-1.2;
+				calculoMetrica = (numReuniones*tiempoReuniones + tamanoCorreos*numCorreos + tiempoLlamadas * numLlamadas)-1.2;
 				if(this.etapa == "Prospeccion"){
 					if (calculoMetrica > 0.7){
 						this.etapa  = "Presentacion";
