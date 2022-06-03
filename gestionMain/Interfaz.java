@@ -14,11 +14,7 @@ import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
 import gestionApp.servicios.Registro;
 import gestionApp.servicios.Servicio;
-import gestionMain.uiMain.uiCliente;
-import gestionMain.uiMain.uiEmpleado;
-import gestionMain.uiMain.uiEmpresa;
-import gestionMain.uiMain.uiNegocio;
-import gestionMain.uiMain.uiRegistro;
+import gestionMain.uiMain.*;
 import gestionApp.Empresa;
 import gestionApp.Negocio;
 import gestionApp.Evento.Evento;
@@ -73,7 +69,8 @@ public class Interfaz {
                         4. Registros
                         5. Negocios
                         6. Servicios
-                        7. Salir
+                        7. Promoción
+                        8. Salir
                         ingrese opción:\s""");
                 opcion = scan.nextInt();
                 switch (opcion) {
@@ -83,7 +80,8 @@ public class Interfaz {
                     case 4: uiRegistro.registros(); break; //activa menú negocios
                     case 5: uiNegocio.negocios(); break; //activa menú registros
                     case 6: servicios(); break; //activa menú servicios
-                    case 7: break; //Salir
+                    case 7: uiPromocion.promocion();
+                    case 8: break; //Salir
 
                 }
             }catch (Exception e) {
@@ -97,7 +95,7 @@ public class Interfaz {
 
 
 
- 
+
 
     public static  void servicios() {
         Scanner scan = new Scanner(System.in);
@@ -130,7 +128,7 @@ public class Interfaz {
             }
         } while (opcion1 != 4);
     }
-  
+
         public static  void registarServicios() {
 
             System.out.print("\tREGISTRO SERVICIOS\s");

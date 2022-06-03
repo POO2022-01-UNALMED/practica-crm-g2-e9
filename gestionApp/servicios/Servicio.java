@@ -51,18 +51,20 @@ public class Servicio implements Serializable {
     
     public void addServicio(Servicio servicio){this.Servicios.add(servicio);}
     
-
-    public  String toStringServicio(){
-        return "\tDatos del Servicio \tID del Servicio: "+ id +
-        "\nNombre del Servicio: "+ nombre +
-            "\nDescripcion del Servicio" + descripcion + 
-            "\nTipo de Servicio: " + tipo;
-    }
     public  String toStringListasServicios(){
         return "\tDatos del Servicio \tID del Servicio: "+ id +
         "\nNombre del Servicio: "+ nombre +
             "\nTipo de Servicio: " + tipo;
     }
+    
+	@Override
+    public  String toString(){
+        return "\tDatos del Servicio \tID del Servicio: "+ id +
+        "\nNombre del Servicio: "+ nombre +
+            "\nDescripcion del Servicio" + descripcion + 
+            "\nTipo de Servicio: " + tipo;
+    }
+ 
     
 
     

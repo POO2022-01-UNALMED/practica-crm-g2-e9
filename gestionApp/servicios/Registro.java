@@ -57,10 +57,9 @@ public class Registro implements Serializable {
 		Negocio negocio = new Negocio(empleadoEncargado, cliente, valorVenta);   	
 		return negocio;
 	}
- 		////////////////////////////////////////////////////////////////REGISTRO///////////////////////////////////////////////
+ 		////////////////////////////////////////////////////////////////BUSQUEDA///////////////////////////////////////////////
 
 		public static Empleado buscarEmpleado(String id) {
-			listaEmpleados();
 			for(int i = 0; i < Empleado.getAllEmpleados().size(); i++){
 				if(Empleado.getAllEmpleados().get(i).getId() == id)
 					return Empleado.getAllEmpleados().get(i);
@@ -119,12 +118,18 @@ public class Registro implements Serializable {
 			System.out.println(empresas.get(i).toStringEmpresas());
 			
     		}
+			if(empresas.size()==0){
+				System.out.println("No hay EMPRESAS para mostrar");
+			}
     	}
 		public static void listaClientes() {
 			ArrayList<Cliente> clientes = Cliente.getAllClientes();
 			for(int i = 0; i < clientes.size(); i++){
 		
 				System.out.println(clientes.get(i).toStringClientes());
+			}
+			if(clientes.size()==0){
+				System.out.println("No hay CLIENTES para mostrar");
 			}
 				
 		}
@@ -134,12 +139,18 @@ public class Registro implements Serializable {
 		
 				System.out.println(empleados.get(i).toStringEmpleado());
 			}
+			if(empleados.size()==0){
+				System.out.println("No hay EMPLEADOS para mostrar");
+			}
 				
 		}
 		public static void listaServicios() {
 			ArrayList<Servicio> servicios = Servicio.getAllServicios();
 			for(int i = 0; i < servicios.size(); i++){
 				System.out.println(servicios.get(i).toStringListasServicios());
+			}
+			if(servicios.size()==0){
+				System.out.println("No hay SERVICIOS para mostrar");
 			}
 				
 		}
@@ -151,6 +162,9 @@ public class Registro implements Serializable {
 	    	for(int i = 0; i < emp.getNegociosAbiertos().size(); i++) {
 	    		System.out.println(emp.getNegociosAbiertos().get(i).toString());
 	    		}
+			if(emp.getNegociosAbiertos().size()==0){
+					System.out.println("No hay NEGOCIOS para esa empresa");
+				}
 	    }
 		
 	  
@@ -183,13 +197,12 @@ public class Registro implements Serializable {
 						if(empresaAso.getClientes().get(j).getCedula()== cedula) {
 							empresaAso.getClientes().remove(empresaAso.getClientes().get(j));
 							System.out.println("\nEl se ha Eliminado de la siguiente empresa " + clienteAsoEliminado);
-						}else
-							System.out.println("No existe este Cliente");
-
+						}
 					}	
 					
 				}else
-					System.out.println("No existe este Cliente");	
+					System.out.println("No existe este Cliente");
+					
 			}			
 	}
 	public static void eliminarEmpleado(String id) {
@@ -223,7 +236,7 @@ public class Registro implements Serializable {
 	
 	public static void infoServicio(String id) {
 		Servicio servicio = buscarServicios(id);
-		System.out.println(servicio.toStringServicio());
+		System.out.println(servicio.toString());
 	}
 
 

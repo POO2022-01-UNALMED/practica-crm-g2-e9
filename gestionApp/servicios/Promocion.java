@@ -11,6 +11,7 @@ public class Promocion implements Serializable {
 	private double descuento;
 	private ArrayList<Servicio> Servicios = new ArrayList<Servicio>();
 	private static ArrayList<Promocion> allPromocion = new ArrayList<>();
+	private Servicio servicio;
 
 	private static int idCounter = 0;
 
@@ -20,20 +21,21 @@ public class Promocion implements Serializable {
 		idCounter += 1;
 		allPromocion.add(this);
 		servicio.addPromocion(this);
+		this.servicio = servicio;
 	}
-	
+
 	public Promocion(double descuento) {
 		this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
 		this.descuento = descuento;
 		idCounter += 1;
-		
+
 	}
-	
-	
-	
-	
-	
-//gettters y setters 
+
+
+
+
+
+//gettters y setters
 	public String getId() {
 		return id;
 	}
@@ -44,8 +46,12 @@ public class Promocion implements Serializable {
 		this.descuento = descuento;
 	}
 	public static ArrayList<Promocion> getAllPromocion(){return allPromocion;}
-	
-	
-	
-	
+
+	public Servicio getServicio() {
+		return servicio;
+	}
+
+	public void setServicio(Servicio servicio) {
+		this.servicio = servicio;
+	}
 }
