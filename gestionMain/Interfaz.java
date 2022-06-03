@@ -1,15 +1,9 @@
 package gestionMain;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import baseDatos.Deserializador;
 import baseDatos.Serializador;
-import gestionApp.Evento.Correo;
-import gestionApp.Evento.Llamada;
-import gestionApp.Evento.Reunion;
-import gestionApp.Venta;
 import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
 import gestionApp.servicios.Registro;
@@ -22,9 +16,27 @@ import gestionApp.Evento.Evento;
 
 public class  Interfaz {
 
-
     public static void main(String[] args) {
-        Deserializador.serializacion();
+        //Creacion de objetos
+        Empleado empEncargado = new Empleado("Carlos Encargado", 1065468798, "300456479", "Encargado@gmail.com", "Supervisor", "10/9/1999");
+        Empleado empleadoEjemplo1 = new Empleado("Eugenia", 102110321, "301546564", "Eugenia@gmail.com", "Razos", "15/3/2004");
+
+        Empresa empresa01 = new Empresa("Empresa Defaut", 321, "descripcion");
+        Empresa empresa02 = new Empresa("Empresa 2", 123, "descripcion 2");
+        Empresa empresa03 = new Empresa("Empresa 3", 223, "descripcion3");
+
+        Cliente cl1 = new Cliente("Ejemplo 1 ", empresa01, 10001, "1111" ,"Elemplo1@gmail.com" ,"tocho1" ,true);
+        Cliente cl2 = new Cliente("Ejemplo 2", empresa02, 10002, "2222" ,"ejemplo2@gmail.com" ,"tocho2" ,true);
+        Cliente cl3 = new Cliente("Ejemplo 3 Restrepo", empresa03, 10003, "2222" ,"ejemplo3@gmail.com" ,"tocho3" ,false);
+
+        Negocio negocioEje = new Negocio(empleadoEjemplo1, cl1, 1000000);
+        Evento Neg = new Evento(negocioEje, "descripcion del negocio" , null);
+
+        Servicio s1 = new Servicio("Diseño web", 100, "digital", "Descripcion generica");
+        Servicio s2 = new Servicio("Venta de anime", 100, "digital", "Descripcion generica");
+        Servicio s3 = new Servicio("Hacking", 100, "digital", "Descripcion generica");
+        Servicio s4 = new Servicio("Falsificación de documento", 100, "digital", "Descripcion generica");
+        Serializador.serializacion();
 
         System.out.println(Servicio.getAllServicios().size());
 
@@ -45,7 +57,7 @@ public class  Interfaz {
                         5. Negocios
                         6. Servicios
                         7. Promoción
-                        8. Salir
+                        8. Serializador
                         ingrese opción:\s""");
                 opcion = scan.nextInt();
                 switch (opcion) {
@@ -56,22 +68,22 @@ public class  Interfaz {
                     case 5: uiNegocio.negocios(); break; //activa menú registros
                     case 6: servicios(); break; //activa menú servicios
                     case 7: uiPromocion.promocion();
-                    case 8: Serializador.serializacion(); break; //Salir
+                        break;
+                    case 8: Serializador.serializacion(); 
+                        break;
+                    case 9:Deserializador.serializacion();
+                        break; //Salir
 
                 }
             }catch (Exception e) {
                 System.out.print("Ingrese una opcion nuevamente: ");
                 opcion = scan.nextInt();
             }
-        }while (opcion != 7);
-        //Deserializador.serializacion();
+        }while (opcion != 8);
+        Deserializador.serializacion();
 
 
     }
-
-
-
-
 
     public static  void servicios() {
         Scanner scan = new Scanner(System.in);
@@ -123,7 +135,7 @@ public class  Interfaz {
             Registro.registrarServicios(nombreServicio, valorProductoServicios, tipoServicio, descripcionServicio);
 
 
-            
+
         }
         public static  void buscarServicios() {
             System.out.print("\n BUSCAR SERVICIO\n");
@@ -154,50 +166,7 @@ public class  Interfaz {
         }
 
 
-    public static  void promocion() {
-        Scanner scan = new Scanner(System.in);
-        int opcion1;
-        do {
-            try {
-                System.out.print("""
-                        ---------------------
-                        |\t MENÚ PROMOCIÓN\s|
-                        ---------------------
-                        1. Agregar promocion:\s
-                        2. Buscar promocion:\s
-                        3. Eliminar promocion:\s
-                        4. Volver\s
-                        ingrese opción:\s""");
-
-                opcion1 = scan.nextInt();
-                switch (opcion1) {
-                    case 1:
-                        registrarPromocion();
-                        break;
-                    case 2:
-                        buscarPromocion();
-                        break;
-                    case 3:
-                        eliminarPromocion();
-                        break;
-                    case 4: break;
-
-                }
-            } catch (Exception e) {
-                System.out.print("Ingrese una opcion nuevamente: ");
-                opcion1 = scan.nextInt();
-            }
-        } while (opcion1 != 4);
-    }
-        public static  void registrarPromocion() {
-            System.out.print("\n REGISTRAR PROMOCION\n");
-        }
-        public static  void buscarPromocion() {
-            System.out.print("\n BUSCAR PROMOCION\n");
-        }
-        public static  void eliminarPromocion() {
-            System.out.print("\n ELIMINAR PROMOCION\n");
-        }
+   
 
     public static void Funcionalidades(){
         Scanner scan = new Scanner(System.in);
