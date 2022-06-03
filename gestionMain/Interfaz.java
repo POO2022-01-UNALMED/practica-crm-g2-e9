@@ -132,8 +132,47 @@ public class Interfaz {
 
 
     }
+  
+        public static  void registarServicios() {
+
+            System.out.print("\tREGISTRO SERVICIOS\s");
+            System.out.print("\nIngrese el Nombre del Servicio: ");
+            String nombreServicio = FuncionesInterfaz.entradaString();;
+
+            System.out.print("\nIngrese Valor del producto del servicio: ");
+            int valorProductoServicios = FuncionesInterfaz.entradaInt();
+
+            System.out.print("\nIngrese tipo de Servicio: ");
+            String tipoServicio = FuncionesInterfaz.entradaString();
+
+            System.out.print("\nIngrese descripcion del Servicio: ");
+            String descripcionServicio = FuncionesInterfaz.entradaString();
+
+            Registro.registrarServicios(nombreServicio, valorProductoServicios, tipoServicio, descripcionServicio);
 
 
+        }
+        public static  void buscarServicios() {
+            System.out.print("\nELIMINAR SERVICIOS\s");
+            System.out.print("\nIngrese el Nombre del Servicio que desea Buscar: ");
+            String nombreServicio = FuncionesInterfaz.entradaString();
+            Registro.buscarServicios(nombreServicio);
+
+        }
+        public static void eliminarServicio() {
+            
+            System.out.print("\nIngrese el Nombre del Servicio que desea eliminar: ");
+            String nombreServicio = FuncionesInterfaz.entradaString();
+            Servicio servicioBuscado = Registro.buscarServicios(nombreServicio);
+            int indice = Servicio.getAllServicios().indexOf(servicioBuscado);
+            String servicioEliminado = servicioBuscado.toStringServicio();
+            if (!Servicio.getAllServicios().isEmpty()){
+                Servicio.getAllServicios().remove(indice);
+                System.out.println("\t El siguiente servicio se a eliminado satisfactoriamente mi rey:\n"+servicioEliminado);}
+            else
+                System.out.println("No existe esa empresa");
+        
+        }
     public static void Funcionalidades(){
         Scanner scan = new Scanner(System.in);
         int opcion1;
@@ -153,46 +192,6 @@ public class Interfaz {
             }
         } while (opcion1 != 5);
 
-    }
-    public static  void registarServicios() {
-
-        System.out.print("\tREGISTRO SERVICIOS\s");
-        System.out.print("\nIngrese el Nombre del Servicio: ");
-        String nombreServicio = FuncionesInterfaz.entradaString();;
-
-        System.out.print("\nIngrese Valor del producto del servicio: ");
-        int valorProductoServicios = FuncionesInterfaz.entradaInt();
-
-        System.out.print("\nIngrese tipo de Servicio: ");
-        String tipoServicio = FuncionesInterfaz.entradaString();
-
-        System.out.print("\nIngrese descripcion del Servicio: ");
-        String descripcionServicio = FuncionesInterfaz.entradaString();
-
-        Registro.registrarServicios(nombreServicio, valorProductoServicios, tipoServicio, descripcionServicio);
-
-
-    }
-    public static  void buscarServicios() {
-        System.out.print("\nELIMINAR SERVICIOS\s");
-        System.out.print("\nIngrese el Nombre del Servicio que desea Buscar: ");
-        String nombreServicio = FuncionesInterfaz.entradaString();
-        Registro.buscarServicios(nombreServicio);
-
-    }
-    public static void eliminarServicio() {
-        
-        System.out.print("\nIngrese el Nombre del Servicio que desea eliminar: ");
-        String nombreServicio = FuncionesInterfaz.entradaString();
-        Servicio servicioBuscado = Registro.buscarServicios(nombreServicio);
-        int indice = Servicio.getAllServicios().indexOf(servicioBuscado);
-        String servicioEliminado = servicioBuscado.toStringServicio();
-        if (!Servicio.getAllServicios().isEmpty()){
-            Servicio.getAllServicios().remove(indice);
-            System.out.println("\t El siguiente servicio se a eliminado satisfactoriamente mi rey:\n"+servicioEliminado);}
-        else
-            System.out.println("No existe esa empresa");
-    
     }
 
 	}
