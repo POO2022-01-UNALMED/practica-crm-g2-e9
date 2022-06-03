@@ -24,7 +24,7 @@ public class Interfaz {
         Negocio necocio01 = new Negocio(empleadoEjemplo1, cl, 1000000);
         Evento evento01 = new Evento(necocio01, "descripcion del negocio" , null);
 
-        Serializador.serializacion();
+        //Serializador.serializacion();
     
 
 
@@ -322,9 +322,9 @@ public class Interfaz {
                         ---------------------
                         1. Hacer Negocio :\s
                         2. Buscar Negocio:\s
-                        3. Consultar Negocios Abiertos:\s
+                        3. Negocio Abierto:\s
                         4. Eliminar Negocio:\s
-                        5. Volver\s
+                        5. Etapa de negocio\s
                         ingrese opción:\s""");
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
@@ -345,6 +345,10 @@ public class Interfaz {
                     case 4:
                         Registro.eliminarNegocio(cliente);
                         break;
+                    case 5: 
+                        System.out.print("\tETAPA DE NEGOCIO: \n");
+                        
+                    case 6: break;
 
                 }
             } catch (Exception e) {

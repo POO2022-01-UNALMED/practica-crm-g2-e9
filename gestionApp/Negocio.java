@@ -40,7 +40,7 @@ public class Negocio implements Serializable {
 		this.servicios = new ArrayList<>();
 		this.eventos = new ArrayList<>();
 
-		Negocio.allNegocios.add(this);
+		allNegocios.add(this);
 		empleadoEncargado.setNegociosEmpleado(this);
 		
 		this.definirEtapa();
