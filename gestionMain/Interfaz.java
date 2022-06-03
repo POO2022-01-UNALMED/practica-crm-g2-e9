@@ -67,10 +67,10 @@ public class Interfaz {
                 opcion = scan.nextInt();
                 switch (opcion) {
                     case 1: uiEmpresa.empresa(); break;//activa menú empresa
-                    case 2: uiCliente.clientes(cl,empresa01);break; //activa menú cliente
-                    case 3: uiEmpleado.empleado(empleadoEjemplo1,empresa01); break;//activa menú empleado
-                    case 4: uiRegistro.registros(empleadoEjemplo1, cl, negocioEje); break; //activa menú negocios
-                    case 5: uiNegocio.negocios(empleadoEjemplo1, cl, negocioEje); break; //activa menú registros
+                    case 2: uiCliente.clientes();break; //activa menú cliente
+                    case 3: uiEmpleado.empleado(); break;//activa menú empleado
+                    case 4: uiRegistro.registros(); break; //activa menú negocios
+                    case 5: uiNegocio.negocios(); break; //activa menú registros
                     case 6: servicios(); break; //activa menú servicios
                     case 7: break; //Salir
 
@@ -100,8 +100,8 @@ public class Interfaz {
                         |\t MENÚ SERVICIOS\s|
                         ---------------------
                         1. Agregar servicios:\s
-                        2. Consultar clientes de servicios:\s
-                        3. Consultar servicios:\s
+                        2. Buscar servicio:\s
+                        3. Eliminar servicio:\s
                         4. Eliminar servicios\s
                         5. Hacer promoción\s
                         6. Volver\s
@@ -112,13 +112,13 @@ public class Interfaz {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1:
-                        //Evento.anadirEvento();
+                        registarServicios();
                         break;
                     case 2:
-                        Evento.cursoEvento();
+                        buscarServicios();
                         break;
                     case 3:
-                        //Evento.modificarEvento();
+                        eliminarServicio();
                         break;
                     case 4: break;
 
@@ -128,6 +128,7 @@ public class Interfaz {
                 opcion1 = scan.nextInt();
             }
         } while (opcion1 != 6);
+
 
 
     }
@@ -153,13 +154,53 @@ public class Interfaz {
         } while (opcion1 != 5);
 
     }
+    public static  void registarServicios() {
+
+        System.out.print("\tREGISTRO SERVICIOS\s");
+        System.out.print("\nIngrese el Nombre del Servicio: ");
+        String nombreServicio = FuncionesInterfaz.entradaString();;
+
+        System.out.print("\nIngrese Valor del producto del servicio: ");
+        int valorProductoServicios = FuncionesInterfaz.entradaInt();
+
+        System.out.print("\nIngrese tipo de Servicio: ");
+        String tipoServicio = FuncionesInterfaz.entradaString();
+
+        System.out.print("\nIngrese descripcion del Servicio: ");
+        String descripcionServicio = FuncionesInterfaz.entradaString();
+
+        Registro.registrarServicios(nombreServicio, valorProductoServicios, tipoServicio, descripcionServicio);
 
 
-    static class menuNegocio{
+    }
+    public static  void buscarServicios() {
+        System.out.print("\nELIMINAR SERVICIOS\s");
+        System.out.print("\nIngrese el Nombre del Servicio que desea Buscar: ");
+        String nombreServicio = FuncionesInterfaz.entradaString();
+        Registro.buscarServicios(nombreServicio);
+
+    }
+    public static void eliminarServicio() {
+        
+        System.out.print("\nIngrese el Nombre del Servicio que desea eliminar: ");
+        String nombreServicio = FuncionesInterfaz.entradaString();
+        Servicio servicioBuscado = Registro.buscarServicios(nombreServicio);
+        int indice = Servicio.getAllServicios().indexOf(servicioBuscado);
+        String servicioEliminado = servicioBuscado.toStringServicio();
+        if (!Servicio.getAllServicios().isEmpty()){
+            Servicio.getAllServicios().remove(indice);
+            System.out.println("\t El siguiente servicio se a eliminado satisfactoriamente mi rey:\n"+servicioEliminado);}
+        else
+            System.out.println("No existe esa empresa");
+    
+    }
+
+	}
+
+
 
   
 
 
-}
 
-}
+

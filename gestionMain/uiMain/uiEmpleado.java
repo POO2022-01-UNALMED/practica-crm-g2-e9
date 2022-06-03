@@ -8,7 +8,7 @@ import gestionApp.servicios.Registro;
 import gestionMain.FuncionesInterfaz;
 
 public class uiEmpleado {
-    public static void empleado(Empleado empleadoEjemplo1,Empresa empresa) {
+    public static void empleado() {
         Scanner scan = new Scanner(System.in);
         int opcion1;
         String id;
@@ -73,7 +73,6 @@ public class uiEmpleado {
                         System.out.print("Infromacion asociada al Empleado por ID: ");
                         idEmpleado = FuncionesInterfaz.entradaString();
                         Registro.infoEmpleado(idEmpleado);
-                        System.out.print(empleadoEjemplo1.toString());
                         break;
                     case 6:
                         break;

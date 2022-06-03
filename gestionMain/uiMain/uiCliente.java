@@ -10,7 +10,7 @@ import gestionMain.FuncionesInterfaz;
 
 public class uiCliente {
     
-    public static  void clientes(Cliente cl,Empresa empresa01) {
+    public static  void clientes() {
         Scanner scan = new Scanner(System.in);
         int opcion1;
         String id;
@@ -78,7 +78,6 @@ public class uiCliente {
                         System.out.print("Infromacion asociada al Cliente por ID: ");
                         int Cedu = FuncionesInterfaz.entradaInt();
                         Registro.infoCliente(Cedu);
-                        System.out.print(cl.toString());
                         break;
                     case 6:
                         break;

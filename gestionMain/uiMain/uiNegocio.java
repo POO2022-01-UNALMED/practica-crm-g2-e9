@@ -15,7 +15,7 @@ import gestionMain.FuncionesInterfaz;
 
 public class uiNegocio {
 
-    public static <list> void negocios(Empleado empEncargado, Cliente cliente, Negocio negocioEje ) {
+    public static <list> void negocios() {
         Scanner scan = new Scanner(System.in);
         int opcion1;
 
@@ -35,7 +35,7 @@ public class uiNegocio {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1:
-                        uiNegocio.registrarNegocio(empEncargado, cliente, negocioEje);
+                        uiNegocio.registrarNegocio();
                         break;
                     case 2:
                         uiNegocio.buscarNegocio();
@@ -60,7 +60,7 @@ public class uiNegocio {
 
 
     }
-    public static void registrarNegocio(Empleado empleadoEjemplo1,Cliente cl,Negocio negocioEje){
+    public static void registrarNegocio(){
         Scanner apoyo = new Scanner(System.in);
         ArrayList<Integer> lista_servicios = new ArrayList<>();
         int iEmpleado;
@@ -202,39 +202,48 @@ public class uiNegocio {
         System.out.println("1. Correo");
         System.out.println("2. Llamada");
         System.out.println("3. Reunión");
-        int iEvento = FuncionesInterfaz.entradaInt();
-        switch (iEvento) {
+       
+        int iEvento;
+        try {
+            iEvento = FuncionesInterfaz.entradaInt();
+            switch (iEvento) {
 
-            case 1:
-                System.out.println(nombreEmpleado + " enviará un correo electronico a " + nombreCliente);
-                System.out.print("Ingrese una breve descripción del correo: ");
-                String ds = FuncionesInterfaz.entradaString();
-                Correo correo = new Correo(Negocio.getNegocios().get(indice - 1), ds);
-                System.out.println("El evento se ha creado satisfactoriamente");
-                System.out.print("Ingrese cualquier tecla: "); ds = FuncionesInterfaz.entradaString();
-                break;
-            case 2:
-                System.out.println(nombreEmpleado + " hará una llamada a " + nombreCliente);
-                System.out.print("Ingrese una breve descripción de la llamada: ");
-                ds = FuncionesInterfaz.entradaString();
-                Llamada llamada = new Llamada(Negocio.getNegocios().get(indice - 1), ds);
-                System.out.println("El evento se ha creado satisfactoriamente");
-                System.out.print("Ingrese cualquier tecla: "); ds = FuncionesInterfaz.entradaString();
-                break;
-            case 3:
-                System.out.println(nombreEmpleado + " realizará una reunión con " + nombreCliente);
-                System.out.print("Ingrese una breve descripción de la reunión: ");
-                ds = FuncionesInterfaz.entradaString();
-                Reunion reunion = new Reunion(Negocio.getNegocios().get(indice - 1), ds);
-                System.out.println("El evento se ha creado satisfactoriamente");
-                System.out.print("Ingrese cualquier tecla: "); ds = FuncionesInterfaz.entradaString();
-                break;
-
+                case 1:
+                    System.out.println(nombreEmpleado + " enviará un correo electronico a " + nombreCliente);
+                    System.out.print("Ingrese una breve descripción del correo: ");
+                    String ds = FuncionesInterfaz.entradaString();
+                    Correo correo = new Correo(Negocio.getNegocios().get(indice - 1), ds);
+                    System.out.println("El evento se ha creado satisfactoriamente");
+                    System.out.print("Ingrese cualquier tecla: "); ds = FuncionesInterfaz.entradaString();
+                    break;
+                case 2:
+                    System.out.println(nombreEmpleado + " hará una llamada a " + nombreCliente);
+                    System.out.print("Ingrese una breve descripción de la llamada: ");
+                    ds = FuncionesInterfaz.entradaString();
+                    Llamada llamada = new Llamada(Negocio.getNegocios().get(indice - 1), ds);
+                    System.out.println("El evento se ha creado satisfactoriamente");
+                    System.out.print("Ingrese cualquier tecla: "); ds = FuncionesInterfaz.entradaString();
+                    break;
+                case 3:
+                    System.out.println(nombreEmpleado + " realizará una reunión con " + nombreCliente);
+                    System.out.print("Ingrese una breve descripción de la reunión: ");
+                    ds = FuncionesInterfaz.entradaString();
+                    Reunion reunion = new Reunion(Negocio.getNegocios().get(indice - 1), ds);
+                    System.out.println("El evento se ha creado satisfactoriamente");
+                    System.out.print("Ingrese cualquier tecla: "); ds = FuncionesInterfaz.entradaString();
+                    break;
+    
+            }
+    
+            
+        } catch (Exception e) {
+            System.out.print("Ingrese una opcion nuevamente: ");
+            iEvento = FuncionesInterfaz.entradaInt();
         }
-
-        //System.out.println(Negocio.getNegocios().get(indice-1).agregarEvento(););
-        System.out.print("Ingrese cualquier caracater: ");
-        String esperador = FuncionesInterfaz.entradaString();
+       
+        // System.out.println(Negocio.getNegocios().get(indice-1).agregarEvento(););
+        // System.out.print("Ingrese cualquier caracater: ");
+        // String esperador = FuncionesInterfaz.entradaString();
     }
 
 }

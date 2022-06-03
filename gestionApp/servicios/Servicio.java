@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 
 public class Servicio implements Serializable {
+    
+
     private String nombre;
     private int precio;
     private String tipo;
@@ -45,8 +47,13 @@ public class Servicio implements Serializable {
     
     public void addServicio(Servicio servicio){this.Servicios.add(servicio);}
     
-    
-    
+
+    public  String toStringServicio(){
+        return "\tDatos del Servicio \nNombre del Servicio: "+ nombre +
+            "\nDescripcion del Servicio" + descripcion + 
+            "\nTipo de Servicio: " + tipo;
+
+    }
     
 
     

@@ -191,14 +191,8 @@ public class Registro implements Serializable {
 				}
 			}	
 	}
-	public static void eliminarNegocio(String id) {
-		
-		for(int i = 0; i < Negocio.getNegocios().size(); i++) {
-			if(Negocio.getNegocios().get(i).getId()== id) {
-				Negocio.getNegocios().remove(Negocio.getNegocios().get(i));
-				}
-			}	
-	}
+
+
 
 	
 	//////////////////////////////////////////////////////// INFO///////////////////////////////////////////////////////

@@ -173,7 +173,6 @@ public class Negocio implements Serializable {
 		 "\nServicios: " +  
 		 "\n/////////////////////////////////////////////\n";
 
-
 	}
 
 
