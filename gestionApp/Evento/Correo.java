@@ -16,6 +16,11 @@ public class Correo extends Evento implements Serializable {
         this.darRespuesta();
         negocio.definirEtapa();
     }
+    
+    public Correo(Negocio negocio){
+    	super(negocio,null,LocalDateTime.now());
+       
+    }
 
     private void darRespuesta(){
         

@@ -15,6 +15,13 @@ public class Llamada extends Evento implements Serializable {
         this.darRespuesta();
         negocio.definirEtapa();
     }
+    
+    public Llamada(Negocio negocio){
+    	super(negocio,null,LocalDateTime.now());
+    	
+    	
+       
+    }
 
     private void darRespuesta(){
         

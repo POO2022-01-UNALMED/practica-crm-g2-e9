@@ -16,6 +16,13 @@ public class Reunion extends Evento implements Serializable {
         this.darRespuesta();
         negocio.definirEtapa();
     }
+    public Reunion(Negocio negocio){
+    	super(negocio,null,LocalDateTime.now());
+    	
+    	
+       
+    }
+
 
     private void darRespuesta(){
 
