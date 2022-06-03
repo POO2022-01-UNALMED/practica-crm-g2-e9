@@ -4,12 +4,14 @@ import gestionApp.Empresa;
 import gestionApp.Negocio;
 import gestionApp.Evento.Evento;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Cliente extends Persona implements Serializable {
-	
 
+	@Serial
+	private static final long serialVersionUID = 1L;
 	private String id;
 	private String cargo;
 	private Boolean activo;

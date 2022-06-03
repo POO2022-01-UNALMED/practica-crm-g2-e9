@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Promocion implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private String id;
 	private double descuento;
 	private ArrayList<Servicio> Servicios = new ArrayList<Servicio>();

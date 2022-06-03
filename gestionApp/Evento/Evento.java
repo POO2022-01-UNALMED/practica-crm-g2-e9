@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 
 public class Evento implements Tiempo, Serializable {
+    private static final long serialVersionUID = 1L;
 
     protected String id;
     protected Negocio negocio;

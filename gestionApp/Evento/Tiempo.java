@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 import gestionApp.Negocio;
 
 public interface Tiempo {
+
     public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
     
 
