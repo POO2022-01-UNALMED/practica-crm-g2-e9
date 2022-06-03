@@ -54,4 +54,7 @@ public class Promocion implements Serializable {
 	public void setServicio(Servicio servicio) {
 		this.servicio = servicio;
 	}
+
+	public void eliminarServicio(){
+		Promocion.getAllPromocion().remove(this);}
 }

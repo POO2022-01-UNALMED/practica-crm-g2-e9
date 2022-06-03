@@ -39,7 +39,7 @@ public class uiPromocion {
                         uiPromocion.buscarPromocion();
                         break;
                     case 3:
-                        uiNegocio.negociosAbiertos();
+                        uiPromocion.eliminarPromocion();
                         break;
                     case 4:
                         uiNegocio.eliminarNegocio();
@@ -103,45 +103,23 @@ public class uiPromocion {
         System.out.print("Promoción: ");
         int indice = FuncionesInterfaz.entradaInt();
         System.out.println("----------------------------------------------");
-        System.out.println(Negocio.getNegocios().get(indice-1).toStringNegocio());
+        System.out.println(Servicio.getAllServicios().get(indice-1).toString());
         System.out.print("Ingrese cualquier caracater: ");
         String esperador = FuncionesInterfaz.entradaString();
-
     }
-
-    public static void negociosAbiertos(){
-        System.out.println("----------------------------------------------");
-        System.out.print("\tNEGOCIOS ABIERTOS:\n");
-        System.out.println("Seleccione el negocio abierto que desea consultar:");
-        System.out.println("Idice\t"+"ID   \t"+"Cliente");
-        for (int i = 0; i < Negocio.getNegocios().size(); i++){
-            if (!Negocio.getNegocios().get(i).getEtapa().equals("Cerrado")){
-                System.out.println(i+1 +".   "+"\t"+Negocio.getNegocios().get(i).getId()+"   \t"+Negocio.getNegocios().get(i).getCliente().getNombre());}
-        }
-        System.out.print("Negocio: ");
-        int indice = FuncionesInterfaz.entradaInt();
-        System.out.println("----------------------------------------------");
-        System.out.println(Negocio.getNegocios().get(indice-1).toStringNegocio());
-        System.out.print("Ingrese cualquier caracater: ");
-        String esperador = FuncionesInterfaz.entradaString();
-
-    }
-    public static void eliminarNegocio(){
+    public static void eliminarPromocion(){
         String ID;
         System.out.println("----------------------------------------------");
-        System.out.print("\tELIMINAR NEGOCIO:\n");
-        System.out.println("Seleccione el negocio que desea eliminar:");
-        System.out.println("Idice\t"+"ID   \t"+"Cliente");
-        for (int i = 0; i < Negocio.getNegocios().size(); i++){
-            if (!Negocio.getNegocios().get(i).getEtapa().equals("Cerrado")){
-                System.out.println(i+1 +".   "+"\t"+Negocio.getNegocios().get(i).getId()+"   \t"+Negocio.getNegocios().get(i).getCliente().getNombre());}
-        }
-        System.out.print("Negocio: ");
+        System.out.print("\tELIMINAR PROMOCIÓN:\n");
+        System.out.println("Seleccione la promoción que desea eliminar:");
+        System.out.println("Idice\t"+"ID   \t"+"Servicio");
+        for (int i = 0; i < Promocion.getAllPromocion().size(); i++){System.out.println(i+1 +".   "+"\t"+Promocion.getAllPromocion().get(i).getId()+"   \t"+Promocion.getAllPromocion().get(i).getServicio().getNombre());}
+        System.out.print("Promoción: ");
         int indice = FuncionesInterfaz.entradaInt();
-        ID = Negocio.getNegocios().get(indice-1).getId();
+        ID = Promocion.getAllPromocion().get(indice-1).getId();
         System.out.println("----------------------------------------------");
-        Negocio.getNegocios().get(indice-1).eliminarNegocio(ID);
-        System.out.print("El negocio identificado con ID "+ID+" se ha eliminado rey");
+        Promocion.getAllPromocion().get(indice-1).eliminarServicio();
+        System.out.println("La promoción identificada con ID "+ID+" se ha eliminado rey");
 
 
     }
