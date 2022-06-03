@@ -163,7 +163,26 @@ public class Registro {
 
 
 
-	public static void eliminarCliente(String id) {///////////////////////////Eliminar Cliente por ID
+	public static void eliminarCliente(String id) {
+		
+
+
+			for(int i = 0; i < Cliente.getAllClientes().size(); i++) {
+				if(Cliente.getAllClientes().get(i).getId()== id) {
+					
+					Cliente.getAllClientes().remove(Cliente.getAllClientes().get(i));
+					Empresa empresaAso=Cliente.getAllClientes().get(i).getEmpresa();
+					for(int j = 0; j < empresaAso.getClientes().size(); j++) {
+						if(empresaAso.getClientes().get(j).getId()== id) {
+							empresaAso.getClientes().remove(empresaAso.getClientes().get(j));
+						}
+						
+					}
+					
+				}
+			}
+					
+					
 	}
 
 
