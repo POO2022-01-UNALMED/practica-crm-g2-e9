@@ -142,6 +142,7 @@ public class Interfaz {
             Registro.registrarServicios(nombreServicio, valorProductoServicios, tipoServicio, descripcionServicio);
 
 
+            
         }
         public static  void buscarServicios() {
             System.out.print("\n BUSCAR SERVICIO\n");
