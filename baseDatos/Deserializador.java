@@ -16,7 +16,7 @@ public class Deserializador {
     public static <E> void deserializador(ArrayList<E> lista, String clase) {
         FileInputStream fileIn;
         try {
-            String path = System.getProperty("user.dir") + "/src/baseDatos/temp/" + clase + ".txt";
+            String path = System.getProperty("user.dir") + "//baseDatos//temp//" + clase + ".txt";
             System.out.println(path);
             File archivo = new File(path);
             archivo.createNewFile();
@@ -34,7 +34,6 @@ public class Deserializador {
             e.printStackTrace();
 
         } catch (IOException e) {
-            System.out.println("Esta vacio");
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

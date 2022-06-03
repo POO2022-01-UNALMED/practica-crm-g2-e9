@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import baseDatos.Deserializador;
 import baseDatos.Serializador;
 import gestionApp.Evento.Correo;
 import gestionApp.Evento.Llamada;
@@ -28,7 +29,7 @@ public class Interfaz {
 
     public static void main(String[] args) {
         //Creacion de objetos
-        Empleado empEncargado = new Empleado("Carlos Encargado", 1065468798, "300456479", "Encargado@gmail.com", "Supervisor", "10/9/1999");
+        /*Empleado empEncargado = new Empleado("Carlos Encargado", 1065468798, "300456479", "Encargado@gmail.com", "Supervisor", "10/9/1999");
         Empleado empleadoEjemplo1 = new Empleado("Eugenia", 102110321, "301546564", "Eugenia@gmail.com", "Razos", "15/3/2004");
 
         Empresa empresa01 = new Empresa("Empresa Defaut", 321, "descripcion");
@@ -38,7 +39,7 @@ public class Interfaz {
         Cliente cl1 = new Cliente("Ejemplo 1 ", empresa01, 10001, "1111" ,"Elemplo1@gmail.com" ,"tocho1" ,true);
         Cliente cl2 = new Cliente("Ejemplo 2", empresa02, 10002, "2222" ,"ejemplo2@gmail.com" ,"tocho2" ,true);
         Cliente cl3 = new Cliente("Ejemplo 3 Restrepo", empresa03, 10003, "2222" ,"ejemplo3@gmail.com" ,"tocho3" ,false);
-        
+
         Negocio negocioEje = new Negocio(empleadoEjemplo1, cl1, 1000000);
         Evento Neg = new Evento(negocioEje, "descripcion del negocio" , null);
 
@@ -46,8 +47,11 @@ public class Interfaz {
         Servicio s2 = new Servicio("Venta de anime", 100, "digital", "Descripcion generica");
         Servicio s3 = new Servicio("Hacking", 100, "digital", "Descripcion generica");
         Servicio s4 = new Servicio("Falsificación de documento", 100, "digital", "Descripcion generica");
-        //Serializador.serializacion();
+        Serializador.serializacion();
+*/
 
+        Deserializador.serializacion();
+        System.out.println(Servicio.getAllServicios().size());
 
 
         Scanner scan = new Scanner(System.in);

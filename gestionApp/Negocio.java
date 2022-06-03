@@ -16,6 +16,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Negocio implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	
 	public Empleado empleadoEncargado;

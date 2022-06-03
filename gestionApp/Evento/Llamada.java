@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 public class Llamada extends Evento implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private double duracionLlamada;
 

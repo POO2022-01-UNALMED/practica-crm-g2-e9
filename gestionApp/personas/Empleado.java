@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Empleado  extends Persona implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int cedula;
     private String id;
     private String cargo;
