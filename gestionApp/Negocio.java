@@ -90,7 +90,7 @@ public class Negocio implements Serializable {
 				
 		for(int j = 0; j < allNegocios.size(); j++) {
 			if (allNegocios.get(j).getId()==id) {
-					
+				allNegocios.remove(j);
 		
 				}
 			}
