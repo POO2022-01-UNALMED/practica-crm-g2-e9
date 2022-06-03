@@ -14,7 +14,7 @@ public class Empleado  extends Persona{
     private  double habilidadVenta;
 
     private  ArrayList<Servicio> servicios;
-    private  ArrayList<Negocio> negociosAbiertos;
+    private  ArrayList<Negocio> negociosEmpleado;
     private  ArrayList<Venta> ventas;
 
     private static ArrayList<Empleado> allEmpleados = new ArrayList<>();
@@ -25,7 +25,7 @@ public class Empleado  extends Persona{
         this.cargo = cargo;
         this.fechaInicioContrato = fechaInicioContrato;
         this.servicios = new ArrayList<>();
-        this.negociosAbiertos = new ArrayList<>();
+        this.negociosEmpleado = new ArrayList<>();
         this.ventas = new ArrayList<>();
         this.habilidadVenta = Math.random(); //numero random entre 0 y 0.4
         allEmpleados.add(this);
@@ -62,8 +62,8 @@ public class Empleado  extends Persona{
     public ArrayList<Servicio> getServicios(){return servicios;}
     public void setServicios(Servicio nuevoServicio){this.servicios.add(nuevoServicio);}
 
-    public ArrayList<Negocio> getNegociosAbiertos(){return negociosAbiertos;}
-    public void setNegociosAbiertos(Negocio nuevoNegocio){this.negociosAbiertos.add(nuevoNegocio);}
+    public ArrayList<Negocio> getNegociosEmpleado(){return negociosEmpleado;}
+    public void setNegociosEmpleado(Negocio nuevoNegocio){this.negociosEmpleado.add(nuevoNegocio);}
 
     public ArrayList<Venta> getVentas(){return ventas;}
     public void setVentas(Venta nuevaVenta){this.ventas.add(nuevaVenta);}
