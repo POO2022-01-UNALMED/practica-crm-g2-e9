@@ -26,7 +26,7 @@ public class Negocio {
 	private ArrayList<Evento> eventos;
 	private ArrayList<Servicio> servicios;
 	private static int idCounter = 0;
-	private static ArrayList<Negocio> negociosActivos = new ArrayList<>();
+	private static ArrayList<Negocio> allNegocios = new ArrayList<>();
 	public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
     
 
@@ -38,7 +38,10 @@ public class Negocio {
 		this.fechaCreacion = LocalDateTime.now();
 		this.servicios = new ArrayList<>();
 		this.eventos = new ArrayList<>();
-		Negocio.negociosActivos.add(this);
+
+		Negocio.allNegocios.add(this);
+		empleadoEncargado.setNegociosAbiertos(this);
+		
 		this.definirEtapa();
 		idCounter += 1;
 	}
@@ -72,9 +75,9 @@ public class Negocio {
 	public void agregarEvento (Evento nuevoEvento){this.eventos.add(nuevoEvento);}
 	public void eliminarEvento(int indice){this.eventos.remove(indice);}
 
-	public static ArrayList<Negocio> getNegociosActivos() {return Negocio.negociosActivos;}
-	public static void agregarNegocio(Negocio nuevoNegocio){Negocio.negociosActivos.add(nuevoNegocio);}
-	public static void eliminarNegocio(int indice){Negocio.negociosActivos.remove(indice);}
+	public static ArrayList<Negocio> getNegocios() {return Negocio.allNegocios;}
+	public static void agregarNegocio(Negocio nuevoNegocio){Negocio.allNegocios.add(nuevoNegocio);}
+	public static void eliminarNegocio(int indice){Negocio.allNegocios.remove(indice);}
 
 
 	// Etapa Negocio.
