@@ -56,6 +56,8 @@ public class Empleado  extends Persona implements Serializable {
 
     //---------------Metodos Propios---------------
 
+    public Empresa getEmpresa(){return empresa;}
+	public void setEmpresa(Empresa empresa){this.empresa = empresa;}
 
     public String getCargo(){return cargo;}
     public void setCargo(String cargo){this.cargo = cargo;}
@@ -73,19 +75,9 @@ public class Empleado  extends Persona implements Serializable {
     
     public static ArrayList<Empleado> getAllEmpleados(){return allEmpleados;}
 
-    public Empresa getEmpresa(){return empresa;}
-	public void setEmpresa(Empresa empresa){this.empresa = empresa;}
 
-    public String toStringEmpresa(){
-		return "\n////////////////////////////\n" +
-		"Empresa: " + getEmpresa().getNombre() +
-		"\nNit Empresa: " + getEmpresa().getNit() +
-		"\nDescripcion de la empresa a la que pertenece el Empleado: \n" + 
-		getEmpresa().getDescripcion() +
-		"\n////////////////////////////\n";  
-	}
+
 	@Override
-	
 	public  String toString(){
 		return "\tDatos del Empleado \nCliente: "+ nombre +
 		 "\nIdentificado con el CC." + cedula + 

@@ -254,14 +254,13 @@ public class Interfaz {
                 switch (opcion1) {
                     case 1:
                         System.out.print("\tLOS EMPLEADOS ACTUALES SON\n");
-                        Empleado.getAllEmpleados();
                         Registro.listaEmpleados();
 
                     case 2:
                         Registro.listaEmpleados();
                         System.out.print("Buscar Empleado por ID: ");
-                        int cedCliente = FuncionesInterfaz.entradaInt();
-                        System.out.print(Registro.buscarCliente(cedCliente));                     
+                        String idEmpleado = FuncionesInterfaz.entradaString();
+                        System.out.print(Registro.buscarEmpleado(idEmpleado));                     
                         break;
                     case 3:
                         System.out.print("Eliminar Empleado por ID: ");
@@ -295,7 +294,7 @@ public class Interfaz {
                         break;
                     case 5:
                         System.out.print("Infromacion asociada al Empleado por ID: ");
-                        String idEmpleado = FuncionesInterfaz.entradaString();
+                        idEmpleado = FuncionesInterfaz.entradaString();
                         Registro.infoEmpleado(idEmpleado);
                         System.out.print(empleadoEjemplo1.toString());
                         break;
