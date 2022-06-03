@@ -90,6 +90,13 @@ public class Registro implements Serializable {
 		}
 			return null;
 				}
+		public static Negocio buscarNegocios(String id)  {
+			for(int i = 0; i < Negocio.getNegocios().size(); i++){
+				if(Negocio.getNegocios().get(i).getId() == id)
+					return Negocio.getNegocios().get(i);
+					}
+			return null;
+				}
 		public static void buscarClientesEmpresa(int nit) {
 			Empresa empre =buscarEmpresas(nit);
 			if (empre != null) {
@@ -227,10 +234,7 @@ public class Registro implements Serializable {
 	}
 
 
-    public static void buscarNegocios(Cliente cliente) {
-		
-    	
-    }
+
 
 
     public static void negociosAbierto() {

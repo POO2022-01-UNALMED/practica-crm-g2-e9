@@ -329,13 +329,15 @@ public class Interfaz {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1:
-                        
-                        System.out.print("Ingresa valor de Venta: ");
+                        System.out.print("\tREGISTRAR NEGOCIO: \n");
+                        System.out.print("Ingresa el Valor de la venta del producto: ");
                         int valorVentaNegocio = FuncionesInterfaz.entradaInt();
                         Registro.registrarNegocio(empEncargado, cliente, valorVentaNegocio);
                         break;
                     case 2:
-                        Registro.buscarNegocios(cliente);
+
+                        String idNegocio = FuncionesInterfaz.entradaString();
+                        Registro.buscarNegocios(idNegocio);
                         break;
                     case 3:
                         Registro.negociosAbierto();
