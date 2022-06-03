@@ -207,8 +207,22 @@ public class Registro {
 	}
 
 
-	public static void eliminarEmpleado(String id) {
+
+
+	public static void eliminarEmpleado(String id) {///////////////////////////////////////////////////////////
 	}
+
+
+    public static void buscarNegocios(Cliente cliente) {
+    }
+
+
+    public static void negociosAbierto() {
+    }
+
+
+    public static void eliminarNegocio(Cliente cliente) {
+    }
 
 
 

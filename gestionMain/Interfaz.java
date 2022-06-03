@@ -304,7 +304,7 @@ public class Interfaz {
     }
 
 
-    public static  void negocios(Empleado empleadoEjemplo1,Cliente cliente) {
+    public static  void negocios(Empleado empEncargado,Cliente cliente) {
         Scanner scan = new Scanner(System.in);
         int opcion1;
 
@@ -315,8 +315,8 @@ public class Interfaz {
                         |\t MENÚ NEGOCIOS\s|
                         ---------------------
                         1. Hacer Negocio :\s
-                        2. :\s
-                        3. Consultar Negocios:\s
+                        2. Buscar Negocio:\s
+                        3. Consultar Negocios Abiertos:\s
                         4. Eliminar Negocio:\s
                         5. Volver\s
                         ingrese opción:\s""");
@@ -326,16 +326,16 @@ public class Interfaz {
                         
                         System.out.print("Ingresa valor de Venta: ");
                         int valorVentaNegocio = FuncionesInterfaz.entradaInt();
-                        Registro.registrarNegocio(empleadoEjemplo1, cliente, valorVentaNegocio);
+                        Registro.registrarNegocio(empEncargado, cliente, valorVentaNegocio);
                         break;
                     case 2:
-                        Cliente.clientesPotenciales();
+                        Registro.buscarNegocios(cliente);
                         break;
                     case 3:
-                        Cliente.consultarVentas();
+                        Registro.negociosAbierto();
                         break;
                     case 4:
-                        Cliente.serviciosClientes();
+                        Registro.eliminarNegocio(cliente);
                         break;
 
                 }
