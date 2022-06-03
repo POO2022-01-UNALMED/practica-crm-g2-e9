@@ -1,5 +1,6 @@
 package gestionApp.Evento;
 import gestionApp.Negocio;
+import gestionApp.personas.Cliente;
 
 import java.io.Serializable;
 import java.time.DayOfWeek;
@@ -36,6 +37,7 @@ public class Evento implements Tiempo, Serializable {
         }
         idCounter += 1;
         
+        
     }
 
     //---------------Metodos Setter y Getter---------------
@@ -54,6 +56,7 @@ public class Evento implements Tiempo, Serializable {
     public String getRespuesta() {return respuesta;}
 
     public static ArrayList<Evento> getAllEventos() {return allEventos;}
+    
 
     //Metodo para elegir si una respuesta cambia la etapa del negocio
 
@@ -67,16 +70,18 @@ public class Evento implements Tiempo, Serializable {
     ///AGENDA//
     
 
-    /*public static void agendarEvento(Llamada llamada) {
-    	
+    public static void agendarLlamadad(Negocio negocio) {
+    	Llamada llamada =new Llamada(negocio);
+    	allEventosPendientes.add(llamada);
+    }
+   public static void agendarCorreo(Negocio negocio) {
+	   Correo correo =new Correo(negocio);
+   	allEventosPendientes.add(correo);
     	
     }
-   public static void agendarEvento(Correo correo) {
-    	
-    	
-    }
-   public static void agendarEvento(Reunion reunion) {
-   	
+   public static void agendarEvento(Negocio negocio) {
+	   Reunion correo =new Reunion(negocio);
+	   allEventosPendientes.add(correo);
    	
    }
     
@@ -86,18 +91,21 @@ public class Evento implements Tiempo, Serializable {
     	for(int i = 0; i < allEventos.size(); i++) {
     		
     		DayOfWeek  dia=LocalDateTime.parse((CharSequence) allEventos.get(i)).getDayOfWeek();
-    		System.out.println("dia");
-    		allEventos.get(i).toString();
-    		
-    		
+    		System.out.println(dia);
+    		System.out.println(allEventos.get(i).getDescripcion());
     		
     		
     	}
+    	System.out.println("No hay eventos");
+    	
+    	
     	
     	
         
     }
-    */
+    
+    
+    
     
 
 
