@@ -34,3 +34,6 @@ MARCAR CON ✔ o ✘
 
 propuestas:
     -Agregar atributo carisma a la clase empleado, un dato de tipo int aleatorio que dinamiza al momento de mandar a un empleado.
+
+Debido a que nos hace falta crear una clase que herede de una clase que hereda de otra se elije clases hijas de evento
+para crear mas clases hijas.

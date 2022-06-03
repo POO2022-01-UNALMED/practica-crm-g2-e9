@@ -8,12 +8,13 @@ import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
 import gestionApp.servicios.Servicio;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import java.util.ArrayList;
 
-public class Negocio {
+public class Negocio implements Serializable {
 	
 	
 	public Empleado empleadoEncargado;

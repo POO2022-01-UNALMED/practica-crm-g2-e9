@@ -1,10 +1,12 @@
 package gestionApp.Evento;
 import gestionApp.Negocio;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 
-
-public class Evento implements Tiempo{
+public class Evento implements Tiempo, Serializable {
 
     protected String id;
     protected Negocio negocio;
@@ -12,6 +14,8 @@ public class Evento implements Tiempo{
     protected LocalDateTime fecha;
     protected String respuesta;
     private static int idCounter = 0;
+    private static ArrayList<Evento> allEventos = new ArrayList<>();
+
 
       
     public Evento(Negocio negocio, String descripcion, LocalDateTime fecha){       
@@ -24,6 +28,8 @@ public class Evento implements Tiempo{
         }
         else{
             this.negocio.agregarEvento(this);
+            Evento.allEventos.add(this);
+
         }
         idCounter += 1;
         
@@ -44,6 +50,8 @@ public class Evento implements Tiempo{
     public void setFecha(LocalDateTime fecha) {this.fecha = fecha;}
 
     public String getRespuesta() {return respuesta;}
+
+    public static ArrayList<Evento> getAllEventos() {return allEventos;}
 
     //Metodo para elegir si una respuesta cambia la etapa del negocio
 

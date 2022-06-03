@@ -5,7 +5,10 @@ import gestionApp.personas.Empleado;
 import gestionApp.servicios.Promocion;
 import gestionApp.servicios.Servicio;
 
-public class Venta {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Venta implements Serializable {
     private String id;
     private Negocio negocio;
     private Servicio servicios;
@@ -16,6 +19,7 @@ public class Venta {
     final private int IVA = 19; 
 
     private static int idCounter = 0;
+    public static ArrayList<Venta> allVentas = new ArrayList<>();
 
     Venta(Negocio negocio, Servicio servicio, int valorVenta, Empleado empleado, Cliente cliente, Promocion promocion,int IVA ){
         this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
@@ -49,6 +53,8 @@ public class Venta {
     public void setPromocion(Promocion promocion) {this.promocion = promocion;}
 
     public int getIVA() {return IVA;}
+
+    public static ArrayList<Venta> getAllVenta(){return allVentas;}
 
 
     

@@ -1,9 +1,11 @@
 package gestionApp.Evento;
 import gestionApp.Negocio;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 
-public class Correo extends Evento{
+public class Correo extends Evento implements Serializable {
     
     private double cantidadPalabras;
 

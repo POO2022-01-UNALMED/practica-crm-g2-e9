@@ -1,6 +1,8 @@
 package gestionMain;
 
 import java.util.Scanner;
+
+import baseDatos.Serializador;
 import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
 import gestionApp.servicios.Registro;
@@ -21,6 +23,8 @@ public class Interfaz {
         Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,"1001" ,true);
         Negocio necocio01 = new Negocio(empleadoEjemplo1, cl, 1000000);
         Evento evento01 = new Evento(necocio01, "descripcion del negocio" , null);
+
+        Serializador.serializacion();
     
 
 

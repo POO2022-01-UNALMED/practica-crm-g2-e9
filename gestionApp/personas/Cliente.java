@@ -4,9 +4,10 @@ import gestionApp.Empresa;
 import gestionApp.Negocio;
 import gestionApp.Evento.Evento;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cliente extends Persona{
+public class Cliente extends Persona implements Serializable {
 	
 
 	private String id;
@@ -135,6 +136,8 @@ public class Cliente extends Persona{
 		 "\nCargo: " + cargo +
 		 "\nActivo en la app: " + activo +
 		 "\n/////////////////////////////////////////////\n";
+
+
 	}
 
 	
