@@ -13,21 +13,17 @@ public abstract class Persona {
         this.correo = correo;
     }
 
-    public Persona() {
+    protected abstract String getNombre();
+    protected abstract void setNombre(String nombre);
 
-    }
+    protected abstract int getCedula();
+    protected abstract void setCedula(int cedula);
 
-    public abstract String getNombre();
-    public abstract void setNombre(String nombre);
+    protected abstract String getCel();
+    protected abstract void setCel(String cel);
 
-    public abstract int getCedula();
-    public abstract void setCedula(int cedula);
-
-    public abstract String getCel();
-    public abstract void setCel(String cel);
-
-    public abstract String getCorreo();
-    public abstract void setCorreo(String correo);
+    protected abstract String getCorreo();
+    protected abstract void setCorreo(String correo);
 
 }
 

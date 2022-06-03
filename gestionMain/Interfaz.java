@@ -454,9 +454,6 @@ public class Interfaz {
                         System.out.print("\nIngrese el Nombre del Servicio para la Promocion: ");
                         nombreServicio = FuncionesInterfaz.entradaString();;
 
-                        
-
-
                         Registro.registrarPromocion(descuento,nombreServicio );
 
 
