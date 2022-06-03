@@ -2,11 +2,14 @@ package gestionMain.uiMain;
 
 import java.util.Scanner;
 
+import gestionApp.Negocio;
+import gestionApp.personas.Cliente;
+import gestionApp.personas.Empleado;
 import gestionApp.servicios.Registro;
 import gestionMain.FuncionesInterfaz;
 
 public class uiRegistro {
-    public static  void registros() {
+    public static  void registros(Empleado empleadoEjemplo1,Cliente cl,Negocio negocioEje) {
         Scanner scan = new Scanner(System.in);
         int opcion1;
 
@@ -19,7 +22,7 @@ public class uiRegistro {
                         1. Registrar Empresa\s
                         2. Registrar Cliente\s
                         3. Registrar Empleado\s
-                        3. Registrar \s
+                        3. Registrar Negocio\s
                         4. Registrar :\s
                         5. Registrar :\s
                         6. Volver\s
@@ -91,9 +94,25 @@ public class uiRegistro {
                     
                         
                     case 4:
+
+                        System.out.print("\tREGISTRO NEGOCIO\s");
+                        uiNegocio.registrarNegocio(empleadoEjemplo1, cl, negocioEje);
+
+                        break;
+                    case 5:
+                        System.out.print("\tREGISTRO PROMOCION\s");
+
+                        System.out.print("\nIngrese el descuento en valor decimal: ");
+                        Double descuento = FuncionesInterfaz.entradaDouble();
+
+                        System.out.print("\nIngrese el Nombre del Servicio para la Promocion: ");
+                        String nombreServicio = FuncionesInterfaz.entradaString();;
+
+                        Registro.registrarPromocion(descuento,nombreServicio );
+                    case 6:
                         System.out.print("\tREGISTRO SERVICIOS\s");
                         System.out.print("\nIngrese el Nombre del Servicio: ");
-                        String nombreServicio = FuncionesInterfaz.entradaString();;
+                        nombreServicio = FuncionesInterfaz.entradaString();;
 
                         System.out.print("\nIngrese Valor del producto del servicio: ");
                         int valorProductoServicios = FuncionesInterfaz.entradaInt();
@@ -106,16 +125,7 @@ public class uiRegistro {
 
                         Registro.registrarServicios(nombreServicio, valorProductoServicios, tipoServicio, descripcionServicio);
                         break;
-                    case 5:
-                        System.out.print("\tREGISTRO PROMOCION\s");
 
-                        System.out.print("\nIngrese el descuento en valor decimal: ");
-                        Double descuento = FuncionesInterfaz.entradaDouble();
-
-                        System.out.print("\nIngrese el Nombre del Servicio para la Promocion: ");
-                        nombreServicio = FuncionesInterfaz.entradaString();;
-
-                        Registro.registrarPromocion(descuento,nombreServicio );
 
 
                 }
