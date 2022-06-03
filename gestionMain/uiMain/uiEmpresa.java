@@ -35,7 +35,7 @@ public class uiEmpresa {
                         break;
                     case 2:
                         Registro.listaEmpresas();
-                        System.out.print("\n ");
+                        System.out.print("\nIngrese el nit del la empresa que desea buscar:  ");
                         int nitEmpresa = FuncionesInterfaz.entradaInt();
                         Registro.infoEmpresa(nitEmpresa);
 

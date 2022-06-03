@@ -70,7 +70,6 @@ public class Registro implements Serializable {
 		public static Cliente buscarCliente(int cedula){
 			for(int i = 0; i < Cliente.getAllClientes().size(); i++){
 				if(Cliente.getAllClientes().get(i).getCedula() == cedula)
-					System.out.println(Cliente.getAllClientes().get(i).getEmpresa().getNombre());
 					return Cliente.getAllClientes().get(i);
 		}
 			return null;
