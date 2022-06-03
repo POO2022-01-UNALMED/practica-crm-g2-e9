@@ -1,6 +1,7 @@
 package gestionApp.servicios;
 
 import gestionApp.Empresa;
+import gestionApp.Negocio;
 import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
 import gestionApp.servicios.Servicio;
@@ -51,7 +52,12 @@ public class Registro {
     public static Servicio registrarServicios(String nombreServicios, int valorProducto, String tipo, String descripcion){
     	Servicio servicio = new Servicio(nombreServicios,valorProducto, tipo, descripcion);   	
     	return servicio;
- }
+ }	
+	public static Negocio registrarNegocio(Empleado empleadoEncargado, Cliente cliente, int valorVenta){
+		Negocio negocio = new Negocio(empleadoEncargado, cliente, valorVenta);   	
+		return negocio;
+	}
+ 	
  		////////////////////////////////////////////////////////////////REGISTRO///////////////////////////////////////////////
 
 
