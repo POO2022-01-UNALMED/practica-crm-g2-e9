@@ -17,7 +17,6 @@ public class Evento implements Tiempo, Serializable {
     private static ArrayList<Evento> allEventos = new ArrayList<>();
 
 
-      
     public Evento(Negocio negocio, String descripcion, LocalDateTime fecha){   
             
         this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
@@ -34,7 +33,6 @@ public class Evento implements Tiempo, Serializable {
         idCounter += 1;
         
     }
-
 
     //---------------Metodos Setter y Getter---------------
 
@@ -55,17 +53,9 @@ public class Evento implements Tiempo, Serializable {
 
     //Metodo para elegir si una respuesta cambia la etapa del negocio
 
-
-
-
-    public static void anadirEvento(){
-        
-    }
     public static void cursoEvento(){
         
     }
-    public static void modificarEvento(){
-        
-    }
+
 
 }
