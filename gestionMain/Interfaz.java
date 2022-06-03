@@ -93,7 +93,6 @@ public class Interfaz {
                 switch (opcion1) {
                     case 1:
                         Registro.listaEmpresas();
-                        //System.out.print(Registro.listaEmpresas());
                         System.out.print("\n ");
                         
 
@@ -176,9 +175,11 @@ public class Interfaz {
                         Registro.listaClientes();
 
                     case 2:
+                        Registro.listaClientes();
                         System.out.print("Buscar Cliente por Cedula: ");
                         int cedula= FuncionesInterfaz.entradaInt();
-                        Registro.buscarCliente(cedula);                        
+                        System.out.print(Registro.buscarCliente(cedula));
+                   
                         break;
                     case 3:
                         System.out.print("Eliminar Cliente por Cedula: ");
@@ -252,13 +253,14 @@ public class Interfaz {
                 
                 switch (opcion1) {
                     case 1:
-                        System.out.print("\tLOS EMPLEADOS ACTUALES SON\s");
-                        Registro.listaClientes();
+                        System.out.print("\tLOS EMPLEADOS ACTUALES SON\n");
+                        Registro.listaEmpleados();
 
                     case 2:
+                        Registro.listaEmpleados();
                         System.out.print("Buscar Empleado por ID: ");
                         int cedCliente = FuncionesInterfaz.entradaInt();
-                        Registro.buscarCliente(cedCliente);                        
+                        System.out.print(Registro.buscarCliente(cedCliente));                     
                         break;
                     case 3:
                         System.out.print("Eliminar Empleado por ID: ");
