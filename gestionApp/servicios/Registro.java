@@ -210,10 +210,25 @@ public class Registro {
 
 
 	public static void eliminarEmpleado(String id) {///////////////////////////////////////////////////////////
+		
+		for(int i = 0; i < Empleado.getAllEmpleados().size(); i++) {
+			if(Empleado.getAllEmpleados().get(i).getId()== id) {
+				
+				Empleado.getAllEmpleados().remove(Empleado.getAllEmpleados().get(i));
+				
+			
+				}
+				
+			}
+		
+		
+		
 	}
 
 
     public static void buscarNegocios(Cliente cliente) {
+    		
+    	
     }
 
 
