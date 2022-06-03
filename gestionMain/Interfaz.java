@@ -16,7 +16,6 @@ import gestionApp.Evento.Evento;
 
 public class  Interfaz {
 
-
     public static void main(String[] args) {
         //Creacion de objetos
         Empleado empEncargado = new Empleado("Carlos Encargado", 1065468798, "300456479", "Encargado@gmail.com", "Supervisor", "10/9/1999");
@@ -81,10 +80,6 @@ public class  Interfaz {
 
 
     }
-
-
-
-
 
     public static  void servicios() {
         Scanner scan = new Scanner(System.in);
