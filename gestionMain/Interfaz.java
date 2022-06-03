@@ -15,7 +15,8 @@ public class Interfaz {
  
     public static void main(String[] args) {
         //Creacion de objetos
-        Empleado empleadoEjemplo1 = new Empleado("Carlos Encargado", 102110321, "301546564", "Encargado@gmail.com", "Supervisor", "10/9/1999");
+        Empleado empEncargado = new Empleado("Carlos Encargado", 1065468798, "300456479", "Encargado@gmail.com", "Supervisor", "10/9/1999");
+        Empleado empleadoEjemplo1 = new Empleado("Eugenia", 102110321, "301546564", "Eugenia@gmail.com", "Razos", "15/3/2004");
         Empresa empresa01 = new Empresa("Empresa Defaut", 321, "descripcion");
         Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,"1001" ,true);
         Negocio necocio01 = new Negocio(empleadoEjemplo1, cl, 1000000);
@@ -50,7 +51,7 @@ public class Interfaz {
                     case 2: clientes(cl,empresa01);break; //activa menú cliente
                     case 3: empleado(empleadoEjemplo1,empresa01); break;//activa menú empleado
                     case 4: registros(); break; //activa menú negocios
-                    case 5: negocios(); break; //activa menú registros
+                    case 5: negocios(empEncargado,cl); break; //activa menú registros
                     case 6: servicios(); break; //activa menú servicios
                     case 7: break; //Salir
 
@@ -303,7 +304,7 @@ public class Interfaz {
     }
 
 
-    public static  void negocios() {
+    public static  void negocios(Empleado empleadoEjemplo1,Cliente cliente) {
         Scanner scan = new Scanner(System.in);
         int opcion1;
 
@@ -313,8 +314,8 @@ public class Interfaz {
                         ---------------------
                         |\t MENÚ NEGOCIOS\s|
                         ---------------------
-                        1. Avanzar Negociación:\s
-                        2. Hacer Negocio:\s
+                        1. Hacer Negocio :\s
+                        2. :\s
                         3. Consultar Negocios:\s
                         4. Eliminar Negocio:\s
                         5. Volver\s
@@ -322,7 +323,10 @@ public class Interfaz {
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
                     case 1:
-                        Cliente.consultarClientes();
+                        
+                        System.out.print("Ingresa valor de Venta: ");
+                        int valorVentaNegocio = FuncionesInterfaz.entradaInt();
+                        Registro.registrarNegocio(empleadoEjemplo1, cliente, valorVentaNegocio);
                         break;
                     case 2:
                         Cliente.clientesPotenciales();
@@ -348,7 +352,6 @@ public class Interfaz {
         Scanner scan = new Scanner(System.in);
         int opcion1;
 
-        Empresa empresa01 = new Empresa("Empresa Defaut", 789456123, "descripcion");
         do {
             try {
                 System.out.print("""
