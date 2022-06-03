@@ -171,14 +171,17 @@ public class Registro {
 		Cliente cliente = buscarCliente(id);
 		System.out.println(cliente.toString());}
 	
+
+
 	public static void infoEmpleado(String id) {
 		Empleado empleado = buscarEmpleado(id);
 		System.out.println(empleado.toString());
 	}
-	
-		
-		
-	
+
+
+
+
+
 
     
 }

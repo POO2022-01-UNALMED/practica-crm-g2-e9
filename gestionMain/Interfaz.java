@@ -171,7 +171,7 @@ public class Interfaz {
 
 
 
-    public static  void clientes(Cliente cl,Empresa empresa01) {
+    private static  void clientes(Cliente cl,Empresa empresa01) {
         Scanner scan = new Scanner(System.in);
         int opcion1;
         String id;
@@ -238,7 +238,6 @@ public class Interfaz {
                         String idCliente = FuncionesInterfaz.entradaString();
                         Registro.infoCliente(idCliente);
                         System.out.print(cl.toString());
-
                         break;
                     case 6:
                         break;
@@ -449,9 +448,6 @@ public class Interfaz {
 
                         System.out.print("\nIngrese Correo del Empleado: ");
                         String correoEmpleado = FuncionesInterfaz.entradaString();
-
-                        System.out.print("\nIngrese Edad del Empleado: ");
-                        int edadEmpleado = FuncionesInterfaz.entradaInt();
 
                         System.out.print("\nIngrese cargo del Empleado: ");
                         String cargoEmpreado = FuncionesInterfaz.entradaString();

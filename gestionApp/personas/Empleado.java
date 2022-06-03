@@ -29,6 +29,7 @@ public class Empleado  extends Persona{
         this.negociosEmpleado = new ArrayList<>();
         this.ventas = new ArrayList<>();
         this.habilidadVenta = Math.random(); //numero random entre 0 y 0.4
+        idCounter += 1;
         allEmpleados.add(this);
         idCounter += 1;
     }
@@ -36,9 +37,6 @@ public class Empleado  extends Persona{
     //---------------Metodos Heredados---------------
 
 	public String getId(){return this.id;}
-
-	public Empresa getEmpresa(){return empresa;}
-	public void setEmpresa(Empresa empresa){this.empresa = empresa;}
 
     public String getNombre(){return nombre;}
     public void setNombre(String nombre){this.nombre = nombre;}
@@ -59,7 +57,6 @@ public class Empleado  extends Persona{
     //---------------Metodos Propios---------------
 
 
-
     public String getCargo(){return cargo;}
     public void setCargo(String cargo){this.cargo = cargo;}
 
@@ -75,4 +72,30 @@ public class Empleado  extends Persona{
     public void setVentas(Venta nuevaVenta){this.ventas.add(nuevaVenta);}
     
     public static ArrayList<Empleado> getAllEmpleados(){return allEmpleados;}
+
+    public Empresa getEmpresa(){return empresa;}
+	public void setEmpresa(Empresa empresa){this.empresa = empresa;}
+
+    public String toStringEmpresa(){
+		return "\n////////////////////////////\n" +
+		"Empresa: " + getEmpresa().getNombre() +
+		"\nNit Empresa: " + getEmpresa().getNit() +
+		"\nDescripcion de la empresa a la que pertenece el Empleado: \n" + 
+		getEmpresa().getDescripcion() +
+		"\n////////////////////////////\n";  
+	}
+	@Override
+	
+	public  String toString(){
+		return "\tDatos del Empleado \nCliente: "+ nombre +
+		 "\nIdentificado con el CC." + cedula + 
+		 "\nCelular: " + cel +
+		 "\nCorreo: " + correo +
+		 "\nID: " + id +
+		 "\nCargo: " + cargo +
+		 "\nNegocios del Empleado" +negociosEmpleado +
+		 "\n/////////////////////////////////////////////\n";
+		 
+		
+	}
 }
