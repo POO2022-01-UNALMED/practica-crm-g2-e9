@@ -118,12 +118,18 @@ public class Registro implements Serializable {
 			System.out.println(empresas.get(i).toStringEmpresas());
 			
     		}
+			if(empresas.size()==0){
+				System.out.println("No hay EMPRESAS para mostrar");
+			}
     	}
 		public static void listaClientes() {
 			ArrayList<Cliente> clientes = Cliente.getAllClientes();
 			for(int i = 0; i < clientes.size(); i++){
 		
 				System.out.println(clientes.get(i).toStringClientes());
+			}
+			if(clientes.size()==0){
+				System.out.println("No hay CLIENTES para mostrar");
 			}
 				
 		}
@@ -133,12 +139,18 @@ public class Registro implements Serializable {
 		
 				System.out.println(empleados.get(i).toStringEmpleado());
 			}
+			if(empleados.size()==0){
+				System.out.println("No hay EMPLEADOS para mostrar");
+			}
 				
 		}
 		public static void listaServicios() {
 			ArrayList<Servicio> servicios = Servicio.getAllServicios();
 			for(int i = 0; i < servicios.size(); i++){
 				System.out.println(servicios.get(i).toStringListasServicios());
+			}
+			if(servicios.size()==0){
+				System.out.println("No hay SERVICIOS para mostrar");
 			}
 				
 		}
@@ -150,6 +162,9 @@ public class Registro implements Serializable {
 	    	for(int i = 0; i < emp.getNegociosAbiertos().size(); i++) {
 	    		System.out.println(emp.getNegociosAbiertos().get(i).toString());
 	    		}
+			if(emp.getNegociosAbiertos().size()==0){
+					System.out.println("No hay NEGOCIOS para esa empresa");
+				}
 	    }
 		
 	  

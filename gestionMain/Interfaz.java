@@ -48,6 +48,10 @@ public class Interfaz {
         Servicio s3 = new Servicio("Hacking", 100, "digital", "Descripcion generica");
         Servicio s4 = new Servicio("Falsificación de documento", 100, "digital", "Descripcion generica");
         Serializador.serializacion();
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
         System.out.println(Servicio.getAllServicios().size());
 
@@ -123,7 +127,7 @@ public class Interfaz {
                 System.out.print("Ingrese una opcion nuevamente: ");
                 opcion1 = scan.nextInt();
             }
-        } while (opcion1 != 4);
+        } while (opcion1 != 5);
     }
   
         public static  void registarServicios() {
