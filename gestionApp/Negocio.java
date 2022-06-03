@@ -141,9 +141,9 @@ public class Negocio implements Serializable {
 					if (calculoMetrica > 0.6){
 						this.etapa  = "Cerrado";
 						this.fechaFinalizacion = LocalDateTime.now();
-						/*esto ultimo es para cuando la etapa del negocio esté "cerrado" se elimine
+						/*esto ultimo es para cuando la etapa del negocio estï¿½ "cerrado" se elimine
 						 * los negocios de las listas , de la de negocio de empresa y la de allNegocios
-						 * está sin probar
+						 * estï¿½ sin probar
 						 */
 						this.eliminarNegocio(this.id);
 						
