@@ -41,7 +41,7 @@ public class uiEmpresa {
 
                         break;
                     case 3:
-                    
+                        Registro.listaEmpresas();
                         System.out.print("Ingrese el NIT de la Empresa que desea eliminar: ");
                         nit = FuncionesInterfaz.entradaInt();
                         Registro.eliminarEmpresa(nit);
@@ -83,5 +83,7 @@ public class uiEmpresa {
         String descripcionEmpresa = FuncionesInterfaz.entradaString();
 
         Registro.registrarEmpresa(nombreEmpresa, nitEmpresa, descripcionEmpresa);
-}
+    }
+
+
 }

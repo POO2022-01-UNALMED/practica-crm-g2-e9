@@ -43,6 +43,7 @@ public class uiCliente {
                    
                         break;
                     case 3:
+                        Registro.listaClientes();
                         System.out.print("Eliminar Cliente por Cedula: ");
                         cedula = FuncionesInterfaz.entradaInt();
                         Registro.eliminarCliente(cedula);      

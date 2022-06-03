@@ -123,10 +123,7 @@ public class Registro implements Serializable {
 			ArrayList<Cliente> clientes = Cliente.getAllClientes();
 			for(int i = 0; i < clientes.size(); i++){
 		
-				System.out.println("\nNombre Cliente: "+clientes.get(i).getNombre()+
-				"\nCedula del Cliente: " + clientes.get(i).getCedula()+
-				"\nActividad del Cliente: " + clientes.get(i).isActivo()+
-				"\n Empresa a la que pertenece: " + clientes.get(i).toStringEmpresa());
+				System.out.println(clientes.get(i).toStringClientes());
 			}
 				
 		}
@@ -134,9 +131,7 @@ public class Registro implements Serializable {
 			ArrayList<Empleado> empleados = Empleado.getAllEmpleados();
 			for(int i = 0; i < empleados.size(); i++){
 		
-				System.out.println("\nNombre Empleados: "+empleados.get(i).getNombre()+
-				"\nID del Empleados: " + empleados.get(i).getId()+
-				"\nNegocios asociados al Empleado: "+ empleados.get(i).getNegociosEmpleado());
+				System.out.println(empleados.get(i).toStringEmpleado());
 			}
 				
 		}
@@ -161,40 +156,54 @@ public class Registro implements Serializable {
 	
     ///////////////////////////////////////////////////////////////ELIMINAR//////////////////////////////////////////////////
     public static void eliminarEmpresa(int nit) { 
-    	Empresa empleado = buscarEmpresas(nit);
-    	int posicion = Empresa.getAllEmpresas().indexOf(empleado);
-    	if (!Empresa.getAllEmpresas().isEmpty())
+    	Empresa empresa = buscarEmpresas(nit);
+    	int posicion = Empresa.getAllEmpresas().indexOf(empresa);
+		String empresaEliminada = empresa.toString();
+    	if (!Empresa.getAllEmpresas().isEmpty()){
         	Empresa.getAllEmpresas().remove(posicion);
+			System.out.println("La siguente Empresa se ha eliminado" + empresaEliminada);
+			}
+
     	else
-    		System.out.println("No existe esa empresa");
+    		System.out.println("No existe esa Empresa");
 
     }
 
-	public static void eliminarCliente(int cedula) {	
+	public static void eliminarCliente(int cedula) {
+			Cliente cliente = buscarCliente(cedula);
+			String clienteEliminado  = cliente.toString();
 			for(int i = 0; i < Cliente.getAllClientes().size(); i++) {
 				if(Cliente.getAllClientes().get(i).getCedula()== cedula) {
-					
 					Cliente.getAllClientes().remove(Cliente.getAllClientes().get(i));
 					Empresa empresaAso=Cliente.getAllClientes().get(i).getEmpresa();
+					System.out.println("El siguente Cliente se ha eliminado" + clienteEliminado);
+					String clienteAsoEliminado = empresaAso.toString();
 					for(int j = 0; j < empresaAso.getClientes().size(); j++) {
 						if(empresaAso.getClientes().get(j).getCedula()== cedula) {
 							empresaAso.getClientes().remove(empresaAso.getClientes().get(j));
-						}
+							System.out.println("\nEl se ha Eliminado de la siguiente empresa " + clienteAsoEliminado);
+						}else
+							System.out.println("No existe este Cliente");
+
 					}	
-				}
+					
+				}else
+					System.out.println("No existe este Cliente");	
 			}			
 	}
 	public static void eliminarEmpleado(String id) {
+		Empleado empleado = buscarEmpleado(id);
+		String empleadoEliminado = empleado.toString();
 		
 		for(int i = 0; i < Empleado.getAllEmpleados().size(); i++) {
 			if(Empleado.getAllEmpleados().get(i).getId()== id) {
 				Empleado.getAllEmpleados().remove(Empleado.getAllEmpleados().get(i));
-				}
+				System.out.println("La siguente Empleado se ha eliminado" + empleadoEliminado);
+
+			}else
+				System.out.println("No existe este Empleado");
 			}	
 	}
-
-
-
 	
 	//////////////////////////////////////////////////////// INFO///////////////////////////////////////////////////////
 	public static void infoEmpresa(int nit) {

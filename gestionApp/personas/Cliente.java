@@ -125,6 +125,15 @@ public class Cliente extends Persona implements Serializable {
 		getEmpresa().getDescripcion() +
 		"\n////////////////////////////\n";  
 	}
+	public  String toStringClientes(){
+		return "\tDatos del Cliente \nCliente: "+ nombre +
+		 "\nIdentificado con el CC." + cedula + 
+		 "\nID: " + id +
+		 "\nActivo en la app: " + activo +
+		 "\n/////////////////////////////////////////////\n";
+	}
+
+
 	@Override
 	
 	public  String toString(){
@@ -136,8 +145,6 @@ public class Cliente extends Persona implements Serializable {
 		 "\nCargo: " + cargo +
 		 "\nActivo en la app: " + activo +
 		 "\n/////////////////////////////////////////////\n";
-
-
 	}
 
 	

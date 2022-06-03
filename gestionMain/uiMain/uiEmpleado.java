@@ -40,6 +40,7 @@ public class uiEmpleado {
                         System.out.print(Registro.buscarEmpleado(idEmpleado));                     
                         break;
                     case 3:
+                        Registro.listaEmpleados();
                         System.out.print("Eliminar Empleado por ID: ");
                         id = FuncionesInterfaz.entradaString();
                         Registro.eliminarEmpleado(id);      

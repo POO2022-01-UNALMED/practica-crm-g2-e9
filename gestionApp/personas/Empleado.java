@@ -75,7 +75,11 @@ public class Empleado  extends Persona implements Serializable {
     
     public static ArrayList<Empleado> getAllEmpleados(){return allEmpleados;}
 
-
+    public  String toStringEmpleado(){
+		return "\tDatos del Empleado \nNombre del Empleado: "+ nombre +
+		 "\nID: " + id +
+         "\nCargo de empleado: " + cargo +
+		 "\n/////////////////////////////////////////////\n";}
 
 	@Override
 	public  String toString(){
