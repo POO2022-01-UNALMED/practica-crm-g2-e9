@@ -182,8 +182,8 @@ public class Interfaz {
                         break;
                     case 3:
                         System.out.print("Eliminar Cliente por Cedula: ");
-                        int ced = FuncionesInterfaz.entradaInt();
-                        Registro.eliminarCliente(ced);      
+                        cedula = FuncionesInterfaz.entradaInt();
+                        Registro.eliminarCliente(cedula);      
                         
                         break;
                     case 4:
