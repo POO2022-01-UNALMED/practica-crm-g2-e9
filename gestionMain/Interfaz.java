@@ -21,8 +21,8 @@ public class Interfaz {
         Empleado empleadoEjemplo1 = new Empleado("Eugenia", 102110321, "301546564", "Eugenia@gmail.com", "Razos", "15/3/2004");
         Empresa empresa01 = new Empresa("Empresa Defaut", 321, "descripcion");
         Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,"1001" ,true);
-        Negocio necocio01 = new Negocio(empleadoEjemplo1, cl, 1000000);
-        Evento evento01 = new Evento(necocio01, "descripcion del negocio" , null);
+        Negocio negocioEje = new Negocio(empleadoEjemplo1, cl, 1000000);
+        Evento Neg = new Evento(negocioEje, "descripcion del negocio" , null);
 
         //Serializador.serializacion();
     
@@ -55,7 +55,7 @@ public class Interfaz {
                     case 2: clientes(cl,empresa01);break; //activa menú cliente
                     case 3: empleado(empleadoEjemplo1,empresa01); break;//activa menú empleado
                     case 4: registros(); break; //activa menú negocios
-                    case 5: negocios(empEncargado,cl); break; //activa menú registros
+                    case 5: negocios(empleadoEjemplo1, cl, negocioEje); break; //activa menú registros
                     case 6: servicios(); break; //activa menú servicios
                     case 7: break; //Salir
 
@@ -310,7 +310,7 @@ public class Interfaz {
     }
 
 
-    public static  void negocios(Empleado empEncargado,Cliente cliente) {
+    public static  void negocios(Empleado empEncargado,Cliente cliente,Negocio negocioEje ) {
         Scanner scan = new Scanner(System.in);
         int opcion1;
 
@@ -325,6 +325,8 @@ public class Interfaz {
                         3. Negocio Abierto:\s
                         4. Eliminar Negocio:\s
                         5. Etapa de negocio\s
+                        6.
+                        7. Atras.\s
                         ingrese opción:\s""");
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
@@ -340,13 +342,22 @@ public class Interfaz {
                         Registro.buscarNegocios(idNegocio);
                         break;
                     case 3:
-                        Registro.negociosAbierto();
+                        int nitEmpresa = FuncionesInterfaz.entradaInt();
+                        Registro.negociosEmpresa(nitEmpresa);
                         break;
                     case 4:
                         Registro.eliminarNegocio(cliente);
                         break;
                     case 5: 
                         System.out.print("\tETAPA DE NEGOCIO: \n");
+                        System.out.print("");
+                        
+                        System.out.print("El Negocio del Cliente: "+cliente.getNombre()+
+                        " y "+"el Empleado: "+empEncargado.getNombre()+
+                        "se encuentra en la etapa: "+ negocioEje.getEtapa());
+                        System.out.print(negocioEje.getEventos());
+
+
                         
                     case 6: break;
 

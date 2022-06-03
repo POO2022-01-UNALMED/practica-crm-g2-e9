@@ -18,7 +18,8 @@ public class Evento implements Tiempo, Serializable {
 
 
       
-    public Evento(Negocio negocio, String descripcion, LocalDateTime fecha){       
+    public Evento(Negocio negocio, String descripcion, LocalDateTime fecha){   
+            
         this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
         this.negocio = negocio;
         this.descripcion = descripcion;
@@ -29,7 +30,6 @@ public class Evento implements Tiempo, Serializable {
         else{
             this.negocio.agregarEvento(this);
             Evento.allEventos.add(this);
-
         }
         idCounter += 1;
         

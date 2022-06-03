@@ -39,10 +39,8 @@ public class Negocio implements Serializable {
 		this.fechaCreacion = LocalDateTime.now();
 		this.servicios = new ArrayList<>();
 		this.eventos = new ArrayList<>();
-
 		allNegocios.add(this);
 		empleadoEncargado.setNegociosEmpleado(this);
-		
 		this.definirEtapa();
 		idCounter += 1;
 	}
@@ -116,17 +114,17 @@ public class Negocio implements Serializable {
 				}
 				calculoMetrica = (numReuniones*tiempoReuniones + tamanoCorreos*numCorreos + tiempoLlamadas * numLlamadas)-1.2;
 				if(this.etapa == "Prospeccion"){
-					if (calculoMetrica > 0.7){
+					if (calculoMetrica > 0.4){
 						this.etapa  = "Presentacion";
 					}										
 				}
 				else if(this.etapa == "Presentacion"){
-					if (calculoMetrica > 0.7){
+					if (calculoMetrica > 0.5){
 						this.etapa  = "Negociacion";
 					}		
 				}
 				else if(this.etapa == "Negociacion"){
-					if (calculoMetrica > 0.7){
+					if (calculoMetrica > 0.6){
 						this.etapa  = "Cerrado";
 						this.fechaFinalizacion = LocalDateTime.now();
 					}		
@@ -136,6 +134,21 @@ public class Negocio implements Serializable {
 		}
 
 	}
+
+	
+	public  String toStringNegocio(){
+		return "\tDatos del Negocio \nID del Negocio: "+ getId() +
+		 "\nCliente del negocio" + cliente.toString() + 
+		 "\nEmpleado encargado del negocio: " + empleadoEncargado.toString() +
+		 "\nValor de venta del negocio: " + valorVenta +
+		 "\nEtapa del negocio: " + etapa +
+		 "\nEventos: " +  
+		 "\nServicios: " +  
+		 "\n/////////////////////////////////////////////\n";
+
+
+	}
+
 
 
 
