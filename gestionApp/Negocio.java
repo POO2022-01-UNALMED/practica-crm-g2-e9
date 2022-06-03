@@ -6,6 +6,7 @@ import gestionApp.Evento.Llamada;
 import gestionApp.Evento.Reunion;
 import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
+import gestionApp.servicios.Registro;
 import gestionApp.servicios.Servicio;
 
 import java.io.Serializable;
@@ -76,7 +77,25 @@ public class Negocio implements Serializable {
 
 	public static ArrayList<Negocio> getNegocios() {return Negocio.allNegocios;}
 	public static void agregarNegocio(Negocio nuevoNegocio){Negocio.allNegocios.add(nuevoNegocio);}
-	public static void eliminarNegocio(int indice){Negocio.allNegocios.remove(indice);}
+	
+	
+	public  void eliminarNegocio(String id){
+		for(int i = 0; i < allNegocios.get(i).getCliente().getEmpresa().getNegociosAbiertos().size(); i++) {
+			
+			if(allNegocios.get(i).getCliente().getEmpresa().getNegociosAbiertos().get(i).getId().equals(id)) {
+				allNegocios.get(i).getCliente().getEmpresa().eliminarNeg(id);
+			}
+			
+		}
+				
+		for(int j = 0; j < allNegocios.size(); j++) {
+			if (allNegocios.get(j).getId()==id) {
+					
+		
+				}
+			}
+		
+	}
 
 
 	// Etapa Negocio.
@@ -127,6 +146,14 @@ public class Negocio implements Serializable {
 					if (calculoMetrica > 0.6){
 						this.etapa  = "Cerrado";
 						this.fechaFinalizacion = LocalDateTime.now();
+						/*esto ultimo es para cuando la etapa del negocio esté "cerrado" se elimine
+						 * los negocios de las listas , de la de negocio de empresa y la de allNegocios
+						 * está sin probar
+						 */
+						this.eliminarNegocio(this.id);
+						
+						
+						
 					}		
 				}
 				
@@ -135,7 +162,7 @@ public class Negocio implements Serializable {
 
 	}
 
-	
+
 	public  String toStringNegocio(){
 		return "\tDatos del Negocio \nID del Negocio: "+ getId() +
 		 "\nCliente del negocio" + cliente.toString() + 

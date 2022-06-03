@@ -57,6 +57,17 @@ public class Empresa implements Serializable {
 	public void setVenta(Venta nuevaVenta) {this.ventas.add(nuevaVenta);}
 
 	public static ArrayList<Empresa> getAllEmpresas(){return allEmpresas;}
+	
+	//esto se creo para llamarlo desde negocio 
+	public  void eliminarNeg(String id){
+		for(int j = 0; j < negociosAbiertos.size(); j++) {
+			int posicion = negociosAbiertos.indexOf(j);
+			if(negociosAbiertos.get(j).getId()==id) {
+				negociosAbiertos.remove(posicion);
+			}
+		}
+	}
+	
 
 	@Override
 	public  String toString(){
