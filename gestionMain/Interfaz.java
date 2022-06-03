@@ -25,7 +25,7 @@ public class Interfaz {
 
     public static void main(String[] args) {
         //Creacion de objetos
-        /*Empleado empEncargado = new Empleado("Carlos Encargado", 1065468798, "300456479", "Encargado@gmail.com", "Supervisor", "10/9/1999");
+        Empleado empEncargado = new Empleado("Carlos Encargado", 1065468798, "300456479", "Encargado@gmail.com", "Supervisor", "10/9/1999");
         Empleado empleadoEjemplo1 = new Empleado("Eugenia", 102110321, "301546564", "Eugenia@gmail.com", "Razos", "15/3/2004");
 
         Empresa empresa01 = new Empresa("Empresa Defaut", 321, "descripcion");
@@ -43,18 +43,12 @@ public class Interfaz {
         Servicio s2 = new Servicio("Venta de anime", 100, "digital", "Descripcion generica");
         Servicio s3 = new Servicio("Hacking", 100, "digital", "Descripcion generica");
         Servicio s4 = new Servicio("Falsificación de documento", 100, "digital", "Descripcion generica");
-        Serializador.serializacion();
-*/
+        //Serializador.serializacion();
 
-        Deserializador.serializacion();
         System.out.println(Servicio.getAllServicios().size());
-
 
         Scanner scan = new Scanner(System.in);
         int opcion;
-
-
-
 
         do {
             try {
@@ -89,6 +83,7 @@ public class Interfaz {
                 opcion = scan.nextInt();
             }
         }while (opcion != 7);
+        //Deserializador.serializacion();
 
 
     }
@@ -126,7 +121,7 @@ public class Interfaz {
                 System.out.print("Ingrese una opcion nuevamente: ");
                 opcion1 = scan.nextInt();
             }
-        } while (opcion1 != 4);
+        } while (opcion1 != 5);
     }
 
         public static  void registarServicios() {
@@ -163,7 +158,7 @@ public class Interfaz {
             String idServicio = FuncionesInterfaz.entradaString();
             Servicio servicioBuscado = Registro.buscarServicios(idServicio);
             int indice = Servicio.getAllServicios().indexOf(servicioBuscado);
-            String servicioEliminado = servicioBuscado.toStringServicio();
+            String servicioEliminado = servicioBuscado.toString();
             if (!Servicio.getAllServicios().isEmpty()){
                 Servicio.getAllServicios().remove(indice);
                 System.out.println("\t El siguiente servicio se a eliminado satisfactoriamente mi rey:\n"+servicioEliminado);}
