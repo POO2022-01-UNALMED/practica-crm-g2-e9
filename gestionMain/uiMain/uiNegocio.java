@@ -27,7 +27,7 @@ public class uiNegocio {
                         ---------------------
                         1. Hacer Negocio :\s
                         2. Buscar Negocio:\s
-                        3. Negocios Abiertos:\s
+                        3. Match:\s
                         4. Eliminar Negocio:\s
                         5. Realizar Evento\s
                         6. Atras.\s
