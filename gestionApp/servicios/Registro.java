@@ -65,9 +65,9 @@ public class Registro {
 			return null;
 	}
 		
-		public static Cliente buscarCliente(String id){
+		public static Cliente buscarCliente(int cedula){
 			for(int i = 0; i < Cliente.getAllClientes().size(); i++){
-				if(Cliente.getAllClientes().get(i).getId() == id)
+				if(Cliente.getAllClientes().get(i).getCedula() == cedula)
 					System.out.println(Cliente.getAllClientes().get(i).getEmpresa().getNombre());
 					return Cliente.getAllClientes().get(i);
 		}
@@ -163,17 +163,17 @@ public class Registro {
 
 
 
-	public static void eliminarCliente(String id) {
+	public static void eliminarCliente(int cedula) {
 		
 
 
 			for(int i = 0; i < Cliente.getAllClientes().size(); i++) {
-				if(Cliente.getAllClientes().get(i).getId()== id) {
+				if(Cliente.getAllClientes().get(i).getCedula()== cedula) {
 					
 					Cliente.getAllClientes().remove(Cliente.getAllClientes().get(i));
 					Empresa empresaAso=Cliente.getAllClientes().get(i).getEmpresa();
 					for(int j = 0; j < empresaAso.getClientes().size(); j++) {
-						if(empresaAso.getClientes().get(j).getId()== id) {
+						if(empresaAso.getClientes().get(j).getCedula()== cedula) {
 							empresaAso.getClientes().remove(empresaAso.getClientes().get(j));
 						}
 						
@@ -186,9 +186,12 @@ public class Registro {
 	}
 
 
-    public static void infoCliente(String id) {
-		Cliente cliente = buscarCliente(id);
-		System.out.println(cliente.toString());}
+    public static void infoCliente(int cedula) {
+		Cliente cliente = buscarCliente(cedula);
+		System.out.println(cliente.toString());
+		
+    
+    }
 	
 
 

@@ -171,14 +171,14 @@ public class Interfaz {
                         Registro.listaClientes();
 
                     case 2:
-                        System.out.print("Buscar Cliente por ID: ");
-                        id = FuncionesInterfaz.entradaString();
-                        Registro.buscarCliente(id);                        
+                        System.out.print("Buscar Cliente por Cedula: ");
+                        int cedula= FuncionesInterfaz.entradaInt();
+                        Registro.buscarCliente(cedula);                        
                         break;
                     case 3:
-                        System.out.print("Eliminar Cliente por ID: ");
-                        id = FuncionesInterfaz.entradaString();
-                        Registro.eliminarCliente(id);      
+                        System.out.print("Eliminar Cliente por Cedula: ");
+                        int ced = FuncionesInterfaz.entradaInt();
+                        Registro.eliminarCliente(ced);      
                         
                         break;
                     case 4:
@@ -209,8 +209,8 @@ public class Interfaz {
                         break;
                     case 5:
                         System.out.print("Infromacion asociada al Cliente por ID: ");
-                        String idCliente = FuncionesInterfaz.entradaString();
-                        Registro.infoCliente(idCliente);
+                        int Cedu = FuncionesInterfaz.entradaInt();
+                        Registro.infoCliente(Cedu);
                         System.out.print(cl.toString());
                         break;
                     case 6:
@@ -252,8 +252,8 @@ public class Interfaz {
 
                     case 2:
                         System.out.print("Buscar Empleado por ID: ");
-                        id = FuncionesInterfaz.entradaString();
-                        Registro.buscarCliente(id);                        
+                        int cedCliente = FuncionesInterfaz.entradaInt();
+                        Registro.buscarCliente(cedCliente);                        
                         break;
                     case 3:
                         System.out.print("Eliminar Empleado por ID: ");
