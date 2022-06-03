@@ -125,23 +125,21 @@ public class Registro implements Serializable {
 		public static void listaClientes() {
 			ArrayList<Cliente> clientes = Cliente.getAllClientes();
 			for(int i = 0; i < clientes.size(); i++){
-		
 				System.out.println(clientes.get(i).toStringClientes());
 			}
-			if(clientes.size()==0){
-				System.out.println("No hay CLIENTES para mostrar");
-			}
+		// 	if(clientes.size()==0){
+		// 		System.out.println("No hay CLIENTES para mostrar");
+		// 	}
 				
 		}
 		public static void listaEmpleados() {
 			ArrayList<Empleado> empleados = Empleado.getAllEmpleados();
 			for(int i = 0; i < empleados.size(); i++){
-		
 				System.out.println(empleados.get(i).toStringEmpleado());
 			}
-			if(empleados.size()==0){
-				System.out.println("No hay EMPLEADOS para mostrar");
-			}
+			// if(empleados.size() == 0){
+			// 	System.out.println("No hay EMPLEADOS para mostrar");
+			// }
 				
 		}
 		public static void listaServicios() {
