@@ -284,7 +284,7 @@ public class Interfaz {
                     case 3:
                         System.out.print("Eliminar Empleado por ID: ");
                         id = FuncionesInterfaz.entradaString();
-                        Registro.eliminarCliente(id);      
+                        Registro.eliminarEmpleado(id);      
                         
                         break;
                     case 4:
