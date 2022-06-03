@@ -30,9 +30,16 @@ public class Interfaz {
         //Creacion de objetos
         Empleado empEncargado = new Empleado("Carlos Encargado", 1065468798, "300456479", "Encargado@gmail.com", "Supervisor", "10/9/1999");
         Empleado empleadoEjemplo1 = new Empleado("Eugenia", 102110321, "301546564", "Eugenia@gmail.com", "Razos", "15/3/2004");
+
         Empresa empresa01 = new Empresa("Empresa Defaut", 321, "descripcion");
-        Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,"1001" ,true);
-        Negocio negocioEje = new Negocio(empleadoEjemplo1, cl, 1000000);
+        Empresa empresa02 = new Empresa("Empresa 2", 123, "descripcion 2");
+        Empresa empresa03 = new Empresa("Empresa 3", 223, "descripcion3");
+
+        Cliente cl1 = new Cliente("Ejemplo 1 ", empresa01, 10001, "1111" ,"Elemplo1@gmail.com" ,"tocho1" ,true);
+        Cliente cl2 = new Cliente("Ejemplo 2", empresa02, 10002, "2222" ,"ejemplo2@gmail.com" ,"tocho2" ,true);
+        Cliente cl3 = new Cliente("Ejemplo 3 Restrepo", empresa03, 10003, "2222" ,"ejemplo3@gmail.com" ,"tocho3" ,false);
+        
+        Negocio negocioEje = new Negocio(empleadoEjemplo1, cl1, 1000000);
         Evento Neg = new Evento(negocioEje, "descripcion del negocio" , null);
 
         Servicio s1 = new Servicio("Diseño web", 100, "digital", "Descripcion generica");
@@ -91,8 +98,6 @@ public class Interfaz {
     public static  void servicios() {
         Scanner scan = new Scanner(System.in);
         int opcion1;
-
-
         do {
             try {
                 System.out.print("""
@@ -102,35 +107,24 @@ public class Interfaz {
                         1. Agregar servicios:\s
                         2. Buscar servicio:\s
                         3. Eliminar servicio:\s
-                        4. Eliminar servicios\s
-                        5. Hacer promoción\s
-                        6. Volver\s
+                        4. Lista de Servicios:\s
+                        5. Volver\s
                         ingrese opción:\s""");
-
-
 
                 opcion1 = scan.nextInt();
                 switch (opcion1) {
-                    case 1:
-                        registarServicios();
-                        break;
-                    case 2:
-                        buscarServicios();
-                        break;
-                    case 3:
-                        eliminarServicio();
-                        break;
-                    case 4: break;
+                    case 1: registarServicios(); break;
+                    case 2:buscarServicios(); break;
+                    case 3:eliminarServicio();break;
+                    case 4: listaServicios();break;
+                    case 5: break;
 
                 }
             } catch (Exception e) {
                 System.out.print("Ingrese una opcion nuevamente: ");
                 opcion1 = scan.nextInt();
             }
-        } while (opcion1 != 6);
-
-
-
+        } while (opcion1 != 4);
     }
   
         public static  void registarServicios() {
@@ -154,16 +148,18 @@ public class Interfaz {
         }
         public static  void buscarServicios() {
             System.out.print("\n BUSCAR SERVICIO\n");
+            Registro.listaServicios();
             System.out.print("\nIngrese el Nombre del Servicio que desea Buscar: ");
-            String nombreServicio = FuncionesInterfaz.entradaString();
-            Registro.buscarServicios(nombreServicio);
+            String idServicio = FuncionesInterfaz.entradaString();
+            Registro.infoServicio(idServicio);
 
         }
         public static void eliminarServicio() {
             System.out.print("\n ELIMINAR SERVICIO\n");
+            Registro.listaServicios();
             System.out.print("\nIngrese el Nombre del Servicio que desea eliminar: ");
-            String nombreServicio = FuncionesInterfaz.entradaString();
-            Servicio servicioBuscado = Registro.buscarServicios(nombreServicio);
+            String idServicio = FuncionesInterfaz.entradaString();
+            Servicio servicioBuscado = Registro.buscarServicios(idServicio);
             int indice = Servicio.getAllServicios().indexOf(servicioBuscado);
             String servicioEliminado = servicioBuscado.toStringServicio();
             if (!Servicio.getAllServicios().isEmpty()){
@@ -173,6 +169,57 @@ public class Interfaz {
                 System.out.println("No existe el servicio");
         
         }
+        public static void listaServicios() {
+            System.out.print("\n LISTA DE SERVICIOS\n");
+            Registro.listaServicios();
+        }
+
+
+    public static  void promocion() {
+        Scanner scan = new Scanner(System.in);
+        int opcion1;
+        do {
+            try {
+                System.out.print("""
+                        ---------------------
+                        |\t MENÚ PROMOCIÓN\s|
+                        ---------------------
+                        1. Agregar promocion:\s
+                        2. Buscar promocion:\s
+                        3. Eliminar promocion:\s
+                        4. Volver\s
+                        ingrese opción:\s""");
+
+                opcion1 = scan.nextInt();
+                switch (opcion1) {
+                    case 1:
+                        registrarPromocion();
+                        break;
+                    case 2:
+                        buscarPromocion();
+                        break;
+                    case 3:
+                        eliminarPromocion();
+                        break;
+                    case 4: break;
+
+                }
+            } catch (Exception e) {
+                System.out.print("Ingrese una opcion nuevamente: ");
+                opcion1 = scan.nextInt();
+            }
+        } while (opcion1 != 4);
+    }
+        public static  void registrarPromocion() {
+            System.out.print("\n REGISTRAR PROMOCION\n");
+        }
+        public static  void buscarPromocion() {
+            System.out.print("\n BUSCAR PROMOCION\n");
+        }
+        public static  void eliminarPromocion() {
+            System.out.print("\n ELIMINAR PROMOCION\n");
+        }
+
     public static void Funcionalidades(){
         Scanner scan = new Scanner(System.in);
         int opcion1;

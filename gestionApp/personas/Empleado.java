@@ -79,7 +79,7 @@ public class Empleado  extends Persona implements Serializable {
 
 	@Override
 	public  String toString(){
-		return "\tDatos del Empleado \nCliente: "+ nombre +
+		return "\tDatos del Empleado \nNombre del Empleado: "+ nombre +
 		 "\nIdentificado con el CC." + cedula + 
 		 "\nCelular: " + cel +
 		 "\nCorreo: " + correo +

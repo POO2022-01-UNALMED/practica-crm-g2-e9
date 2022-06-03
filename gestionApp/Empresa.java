@@ -67,7 +67,13 @@ public class Empresa implements Serializable {
 			}
 		}
 	}
-	
+	public  String toStringEmpresas(){
+		return "\tDatos del Empresa \nEmpresa: "+ nombre +
+		 "\nNit de la empresa: " + nit + 
+		 "\nID: " + id +
+		 "\nDescripcion de la empresa: " + descripcion +
+		 "\n/////////////////////////////////////////////\n";
+	}
 
 	@Override
 	public  String toString(){

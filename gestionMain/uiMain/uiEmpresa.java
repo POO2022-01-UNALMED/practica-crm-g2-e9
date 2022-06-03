@@ -29,39 +29,26 @@ public class uiEmpresa {
                 
                 switch (opcion1) {
                     case 1:
+                        System.out.print("\tLAS EMPRESAS ACUTALES SON\n");
                         Registro.listaEmpresas();
                         System.out.print("\n ");
-                        
-
-
                         break;
-                        
                     case 2:
-                        System.out.print("Buscar Empresa por NIT: ");
-                        nit = FuncionesInterfaz.entradaInt();
-                        Registro.buscarEmpresas(nit);    
+                        Registro.listaEmpresas();
+                        System.out.print("\n ");
+                        int nitEmpresa = FuncionesInterfaz.entradaInt();
+                        Registro.infoEmpresa(nitEmpresa);
 
                         break;
                     case 3:
+                    
                         System.out.print("Ingrese el NIT de la Empresa que desea eliminar: ");
                         nit = FuncionesInterfaz.entradaInt();
                         Registro.eliminarEmpresa(nit);
         
                         break;
                     case 4:
-                        System.out.print("\tREGISTRAR UNA EMPRESA: \s");
-
-                        System.out.print("\nIngrese el Nombre de la Empresa: ");
-                        String nombreEmpresa = FuncionesInterfaz.entradaString();
-
-                        System.out.print("\nIngrese el Nit de la Empresa: ");
-                        int nitEmpresa = FuncionesInterfaz.entradaInt();
-
-                        System.out.print("\nIngrese la descripcion: ");
-                        String descripcionEmpresa = FuncionesInterfaz.entradaString();
-
-                        Registro.registrarEmpresa(nombreEmpresa, nitEmpresa, descripcionEmpresa);
-
+                        registrarEmpresa();
                         break;
 
                     case 5:
@@ -83,6 +70,18 @@ public class uiEmpresa {
 
 
     }
+    public static void registrarEmpresa(){
+        System.out.print("\tREGISTRAR UNA EMPRESA: \s");
 
-    
+        System.out.print("\nIngrese el Nombre de la Empresa: ");
+        String nombreEmpresa = FuncionesInterfaz.entradaString();
+
+        System.out.print("\nIngrese el Nit de la Empresa: ");
+        int nitEmpresa = FuncionesInterfaz.entradaInt();
+
+        System.out.print("\nIngrese la descripcion: ");
+        String descripcionEmpresa = FuncionesInterfaz.entradaString();
+
+        Registro.registrarEmpresa(nombreEmpresa, nitEmpresa, descripcionEmpresa);
+}
 }

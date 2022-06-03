@@ -62,7 +62,6 @@ public class Registro implements Serializable {
 			listaEmpleados();
 			for(int i = 0; i < Empleado.getAllEmpleados().size(); i++){
 				if(Empleado.getAllEmpleados().get(i).getId() == id)
-					System.out.println(Empleado.getAllEmpleados().get(i).getEmpresa().getNombre());
 					return Empleado.getAllEmpleados().get(i);
 		}
 			return null;
@@ -80,7 +79,6 @@ public class Registro implements Serializable {
 		public static Empresa buscarEmpresas(int nit){
 			for(int i = 0; i < Empresa.getAllEmpresas().size(); i++){
 				if(Empresa.getAllEmpresas().get(i).getNit() == nit)
-					System.out.println(Empresa.getAllEmpresas().get(i).getNombre());
 					return Empresa.getAllEmpresas().get(i);
 		}
 			return null;
@@ -103,13 +101,14 @@ public class Registro implements Serializable {
 			}
 		}
     	
-		public static Servicio buscarServicios(String nombre){
+		public static Servicio buscarServicios(String id){
 			for(int i = 0; i < Servicio.getAllServicios().size(); i++){
-				if(Servicio.getAllServicios().get(i).getNombre() == nombre)
+				if(Servicio.getAllServicios().get(i).getNombre() == id)
 					return Servicio.getAllServicios().get(i);
 		}
 			return null;
-				}
+				}			
+
 
     	////////////////////////////////////////////////////////////////BUSQUEDAS///////////////////////////////////////////////
 
@@ -117,11 +116,7 @@ public class Registro implements Serializable {
     	ArrayList<Empresa> empresas = Empresa.getAllEmpresas();
 
 		for(int i = 0; i < empresas.size(); i++){
-		
-			System.out.println("\nNombre Empresa: "+empresas.get(i).getNombre()+
-			"\nDescripcion Empresa" + empresas.get(i).getDescripcion() +
-			"\nNit Empresa: " + empresas.get(i).getNit());
-			
+			System.out.println(empresas.get(i).toStringEmpresas());
 			
     		}
     	}
@@ -146,6 +141,13 @@ public class Registro implements Serializable {
 			}
 				
 		}
+		public static void listaServicios() {
+			ArrayList<Servicio> servicios = Servicio.getAllServicios();
+			for(int i = 0; i < servicios.size(); i++){
+				System.out.println(servicios.get(i).toStringListasServicios());
+			}
+				
+		}
 		
 
 	    public static void negociosEmpresa(int nit) {
@@ -155,6 +157,7 @@ public class Registro implements Serializable {
 	    		System.out.println(emp.getNegociosAbiertos().get(i).toString());
 	    		}
 	    }
+		
 	  
 	
     ///////////////////////////////////////////////////////////////ELIMINAR//////////////////////////////////////////////////
@@ -166,7 +169,6 @@ public class Registro implements Serializable {
     	else
     		System.out.println("No existe esa empresa");
 
-    	
     }
 
 	public static void eliminarCliente(int cedula) {	
@@ -196,6 +198,10 @@ public class Registro implements Serializable {
 
 	
 	//////////////////////////////////////////////////////// INFO///////////////////////////////////////////////////////
+	public static void infoEmpresa(int nit) {
+		Empresa empresa = buscarEmpresas(nit);
+		System.out.println(empresa.toString());
+	}
     public static void infoCliente(int cedula) {
 		Cliente cliente = buscarCliente(cedula);
 		System.out.println(cliente.toString());
@@ -205,6 +211,12 @@ public class Registro implements Serializable {
 		Empleado empleado = buscarEmpleado(id);
 		System.out.println(empleado.toString());
 	}
+	
+	public static void infoServicio(String id) {
+		Servicio servicio = buscarServicios(id);
+		System.out.println(servicio.toStringServicio());
+	}
+
 
 
 }
