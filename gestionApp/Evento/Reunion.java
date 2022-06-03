@@ -28,4 +28,14 @@ public class Reunion extends Evento implements Serializable {
 
     public double getDuracionReunion(){return duracionReunion;}
 
+	@Override
+	public String toString() {
+		return "Reunion [duracionReunion=" + duracionReunion + ", id=" + id + ", negocio=" + negocio + ", descripcion="
+				+ descripcion + ", fecha=" + fecha + ", respuesta=" + respuesta + ", getDuracionReunion()="
+				+ getDuracionReunion() + ", getId()=" + getId() + ", getNegocio()=" + getNegocio()
+				+ ", getDescripcion()=" + getDescripcion() + ", getFecha()=" + getFecha() + ", getRespuesta()="
+				+ getRespuesta() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
+	}
+
 }

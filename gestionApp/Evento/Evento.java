@@ -17,6 +17,7 @@ public class Evento implements Tiempo, Serializable {
     protected String respuesta;
     private static int idCounter = 0;
     private static ArrayList<Evento> allEventos = new ArrayList<>();
+    private static ArrayList<Evento> allEventosPendientes = new ArrayList<>();
 
 
     public Evento(Negocio negocio, String descripcion, LocalDateTime fecha){   
@@ -65,6 +66,21 @@ public class Evento implements Tiempo, Serializable {
     ///AGENDA//
     
 
+    /*public static void agendarEvento(Llamada llamada) {
+    	
+    	
+    }
+   public static void agendarEvento(Correo correo) {
+    	
+    	
+    }
+   public static void agendarEvento(Reunion reunion) {
+   	
+   	
+   }
+    
+    
+    
     public static void Agenda(){
     	for(int i = 0; i < allEventos.size(); i++) {
     		
@@ -80,7 +96,7 @@ public class Evento implements Tiempo, Serializable {
     	
         
     }
-    
+    */
     
 
 
