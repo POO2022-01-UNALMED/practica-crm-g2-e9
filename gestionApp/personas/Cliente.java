@@ -135,8 +135,6 @@ public class Cliente extends Persona{
 		 "\nCargo: " + cargo +
 		 "\nActivo en la app: " + activo +
 		 "\n/////////////////////////////////////////////\n";
-		 
-		
 	}
 
 	
