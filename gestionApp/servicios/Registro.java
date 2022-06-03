@@ -237,15 +237,25 @@ public class Registro implements Serializable {
 
 
 
-    public static void negociosAbierto() {
-    }
+   
 
 
     public static void eliminarNegocio(Cliente cliente) {
     }
 
 
-
+    public static void negociosEmpresa(int nit) {
+    	Empresa emp = buscarEmpresas(nit);
+    	
+    	for(int i = 0; i < emp.getNegociosAbiertos().size(); i++) {
+    		System.out.println(emp.getNegociosAbiertos().get(i).toString());
+    		
+    		
+    	}
+    	
+    	
+    	
+    }
 
 
 
