@@ -37,7 +37,7 @@ public class uiEmpleado {
                         Registro.listaEmpleados();
                         System.out.print("Buscar Empleado por ID: ");
                         String idEmpleado = FuncionesInterfaz.entradaString();
-                        System.out.print(Registro.buscarEmpleado(idEmpleado));                     
+                        Registro.infoEmpleado(idEmpleado);                    
                         break;
                     case 3:
                         Registro.listaEmpleados();

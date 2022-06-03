@@ -57,10 +57,9 @@ public class Registro implements Serializable {
 		Negocio negocio = new Negocio(empleadoEncargado, cliente, valorVenta);   	
 		return negocio;
 	}
- 		////////////////////////////////////////////////////////////////REGISTRO///////////////////////////////////////////////
+ 		////////////////////////////////////////////////////////////////BUSQUEDA///////////////////////////////////////////////
 
 		public static Empleado buscarEmpleado(String id) {
-			listaEmpleados();
 			for(int i = 0; i < Empleado.getAllEmpleados().size(); i++){
 				if(Empleado.getAllEmpleados().get(i).getId() == id)
 					return Empleado.getAllEmpleados().get(i);
@@ -183,13 +182,12 @@ public class Registro implements Serializable {
 						if(empresaAso.getClientes().get(j).getCedula()== cedula) {
 							empresaAso.getClientes().remove(empresaAso.getClientes().get(j));
 							System.out.println("\nEl se ha Eliminado de la siguiente empresa " + clienteAsoEliminado);
-						}else
-							System.out.println("No existe este Cliente");
-
+						}
 					}	
 					
 				}else
-					System.out.println("No existe este Cliente");	
+					System.out.println("No existe este Cliente");
+					
 			}			
 	}
 	public static void eliminarEmpleado(String id) {
@@ -223,7 +221,7 @@ public class Registro implements Serializable {
 	
 	public static void infoServicio(String id) {
 		Servicio servicio = buscarServicios(id);
-		System.out.println(servicio.toStringServicio());
+		System.out.println(servicio.toString());
 	}
 
 
