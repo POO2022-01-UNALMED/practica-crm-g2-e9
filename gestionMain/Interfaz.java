@@ -57,7 +57,7 @@ public class  Interfaz {
                         5. Negocios
                         6. Servicios
                         7. Promoción
-                        8. Salir
+                        8. Serializador
                         ingrese opción:\s""");
                 opcion = scan.nextInt();
                 switch (opcion) {
@@ -68,7 +68,10 @@ public class  Interfaz {
                     case 5: uiNegocio.negocios(); break; //activa menú registros
                     case 6: servicios(); break; //activa menú servicios
                     case 7: uiPromocion.promocion();
+                        break;
                     case 8: Serializador.serializacion(); 
+                        break;
+                    case 9:Deserializador.serializacion();
                         break; //Salir
 
                 }
