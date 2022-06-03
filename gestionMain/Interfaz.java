@@ -47,7 +47,7 @@ public class Interfaz {
         Servicio s2 = new Servicio("Venta de anime", 100, "digital", "Descripcion generica");
         Servicio s3 = new Servicio("Hacking", 100, "digital", "Descripcion generica");
         Servicio s4 = new Servicio("Falsificación de documento", 100, "digital", "Descripcion generica");
-        Serializador.serializacion();
+        //Serializador.serializacion();
 
         System.out.println(Servicio.getAllServicios().size());
 
@@ -85,7 +85,7 @@ public class Interfaz {
                 opcion = scan.nextInt();
             }
         }while (opcion != 7);
-        Deserializador.serializacion();
+        //Deserializador.serializacion();
 
 
     }
