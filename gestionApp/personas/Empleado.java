@@ -1,5 +1,6 @@
 package gestionApp.personas;
 
+import gestionApp.Empresa;
 import gestionApp.Negocio;
 import gestionApp.servicios.Servicio;
 import gestionApp.Venta;
@@ -8,20 +9,20 @@ import java.util.ArrayList;
 
 public class Empleado  extends Persona{
     private int cedula;
-    private int edad;
+    private String id;
     private String cargo;
     private  String fechaInicioContrato;
     private  double habilidadVenta;
-
+    public Empresa empresa;
     private  ArrayList<Servicio> servicios;
     private  ArrayList<Negocio> negociosEmpleado;
     private  ArrayList<Venta> ventas;
-
+	private static int idCounter = 0;
     private static ArrayList<Empleado> allEmpleados = new ArrayList<>();
 
-    public Empleado(String nombre, int cedula, String cel, String correo, int edad, String cargo, String fechaInicioContrato){
+    public Empleado(String nombre, int cedula, String cel, String correo , String cargo, String fechaInicioContrato){
         super(nombre, cedula, cel, correo);
-        this.edad = edad;
+        this.id = "0".repeat(3-String.valueOf(idCounter).length()) + String.valueOf(idCounter);
         this.cargo = cargo;
         this.fechaInicioContrato = fechaInicioContrato;
         this.servicios = new ArrayList<>();
@@ -29,9 +30,15 @@ public class Empleado  extends Persona{
         this.ventas = new ArrayList<>();
         this.habilidadVenta = Math.random(); //numero random entre 0 y 0.4
         allEmpleados.add(this);
+        idCounter += 1;
     }
 
     //---------------Metodos Heredados---------------
+
+	public String getId(){return this.id;}
+
+	public Empresa getEmpresa(){return empresa;}
+	public void setEmpresa(Empresa empresa){this.empresa = empresa;}
 
     public String getNombre(){return nombre;}
     public void setNombre(String nombre){this.nombre = nombre;}
@@ -51,8 +58,7 @@ public class Empleado  extends Persona{
 
     //---------------Metodos Propios---------------
 
-    public int getEdad(){return edad;}
-    public void setEdad(int edad){this.edad = edad;}
+
 
     public String getCargo(){return cargo;}
     public void setCargo(String cargo){this.cargo = cargo;}

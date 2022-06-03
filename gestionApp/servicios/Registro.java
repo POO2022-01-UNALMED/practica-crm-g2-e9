@@ -10,10 +10,11 @@ import java.util.ArrayList;
 public class Registro {
 	
 	
-	//registros 
+
+		////////////////////////////////////////////////////////////////REGISTRO///////////////////////////////////////////////
    
-    public static Empleado registrarEmpleado(String nombre, int cedula, String cel, String correo, int edad, String cargo, String fechaInicioContrato) {
-     	Empleado empleado = new Empleado(nombre,cedula,cel ,correo,edad,cargo,fechaInicioContrato);
+    public static Empleado registrarEmpleado(String nombre, int cedula, String cel, String correo, String cargo, String fechaInicioContrato) {
+		Empleado empleado = new Empleado(nombre,cedula,cel ,correo,cargo,fechaInicioContrato);
      	return empleado;
     }
     
@@ -51,42 +52,63 @@ public class Registro {
     	Servicio servicio = new Servicio(nombreServicios,valorProducto, tipo, descripcion);   	
     	return servicio;
  }
+ 		////////////////////////////////////////////////////////////////REGISTRO///////////////////////////////////////////////
 
 
-
-    
-    
-
-    
-    
-    //busquedas
-    public static Empresa buscarEmpresas(int nit){
-    	  
-    	for(int i = 0; i < Empresa.getAllEmpresas().size(); i++){
-    		if(Empresa.getAllEmpresas().get(i).getNit() == nit)
-    	        System.out.println(Empresa.getAllEmpresas().get(i).getNombre());
-    			return Empresa.getAllEmpresas().get(i);
-    		//-------
-    		
-    }
-    	return null;
+		////////////////////////////////////////////////////////////////BUSQUEDAS///////////////////////////////////////////////
+		public static Empleado buscarEmpleado(String id) {
+			for(int i = 0; i < Empleado.getAllEmpleados().size(); i++){
+				if(Empleado.getAllEmpleados().get(i).getId() == id)
+					System.out.println(Empleado.getAllEmpleados().get(i).getEmpresa().getNombre());
+					return Empleado.getAllEmpleados().get(i);
+		}
+			return null;
+	}
+		
+		public static Cliente buscarCliente(String id){
+			for(int i = 0; i < Cliente.getAllClientes().size(); i++){
+				if(Cliente.getAllClientes().get(i).getId() == id)
+					System.out.println(Cliente.getAllClientes().get(i).getEmpresa().getNombre());
+					return Cliente.getAllClientes().get(i);
+		}
+			return null;
+				}
+	
+		public static Empresa buscarEmpresas(int nit){
+			for(int i = 0; i < Empresa.getAllEmpresas().size(); i++){
+				if(Empresa.getAllEmpresas().get(i).getNit() == nit)
+					System.out.println(Empresa.getAllEmpresas().get(i).getNombre());
+					return Empresa.getAllEmpresas().get(i);
+		}
+			return null;
+				}
+		public static void buscarClientesEmpresa(int nit) {
+			Empresa empre =buscarEmpresas(nit);
+			if (empre != null) {
+				for(int i = 0; i < empre.getClientes().size(); i++) {
+					System.out.println(empre.getClientes().get(i).getNombre());
+				}
+			}else{
+				System.out.println("No existe la empresa");
+			}
+		}
     	
-    	    }
+		public static Servicio buscarServicios(String nombre){
+			for(int i = 0; i < Servicio.getAllServicios().size(); i++){
+				if(Servicio.getAllServicios().get(i).getNombre() == nombre)
+					return Servicio.getAllServicios().get(i);
+		}
+			return null;
+				}
+
+    	////////////////////////////////////////////////////////////////BUSQUEDAS///////////////////////////////////////////////
     
+		////////////////////////////////////////////////////////////////LISTAS/////////////////////////////////////////////////
     
-    public static Cliente buscarCliente(String id){
-  	  
-    	for(int i = 0; i < Cliente.getAllClientes().size(); i++){
-    		if(Cliente.getAllClientes().get(i).getId() == id)
-    			System.out.println(Cliente.getAllClientes().get(i).getEmpresa().getNombre());
-    			return Cliente.getAllClientes().get(i);
-    		//-------
-    		
-    }
-    	return null;
-    	
-    	    }
+
     
+
+
     public static void listaEmpresas( ){
     	ArrayList<Empresa> empresas = Empresa.getAllEmpresas();
 
@@ -99,7 +121,7 @@ public class Registro {
 			
     		}
     	}
-		public static void listaClientes() {//////////////////////////////////////////////////////Mostrar todos los Clientes solo por ID y Nombre correspondientemente que devuelva Strings para mostrar en el menu
+		public static void listaClientes() {
 			ArrayList<Cliente> clientes = Cliente.getAllClientes();
 			for(int i = 0; i < clientes.size(); i++){
 		
@@ -110,69 +132,34 @@ public class Registro {
 			}
 				
 		}
-	
-    	
-	    	
-    	
-    		
-    
-    
-
-    public static Servicio buscarServicios(String nombre){
-  	  
-    	for(int i = 0; i < Servicio.getAllServicios().size(); i++){
-    		if(Servicio.getAllServicios().get(i).getNombre() == nombre)
-    	        
-    			return Servicio.getAllServicios().get(i);
-    		
-    }
-    	return null;
-    	
-    	    }
-    
+		public static void listaEmpleados() {
+			ArrayList<Empleado> empleados = Empleado.getAllEmpleados();
+			for(int i = 0; i < empleados.size(); i++){
+		
+				System.out.println("\nNombre Empleados: "+empleados.get(i).getNombre()+
+				"\nID del Empleados: " + empleados.get(i).getId()+
+				"\nNegocios del Empleado: " + empleados.get(i).getNegociosEmpleado()+
+				"\n Empresa a la que pertenece: " + empleados.get(i).getNegociosEmpleado());
+			}
+				
+		}
+		////////////////////////////////////////////////////////////////LISTAS/////////////////////////////////////////////////
 
 
     public static ArrayList<Cliente> getClientes() {
         return getClientes();
     }
 
-
-    public static void eliminarEmpresa(int nit) { /////////////////////////////////////// Eliminar Empresa
-    	Empresa emp =buscarEmpresas(nit);
-    	int posicion = Empresa.getAllEmpresas().indexOf(emp);
+    public static void eliminarEmpresa(int nit) { 
+    	Empresa empleado = buscarEmpresas(nit);
+    	int posicion = Empresa.getAllEmpresas().indexOf(empleado);
     	if (!Empresa.getAllEmpresas().isEmpty())
         	Empresa.getAllEmpresas().remove(posicion);
     	else
     		System.out.println("No existe esa empresa");
-    	
-    	
-    	
+
     	
     }
-
-
-    public static void buscarClientesEmpresa(int nit) {////////////////////////////////////////////////Buscar Clientes por empresa (se ingres NIT) y devulve Clientes asociados a esta empresa
-    	Empresa empre =buscarEmpresas(nit);
-    	if (empre != null) {
-    		for(int i = 0; i < empre.getClientes().size(); i++) {
-    			
-    			System.out.println(empre.getClientes().get(i).getNombre());
-    			
-    			
-    		}
-    	}
-		else{
-			
-			System.out.println("No existe la empresa");
-		}
-    	
-    	
-    	
-    	
-    	
-    	
-    }
-
 
 
 
@@ -180,9 +167,18 @@ public class Registro {
 	}
 
 
-    public static void infoCliente() {
-    }
-
+    public static void infoCliente(String id) {
+		Cliente cliente = buscarCliente(id);
+		System.out.println(cliente.toString());}
+	
+	public static void infoEmpleado(String id) {
+		Empleado empleado = buscarEmpleado(id);
+		System.out.println(empleado.toString());
+	}
+	
+		
+		
+	
 
     
 }

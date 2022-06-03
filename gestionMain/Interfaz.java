@@ -41,10 +41,10 @@ public class Interfaz {
  
     public static void main(String[] args) {
         //Creacion de objetos
-        Empleado empleadoEncargado = new Empleado("Carlos Encargado", 102110321, "301546564", "Encargado@gmail.com", 60, "Supervisor", "10/9/1999");
+        Empleado empleadoEjemplo1 = new Empleado("Carlos Encargado", 102110321, "301546564", "Encargado@gmail.com", "Supervisor", "10/9/1999");
         Empresa empresa01 = new Empresa("Empresa Defaut", 321, "descripcion");
         Cliente cl = new Cliente("Miguel Restrepo", empresa01, 1036688866, "3014654654" ,"miguel@gmail.com" ,"1001" ,true);
-        Negocio necocio01 = new Negocio(empleadoEncargado, cl, 1000000);
+        Negocio necocio01 = new Negocio(empleadoEjemplo1, cl, 1000000);
         Evento evento01 = new Evento(necocio01, "descripcion del negocio" , null);
     
 
@@ -74,7 +74,7 @@ public class Interfaz {
                 switch (opcion) {
                     case 1: empresa(); break;//activa menú empresa
                     case 2: clientes(cl,empresa01);break; //activa menú cliente
-                    case 3: empleado(); break;//activa menú empleado
+                    case 3: empleado(empleadoEjemplo1,empresa01); break;//activa menú empleado
                     case 4: registros(); break; //activa menú negocios
                     case 5: negocios(); break; //activa menú registros
                     case 6: servicios(); break; //activa menú servicios
@@ -235,9 +235,10 @@ public class Interfaz {
                         break;
                     case 5:
                         System.out.print("Infromacion asociada al Cliente por ID: ");
-                        Registro.infoCliente();
+                        String idCliente = FuncionesInterfaz.entradaString();
+                        Registro.infoCliente(idCliente);
                         System.out.print(cl.toString());
-                        System.out.print("\t"+empresa01.toString());
+
                         break;
                     case 6:
                         break;
@@ -251,9 +252,84 @@ public class Interfaz {
 
 
     }
-    private static void empleado() {
+    private static void empleado(Empleado empleadoEjemplo1,Empresa empresa) {
+        Scanner scan = new Scanner(System.in);
+        int opcion1;
+        String id;
 
+        do {
+            try {
+                System.out.print("""
+                        ---------------------
+                        |\t MENÚ EMPLEADO\s|
+                        ---------------------
+                        1. Mostrar Empleado:\s
+                        2. Buscar Empleado:\s
+                        3. Eliminar Empleado:\s
+                        4. Agregar Empleado:\s
+                        5. Mostrar Informacion Empleado\s
+                        6. Volver\s
+                        ingrese opción:\s""");
+                opcion1 = scan.nextInt();
+                
+                switch (opcion1) {
+                    case 1:
+                        System.out.print("\tLOS EMPLEADOS ACTUALES SON\s");
+                        Registro.listaClientes();
+
+                    case 2:
+                        System.out.print("Buscar Empleado por ID: ");
+                        id = FuncionesInterfaz.entradaString();
+                        Registro.buscarCliente(id);                        
+                        break;
+                    case 3:
+                        System.out.print("Eliminar Empleado por ID: ");
+                        id = FuncionesInterfaz.entradaString();
+                        Registro.eliminarCliente(id);      
+                        
+                        break;
+                    case 4:
+                        System.out.print("\tREGISTRAR UNA EMPLEADO: \s");
+                        System.out.print("\nIngrese el Nombre del Empleado: ");
+                        String nombreEmpleado = FuncionesInterfaz.entradaString();;
+
+                        System.out.print("\nIngrese Cedula del Empleado: ");
+                        int cedulaEmpleado = FuncionesInterfaz.entradaInt();
+
+                        System.out.print("\nIngrese Celular del Empleado: ");
+                        String celEmpleado = FuncionesInterfaz.entradaString();
+
+                        System.out.print("\nIngrese Correo del Empleado: ");
+                        String correoEmpleado = FuncionesInterfaz.entradaString();
+
+                        System.out.print("\nIngrese Cargo del Empleado: ");
+                        String cargoEmpleado = FuncionesInterfaz.entradaString();
+                    
+                        System.out.print("\nIngrese Fecha de inicio del Contrato: ");
+                        String fechaInicioContratoEmpleado = FuncionesInterfaz.entradaString();
+
+
+                        Registro.registrarEmpleado(nombreEmpleado, cedulaEmpleado, celEmpleado, correoEmpleado, cargoEmpleado, fechaInicioContratoEmpleado);
+
+                        break;
+                    case 5:
+                        System.out.print("Infromacion asociada al Empleado por ID: ");
+                        String idEmpleado = FuncionesInterfaz.entradaString();
+                        Registro.infoEmpleado(idEmpleado);
+                        System.out.print(empleadoEjemplo1.toString());
+                        break;
+                    case 6:
+                        break;
+                        
+                }
+            } catch (Exception e) {
+                System.out.print("Ingrese una opcion nuevamente: ");
+                opcion1 = scan.nextInt();
+            }
+        } while (opcion1 != 6);
     }
+
+
     public static  void negocios() {
         Scanner scan = new Scanner(System.in);
         int opcion1;
@@ -383,7 +459,7 @@ public class Interfaz {
                         System.out.print("\nIngrese Fecha en la que incio el contrato dd/mm/aaaa: ");
                         String fechaInicioContratoEmpleado = FuncionesInterfaz.entradaString();
 
-                        Registro.registrarEmpleado(nombreEmpleado, cedulaEmpleado, celEmpleado, correoEmpleado, edadEmpleado, cargoEmpreado, fechaInicioContratoEmpleado);
+                        Registro.registrarEmpleado(nombreEmpleado, cedulaEmpleado, celEmpleado, correoEmpleado, cargoEmpreado, fechaInicioContratoEmpleado);
                         break;
                     
                         

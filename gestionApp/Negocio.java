@@ -40,7 +40,7 @@ public class Negocio {
 		this.eventos = new ArrayList<>();
 
 		Negocio.allNegocios.add(this);
-		empleadoEncargado.setNegociosAbiertos(this);
+		empleadoEncargado.setNegociosEmpleado(this);
 		
 		this.definirEtapa();
 		idCounter += 1;
