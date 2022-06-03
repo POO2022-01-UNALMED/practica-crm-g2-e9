@@ -28,7 +28,7 @@ public class Registro implements Serializable {
     	}
 		else{
 			new Cliente(nombre, cedula, cel, correo, activo,cargo);
-			//Acepta los cambios
+			//Acepta los cambiosAAAA
 		}
     }
     public static Empresa registrarEmpresa(String nombre, int nit, String descripcion){
