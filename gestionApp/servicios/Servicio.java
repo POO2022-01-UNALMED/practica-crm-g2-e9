@@ -44,6 +44,10 @@ public class Servicio implements Serializable {
     public void addPromocion(Promocion promocion){this.Promociones.add(promocion);}
     
     public void addServicio(Servicio servicio){this.Servicios.add(servicio);}
+    
+    
+    
+    
 
     
 
