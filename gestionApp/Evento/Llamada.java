@@ -1,8 +1,10 @@
 package gestionApp.Evento;
 import gestionApp.Negocio;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Llamada extends Evento{
+public class Llamada extends Evento implements Serializable {
 
     private double duracionLlamada;
 

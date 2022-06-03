@@ -1,12 +1,15 @@
 package gestionApp.servicios;
 
+import gestionApp.Empresa;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Promocion {
+public class Promocion implements Serializable {
 	private String id;
 	private double descuento;
 	private ArrayList<Servicio> Servicios = new ArrayList<Servicio>();
-	private ArrayList<Promocion> allPromocion = new ArrayList<>();
+	private static ArrayList<Promocion> allPromocion = new ArrayList<>();
 
 	private static int idCounter = 0;
 
@@ -39,6 +42,7 @@ public class Promocion {
 	public void setDescuento(double descuento) {
 		this.descuento = descuento;
 	}
+	public static ArrayList<Promocion> getAllPromocion(){return allPromocion;}
 	
 	
 	

@@ -1,10 +1,11 @@
 package gestionApp.servicios;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
 
-public class Servicio {
+public class Servicio implements Serializable {
     private String nombre;
     private int precio;
     private String tipo;

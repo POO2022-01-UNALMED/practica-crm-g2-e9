@@ -5,9 +5,10 @@ import gestionApp.Negocio;
 import gestionApp.servicios.Servicio;
 import gestionApp.Venta;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Empleado  extends Persona{
+public class Empleado  extends Persona implements Serializable {
     private int cedula;
     private String id;
     private String cargo;

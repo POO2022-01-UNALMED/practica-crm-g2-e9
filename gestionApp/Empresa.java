@@ -3,9 +3,10 @@ package gestionApp;
 import gestionApp.personas.Cliente;
 import gestionApp.servicios.Servicio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Empresa {
+public class Empresa implements Serializable {
 
 	private String id;
 	private String nombre;

@@ -6,9 +6,10 @@ import gestionApp.personas.Cliente;
 import gestionApp.personas.Empleado;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Registro {
+public class Registro implements Serializable {
 	
 	
 
