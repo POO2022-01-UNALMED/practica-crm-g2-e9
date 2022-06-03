@@ -102,7 +102,7 @@ public class Registro implements Serializable {
     	
 		public static Servicio buscarServicios(String id){
 			for(int i = 0; i < Servicio.getAllServicios().size(); i++){
-				if(Servicio.getAllServicios().get(i).getNombre() == id)
+				if(Servicio.getAllServicios().get(i).getId() == id)
 					return Servicio.getAllServicios().get(i);
 		}
 			return null;

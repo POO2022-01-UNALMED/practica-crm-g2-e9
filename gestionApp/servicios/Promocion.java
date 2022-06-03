@@ -11,7 +11,6 @@ public class Promocion implements Serializable {
 	private double descuento;
 	private ArrayList<Servicio> Servicios = new ArrayList<Servicio>();
 	private static ArrayList<Promocion> allPromocion = new ArrayList<>();
-
 	private static int idCounter = 0;
 
 	public Promocion(double descuento, Servicio servicio) {
@@ -46,6 +45,20 @@ public class Promocion implements Serializable {
 	public static ArrayList<Promocion> getAllPromocion(){return allPromocion;}
 	
 	
+	public  String toStringPromociones(){
+		return "\tDatos del Promocion \nID: "+ getId() +
+		 "\nDescuento: " + descuento;
+
+	}
+
+
+	@Override
 	
+	public  String toString(){
+		return "\tDatos del Promocion \nID: "+ getId() +
+		 "\nDescuento: " + descuento +
+		 "\n/////////////////////////////////////////////\n";
+	}
+
 	
 }
