@@ -28,15 +28,10 @@ class Cliente(Persona):
     
     @classmethod
     def getAllClientes(cls): return cls.allClientes
-    @classmethod
     def setAllClientes(cls, allClientes): cls.allClientes = allClientes
     
-    @classmethod
     def getNegociosActivos(cls): return cls.negociosActivos
-    @classmethod
     def setNegociosActivos(cls, negociosActivos): cls.negociosActivos = negociosActivos   
 
-    @classmethod
     def getListaEventos(cls): return cls.listaEventos
-    @classmethod
     def setListaEventos(cls, listaEventos): cls.listaEventos = listaEventos       
