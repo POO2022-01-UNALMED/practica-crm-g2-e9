@@ -6,20 +6,21 @@ from Python.gestionApp.personas.Persona import Persona
 
 class Empleado(Persona):
     
-    allEmpleados = []
-    servicios = []
-    negociosEmpleado = []
-    ventas = []
-    idCounter = 0
+    _allEmpleados = []
+    _servicios = []
+    _negociosEmpleado = []
+    _ventas = []
+    _idCounter = 0
     
     def __init__(self, nombre, cedula, cel, correo, cargo, fechaContrato):
         super().__init__(nombre, cedula, cel, correo, id)
-        self.id = 0+idCounter
+        self.id = 0 + idCounter
         self.cargo = cargo
         self.fechaContrato = fechaContrato
         self.habilidadVenta = math.random()
         idCounter += 1
-        Empleado.setAllEmpleados.append(self)
+        Empleado._allEmpleados.append(self)
+        
         
     def getId(self): return self.id
 
@@ -32,18 +33,13 @@ class Empleado(Persona):
     def getHabilidadVenta (self): return self.habilidadVenta
         
     @classmethod
-    def getAllEmpleados(cls) :return cls.allEmpleados
-    @classmethod
-    def setAllEmpleados(cls,allEmpleados): cls.allEmpleados = allEmpleados
+    def getAllEmpleados(cls) :return cls._allEmpleados
+    def setAllEmpleados(cls,allEmpleados): cls._allEmpleados = allEmpleados
+
+    def getServicios(cls): return cls._servicios
+    def setServicios(cls,servicios): cls._servicios = servicios
     
-    @classmethod
-    def getServicios(cls): return cls.servicios
-    @classmethod
-    def setServicios(cls,servicios): cls.servicios = servicios
-    
-    @classmethod
-    def getNegociosEmpleado(cls): return cls.negociosEmpleado
-    @classmethod
-    def setNegociosEmpleado(cls,negociosEmpleado): cls.negociosEmpleado = negociosEmpleado
+    def getNegociosEmpleado(cls): return cls._negociosEmpleado
+    def setNegociosEmpleado(cls,negociosEmpleado): cls._negociosEmpleado = negociosEmpleado
     
     

@@ -26,6 +26,7 @@ class Cliente(Persona):
     def getProbCompra(self): return self.probCompra
     def setProbCompra(self,probCompra): self.probCompra = probCompra
     
+    
     @classmethod
     def getAllClientes(cls): return cls.allClientes
     def setAllClientes(cls, allClientes): cls.allClientes = allClientes
