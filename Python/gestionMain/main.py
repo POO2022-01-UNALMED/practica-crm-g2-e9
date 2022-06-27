@@ -1,6 +1,3 @@
-
-
-from Python.gestionApp.Personas.Empleado import Empleado
 from Python.gestionMain.uiMain.uiCliente import uiClientes
 from Python.gestionMain.uiMain.uiEmpleado import uiEmpleados
 from Python.gestionMain.uiMain.uiEmpresa import uiEmpresa
