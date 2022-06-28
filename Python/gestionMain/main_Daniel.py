@@ -140,7 +140,7 @@ canvas.grid(row=0, column=0, sticky='nsew')
 
 image_height = canvas_height
 image_width = int(canvas_height*1.3)
-my_image = ImageTk.PhotoImage(Image.open("C:/CARLOS/UN/2022_1/POO/SegundaEntrega/practica-crm-g2-e9/Python/gestionMain/a.jpg").resize((image_width, canvas_height)))
+my_image = ImageTk.PhotoImage(Image.open('./resources/slider/a.jpg').resize((image_width, canvas_height)))
 img1_s = ImageTk.PhotoImage(Image.open('./resources/slider/1.jpg'))
 img2_s = ImageTk.PhotoImage(Image.open('./resources/slider/2.jpg'))
 img3_s = ImageTk.PhotoImage(Image.open('./resources/slider/3.jpg'))
