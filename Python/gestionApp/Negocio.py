@@ -11,6 +11,7 @@ class Negocio:
 
     _allNegocios = []
     _eventos = []
+    etapa = ""
     
     
     def __init__ (self, empleadoEncargado, cliente, valorVenta):
@@ -26,6 +27,8 @@ class Negocio:
 
     def getId(self): return self.id
     
+    def getEtapa(self): return self.etapa
+    
     def getEmpleadoEncargado(self): return self.empleadoEncargado
     def setEmpleadoEncargado(self,empleadoEncargado): self.empleadoEncargado = empleadoEncargado
     
@@ -38,8 +41,8 @@ class Negocio:
     
     
         
-    
-    def definirEtapa():
+
+    def definirEtapa(self):
         numLlamadas = 0
         tiempoLlamada = 0.0
         numCorreos = 0
@@ -48,9 +51,18 @@ class Negocio:
         timepoReuniones = 0.0
         calculoMetrica = 0.0
         
-        if ():
+        if (len(self._eventos)== 0):
             self.etapa = "Prospeccion"
-        
+        else: 
+            if (self._eventos.__contains__("No interesado")):
+                self.etapa = "Finalizado"
+                self.fechaFinalizacion = datetime.now()
+            else:
+                for i in range(len(self._eventos)):
+                    if (self._eventos.get(i)):
+                        pass
+                    #Aqui va lo que falta de la funcion definir Etapa
+                
         
     @classmethod     
     def getAllNegocios(cls): return cls.allNegocios
