@@ -1,5 +1,5 @@
 
 
 class uiClientes:
-    def menuClientes():
+    def menuClientes(self):
         pass
