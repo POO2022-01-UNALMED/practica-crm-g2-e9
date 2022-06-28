@@ -21,25 +21,36 @@ class Empleado(Persona):
         idCounter += 1
         Empleado._allEmpleados.append(self)
         
-        
+    
+    @classmethod    
     def getId(self): return self.id
 
+    @classmethod
     def getCargo(self): return self.cargo
+    @classmethod
     def setCargo(self,cargo):self.cargo = cargo
     
+    @classmethod
     def getFechaContrato(self): return self.fechaContrato
+    @classmethod
     def setFechaContrato(self,fechaContrato):self.fechaContrato = fechaContrato
     
+    @classmethod
     def getHabilidadVenta (self): return self.habilidadVenta
         
     @classmethod
     def getAllEmpleados(cls) :return cls._allEmpleados
+    @classmethod
     def setAllEmpleados(cls,allEmpleados): cls._allEmpleados = allEmpleados
 
+    @classmethod
     def getServicios(cls): return cls._servicios
+    @classmethod
     def setServicios(cls,servicios): cls._servicios = servicios
     
+    @classmethod
     def getNegociosEmpleado(cls): return cls._negociosEmpleado
+    @classmethod
     def setNegociosEmpleado(cls,negociosEmpleado): cls._negociosEmpleado = negociosEmpleado
     
     

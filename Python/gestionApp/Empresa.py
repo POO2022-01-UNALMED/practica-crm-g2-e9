@@ -24,17 +24,26 @@ class Empresa:
         
     @classmethod    
     def getAllEmpresas(cls): return cls.allEmpresas
+    @classmethod
     def setAllEmpresas(cls,allEmpresas): cls.allEmpresas = allEmpresas
     
+    @classmethod
     def getClientes(cls): return cls.clientes
+    @classmethod
     def setClientes(cls,clientes): cls.clientes = clientes
     
+    @classmethod
     def getNegociosAbiertos(cls): return cls.negociosAbiertos
+    @classmethod
     def setNegociosAbiertos(cls,negociosAbiertos): cls.negociosAbiertos = negociosAbiertos
     
+    @classmethod
     def getVentas(cls): return cls.ventas
+    @classmethod
     def setVentas(cls,ventas): cls.ventas = ventas 
     
+    @classmethod
     def getServiciosInteres(cls): return cls.serviciosInteres
+    @classmethod
     def setServiciosInteres(cls,serviciosInteres): cls.serviciosInteres = serviciosInteres
     

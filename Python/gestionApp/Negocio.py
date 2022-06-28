@@ -59,4 +59,5 @@ class Negocio:
     
     @classmethod
     def getEventos(cls): return cls._eventos
+    @classmethod
     def setEventos(cls,_eventos): cls._eventos = _eventos
