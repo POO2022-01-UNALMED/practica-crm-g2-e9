@@ -124,7 +124,7 @@ canvas.grid(row=0, column=0, sticky='nsew')
 
 image_height = canvas_height
 image_width = int(canvas_height*1.3)
-my_image = ImageTk.PhotoImage(Image.open("aff.jpg").resize((image_width, canvas_height), Image.ANTIALIAS))
+my_image = ImageTk.PhotoImage(Image.open("Python/gestionMain/aff.jpg").resize((image_width, canvas_height), Image.ANTIALIAS))
 
 list_images=[my_image,my_image,my_image,my_image]
 imagesList = [
