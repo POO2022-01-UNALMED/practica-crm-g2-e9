@@ -6,14 +6,9 @@ from tkinter import messagebox
 from operator import itemgetter
 from excepciones import *
 
-import os
-import sys
-
-sys.path.append(sys.path[0].replace('gestionMain','gestionApp'))
-
-
 from Python.gestionApp.Empresa import Empresa
 from Python.gestionApp.Negocio import Negocio
+from Python.gestionApp.personas.Persona import Persona
 from Python.gestionApp.personas.Cliente import Cliente
 from Python.gestionApp.personas.Empleado import Empleado
 
@@ -39,13 +34,10 @@ def mostrarDescripcion():
 ### Clase Generadora
 
 class FieldFrame(Frame):
-    def __init__(self, frame = None, tituloCriterios = None, criterios = None, criteriosDropDowm = None, tituloValores = None, valores = None, deshabilitado = None, botones = None):
+    def __init__(self, frame = None, criterios = None, criteriosDropDowm = None, valores = None, deshabilitado = None):
 
         if not isinstance(frame, Frame):
             raise TypeError("frame should be Frame type")
-
-        if not isinstance(tituloCriterios, str):
-            raise TypeError("tituloCriterios should be str type")
 
         if not isinstance(criterios, list):
             raise TypeError("criterios should be list type")
@@ -53,9 +45,6 @@ class FieldFrame(Frame):
         if criteriosDropDowm!=None:
             if not isinstance(criteriosDropDowm, dict):
                 raise TypeError("criterios should be dict type")
-
-        if not isinstance(tituloValores, str):
-            raise TypeError("tituloValores should be str type")
 
         if valores!=None:
             if not isinstance(valores, list):
@@ -65,19 +54,13 @@ class FieldFrame(Frame):
             if not isinstance(deshabilitado, list):
                 raise TypeError("deshabilitado should be list type")
 
-        if botones!=None:
-            if not isinstance(botones, dict):
-                raise TypeError("botones should be dict type")
-        
-        
+
         self.frame = frame
-        self.tituloCriterios = tituloCriterios
         self.criterios = criterios
         self.criteriosDropDowm = criteriosDropDowm
-        self.tituloValores = tituloValores
         self.valores = valores
         self.deshabilitado = deshabilitado
-        self.botones = botones
+        
         
         for widget in self.frame.winfo_children():
             widget.destroy()
@@ -85,7 +68,6 @@ class FieldFrame(Frame):
         self.generarCriterios()
         self.generarValores()
         self.deshabilitarIngresos()
-        self.crearBotones()
         self.frame.update()
 
     def generarCriterios(self):
@@ -99,8 +81,6 @@ class FieldFrame(Frame):
             criterio.grid(row = index, column = 0)
 
     def generarValores(self):
-        global stringVarsValues 
-        stringVarsValues = {}
 
         if self.valores == None:
             if self.criteriosDropDowm != None:
@@ -120,7 +100,7 @@ class FieldFrame(Frame):
                         if len(self.criteriosDropDowm[valor])>0:
                             self.camposValores.append(OptionMenu(self.frame, 
                             self.StringVars[stringVarsCounter], 
-                            *self.criteriosDropDowm[valor], command = stringVarsValues[stringVarsCounter]))
+                            *self.criteriosDropDowm[valor]))
                             stringVarsCounter+=1
                         else:
                             self.camposValores.append(OptionMenu(self.frame, 
@@ -176,14 +156,19 @@ class FieldFrame(Frame):
                     valor.insert(-1, self.valores[index])
                     valor.grid(row = index, column = 1, sticky="news")
                 
-
     def deshabilitarIngresos(self):
         if self.deshabilitado != None:
             for index, valor in enumerate(self.camposValores):
                 if self.criterios[index] in self.deshabilitado:
                     valor.config(state= "disabled")
 
-    def crearBotones(self):
+    def crearBotones(self, botones = None):
+
+        if botones!=None:
+            if not isinstance(botones, dict):
+                raise TypeError("botones should be dict type")
+
+        self.botones = botones
         if self.botones != None:
             fila = len(self.criterios)
             columna = 0
@@ -195,8 +180,38 @@ class FieldFrame(Frame):
                     
                 Button(self.frame, text=textoBoton, command=self.botones[textoBoton]).grid(row = fila, column=columna)
                 columna += 1
-                
+
+            self.frame.update()
     
+### Otras Funciones
+
+def command():
+    pass
+
+def vaciarCampos(frame):
+    for widget in frame.winfo_children():
+        if widget.winfo_class() == 'Entry':
+            widget.delete(0, 'end')
+        if widget.winfo_class() == 'OptionMenu':
+            widget.delete(0, 'end')
+
+def funcWrapper(func, args):
+    func(*args)
+
+def setValores(frame = None, classDestino = None, menuValues = None):
+
+    entryValues = []
+    optionsCounter = 0
+    for widget in frame.winfo_children():
+        if widget.winfo_class() == 'Entry':
+            entryValues.append(widget.get())
+        if (widget.winfo_class() == 'Menubutton') & (type(menuValues) == list):
+            entryValues.append(menuValues[optionsCounter].get())
+            messagebox.showinfo(message = str(menuValues[optionsCounter].get()), title = 'Descripcion Aplicacion')
+            optionsCounter =+ 1       
+    messagebox.showinfo(message = type(entryValues), title = 'Descripcion Aplicacion')
+    if len(entryValues)>0:
+        funcWrapper(classDestino, entryValues)
 
 ##########################################################################
 ### root
@@ -215,33 +230,6 @@ ventanaPrincipal.rowconfigure(0, weight=1)
 
 ### Barra Menu
 
-def command():
-    pass
-
-def vaciarCampos(frame):
-    for widget in frame.winfo_children():
-        if widget.winfo_class() == 'Entry':
-            widget.delete(0, 'end')
-        if widget.winfo_class() == 'OptionMenu':
-            widget.delete(0, 'end')
-
-def funcWrapper(func, args):
-    func(*args)
-
-def setValores(frame, classDestino, *options):
-    entryValues = []
-    optionsCounter = 0
-    for widget in frame.winfo_children():
-        messagebox.showinfo(message = str(widget.winfo_class()), title = 'Descripcion Aplicacion')
-        if widget.winfo_class() == 'Entry':
-            entryValues.append(widget.get())
-        if widget.winfo_class() == 'Menubutton':
-            
-            #entryValues.append(funcWrapper(options[optionsCounter],widget.__var.get()))
-            optionsCounter =+ 1
-            
-    funcWrapper(classDestino, entryValues)
-
 
 def camposCrearCliente():
 
@@ -251,9 +239,7 @@ def camposCrearCliente():
     descipcionProceso['text'] = 'Este proceso permite añadir un nuevo CLIENTE a la base de datos'
     
     FieldFrame(frame = F23,
-           tituloCriterios = 'Criterios',
            criterios = ['Nombre', 'Cedula','Celular','Correo','Cargo','Activo'],
-           tituloValores = 'Valores',
            valores = None,
            deshabilitado = None,
            botones = {'Crear Cliente' : lambda:setValores(F23, Cliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
@@ -267,15 +253,14 @@ def camposCrearEmpleado():
     nombreProceso['text'] = 'Crear Empleado'
     descipcionProceso['text'] = 'Este proceso permite añadir un nuevo EMPLEADO a la base de datos'
     
-    FieldFrame(frame = F23,
-           tituloCriterios = 'Criterios',
+    camposCrearEmpleado = FieldFrame(frame = F23,
            criterios = ['Nombre', 'Cedula','Celular','Correo','Cargo','Fecha Contrato'],
-           tituloValores = 'Valores',
            valores = None,
            deshabilitado = None,
-           botones = {'Crear Empleado' : lambda:setValores(F23, Empleado), 'Vaciar Campos': lambda:vaciarCampos(F23)}
            )
-
+    camposCrearEmpleado.crearBotones(botones = {'Crear Empleado' : lambda:setValores(frame = F23, classDestino = Empleado), 
+        'Vaciar Campos': lambda:vaciarCampos(frame = F23)}
+    )
 
 def camposCrearEmpresa():
 
@@ -300,15 +285,18 @@ def camposCrearNegocio():
     descipcionProceso['text'] = 'Este proceso permite añadir una nuevo NEGOCIO a la base de datos'
         
     camposCrearNegocio = FieldFrame(frame = F23,
-           tituloCriterios = 'Criterios',
            criterios = ['Empleado Encargado', 'Cliente','Valor Venta'],
            criteriosDropDowm = {'Empleado Encargado': [empleado.getCedula() for empleado in Empleado.getAllEmpleados()],
                                 'Cliente': [cliente.getCedula() for cliente in Cliente.getAllClientes()]},
-           tituloValores = 'Valores',
            valores = None,
            deshabilitado = None,
-           botones = {'Crear Negocio' : lambda: setValores(F23, Negocio, Empleado.busquedaEmpleado, Cliente.busquedaCliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
            )
+
+    camposCrearNegocio.crearBotones(botones = {'Crear Negocio' : lambda: setValores(frame = F23, 
+                                                                        classDestino = Negocio, 
+                                                                        menuValues = camposCrearNegocio.StringVars), 
+        'Vaciar Campos': lambda:vaciarCampos(frame = F23)}
+        )      
 #########################################Consultas
 
 def consultarCliente():
