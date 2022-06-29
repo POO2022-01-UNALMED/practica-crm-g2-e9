@@ -244,7 +244,7 @@ imagesList = [
 
 ### Boton ventana principal
 botonInit=ImageTk.PhotoImage(Image.open('Python/resources/button.png'))
-botonPrincipal = Button(P4, image=botonInit , border=0,bg="white", command = click_s)
+botonPrincipal = Button(P4, image=botonInit , border=0,bg="white", command = clickPrincipal)
 botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.8)
   
 
