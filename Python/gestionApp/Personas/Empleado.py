@@ -49,4 +49,4 @@ class Empleado(Persona):
     def getNegociosEmpleado(cls): return cls._negociosEmpleado
 
     @classmethod
-    def setNegociosEmpleado(cls, negociosEmpleado): cls._negociosEmpleado = negociosEmpleado
+    def setNegociosEmpleado(cls, negocio): cls._negociosEmpleado.append(negocio)

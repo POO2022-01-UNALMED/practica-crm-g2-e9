@@ -18,7 +18,6 @@ class Negocio:
         self.valorVenta = valorVenta
         self.fechaCreacion = datetime.now()
         Negocio.allNegocios.append(self)
-        self.empleado = Empleado(self)
         empleadoEncargado(Empleado.setNegociosEmpleado(self))
         self.definirEtapa()
 
