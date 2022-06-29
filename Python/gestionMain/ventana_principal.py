@@ -6,11 +6,11 @@ from operator import itemgetter
 
 import os
 import sys
+print(os.getcwd().split('\\Python')[0])
+sys.path.insert(1, os.getcwd().split('\\Python')[0])
 
-sys.path.insert(1, os.getcwd().split('\\Python\\gestionMain')[0])
-
-#from Python.gestionApp.Personas.Empleado import Empleado
-#from Python.gestionApp.Personas.Cliente import Cliente
+from Python.gestionApp.Personas.Empleado import Empleado
+from Python.gestionApp.Personas.Cliente import Cliente
 from Python.gestionApp.Empresa import Empresa
 
 ### Definicion

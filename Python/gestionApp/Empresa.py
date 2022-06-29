@@ -15,7 +15,7 @@ class Empresa:
         self.nombre = nombre
         self.nit = nit
         self.description = description
-        self.allEmpresas(self)
+        self.allEmpresas.append(self)
         messagebox.showinfo(message ='EMPRESA creada correctamente', title = 'Creacion Empresa')
         
         

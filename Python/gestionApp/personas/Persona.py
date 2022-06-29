@@ -1,4 +1,3 @@
-
 class Persona:
 
     def __init__(self,nombre,cedula,cel,correo,id):
