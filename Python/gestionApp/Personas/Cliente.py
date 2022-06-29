@@ -46,9 +46,3 @@ class Cliente(Persona):
     @classmethod
     def setListaEventos(cls, listaEventos): cls.listaEventos = listaEventos  
     
-   
-
-
-print('---')
-print(sys.path)
-print('---')
