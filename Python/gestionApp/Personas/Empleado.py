@@ -16,7 +16,7 @@ class Empleado(Persona):
     _idCounter = 0
     
     def __init__(self, nombre, cedula, cel, correo, cargo, fechaContrato):
-        super().__init__(nombre, cedula, cel, correo )
+        super().__init__(nombre, cedula, cel, correo)
 
         self.cargo = cargo
         self.fechaContrato = fechaContrato
