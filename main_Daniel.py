@@ -1,4 +1,5 @@
 from cgitb import text
+from os import stat
 import time
 from tkinter import*
 from PIL import ImageTk, Image
@@ -43,7 +44,7 @@ def clickOn_hojaDeVida(event):
 def imagenesEnMovimiento():
     global canvas_width, image_width, P4, canvas
     
-    all_images_coordinates = [(canvasId,int(canvas.coords(canvasId)[0])) for canvasId in canvas.find_all()]
+    all_images_coordinates = [(canvasId,int(canvas.coords(canvasId)[1])) for canvasId in canvas.find_all()]
     
     for image_coordinates in all_images_coordinates:
         canvas.move(image_coordinates[0], -3, 0)
@@ -60,6 +61,15 @@ def imagenesEnMovimiento():
                 canvas.create_image(max_coord + image_width - 5, 0, anchor=NW, image=list_images[tag] , tags = tag)
     P4.update()
     P4.after(70, imagenesEnMovimiento)
+
+state = False
+def aa(event):
+    global state, canvas
+    
+    if (not state):
+        canvas.config(background="red")
+        imagenesEnMovimiento()
+        state=True
 
 ###
 
@@ -369,6 +379,7 @@ canvas_width = 400
 canvas_height = 150
 canvas = Canvas(P4, width=canvas_width, height=canvas_height, background='#AFAFAF', highlightthickness=0)
 canvas.grid(row=0, column=0, sticky='nsew')
+canvas.bind("<Enter>", aa)
 
 image_height = canvas_height
 image_width = int(canvas_height*1.3)
@@ -382,7 +393,7 @@ img5_s = ImageTk.PhotoImage(Image.open("Python/resources/slider/5.jpg"))
 
 list_images=[my_image,img1_s,img2_s,img3_s,img4_s,img5_s]
 imagesList = [
-    canvas.create_image(canvas_width + index*image_width, 0, anchor=NW, image=image_in_list, tags = index)
+    canvas.create_image(canvas_width + index*image_width, 3, anchor=NW, image=image_in_list, tags = index)
     for index, image_in_list in enumerate(list_images)
     ]
 
@@ -448,7 +459,5 @@ pan4 = Label(P6, image=img4).grid(column=1, row=1)
 ### Inicio del loop
 ##########################################################################
 
-    
-imagenesEnMovimiento()
 
 inicio.mainloop()
