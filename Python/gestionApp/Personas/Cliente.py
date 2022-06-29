@@ -1,6 +1,7 @@
 from random import uniform
-from Python.gestionApp.Empresa import Empresa
+from tkinter import messagebox
 
+from Python.gestionApp.Empresa import Empresa
 from Python.gestionApp.personas.Persona import Persona
 
 
@@ -10,13 +11,14 @@ class Cliente(Persona):
     listaEventos = []
     idCounter = 0
 
-    def __init__(self, nombre, cedula, cel, correo, id, cargo, activo):
+    def __init__(self, nombre, cedula, cel, correo, cargo, activo):
         super().__init__(nombre, cedula, cel, correo)
         self.id = id
         self.cargo = cargo
         self.activo = activo
         self.probCompra = uniform(0, 0.4)
         Cliente.allClientes.append(self)
+        messagebox.showinfo(message='CLIENTE creada correctamente', title='Creacion Cliente')
 
     def getCargo(self):
         return self.cargo
@@ -67,13 +69,13 @@ class Cliente(Persona):
         cls.listaEventos = listaEventos
 
     @classmethod
-    def busquedaEmpleado(cls, cedula):
+    def busquedaCliente(cls, cedula):
         for i in range(len(Cliente.getAllClientes())):
             if Cliente.allClientes[i].cedula == cedula:
                 return Cliente.getAllClientes()[i]
 
     @classmethod
-    def eliminarEmpleado(cls, cedula):
+    def busquedaCliente(cls, cedula):
         for i in range(len(Cliente.getAllClientes())):
             if (Cliente.getAllClientes(Cliente.getCedula(i))):
                 return Cliente.getAllClientes(i)   

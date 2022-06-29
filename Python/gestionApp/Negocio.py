@@ -1,3 +1,4 @@
+from tkinter import messagebox
 from datetime import datetime
 from random import randrange
 
@@ -18,6 +19,7 @@ class Negocio:
         Negocio._allNegocios.append(self)
         Empleado.setNegociosEmpleado(self.empleadoEncargado)
         self.definirEtapa()
+        messagebox.showinfo(message='NEGOCIO creada correctamente', title='Creacion Negocio')
 
     def getId(self):
         return self.id
