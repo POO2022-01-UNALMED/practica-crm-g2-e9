@@ -10,15 +10,15 @@ import os.path
 ### Definicion
 counter_hojaDeVida = -1
 
-list_hojaDeVida = ["Daniel","Santiago","Miguel","Carlos"]
-list_descripciones_hv = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    ]
+# list_hojaDeVida = Image[image3]
+# list_descripciones_hv = [
+#     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+#     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+#     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+#     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+#     ]
 
-listdesc = ['a','b,','c','d']
+# listdesc = ['a','b,','c','d']
 
 app_desc = 'Esta es la descripcion de la aplicacion'
 
@@ -30,15 +30,17 @@ def mostrarDescripcion():
     messagebox.showinfo(message = app_desc, title = 'Descripcion Aplicacion')
 
 def clickOn_hojaDeVida(event):
-    global counter_hojaDeVida, list_hojaDeVida, ind_img
-    counter_hojaDeVida+=1
-    if counter_hojaDeVida>=len(list_hojaDeVida):
-        counter_hojaDeVida = 0
-    hojaDeVida.config(text = str(list_hojaDeVida[counter_hojaDeVida]))
-    descripcion.config(text = str(listdesc[counter_hojaDeVida]))
-    print('Python/resources/bio_images'+str((counter_hojaDeVida+1))+'_1.jpg')
-    ind_img = ImageTk.PhotoImage(Image.open('Python/resources/bio_images'+str((counter_hojaDeVida+1))+'_1.jpg'))
-    pan.config(image=ind_img)
+    pass
+    #global counter_hojaDeVida, list_hojaDeVida, ind_img
+    #counter_hojaDeVida+=1
+    #if counter_hojaDeVida>=len(list_hojaDeVida):
+        #counter_hojaDeVida = 0
+    #hojaDeVida.config(text = str(list_hojaDeVida[counter_hojaDeVida]))
+    #descripcion.config(text = str(listdesc[counter_hojaDeVida]))
+    #print('Python/resources/bio_images'+str((counter_hojaDeVida+1))+'_1.jpg')
+    #ind_img = ImageTk.PhotoImage(Image.open('Python/resources/bio_images'+str((counter_hojaDeVida+1))+'_1.jpg'))
+    #pan.config(image=ind_img)
+    
 
 
 
@@ -106,7 +108,7 @@ menu1.add_command(label="Salir",command=inicio.destroy)
 ##########################################################################
 
 
-P1 = Frame(inicio, background="#263238", height = 100, width = 50)
+P1 = Frame(inicio, background="#ffffff", height = 100, width = 50)
 P1.grid(row=0, column=0,sticky="news")
 P1.rowconfigure(0, weight=1)
 P1.rowconfigure(1, weight=1)
@@ -117,7 +119,7 @@ P1.columnconfigure(0, weight=1)
 ### P2
 ##########################################################################
 
-P2 = Frame(inicio, background="black", height = 100, width = 50)
+P2 = Frame(inicio, background="white", height = 100, width = 50)
 P2.grid(row=0, column=1,sticky="news")
 P2.rowconfigure(0, weight=1)
 P2.rowconfigure(1, weight=1)
@@ -142,7 +144,7 @@ mensajeBienvenida.place(anchor=CENTER, relx=0.5, rely=0.5)
 ### P4
 ##########################################################################
 
-P4 = Frame(P1, background="#AFAFAF", width=100, height=50)
+P4 = Frame(P1, background="#ffffff", width=100, height=50)
 P4.grid(row=1, column=0, padx=1, pady=1,sticky="news")
 P4.grid_propagate(False)
 
@@ -180,21 +182,21 @@ botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.9)
 ### P5
 ##########################################################################
 
-P5 = Frame(P2, background="pink", width=100, height=50)
+P5 = Frame(P2, background="white", width=100, height=50)
 P5.grid(row=0, column=0, padx=1, pady=1,sticky="news")
 P5.grid_propagate(False)
-P5.bind("<Button-1>", clickOn_hojaDeVida)
+#P5.bind("<Button-1>", clickOn_hojaDeVida)
 
 
 ### Cambio de hoja de vida
-
-hojaDeVida = Label(P5, text = 'Hoja de vida', font=("Arial", 25))
-hojaDeVida.place(anchor=CENTER, relx=0.5, rely=0.25)                 
+image3=ImageTk.PhotoImage(Image.open('Python/resources/hoja.png'))
+hojaDeVida = Label(P5, image=image3)
+hojaDeVida.place(anchor=CENTER, relx=0.5, rely=0.5)                 
 hojaDeVida.bind("<Button-1>", clickOn_hojaDeVida)
 
-descripcion = Label(P5, text= 'Esta es una breve descripción\n de los integrantes del grupo :D!', font=('Arial',12))
-descripcion.place(anchor=CENTER, relx=0.5, rely=0.5)
-descripcion.bind("<Button-1>", clickOn_hojaDeVida)
+#descripcion = Label(P5, text= 'Esta es una breve descripción\n de los integrantes del grupo :D!', font=('Arial',12))
+#descripcion.place(anchor=CENTER, relx=0.5, rely=0.5)
+#descripcion.bind("<Button-1>", clickOn_hojaDeVida)
 
 
 
