@@ -38,6 +38,8 @@ def Inicio(f,d,i1,i2,i3,i4):
     i2.grid_forget()
     i3.grid_forget()
     i4.grid_forget()
+    
+    
       
     
     
@@ -90,7 +92,9 @@ def click_d():
     hojaDeVida2.place(anchor=CENTER, relx=0.5, rely=0.5)
     flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita)   )
     flechita.place(anchor=CENTER, relx=0.1, rely=0.9)
-    
+
+def clickPrincipal():
+    pass
     
     #global counter_hojaDeVida, list_hojaDeVida, ind_img
     #counter_hojaDeVida+=1
@@ -239,7 +243,8 @@ imagesList = [
 ### Boton ventana principal
 botonInit=ImageTk.PhotoImage(Image.open('Python/resources/button.png'))
 botonPrincipal = Button(P4, image=botonInit , border=0,bg="white")
-botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.8)  
+botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.8)
+  
 
 ##########################################################################
 ### P5
