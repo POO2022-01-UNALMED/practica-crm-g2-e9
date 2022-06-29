@@ -8,16 +8,12 @@ class Empresa:
     ventas = []
     serviciosInteres = []
     def __init__(self, nombre, nit, description):
-        self.id = 0 
         self.nombre = nombre
         self.nit = nit
         self.description = description
         self.allEmpresas.append(self)
         messagebox.showinfo(message ='EMPRESA creada correctamente', title = 'Creacion Empresa')
-        
-        
-    def getId(self): return self.id
-    
+
     def getNombre(self): return self.nombre
     def setNombre(self,nombre): self.nombre = nombre
     

@@ -21,9 +21,10 @@ from Python.gestionApp.personas.Empleado import Empleado
 ### Definicion
 app_desc = 'Esta es la descripcion de la aplicacion'
 app_func = 'Esto es lo que hace la app'
+stringVarsValues={}
+
 
 ### Funciones
-
 
 def funcionesAplicacion():
     global app_desc
@@ -76,7 +77,7 @@ class FieldFrame(Frame):
         self.valores = valores
         self.deshabilitado = deshabilitado
         self.botones = botones
-
+        
         for widget in self.frame.winfo_children():
             widget.destroy()
         
@@ -97,6 +98,9 @@ class FieldFrame(Frame):
             criterio.grid(row = index, column = 0)
 
     def generarValores(self):
+        global stringVarsValues 
+        stringVarsValues = {}
+
         if self.valores == None:
             if self.criteriosDropDowm != None:
                 self.StringVars = [
@@ -115,7 +119,7 @@ class FieldFrame(Frame):
                         if len(self.criteriosDropDowm[valor])>0:
                             self.camposValores.append(OptionMenu(self.frame, 
                             self.StringVars[stringVarsCounter], 
-                            *self.criteriosDropDowm[valor]))
+                            *self.criteriosDropDowm[valor], command = stringVarsValues[stringVarsCounter]))
                             stringVarsCounter+=1
                         else:
                             self.camposValores.append(OptionMenu(self.frame, 
@@ -131,7 +135,8 @@ class FieldFrame(Frame):
 
             for index, valor in enumerate(self.camposValores):
                 valor.grid(row = index, column = 1, sticky="news")
-                                
+
+                              
         else:
 
             if self.criteriosDropDowm != None:
@@ -221,11 +226,18 @@ def vaciarCampos(frame):
 def funcWrapper(func, args):
     func(*args)
 
-def setValores(frame, classDestino):
+def setValores(frame, classDestino, *options):
     entryValues = []
+    optionsCounter = 0
     for widget in frame.winfo_children():
-        if widget.winfo_class() in ['Entry','OptionMenu']:
+        messagebox.showinfo(message = str(widget.winfo_class()), title = 'Descripcion Aplicacion')
+        if widget.winfo_class() == 'Entry':
             entryValues.append(widget.get())
+        if widget.winfo_class() == 'Menubutton':
+            
+            #entryValues.append(funcWrapper(options[optionsCounter],widget.__var.get()))
+            optionsCounter =+ 1
+            
     funcWrapper(classDestino, entryValues)
 
 
@@ -280,7 +292,6 @@ def camposCrearEmpresa():
            )
     
 def camposCrearNegocio():
-    messagebox.showinfo(message = dir(OptionMenu), title = 'Descripcion Aplicacion')
     global nombreProceso, descipcionProceso
 
     nombreProceso['text'] = 'Crear Negocio'
@@ -294,7 +305,7 @@ def camposCrearNegocio():
            tituloValores = 'Valores',
            valores = None,
            deshabilitado = None,
-           botones = {'Crear Negocio' : lambda: setValores(F23, Negocio), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           botones = {'Crear Negocio' : lambda: setValores(F23, Negocio, Empleado.busquedaEmpleado, Cliente.busquedaCliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
            )
 
 
