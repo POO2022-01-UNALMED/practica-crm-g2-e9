@@ -90,9 +90,16 @@ def click_c():
 def click_d():
     hojaDeVida2 = Label(P5, image=dd)
     hojaDeVida2.place(anchor=CENTER, relx=0.5, rely=0.5)
-    flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita)   )
+    flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita,pan,pan2,pan3,pan4)   )
     flechita.place(anchor=CENTER, relx=0.1, rely=0.9)
-
+    pan = Label(P6, image=imgA2)
+    pan.grid(column=0, row=0,padx=30,pady=5)
+    pan2 = Label(P6, image=imgB2)
+    pan2.grid(column=1, row=0,padx=70,pady=5)
+    pan3 = Label(P6, image=imgC2)
+    pan3.grid(column=0, row=1,padx=30,pady=0)
+    pan4= Label(P6, image=imgD2)
+    pan4.grid(column=1, row=1,padx=70,pady=0)
 
     
     #global counter_hojaDeVida, list_hojaDeVida, ind_img
@@ -330,6 +337,14 @@ imgB1 = ImageTk.PhotoImage(Image.open('resources/bio_images/santi2.png'))
 imgC1 = ImageTk.PhotoImage(Image.open('resources/bio_images/santi3.png'))
 imgD1= ImageTk.PhotoImage(Image.open('resources/bio_images/santi4.png'))
 #************************************
+
+#************************************************
+imgA2 = ImageTk.PhotoImage(Image.open('resources/bio_images/daniel.png'))
+imgB2 = ImageTk.PhotoImage(Image.open('resources/bio_images/daniel2.png'))
+imgC2 = ImageTk.PhotoImage(Image.open('resources/bio_images/daniel3.png'))
+imgD2= ImageTk.PhotoImage(Image.open('resources/bio_images/daniel4.png'))
+#**************************************
+
 #pan = Label(P6, text='owo').grid(column=0, row=0)
 panFo=Label(P6,image=fotos)
 panFo.place(anchor=CENTER, relx=0.5, rely=0.5)
