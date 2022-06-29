@@ -30,21 +30,35 @@ def mostrarDescripcion():
     global app_desc
     messagebox.showinfo(message = app_desc, title = 'Descripcion Aplicacion')
 
+
+def Inicio(f,d):
+    f.place_forget()
+    d.place_forget()
+      
+    
+    
 def click_s():
     hojaDeVida2 = Label(P5, image=ss)
     hojaDeVida2.place(anchor=CENTER, relx=0.5, rely=0.5)
-    
+    flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita)   )
+    flechita.place(anchor=CENTER, relx=0.1, rely=0.9)
+
 def click_m():
     hojaDeVida2 = Label(P5, image=mm)
     hojaDeVida2.place(anchor=CENTER, relx=0.5, rely=0.5)
-    
+    flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita)   )
+    flechita.place(anchor=CENTER, relx=0.1, rely=0.9)
 def click_c():
     hojaDeVida2 = Label(P5, image=cc)
     hojaDeVida2.place(anchor=CENTER, relx=0.5, rely=0.5)
+    flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita)   )
+    flechita.place(anchor=CENTER, relx=0.1, rely=0.9)
 
 def click_d():
     hojaDeVida2 = Label(P5, image=dd)
     hojaDeVida2.place(anchor=CENTER, relx=0.5, rely=0.5)
+    flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita)   )
+    flechita.place(anchor=CENTER, relx=0.1, rely=0.9)
     
     
     #global counter_hojaDeVida, list_hojaDeVida, ind_img
@@ -217,6 +231,8 @@ mm=ImageTk.PhotoImage(Image.open('Python/resources/mm.png'))
 cc=ImageTk.PhotoImage(Image.open('Python/resources/cc.png'))
 dd=ImageTk.PhotoImage(Image.open('Python/resources/dd.png'))
 
+flecha=ImageTk.PhotoImage(Image.open('Python/resources/flecha.png'))
+
 hojaDeVida = Label(P5, image=image3)
 hojaDeVida.place(anchor=CENTER, relx=0.5, rely=0.5)
 #s
@@ -231,6 +247,9 @@ botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.7)
 #m
 botonPrincipal = Button(P5, image=c , border=0,bg="white",command=click_c)
 botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.88)  
+
+
+
 
 #----------                 
 #hojaDeVida.bind("<Button-1>", clickOn_hojaDeVida)
