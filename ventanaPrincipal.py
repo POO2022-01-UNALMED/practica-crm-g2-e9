@@ -494,7 +494,7 @@ F22.grid(row=1, column=0, sticky="news")
 descipcionProceso = Label(F22, text = 'Descripcion Proceso')
 descipcionProceso.place(anchor=CENTER, relx=0.5, rely=0.5)
 
-l1=ImageTk.PhotoImage(Image.open('Python/resources/l1.png'))
+l1=ImageTk.PhotoImage(Image.open('resources/l1.png'))
 l1Label=Label(F22,image=l1)
 l1Label.place(anchor=CENTER, relx=0.5, rely=0.97)
 
