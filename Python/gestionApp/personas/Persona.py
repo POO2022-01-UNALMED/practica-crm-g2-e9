@@ -19,5 +19,5 @@ class Persona:
     def getCorreo(self): return self.correo
     def setCorreo(self,correo): self.correo = correo   
     
-    def toStringDatos(self):
+    def __str__(self):
         return "Nombre: " + self.nombre + "\nCedula " + self.cedula + "\nCel: " + self.cel + "\nCorreo: " + self.correo

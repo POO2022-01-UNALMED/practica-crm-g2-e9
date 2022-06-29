@@ -7,11 +7,10 @@ from operator import itemgetter
 import os
 import sys
 
-from Python.gestionApp.personas.Cliente import Cliente
 print(os.getcwd().split('\\Python')[0])
 sys.path.insert(1, os.getcwd().split('\\Python')[0])
 
-
+from Python.gestionApp.Personas.Cliente import Cliente
 from Python.gestionApp.Empresa import Empresa
 
 ### Definicion
