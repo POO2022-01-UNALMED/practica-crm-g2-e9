@@ -1,4 +1,7 @@
-from Python.gestionApp.Personas import Persona
+
+
+
+from Python.gestionApp.personas.Persona import Persona
 
 
 class Cliente(Persona):

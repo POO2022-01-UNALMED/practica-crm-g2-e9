@@ -16,6 +16,7 @@ class Empresa:
         self.nit = nit
         self.description = description
         self.allEmpresas(self)
+        messagebox.showinfo(message ='EMPRESA creada correctamente', title = 'Creacion Empresa')
         
         
     def getId(self): return self.id
@@ -54,10 +55,7 @@ class Empresa:
     @classmethod
     def setServiciosInteres(cls,serviciosInteres): cls.serviciosInteres = serviciosInteres
     
-<<<<<<< Updated upstream
     def buscarEmpresa(nit):
         for i in range(len(Empresa.getAllEmpresas())):
             if (Empresa.getAllEmpresas(Empresa.getNit(i))):
                 return Empresa.getAllEmpresas(get(i))     
-=======
->>>>>>> Stashed changes
