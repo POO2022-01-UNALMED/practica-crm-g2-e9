@@ -78,10 +78,12 @@ class Cliente(Persona):
                 return Cliente.getAllClientes(i)   
             if Cliente.allClientes[i].cedula == cedula:
                 Cliente.getAllClientes().pop(i)
+                      
+            if Cliente.allClientes[i].cedula == cedula:
+                Cliente.getAllClientes().pop(i)
+
         
     
     def infoCliente(self):
         return f'\t---Informacion Cliente---  \n Nombre: {self.nombre} \n Cedula: {self.cedula} \n Celular: {self.celular} \n Cargo: {self.cargo} \n Empresa: {self.getEmpresa}'
 
-        
-          
