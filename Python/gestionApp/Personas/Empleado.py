@@ -2,7 +2,7 @@ import math
 from random import uniform
 from tkinter import messagebox
 
-from Python.gestionApp.Personas.Persona import Persona
+from personas import Persona
 
 
 class Empleado(Persona):

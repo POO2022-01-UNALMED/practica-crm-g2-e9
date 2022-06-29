@@ -1,7 +1,5 @@
 from random import uniform
-
-from Python.gestionApp.Personas.Persona import Persona
-
+from Persona import Persona
 
 class Cliente(Persona):
     
@@ -48,3 +46,6 @@ class Cliente(Persona):
    
 
 
+print('---')
+print(sys.path)
+print('---')
