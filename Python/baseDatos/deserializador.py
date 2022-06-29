@@ -1,32 +1,33 @@
 import pickle
-from gestorAplicacion.viajes.Tiquete import Tiquete
-from gestorAplicacion.personas.Comprador import Comprador
-from gestorAplicacion.viajes.Ciudad import Ciudad
-from gestorAplicacion.viajes.Vehiculo import Vehiculo
-from gestorAplicacion.viajes.Viaje import Viaje
-from gestorAplicacion.personas.Conductor import Conductor
-from gestorAplicacion.personas.Especialista import Especialista
 import pathlib
 import os
 
-class Deserializador():
-    
-    def deserializar():
-        """ Método encargado de carcar  los datos del
-            sistema al abrir la app"""
+from Python.gestionApp.Empresa import Empresa
+from Python.gestionApp.Negocio import Negocio
+from Python.gestionApp.Venta import Venta
+from Python.gestionApp.eventos.Evento import Evento
+from Python.gestionApp.personas.Empleado import Empleado
+from Python.gestionApp.personas.Cliente import Cliente
+from Python.gestionApp.servicios.Promocion import Promocion
+from Python.gestionApp.servicios.Servicio import Servicio
 
+
+class Deserializador():
+
+    def deserializar():
         datos = {
-                "compradores": lambda x : Comprador.setCompradores(x),
-                "ciudades" : lambda x : Ciudad.setCiudades(x),
-                "vehiculos" : lambda x : Vehiculo.setVehiculos(x),
-                "viajes" : lambda x : Viaje.setViajes(x),
-                "conductores" : lambda x : Conductor.setConductores(x),             
-                "especialistas" : lambda x : Especialista.setEspecialistas(x),
-                "tiquetes" : lambda x : Tiquete.setTiquetes(x),
-                }
+            "empleado": lambda x: Empleado.setAllEmpleados(x),
+            "cliente": lambda x: Cliente.setAllClientes(x),
+            "empresa": lambda x: Empresa.setAllEmpresas(x),
+            "negocio": lambda x: Negocio.setAllNegocios(x),
+            "venta": lambda x: Venta.setAllVentas(x),
+            "servicio": lambda x: Servicio.setAllServicios(x),
+            "promocion": lambda x: Promocion.setAllPromociones(x),
+            "evento": lambda x: Evento.setAllEventos(x)
+        }
 
         for archivo, set in datos.items():
-            picklefile = open(os.path.join(pathlib.Path(__file__).parent.absolute(), f"temp\\{archivo}"),"rb")
+            picklefile = open(os.path.join(pathlib.Path(__file__).parent.absolute(), f"temp\\{archivo}"), "rb")
             dato = pickle.load(picklefile)
             set(dato)
             picklefile.close()
