@@ -1,18 +1,16 @@
-
 from datetime import datetime
+from random import randrange
 
 from Python.gestionApp.personas.Empleado import Empleado
 
 
 class Negocio:
-
     _allNegocios = []
     _eventos = []
     etapa = ""
 
-
-    def __init__ (self, empleadoEncargado, cliente, valorVenta):
-        self.id = id
+    def __init__(self, empleadoEncargado, cliente, valorVenta):
+        self.id = Negocio.crear_id()
         self.empleadoEncargado = empleadoEncargado
         self.cliente = cliente
         self.valorVenta = valorVenta
@@ -21,19 +19,29 @@ class Negocio:
         Empleado.setNegociosEmpleado(self.empleadoEncargado)
         self.definirEtapa()
 
-    def getId(self): return self.id
+    def getId(self):
+        return self.id
 
-    def getEtapa(self): return self.etapa
+    def getEtapa(self):
+        return self.etapa
 
-    def getEmpleadoEncargado(self): return self.empleadoEncargado
-    def setEmpleadoEncargado(self,empleadoEncargado): self.empleadoEncargado = empleadoEncargado
+    def getEmpleadoEncargado(self):
+        return self.empleadoEncargado
 
-    def getValorVenta(self): return self.valorVenta
-    def setValorVenta(self,valorVenta): self.valorVenta = valorVenta
+    def setEmpleadoEncargado(self, empleadoEncargado):
+        self.empleadoEncargado = empleadoEncargado
 
-    def getFechaCreacion(self): return self.fechaCreacion
-    def setFechaCreacion(self,fechaCreacion): self.fechaCreacion = fechaCreacion
+    def getValorVenta(self):
+        return self.valorVenta
 
+    def setValorVenta(self, valorVenta):
+        self.valorVenta = valorVenta
+
+    def getFechaCreacion(self):
+        return self.fechaCreacion
+
+    def setFechaCreacion(self, fechaCreacion):
+        self.fechaCreacion = fechaCreacion
 
     def definirEtapa(self):
         numLlamadas = 0
@@ -44,7 +52,7 @@ class Negocio:
         timepoReuniones = 0.0
         calculoMetrica = 0.0
 
-        if (len(self._eventos)== 0):
+        if (len(self._eventos) == 0):
             self.etapa = "Prospeccion"
         else:
             if (self._eventos.__contains__("No interesado")):
@@ -54,23 +62,27 @@ class Negocio:
                 for i in range(len(self._eventos)):
                     if (self._eventos.get(i)):
                         pass
-                    #Aqui va lo que falta de la funcion definir Etapa
-
-
-    @classmethod
-    def getAllNegocios(cls): return cls.allNegocios
-    @classmethod
-    def setAllNegocios(cls,allNegocios): cls.allNegocios = allNegocios
+                    # Aqui va lo que falta de la funcion definir Etapa
 
     @classmethod
-    def getEventos(cls): return cls._eventos
+    def getAllNegocios(cls):
+        return cls.allNegocios
+
     @classmethod
-    def setEventos(cls,_eventos): cls._eventos = _eventos
+    def setAllNegocios(cls, allNegocios):
+        cls.allNegocios = allNegocios
+
+    @classmethod
+    def getEventos(cls):
+        return cls._eventos
+
+    @classmethod
+    def setEventos(cls, _eventos):
+        cls._eventos = _eventos
 
     def infoNegocio(self):
         return f'\t---Informacion Negocio---  \n Empleado Encargado del Negocio: {self.empleadoEncargado} \n Cliente: {self.getCliente} \n Valor de Venta: {self.valorVenta}'
 
-               
     @classmethod
     def busquedaNegocio(cls, id):
         for i in range(len(Negocio.getAllNegocios())):
@@ -83,3 +95,15 @@ class Negocio:
             if Negocio.getAllNegocios()[i].id == id:
                 Negocio.getAllNegocios().pop(i)
 
+    @classmethod
+    def crear_id(cls):
+        idGenerado = randrange(0, 1000, 1)
+        if len(Negocio.getAllNegocios()) == 0:
+            return idGenerado
+        else:
+            for i in range(len(Negocio.getAllNegocios())):
+                if idGenerado == Negocio.getAllNegocios()[i].id:
+                    i = 0
+                    idGenerado = randrange(0, 1000, 1)
+                elif i == len(Negocio.getAllNegocios()) - 1:
+                    return idGenerado

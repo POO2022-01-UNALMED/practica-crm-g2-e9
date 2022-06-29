@@ -5,6 +5,7 @@ from random import randrange
 class Evento:
     allEventos = []
     allEventosPendientes = []
+
     def __init__(self, negocio, descripcion, fecha):
         self.id = Evento.crear_id()
         self.negocio = negocio
@@ -15,22 +16,37 @@ class Evento:
         else:
             self.negocio.agregarEvento(self)
             Evento.allEventos.append(self)
-            
-    def getNegocio(self): return self.negocio
-    def setNegocio(self,negocio): self.negocio = negocio
-    
-    def getDescripcion(self): return self.descripcion
-    def setDescripcion(self,description): self.descripcion = description
-    
-    def getFecha(self): return self.fecha
-    def setFecha(self,fecha): self.fecha = fecha
-    
+
+    def getNegocio(self):
+        return self.negocio
+
+    def setNegocio(self, negocio):
+        self.negocio = negocio
+
+    def getDescripcion(self):
+        return self.descripcion
+
+    def setDescripcion(self, description):
+        self.descripcion = description
+
+    def getFecha(self):
+        return self.fecha
+
+    def setFecha(self, fecha):
+        self.fecha = fecha
+
     @classmethod
-    def getAllEventos(cls): return cls.allEventos
-    def setAllEventos(cls): cls.allEventos
-    
-    def getAllEventosPendientes(cls): return cls.allEventosPendientes
-    def setAllEventosPendientes(cls,allEventosPendientes): cls.allEventosPendientes
+    def getAllEventos(cls):
+        return cls.allEventos
+
+    def setAllEventos(cls):
+        cls.allEventos
+
+    def getAllEventosPendientes(cls):
+        return cls.allEventosPendientes
+
+    def setAllEventosPendientes(cls, allEventosPendientes):
+        cls.allEventosPendientes
 
     @classmethod
     def busquedaEvento(cls, id):
