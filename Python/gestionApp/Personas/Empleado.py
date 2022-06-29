@@ -1,4 +1,5 @@
 import math
+from tkinter import messagebox
 
 from Python.gestionApp.Personas import Persona
 
@@ -13,14 +14,14 @@ class Empleado(Persona):
     _idCounter = 0
     
     def __init__(self, nombre, cedula, cel, correo, cargo, fechaContrato):
-        super().__init__(nombre, cedula, cel, correo, id)
-        self.id = 0 + idCounter
+        super().__init__(nombre, cedula, cel, correo )
+
         self.cargo = cargo
         self.fechaContrato = fechaContrato
         self.habilidadVenta = math.random()
-        idCounter += 1
+
         Empleado._allEmpleados.append(self)
-        messagebox.showinfo(message ='EMPRESA creada correctamente', title = 'Creacion Empresa')
+        messagebox.showinfo(message ='EMPLEADO creada correctamente', title = 'Creacion Empleado')
         
     
     @classmethod    
