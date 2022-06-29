@@ -1,10 +1,10 @@
 from requests import get
-from Python.gestionApp import Negocio
-from Python.gestionApp.Empresa import Empresa
-from Python.gestionApp.personas.Cliente import Cliente
-from Python.gestionApp.personas.Empleado import Empleado
-from Python.gestionApp.servicios import Promocion
-from Python.gestionApp.servicios.Servicio import Servicio
+from gestionApp import Negocio
+from gestionApp.Empresa import Empresa
+from gestionApp.personas.Cliente import Cliente
+from gestionApp.personas.Empleado import Empleado
+from gestionApp.servicios import Promocion
+from gestionApp.servicios.Servicio import Servicio
 
 
 class Registro:
