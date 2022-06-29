@@ -439,7 +439,7 @@ def eliminarEmpresa():
                                                                         menuValues = camposEliminarEmpresa.StringVars), 
         'Vaciar Campos': lambda:vaciarCampos(frame = F23)})
 
-def Negocio():
+def eliminarNegocio():
     global nombreProceso, descipcionProceso
 
     nombreProceso['text'] = 'ELIMINAR NEGOCIO'
