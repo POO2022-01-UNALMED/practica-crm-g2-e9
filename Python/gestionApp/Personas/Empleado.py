@@ -1,7 +1,7 @@
 import math
 from tkinter import messagebox
 
-from Python.gestionApp.personas.Persona import Persona
+import Persona
 
 
 class Empleado(Persona):

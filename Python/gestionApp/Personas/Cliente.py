@@ -1,6 +1,5 @@
 
-
-from gestionApp.personas import Persona
+import Persona
 
 
 class Cliente(Persona):
