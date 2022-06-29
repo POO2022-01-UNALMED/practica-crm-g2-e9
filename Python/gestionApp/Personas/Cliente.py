@@ -1,6 +1,6 @@
 from random import uniform
 
-from Persona import Persona
+from Python.gestionApp.Personas.Persona import Persona
 
 
 class Cliente(Persona):
