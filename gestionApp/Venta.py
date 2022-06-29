@@ -1,7 +1,7 @@
 from http import client
 import re
 from random import randrange
-from excepciones import *
+from gestionApp.excepciones import *
 
 class Venta:
     allVentas = []

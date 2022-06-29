@@ -1,5 +1,5 @@
 from tkinter import messagebox
-from excepciones import *
+from gestionApp.excepciones import *
 
 class Empresa:
     

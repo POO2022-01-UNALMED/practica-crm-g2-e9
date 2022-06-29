@@ -1,11 +1,15 @@
 from tkinter import messagebox
 from datetime import datetime
 from random import randrange
-from excepciones import *
 
-from gestionApp.eventos.Reunion import Reunion
+
+
+
+from gestionApp.excepciones import *
 from gestionApp.eventos.Correo import Correo
+from gestionApp.eventos.Reunion import Reunion
 from gestionApp.personas.Empleado import Empleado
+
 
 
 class Negocio:
