@@ -210,7 +210,7 @@ def vaciarCampos(frame):
 def funcWrapper(func, args):
     func(*args)
 
-def setValores(frame = None, classDestino = None, menuValues = None):
+def setValores(frame = None, classDestino = None, menuValues = None, options = None):
 
     entryValues = []
     optionsCounter = 0
@@ -219,9 +219,14 @@ def setValores(frame = None, classDestino = None, menuValues = None):
             entryValues.append(widget.get())
         if (widget.winfo_class() == 'Menubutton') & (type(menuValues) == list):
             entryValues.append(menuValues[optionsCounter].get())
-            messagebox.showinfo(message = str(menuValues[optionsCounter].get()), title = 'Descripcion Aplicacion')
-            optionsCounter =+ 1       
-    messagebox.showinfo(message = type(entryValues), title = 'Descripcion Aplicacion',font="resources/fonts/Montserrat/static/Montserrat-Bold.ttf", fg="#030716")
+            optionsCounter =+ 1
+
+    if type(options) == dict:
+        for index, value in enumerate(entryValues):
+            if index in options.keys():
+                messagebox.showinfo(message = value, title = 'Descripcion Aplicacion')
+                entryValues[index] = funcWrapper(options[index], [value])
+                
     if len(entryValues)>0:
         funcWrapper(classDestino, entryValues)
 
@@ -250,12 +255,15 @@ def camposCrearCliente():
     nombreProceso['text'] = 'CREAR CLIENTE'
     descipcionProceso['text'] = 'Este proceso permite añadir un nuevo CLIENTE a la base de datos'
     
-    FieldFrame(frame = F23,
+    camposCrearCliente = FieldFrame(frame = F23,
            criterios = ['Nombre', 'Cedula','Celular','Correo','Cargo','Activo'],
            valores = None,
            deshabilitado = None,
-           botones = {'Crear Cliente' : lambda:setValores(F23, Cliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
            )
+
+    camposCrearCliente.crearBotones(botones = {'Crear Cliente' : lambda:setValores(frame = F23, classDestino = Cliente), 
+        'Vaciar Campos': lambda:vaciarCampos(frame = F23)}
+    )
 
 
 def camposCrearEmpleado():
@@ -282,14 +290,13 @@ def camposCrearEmpresa():
     descipcionProceso['text'] = 'Este proceso permite añadir una nueva EMPRESA a la base de datos'
         
     camposCrearEmpresa = FieldFrame(frame = F23,
-           tituloCriterios = 'Criterios',
            criterios = ['Nombre', 'Nit','Descripcion'],
-           tituloValores = 'Valores',
            valores = None,
            deshabilitado = None,
-           botones = {'Crear Empresa' : lambda: setValores(F23, Empresa), 'Vaciar Campos': lambda:vaciarCampos(F23)}
            )
-    
+    camposCrearEmpresa.crearBotones(botones = {'Crear Empresa' : lambda:setValores(frame = F23, classDestino = Empresa), 
+        'Vaciar Campos': lambda:vaciarCampos(frame = F23)})
+
 def camposCrearNegocio():
     global nombreProceso, descipcionProceso
 
@@ -306,7 +313,8 @@ def camposCrearNegocio():
 
     camposCrearNegocio.crearBotones(botones = {'Crear Negocio' : lambda: setValores(frame = F23, 
                                                                         classDestino = Negocio, 
-                                                                        menuValues = camposCrearNegocio.StringVars), 
+                                                                        menuValues = camposCrearNegocio.StringVars,
+                                                                        options={1:Empleado.busquedaEmpleado ,2:Cliente.busquedaCliente}), 
         'Vaciar Campos': lambda:vaciarCampos(frame = F23)}
         )      
 #########################################Consultas
@@ -377,64 +385,77 @@ def consultarNegocio():
 def eliminarCliente():
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'ELIMINAR CLIENTE'
+    nombreProceso['text'] = 'Eliminar Cliente'
     descipcionProceso['text'] = 'Este proceso permite eliminar un CLIENTE de la base de datos'
     
-    FieldFrame(frame = F23,
-           tituloCriterios = 'Criterios',
-           criterios = ['Ingrese Cedula del Cliente: '],
-           tituloValores = 'Valores',
+    camposEliminarCliente = FieldFrame(frame = F23,
+           criterios = ['Ingrese Cedula del Cliente'],
+           criteriosDropDowm = {'Ingrese Cedula del Cliente': [cliente.getCedula() for cliente in Cliente.getAllClientes()]},
            valores = None,
-           deshabilitado = None,
-           botones = {'Eliminar Cliente' : lambda:setValores(F23, Cliente.eliminarCliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
-           )    
-    
+           deshabilitado = None
+           )     
+
+    camposEliminarCliente.crearBotones(botones = {'Eliminar Cliente' : lambda: setValores(frame = F23, 
+                                                                        classDestino = Cliente.eliminarCliente, 
+                                                                        menuValues = camposEliminarCliente.StringVars), 
+        'Vaciar Campos': lambda:vaciarCampos(frame = F23)})
+
+
+
 def eliminarEmpleado():
     global nombreProceso, descipcionProceso
 
     nombreProceso['text'] = 'ELIMINAR EMPLEADOS'
     descipcionProceso['text'] = 'Este proceso permite eliminar un EMPLEADO de la base de datos'
     
-    FieldFrame(frame = F23,
-           tituloCriterios = 'Criterios',
-           criterios = ['Ingrese Cedula del Empleado: '],
-           tituloValores = 'Valores',
+    camposEliminarEmpleado = FieldFrame(frame = F23,
+           criterios = ['Ingrese Cedula del Empleado'],
+           criteriosDropDowm = {'Ingrese Cedula del Empleado': [empleado.getCedula() for empleado in Empleado.getAllEmpleados()]},
            valores = None,
-           deshabilitado = None,
-           botones = {'Elimianar Empleado' : lambda:setValores(F23, Empleado.eliminarEmpleado), 'Vaciar Campos': lambda:vaciarCampos(F23)}
-           )
+           deshabilitado = None
+           )     
+
+    camposEliminarEmpleado.crearBotones(botones = {'Eliminar Empleado' : lambda: setValores(frame = F23, 
+                                                                        classDestino = Empleado.eliminarEmpleado, 
+                                                                        menuValues = camposEliminarEmpleado.StringVars), 
+        'Vaciar Campos': lambda:vaciarCampos(frame = F23)})
 
 
 def eliminarEmpresa():
-
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'ELIMINAR EMPRESA'
-    descipcionProceso['text'] = 'Este proceso permite Eliminar una EMPRESA de la base de datos'
-        
-    FieldFrame(frame = F23,
-           tituloCriterios = 'Criterios',
-           criterios = ['Ingrese nit de la Empresa: '],
-           tituloValores = 'Valores',
+    nombreProceso['text'] = 'Eliminar Empresa'
+    descipcionProceso['text'] = 'Este proceso permite eliminar un EMPRESA de la base de datos'
+    
+    camposEliminarEmpresa = FieldFrame(frame = F23,
+           criterios = ['Ingrese Nit del Empresa'],
+           criteriosDropDowm = {'Ingrese Nit del Empresa': [empresa.getNit() for empresa in Empresa.getAllEmpresas()]},
            valores = None,
-           deshabilitado = None,
-           botones = {'Eliminar Empresa' : lambda: setValores(F23, Empresa.eliminarEmpresa), 'Vaciar Campos': lambda:vaciarCampos(F23)}
-           )
+           deshabilitado = None
+           )     
 
-def eliminarNegocio():
+    camposEliminarEmpresa.crearBotones(botones = {'Eliminar Empresa' : lambda: setValores(frame = F23, 
+                                                                        classDestino = Empresa.eliminarEmpresa, 
+                                                                        menuValues = camposEliminarEmpresa.StringVars), 
+        'Vaciar Campos': lambda:vaciarCampos(frame = F23)})
+
+def Negocio():
     global nombreProceso, descipcionProceso
 
     nombreProceso['text'] = 'ELIMINAR NEGOCIO'
     descipcionProceso['text'] = 'Este proceso permite eliminar un NEGOCIO de la base de datos'
-        
-    FieldFrame(frame = F23,
-           tituloCriterios = 'Criterios',
-           criterios = ['Ingrese el Id del negocio: '],
-           tituloValores = 'Valores',
+    
+    camposEliminarEmpresa = FieldFrame(frame = F23,
+           criterios = ['Ingrese ID del Negocio'],
+           criteriosDropDowm = {'Ingrese ID del Negocio': [negocio.getId() for negocio in Negocio.getAllNegocios()]},
            valores = None,
-           deshabilitado = None,
-           botones = {'Eliminar Negocio' : lambda: setValores(F23, Negocio.eliminarNegocio), 'Vaciar Campos': lambda:vaciarCampos(F23)}
-           )
+           deshabilitado = None
+           )     
+
+    camposEliminarEmpresa.crearBotones(botones = {'Eliminar Negocio' : lambda: setValores(frame = F23, 
+                                                                        classDestino = Negocio.eliminarNegocio, 
+                                                                        menuValues = camposEliminarEmpresa.StringVars), 
+        'Vaciar Campos': lambda:vaciarCampos(frame = F23)})
 
 
 menu = Menu(ventanaPrincipal)
