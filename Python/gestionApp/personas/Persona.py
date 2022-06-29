@@ -1,7 +1,6 @@
-
 class Persona:
 
-    def __init__(self,nombre,cedula,cel,correo,id):
+    def __init__(self,nombre,cedula,cel,correo):
         self.nombre = nombre
         self.cedula = cedula 
         self.cel = cel

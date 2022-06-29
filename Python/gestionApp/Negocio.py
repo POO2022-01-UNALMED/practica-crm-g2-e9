@@ -1,10 +1,7 @@
 
 from datetime import datetime
-from Python.gestionApp import eventos
-from Python.gestionApp.eventos.Evento import Evento
 
-from Python.gestionApp.personas.Empleado import Empleado
-
+from Python.gestionApp.Personas.Empleado import Empleado
 
 
 class Negocio:
@@ -73,3 +70,7 @@ class Negocio:
     def getEventos(cls): return cls._eventos
     @classmethod
     def setEventos(cls,_eventos): cls._eventos = _eventos
+
+
+if __name__ == "__main__":
+    print("Hello, World!")

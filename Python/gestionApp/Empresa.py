@@ -15,7 +15,7 @@ class Empresa:
         self.nombre = nombre
         self.nit = nit
         self.description = description
-        self.allEmpresas(self)
+        self.allEmpresas.append(self)
         messagebox.showinfo(message ='EMPRESA creada correctamente', title = 'Creacion Empresa')
         
         
@@ -59,3 +59,10 @@ class Empresa:
         for i in range(len(Empresa.getAllEmpresas())):
             if (Empresa.getAllEmpresas(Empresa.getNit(i))):
                 return Empresa.getAllEmpresas(get(i))     
+
+
+
+
+
+
+
