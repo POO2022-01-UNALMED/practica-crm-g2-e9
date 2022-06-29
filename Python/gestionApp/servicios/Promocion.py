@@ -7,7 +7,7 @@ class Promocion:
     allPromociones = []
 
     def __init__(self, descuento, servicio):
-        self.id = id
+        self.id = Promocion.crear_id()
         self.descuento = descuento
         self.servicios = servicio
 
@@ -42,16 +42,27 @@ class Promocion:
     def setAllPromociones(cls, allPromociones):
         cls.allPromociones = allPromociones
 
-    def eliminarServicio(self):
-        Promocion.getAllPromociones().remove(self)
+    @classmethod
+    def busquedaPromocion(cls, id):
+        for i in range(len(Promocion.getAllPromociones())):
+            if Promocion.getAllPromociones()[i].id == id:
+                return Promocion.getAllPromociones()[i]
+
+    @classmethod
+    def eliminarPromocion(cls, id):
+        for i in range(len(Promocion.getAllPromociones())):
+            if Promocion.getAllPromociones()[i].id == id:
+                Promocion.getAllPromociones().pop(i)
 
     @classmethod
     def crear_id(cls):
         idGenerado = randrange(0, 1000, 1)
-        for i in range(len(Promocion.getAllPromociones())):
-            if idGenerado == Promocion.getAllPromociones()[i].id:
-                i = 0
-                idGenerado = randrange(0, 1000, 1)
-
-            elif i == len(Promocion.getAllPromociones()) - 1:
-                return idGenerado
+        if len(Promocion.getAllPromociones()) == 0:
+            return idGenerado
+        else:
+            for i in range(len(Promocion.getAllPromociones())):
+                if idGenerado == Promocion.getAllPromociones()[i].id:
+                    i = 0
+                    idGenerado = randrange(0, 1000, 1)
+                elif i == len(Promocion.getAllPromociones()) - 1:
+                    return idGenerado

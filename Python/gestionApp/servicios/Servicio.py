@@ -43,17 +43,6 @@ class Servicio:
         return cls._allServicios
 
     @classmethod
-    def crear_id(cls):
-        idGenerado = randrange(0, 1000, 1)
-        for i in range(len(Servicio.getAllServicios())):
-            if idGenerado == Servicio.getAllServicios()[i].id:
-                i = 0
-                idGenerado = randrange(0, 1000, 1)
-
-            elif i == len(Servicio.getAllServicios()) - 1:
-                return idGenerado
-
-    @classmethod
     def getServicios(cls):
         return cls._servicios
 
@@ -80,6 +69,19 @@ class Servicio:
         for i in range(len(Servicio.getAllServicios())):
             if Servicio.getAllServicios()[i].id == id:
                 Servicio.getAllServicios().pop(i)
+
+    @classmethod
+    def crear_id(cls):
+        idGenerado = randrange(0, 1000, 1)
+        if len(Servicio.getAllServicios()) == 0:
+            return idGenerado
+        else:
+            for i in range(len(Servicio.getAllServicios())):
+                if idGenerado == Servicio.getAllServicios()[i].id:
+                    i = 0
+                    idGenerado = randrange(0, 1000, 1)
+                elif i == len(Servicio.getAllServicios()) - 1:
+                    return idGenerado
 
     def infoServicio(self):
         return f'\t---Informacion Empleado---  \n Nombre del Servicio: {self.nombreServicio} \n Valor del Producto: {self.valorProducto} \n Tipo de servicio: {self.tipo} \n Descripcion: {self.descripcion}'

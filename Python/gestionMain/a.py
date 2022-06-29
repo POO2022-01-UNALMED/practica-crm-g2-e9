@@ -17,7 +17,14 @@ if __name__ == "__main__":
     #empleado3 = Empleado("EWE", 102, 310, "carlos@unal.edu.co", "recogeCucarachas", "10/10/2010")
 
     #empleado4 = Empleado("FASA", 103, 310, "carlos@unal.edu.co", "recogeCucarachas", "10/10/2010")
-
+    print(len(Servicio.getAllServicios()))
     print(Servicio.crear_id())
+    Servicio1 = Servicio("a", 1, "a", "aa")
+    Servicio1 = Servicio("b", 4, "a", "aa")
+    Servicio1 = Servicio("c", 3, "a", "aa")
+    Servicio1 = Servicio("d", 9, "a", "aa")
+
+    for i in range(len(Servicio.getAllServicios())):
+        print(Servicio.getAllServicios()[i].id)
     #print(Empleado.eliminarEmpleado(103))
     #print(Empleado.busquedaEmpleado(103).nombre)
