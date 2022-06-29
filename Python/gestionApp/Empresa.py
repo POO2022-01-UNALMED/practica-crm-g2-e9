@@ -59,3 +59,10 @@ class Empresa:
         for i in range(len(Empresa.getAllEmpresas())):
             if (Empresa.getAllEmpresas(Empresa.getNit(i))):
                 return Empresa.getAllEmpresas(get(i))     
+
+
+
+
+
+
+
