@@ -1,6 +1,6 @@
 from random import uniform
 
-from requests import get
+
 from Python.gestionApp.personas.Persona import Persona
 
 
