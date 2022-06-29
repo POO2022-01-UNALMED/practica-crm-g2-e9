@@ -201,6 +201,7 @@ class FieldFrame(Frame):
 ### root
 ##########################################################################
 
+
 ventanaPrincipal = Tk()
 ventanaPrincipal.title("Ventana Principal")
 ventanaPrincipal.geometry("700x700")
