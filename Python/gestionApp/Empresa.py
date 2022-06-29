@@ -1,3 +1,4 @@
+from tkinter import messagebox
 
 from requests import get
 
@@ -8,8 +9,8 @@ class Empresa:
     negociosAbiertos = []
     ventas = []
     serviciosInteres = []
-    def __init__(self, id, nombre, nit, description):
-        self.id = id 
+    def __init__(self, nombre, nit, description):
+        self.id = 0 
         self.nombre = nombre
         self.nit = nit
         self.description = description
