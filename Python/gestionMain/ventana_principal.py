@@ -10,9 +10,9 @@ import sys
 sys.path.append(sys.path[0].replace('gestionMain','gestionApp'))
 
 
-from Empresa import Empresa
-from personas.Persona import Persona
-from personas.Cliente import Cliente
+from Python.gestionApp.Empresa import Empresa
+from Python.gestionApp.personas.Persona import Persona
+from Python.gestionApp.personas.Cliente import Cliente
 
 
 
