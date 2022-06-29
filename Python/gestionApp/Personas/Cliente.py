@@ -75,7 +75,7 @@ class Cliente(Persona):
                 return Cliente.getAllClientes()[i]
 
     @classmethod
-    def busquedaCliente(cls, cedula):
+    def eliminarCliente(cls, cedula):
         for i in range(len(Cliente.getAllClientes())):
             if (Cliente.getAllClientes(Cliente.getCedula(i))):
                 return Cliente.getAllClientes(i)   
