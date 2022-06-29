@@ -140,12 +140,12 @@ canvas.grid(row=0, column=0, sticky='nsew')
 
 image_height = canvas_height
 image_width = int(canvas_height*1.3)
-my_image = ImageTk.PhotoImage(Image.open('./resources/slider/a.jpg').resize((image_width, canvas_height)))
-img1_s = ImageTk.PhotoImage(Image.open('./resources/slider/1.jpg'))
-img2_s = ImageTk.PhotoImage(Image.open('./resources/slider/2.jpg'))
-img3_s = ImageTk.PhotoImage(Image.open('./resources/slider/3.jpg'))
-img4_s = ImageTk.PhotoImage(Image.open('./resources/slider/4.jpg'))
-img5_s = ImageTk.PhotoImage(Image.open('./resources/slider/5.jpg'))
+my_image = ImageTk.PhotoImage(Image.open("Python/resources/slider/6.jpg").resize((image_width, canvas_height)))
+img1_s = ImageTk.PhotoImage(Image.open("Python//resources/slider/1.jpg"))
+img2_s = ImageTk.PhotoImage(Image.open("Python/resources/slider/2.jpg"))
+img3_s = ImageTk.PhotoImage(Image.open("Python/resources/slider/3.jpg"))
+img4_s = ImageTk.PhotoImage(Image.open("Python/resources/slider/4.jpg"))
+img5_s = ImageTk.PhotoImage(Image.open("Python/resources/slider/5.jpg"))
 
 
 list_images=[my_image,img1_s,img2_s,img3_s,img4_s,img5_s]
@@ -190,10 +190,10 @@ descripcion.bind("<Button-1>", clickOn_hojaDeVida)
 P6 = Frame(P2, background="black", width=100, height=50)
 P6.grid(row=1, column=0, padx=1, pady=1,sticky="news")
 P6.grid_propagate(False)
-img1 = ImageTk.PhotoImage(Image.open('./resources/bio_images/4_1.jpg'))
-img2 = ImageTk.PhotoImage(Image.open('./resources/bio_images/4_2.jpg'))
-img3 = ImageTk.PhotoImage(Image.open('./resources/bio_images/4_3.jpg'))
-img4 = ImageTk.PhotoImage(Image.open('./resources/bio_images/4_4.jpg'))
+img1 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/4_1.jpg'))
+img2 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/4_2.jpg'))
+img3 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/4_3.jpg'))
+img4 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/4_4.jpg'))
 
 #pan = Label(P6, text='owo').grid(column=0, row=0)
 pan = Label(P6, image=img1)
