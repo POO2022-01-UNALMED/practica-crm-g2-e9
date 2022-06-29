@@ -21,7 +21,7 @@ from gestionApp.servicios.Servicio import Servicio
 
 
 
-app_desc = 'Esta es la descripcion de la aplicacion'
+app_desc = 'Es un software creado para administrar y analizar las interacciones con clientes, anticipar necesidades y deseos, optimizar larentabilidad, aumentar las ventas y personalizar campañas de captación de nuevos clientes.'
 
 
 ### Funciones
