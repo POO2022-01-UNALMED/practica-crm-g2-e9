@@ -1,5 +1,8 @@
+import sys
 from random import uniform
-from personas import Persona
+
+from Python.gestionApp.personas.Persona import Persona
+
 
 class Cliente(Persona):
     
