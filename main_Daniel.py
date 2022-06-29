@@ -1,4 +1,5 @@
 from cgitb import text
+from os import stat
 import time
 from tkinter import*
 from PIL import ImageTk, Image
@@ -44,7 +45,7 @@ def clickOn_hojaDeVida(event):
 def imagenesEnMovimiento():
     global canvas_width, image_width, P4, canvas
     
-    all_images_coordinates = [(canvasId,int(canvas.coords(canvasId)[0])) for canvasId in canvas.find_all()]
+    all_images_coordinates = [(canvasId,int(canvas.coords(canvasId)[1])) for canvasId in canvas.find_all()]
     
     for image_coordinates in all_images_coordinates:
         canvas.move(image_coordinates[0], -3, 0)
@@ -61,6 +62,15 @@ def imagenesEnMovimiento():
                 canvas.create_image(max_coord + image_width - 5, 0, anchor=NW, image=list_images[tag] , tags = tag)
     P4.update()
     P4.after(70, imagenesEnMovimiento)
+
+state = False
+def aa(event):
+    global state, canvas
+    
+    if (not state):
+        canvas.config(background="red")
+        imagenesEnMovimiento()
+        state=True
 
 ###
 
@@ -226,3 +236,4 @@ pan4 = Label(P6, image=img4).grid(column=1, row=1)
 imagenesEnMovimiento()
 
 inicio.mainloop()
+

@@ -20,6 +20,7 @@ class Empleado(Persona):
         self.habilidadVenta = math.random()
         idCounter += 1
         Empleado._allEmpleados.append(self)
+        messagebox.showinfo(message ='EMPRESA creada correctamente', title = 'Creacion Empresa')
         
     
     @classmethod    

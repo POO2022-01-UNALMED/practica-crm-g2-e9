@@ -47,4 +47,8 @@ class Cliente(Persona):
     @classmethod
     def getListaEventos(cls): return cls.listaEventos
     @classmethod
-    def setListaEventos(cls, listaEventos): cls.listaEventos = listaEventos       
+    def setListaEventos(cls, listaEventos): cls.listaEventos = listaEventos  
+    
+   
+
+

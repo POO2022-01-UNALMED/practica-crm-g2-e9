@@ -7,7 +7,7 @@ class Venta:
     allVentas = []
     
     def __init__(self,negocio, servicio, valorVenta, empleado, cliente, promocion, IVA):
-        self.id = ""
+        
         self.negocio = negocio
         self.servicios = servicio
         self.valorVenta = valorVenta
