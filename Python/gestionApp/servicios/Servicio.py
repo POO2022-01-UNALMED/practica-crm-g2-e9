@@ -1,11 +1,11 @@
-from requests import get
-
+from random import randrange
 
 class Servicio:
     _allServicios = []
     _servicios = []
     _promociones = []
     def __init__(self, nombreServicios, valorProducto, tipo, descripcion):
+        self.id = Servicio.crear_id()
         self.nombreServicios = nombreServicios
         self.valorProducto = valorProducto
         self.tipo = tipo
@@ -29,7 +29,26 @@ class Servicio:
     @classmethod
     def getAllServicios(cls): return cls._allServicios
 
-    
+    @classmethod
+    def crear_id(cls):
+
+        idGenerado = randrange(0, 1000, 1)
+        for i in range(len(Servicio.getAllServicios())):
+            if idGenerado == Servicio.getAllServicios()[i].id:
+                i=0
+                idGenerado = randrange(0, 1000, 1)
+
+            elif i == len(Servicio.getAllServicios())-1:
+                return idGenerado
+
+
+        for i in range(len(Servicio.getAllServicios())):
+            if (not Servicio.getAllServicios()[i].id == id) and len(Servicio.getAllServicios())-1:
+                return id
+
+
+        for
+        return randrange(0, 1000, 1)
 
 
     @classmethod
@@ -41,11 +60,18 @@ class Servicio:
     def getPromociones(cls): return cls._promociones
     @classmethod
     def addPromocion(cls,promocion): cls._promociones.append(promocion)
-    
-    def buscarServicio(nombre):
+
+    @classmethod
+    def busquedaServicio(cls, id):
         for i in range(len(Servicio.getAllServicios())):
-            if (Servicio.getAllServicios(Servicio.getNombreServicio(i))):
-                return Servicio.getAllServicios(get(i))     
+            if Servicio.getAllServicios()[i].id == id:
+                return Servicio.getAllServicios()[i]
+
+    @classmethod
+    def eliminarServicio(cls, id):
+        for i in range(len(Servicio.getAllServicios())):
+            if Servicio.getAllServicios()[i].id == id:
+                Servicio.getAllServicios().pop(i)
     
     def infoServicio(self):
         return f'\t---Informacion Empleado---  \n Nombre del Servicio: {self.nombreServicio} \n Valor del Producto: {self.valorProducto} \n Tipo de servicio: {self.tipo} \n Descripcion: {self.descripcion}'

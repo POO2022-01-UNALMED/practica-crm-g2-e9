@@ -71,5 +71,15 @@ class Negocio:
         return f'\t---Informacion Negocio---  \n Empleado Encargado del Negocio: {self.empleadoEncargado} \n Cliente: {self.getCliente} \n Valor de Venta: {self.valorVenta}'
 
                
+    @classmethod
+    def busquedaNegocio(cls, id):
+        for i in range(len(Negocio.getAllNegocios())):
+            if Negocio.getAllNegocios()[i].id == id:
+                return Negocio.getAllNegocios()[i]
 
+    @classmethod
+    def eliminarNegocio(cls, id):
+        for i in range(len(Negocio.getAllNegocios())):
+            if Negocio.getAllNegocios()[i].id == id:
+                Negocio.getAllNegocios().pop(i)
 
