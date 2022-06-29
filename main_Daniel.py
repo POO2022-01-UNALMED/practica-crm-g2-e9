@@ -30,8 +30,23 @@ def mostrarDescripcion():
     global app_desc
     messagebox.showinfo(message = app_desc, title = 'Descripcion Aplicacion')
 
-def clickOn_hojaDeVida(event):
-    pass
+def click_s():
+    hojaDeVida2 = Label(P5, image=ss)
+    hojaDeVida2.place(anchor=CENTER, relx=0.5, rely=0.5)
+    
+def click_m():
+    hojaDeVida2 = Label(P5, image=mm)
+    hojaDeVida2.place(anchor=CENTER, relx=0.5, rely=0.5)
+    
+def click_c():
+    hojaDeVida2 = Label(P5, image=cc)
+    hojaDeVida2.place(anchor=CENTER, relx=0.5, rely=0.5)
+
+def click_d():
+    hojaDeVida2 = Label(P5, image=dd)
+    hojaDeVida2.place(anchor=CENTER, relx=0.5, rely=0.5)
+    
+    
     #global counter_hojaDeVida, list_hojaDeVida, ind_img
     #counter_hojaDeVida+=1
     #if counter_hojaDeVida>=len(list_hojaDeVida):
@@ -196,22 +211,29 @@ s=ImageTk.PhotoImage(Image.open('Python/resources/s.png'))
 m=ImageTk.PhotoImage(Image.open('Python/resources/m.png'))
 c=ImageTk.PhotoImage(Image.open('Python/resources/c.png'))
 d=ImageTk.PhotoImage(Image.open('Python/resources/d.png'))
+
+ss=ImageTk.PhotoImage(Image.open('Python/resources/ss.png'))
+mm=ImageTk.PhotoImage(Image.open('Python/resources/mm.png'))
+cc=ImageTk.PhotoImage(Image.open('Python/resources/cc.png'))
+dd=ImageTk.PhotoImage(Image.open('Python/resources/dd.png'))
+
 hojaDeVida = Label(P5, image=image3)
 hojaDeVida.place(anchor=CENTER, relx=0.5, rely=0.5)
 #s
-botonPrincipal = Button(P5, image=s , border=0,bg="white")
+botonPrincipal = Button(P5, image=s , border=0,bg="white", command=click_s)
 botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.35)
 #d
-botonPrincipal = Button(P5, image=m , border=0,bg="white")
+botonPrincipal = Button(P5, image=m , border=0,bg="white",command=click_m)
 botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.523)  
 #c
-botonPrincipal = Button(P5, image=d , border=0,bg="white")
+botonPrincipal = Button(P5, image=d , border=0,bg="white",command=click_c)
 botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.7)  
 #m
-botonPrincipal = Button(P5, image=c , border=0,bg="white")
+botonPrincipal = Button(P5, image=c , border=0,bg="white",command=click_d)
 botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.88)  
+
 #----------                 
-hojaDeVida.bind("<Button-1>", clickOn_hojaDeVida)
+#hojaDeVida.bind("<Button-1>", clickOn_hojaDeVida)
 
 #descripcion = Label(P5, text= 'Esta es una breve descripción\n de los integrantes del grupo :D!', font=('Arial',12))
 #descripcion.place(anchor=CENTER, relx=0.5, rely=0.5)
