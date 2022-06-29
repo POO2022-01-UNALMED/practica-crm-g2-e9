@@ -483,7 +483,7 @@ F21.rowconfigure(2, weight=8)
 F21.columnconfigure(0, weight=1)
 F21.grid_propagate(False)
 
-nombreProceso = Label(F21, text = 'Nombre Proceso')
+nombreProceso = Label(F21, text = 'Nombre Proceso',bg="#030716", fg="white")
 nombreProceso.grid(row = 0, column = 0)
 
 ##########################################################################
@@ -491,18 +491,23 @@ nombreProceso.grid(row = 0, column = 0)
 ##########################################################################
 
 
-F22 = Frame(F21, background="green", height = 100, width = 100)
+F22 = Frame(F21, background="white", height = 100, width = 100)
 F22.grid(row=1, column=0, sticky="news")
 
 descipcionProceso = Label(F22, text = 'Descripcion Proceso')
 descipcionProceso.place(anchor=CENTER, relx=0.5, rely=0.5)
 
+l1=ImageTk.PhotoImage(Image.open('Python/resources/l1.png'))
+l1Label=Label(F22,image=l1)
+l1Label.place(anchor=CENTER, relx=0.5, rely=0.97)
+
+
 ##########################################################################
 ### Frame 2.3
 ##########################################################################
 
-F23 = Frame(F21, background="blue", height = 100, width = 100)
-F23.grid(row=2, column=0, padx = 100, pady = 100, sticky="news")
+F23 = Frame(F21, background="white", height = 100, width = 100)
+F23.grid(row=2, column=0, padx = 50, pady = 0, sticky="news")
 
 F23.columnconfigure(0, weight=1)
 F23.columnconfigure(1, weight=1)
@@ -510,6 +515,6 @@ F23.columnconfigure(1, weight=1)
 #*************
 pat=ImageTk.PhotoImage(Image.open('Python/resources/pat2.png'))
 patLabel=Label(F23,image=pat)
-patLabel.place(anchor=CENTER, relx=0.5, rely=0.5)
+patLabel.place(anchor=CENTER, relx=0.5, rely=0.95)
 
 ventanaPrincipal.mainloop()
