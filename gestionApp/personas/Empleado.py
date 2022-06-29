@@ -1,7 +1,7 @@
 import math
 from random import uniform
 from tkinter import messagebox
-from excepciones import *
+from gestionApp.excepciones import *
 
 from gestionApp.personas.Persona import Persona
 

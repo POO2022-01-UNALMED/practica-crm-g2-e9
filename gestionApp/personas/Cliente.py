@@ -3,7 +3,7 @@ from tkinter import messagebox
 
 from gestionApp.Empresa import Empresa
 from gestionApp.personas.Persona import Persona
-from excepciones import *
+from gestionApp.excepciones import *
 
 
 class Cliente(Persona):

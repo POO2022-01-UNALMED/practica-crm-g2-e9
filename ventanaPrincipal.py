@@ -4,7 +4,7 @@ from tkinter import *
 from PIL import ImageTk, Image
 from tkinter import messagebox
 from operator import itemgetter
-from excepciones import *
+from gestionApp.excepciones import *
 import os
 import sys
 from tkinter import font
