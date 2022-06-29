@@ -1,4 +1,7 @@
 
+from requests import get
+
+
 class Empresa:
     allEmpresas = []
     clientes = []
@@ -10,6 +13,8 @@ class Empresa:
         self.nombre = nombre
         self.nit = nit
         self.description = description
+        self.allEmpresas(self)
+        
         
     def getId(self): return self.id
     
@@ -47,3 +52,7 @@ class Empresa:
     @classmethod
     def setServiciosInteres(cls,serviciosInteres): cls.serviciosInteres = serviciosInteres
     
+    def buscarEmpresa(nit):
+        for i in range(len(Empresa.getAllEmpresas())):
+            if (Empresa.getAllEmpresas(Empresa.getNit(i))):
+                return Empresa.getAllEmpresas(get(i))     

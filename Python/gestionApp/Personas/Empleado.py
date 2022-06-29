@@ -12,13 +12,13 @@ class Empleado(Persona):
     _ventas = []
     _idCounter = 0
     
-    def __init__(self, nombre, cedula, cel, correo, cargo, fechaContrato):
-        super().__init__(nombre, cedula, cel, correo, id)
-        self.id = 0 + idCounter
+    def __init__(self, nombre, cedula, cel, correo, cargo, fechaContrato, id):
+        super().__init__(nombre, cedula, cel, correo)
+        self.id = 0
         self.cargo = cargo
         self.fechaContrato = fechaContrato
         self.habilidadVenta = math.random()
-        idCounter += 1
+
         Empleado._allEmpleados.append(self)
         
     
