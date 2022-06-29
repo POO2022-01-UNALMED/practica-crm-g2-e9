@@ -1,6 +1,6 @@
-from Python.gestionApp.Personas.Cliente import Cliente
-from Python.gestionApp.Personas.Empleado import Empleado
-from Python.gestionApp.Personas.Persona import Persona
+from Python.gestionApp.personas.Cliente import Cliente
+from Python.gestionApp.personas.Empleado import Empleado
+from Python.gestionApp.personas.Persona import Persona
 
 if __name__ == "__main__":
     persona1 = Persona("Carlos",100,310,"carlos@unal.edu.co")
