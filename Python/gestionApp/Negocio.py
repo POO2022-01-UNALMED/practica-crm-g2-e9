@@ -1,7 +1,7 @@
 
 from datetime import datetime
 
-from Python.gestionApp.Personas.Empleado import Empleado
+from Python.gestionApp.personas.Empleado import Empleado
 
 
 class Negocio:
