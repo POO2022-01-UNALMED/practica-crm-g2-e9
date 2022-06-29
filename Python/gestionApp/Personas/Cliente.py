@@ -49,5 +49,5 @@ class Cliente(Persona):
     def busquedaCliente(cedula):
         for i in range(len(Cliente.getAllClientes())):
             if (Cliente.getAllClientes(Cliente.getCedula(i))):
-                return Cliente.getAllClientes(get(i))             
+                return Cliente.getAllClientes(i)             
     

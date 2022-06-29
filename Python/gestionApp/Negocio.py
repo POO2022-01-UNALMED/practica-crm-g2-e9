@@ -34,9 +34,6 @@ class Negocio:
     def getFechaCreacion(self): return self.fechaCreacion
     def setFechaCreacion(self,fechaCreacion): self.fechaCreacion = fechaCreacion
     
-    
-    
-        
 
     def definirEtapa(self):
         numLlamadas = 0
@@ -70,6 +67,3 @@ class Negocio:
     @classmethod
     def setEventos(cls,_eventos): cls._eventos = _eventos
 
-
-if __name__ == "__main__":
-    print("Hello, World!")

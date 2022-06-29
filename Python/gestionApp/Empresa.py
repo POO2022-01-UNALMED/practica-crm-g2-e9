@@ -1,9 +1,5 @@
 from tkinter import messagebox
 
-from requests import get
-
-
-
 class Empresa:
     
     allEmpresas = []
@@ -59,7 +55,7 @@ class Empresa:
     def buscarEmpresa(nit):
         for i in range(len(Empresa.getAllEmpresas())):
             if (Empresa.getAllEmpresas(Empresa.getNit(i))):
-                return Empresa.getAllEmpresas(get(i))     
+                return Empresa.getAllEmpresas((i))     
 
 
 
