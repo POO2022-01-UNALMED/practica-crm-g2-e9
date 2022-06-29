@@ -3,7 +3,7 @@ from datetime import datetime
 from random import randrange
 from excepciones import *
 
-from Python.gestionApp.personas.Empleado import Empleado
+from gestionApp.personas.Empleado import Empleado
 
 
 class Negocio:

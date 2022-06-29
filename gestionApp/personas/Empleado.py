@@ -3,7 +3,7 @@ from random import uniform
 from tkinter import messagebox
 from excepciones import *
 
-from Python.gestionApp.personas.Persona import Persona
+from gestionApp.personas.Persona import Persona
 
 
 class Empleado(Persona):

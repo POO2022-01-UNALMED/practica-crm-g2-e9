@@ -1,4 +1,4 @@
-from Python.gestionApp.eventos.Evento import Evento
+from gestionApp.eventos.Evento import Evento
 
 
 class Correo(Evento):

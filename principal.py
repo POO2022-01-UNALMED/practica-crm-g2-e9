@@ -1,26 +1,25 @@
 from calendar import c
 from cgitb import text
 from os import stat
-import time
 from tkinter import*
 from PIL import ImageTk, Image
 from tkinter import messagebox
 from operator import itemgetter
-import os.path
+from baseDatos.Serializador import Serializador
+from baseDatos.Deserializador import Deserializador
 
 
-### Definicion
-counter_hojaDeVida = -1
 
-# list_hojaDeVida = Image[image3]
-# list_descripciones_hv = [
-#     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-#     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-#     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-#     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-#     ]
 
-# listdesc = ['a','b,','c','d']
+
+from gestionApp.Negocio import Negocio
+from gestionApp.personas.Cliente import Cliente
+from gestionApp.personas.Empleado import Empleado
+from gestionApp.personas.Persona import Persona
+from gestionApp.servicios.Servicio import Servicio
+
+
+
 
 app_desc = 'Esta es la descripcion de la aplicacion'
 
@@ -41,7 +40,7 @@ def Inicio(f,d,i1,i2,i3,i4):
     i4.grid_forget()
     
     
-      
+    
     
     
 def click_s():
@@ -145,7 +144,7 @@ def aa(event):
 def Entrar():
     inicio.destroy()
     import ventanaPrincipal
-     
+    
 ##########################################################################
 ### root
 ##########################################################################
@@ -205,7 +204,7 @@ P3.grid_propagate(False)
 
 
 ### Mensaje de Bienvenida
-imgBienvenida=ImageTk.PhotoImage(Image.open("Python/resources/p3.png"))
+imgBienvenida=ImageTk.PhotoImage(Image.open("resources/p3.png"))
 mensajeBienvenida = Label(P3, background="#ffffff",image=imgBienvenida)
 mensajeBienvenida.place(anchor=CENTER, relx=0.5, rely=0.5)
 
@@ -216,7 +215,7 @@ mensajeBienvenida.place(anchor=CENTER, relx=0.5, rely=0.5)
 P4 = Frame(P1, background="#ffffff", width=100, height=50)
 P4.grid(row=1, column=0, padx=1, pady=1,sticky="news")
 P4.grid_propagate(False)
-rect=ImageTk.PhotoImage(Image.open('Python/resources/rect.png'))
+rect=ImageTk.PhotoImage(Image.open('resources/rect.png'))
 rectl= Label(P4, image=rect)
 rectl.place(anchor=CENTER, relx=0.5, rely=0.5)
 
@@ -229,12 +228,12 @@ canvas.grid(row=0, column=0, padx=45,pady=17)
 
 image_height = canvas_height
 image_width = int(canvas_height*1.3)
-my_image = ImageTk.PhotoImage(Image.open("Python/resources/slider/6.jpg").resize((image_width, canvas_height)))
-img1_s = ImageTk.PhotoImage(Image.open("Python//resources/slider/1.jpg"))
-img2_s = ImageTk.PhotoImage(Image.open("Python/resources/slider/2.jpg"))
-img3_s = ImageTk.PhotoImage(Image.open("Python/resources/slider/3.jpg"))
-img4_s = ImageTk.PhotoImage(Image.open("Python/resources/slider/4.jpg"))
-img5_s = ImageTk.PhotoImage(Image.open("Python/resources/slider/5.jpg"))
+my_image = ImageTk.PhotoImage(Image.open("resources/slider/6.jpg").resize((image_width, canvas_height)))
+img1_s = ImageTk.PhotoImage(Image.open("resources/slider/1.jpg"))
+img2_s = ImageTk.PhotoImage(Image.open("resources/slider/2.jpg"))
+img3_s = ImageTk.PhotoImage(Image.open("resources/slider/3.jpg"))
+img4_s = ImageTk.PhotoImage(Image.open("resources/slider/4.jpg"))
+img5_s = ImageTk.PhotoImage(Image.open("resources/slider/5.jpg"))
 
 
 list_images=[my_image,img1_s,img2_s,img3_s,img4_s,img5_s]
@@ -245,10 +244,10 @@ imagesList = [
 
 
 ### Boton ventana principal
-botonInit=ImageTk.PhotoImage(Image.open('Python/resources/button.png'))
+botonInit=ImageTk.PhotoImage(Image.open('resources/button.png'))
 botonPrincipal = Button(P4, image=botonInit , border=0,bg="white", command=Entrar)
 botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.8)
-  
+
 
 ##########################################################################
 ### P5
@@ -261,19 +260,19 @@ P5.grid_propagate(False)
 
 
 ### Cambio de hoja de vida
-image3=ImageTk.PhotoImage(Image.open('Python/resources/hoja.png'))
+image3=ImageTk.PhotoImage(Image.open('resources/hoja.png'))
 
-s=ImageTk.PhotoImage(Image.open('Python/resources/s.png'))
-m=ImageTk.PhotoImage(Image.open('Python/resources/m.png'))
-c=ImageTk.PhotoImage(Image.open('Python/resources/c.png'))
-d=ImageTk.PhotoImage(Image.open('Python/resources/d.png'))
+s=ImageTk.PhotoImage(Image.open('resources/s.png'))
+m=ImageTk.PhotoImage(Image.open('resources/m.png'))
+c=ImageTk.PhotoImage(Image.open('resources/c.png'))
+d=ImageTk.PhotoImage(Image.open('resources/d.png'))
 
-ss=ImageTk.PhotoImage(Image.open('Python/resources/ss.png'))
-mm=ImageTk.PhotoImage(Image.open('Python/resources/mm.png'))
-cc=ImageTk.PhotoImage(Image.open('Python/resources/cc.png'))
-dd=ImageTk.PhotoImage(Image.open('Python/resources/dd.png'))
+ss=ImageTk.PhotoImage(Image.open('resources/ss.png'))
+mm=ImageTk.PhotoImage(Image.open('resources/mm.png'))
+cc=ImageTk.PhotoImage(Image.open('resources/cc.png'))
+dd=ImageTk.PhotoImage(Image.open('resources/dd.png'))
 
-flecha=ImageTk.PhotoImage(Image.open('Python/resources/flecha.png'))
+flecha=ImageTk.PhotoImage(Image.open('resources/flecha.png'))
 
 hojaDeVida = Label(P5, image=image3)
 hojaDeVida.place(anchor=CENTER, relx=0.5, rely=0.5)
@@ -311,25 +310,25 @@ P6 = Frame(P2, background="black", width=100, height=50)
 P6.grid(row=1, column=0, padx=1, pady=1,sticky="news")
 P6.grid_propagate(False)
 
-fotos=ImageTk.PhotoImage(Image.open('Python/resources/fotos.png'))
-img1 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/ferrari.png'))
-img2 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/ferrari2.png'))
-img3 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/ferrari3.png'))
-img4 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/ferrari4.png'))
+fotos=ImageTk.PhotoImage(Image.open('resources/fotos.png'))
+img1 = ImageTk.PhotoImage(Image.open('resources/bio_images/ferrari.png'))
+img2 = ImageTk.PhotoImage(Image.open('resources/bio_images/ferrari2.png'))
+img3 = ImageTk.PhotoImage(Image.open('resources/bio_images/ferrari3.png'))
+img4 = ImageTk.PhotoImage(Image.open('resources/bio_images/ferrari4.png'))
 
 
 #************************************
-imgA = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/carlos.png'))
-imgB = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/carlos2.png'))
-imgC = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/carlos3.png'))
-imgD = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/carlos4.png'))
+imgA = ImageTk.PhotoImage(Image.open('resources/bio_images/carlos.png'))
+imgB = ImageTk.PhotoImage(Image.open('resources/bio_images/carlos2.png'))
+imgC = ImageTk.PhotoImage(Image.open('resources/bio_images/carlos3.png'))
+imgD = ImageTk.PhotoImage(Image.open('resources/bio_images/carlos4.png'))
 #***********************************
 
 #***********************************
-imgA1 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/santi.png'))
-imgB1 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/santi2.png'))
-imgC1 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/santi3.png'))
-imgD1= ImageTk.PhotoImage(Image.open('Python/resources/bio_images/santi4.png'))
+imgA1 = ImageTk.PhotoImage(Image.open('resources/bio_images/santi.png'))
+imgB1 = ImageTk.PhotoImage(Image.open('resources/bio_images/santi2.png'))
+imgC1 = ImageTk.PhotoImage(Image.open('resources/bio_images/santi3.png'))
+imgD1= ImageTk.PhotoImage(Image.open('resources/bio_images/santi4.png'))
 #************************************
 #pan = Label(P6, text='owo').grid(column=0, row=0)
 panFo=Label(P6,image=fotos)
@@ -356,8 +355,47 @@ panFo.place(anchor=CENTER, relx=0.5, rely=0.5)
 ### Inicio del loop
 ##########################################################################
 
-    
-imagenesEnMovimiento()
+if __name__ == "__main__":
+    Serializador.serializar()
+    Deserializador.deserializar()
+    imagenesEnMovimiento()
+    inicio.mainloop()
 
-inicio.mainloop()
+    
+    # persona1 = Persona("Carlos",100,310,"carlos@unal.edu.co")
+    # print(persona1.nombre)
+
+    #empleado1 = Empleado("Carlos", 100, 310, "carlos@unal.edu.co", "recogeCucarachas", "10/10/2010")
+    # cliente1 = Cliente("Adres", 101, 311, "andres@unal.edu.co", 1001, "Cajero", True)
+    # neg = Negocio(empleado1, cliente1, 100)
+
+    empleado2 = Empleado("DA", 101, 310, "carlos@unal.edu.co", "recogeCucarachas", "10/10/2010")
+
+    #empleado3 = Empleado("EWE", 102, 310, "carlos@unal.edu.co", "recogeCucarachas", "10/10/2010")
+
+    #empleado4 = Empleado("FASA", 103, 310, "carlos@unal.edu.co", "recogeCucarachas", "10/10/2010")
+    print(len(Servicio.getAllServicios()))
+    print(Servicio.crear_id())
+    Servicio1 = Servicio("a", 1, "a", "aa")
+    Servicio1 = Servicio("b", 4, "a", "aa")
+    Servicio1 = Servicio("c", 3, "a", "aa")
+    Servicio1 = Servicio("d", 9, "a", "aa")
+
+    for i in range(len(Servicio.getAllServicios())):
+        print(Servicio.getAllServicios()[i].id)
+    #print(Empleado.eliminarEmpleado(103))
+    #print(Empleado.busquedaEmpleado(103).nombre)
+
+    ### Definicion
+    counter_hojaDeVida = -1
+
+    # list_hojaDeVida = Image[image3]
+    # list_descripciones_hv = [
+    #     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    #     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    #     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    #     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    #     ]
+
+    # listdesc = ['a','b,','c','d']
 

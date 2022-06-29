@@ -1,8 +1,8 @@
 from random import uniform
 from tkinter import messagebox
 
-from Python.gestionApp.Empresa import Empresa
-from Python.gestionApp.personas.Persona import Persona
+from gestionApp.Empresa import Empresa
+from gestionApp.personas.Persona import Persona
 from excepciones import *
 
 

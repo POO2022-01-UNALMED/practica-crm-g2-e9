@@ -2,14 +2,14 @@ import pickle
 import pathlib
 import os
 
-from Python.gestionApp.Empresa import Empresa
-from Python.gestionApp.Negocio import Negocio
-from Python.gestionApp.Venta import Venta
-from Python.gestionApp.eventos.Evento import Evento
-from Python.gestionApp.personas.Empleado import Empleado
-from Python.gestionApp.personas.Cliente import Cliente
-from Python.gestionApp.servicios.Promocion import Promocion
-from Python.gestionApp.servicios.Servicio import Servicio
+from gestionApp.Empresa import Empresa
+from gestionApp.Negocio import Negocio
+from gestionApp.Venta import Venta
+from gestionApp.eventos.Evento import Evento
+from gestionApp.personas.Empleado import Empleado
+from gestionApp.personas.Cliente import Cliente
+from gestionApp.servicios.Promocion import Promocion
+from gestionApp.servicios.Servicio import Servicio
 
 
 class Deserializador():

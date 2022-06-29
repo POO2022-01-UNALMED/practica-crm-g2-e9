@@ -5,12 +5,21 @@ from PIL import ImageTk, Image
 from tkinter import messagebox
 from operator import itemgetter
 from excepciones import *
+import os
+import sys
 
-from Python.gestionApp.Empresa import Empresa
-from Python.gestionApp.Negocio import Negocio
-from Python.gestionApp.personas.Persona import Persona
-from Python.gestionApp.personas.Cliente import Cliente
-from Python.gestionApp.personas.Empleado import Empleado
+sys.path.append(sys.path[0].replace('gestionMain','gestionApp'))
+
+import os
+import sys
+
+sys.path.append(sys.path[0].replace('gestionMain','gestionApp'))
+
+
+from gestionApp.Empresa import Empresa
+from gestionApp.Negocio import Negocio
+from gestionApp.personas.Cliente import Cliente
+from gestionApp.personas.Empleado import Empleado
 
 
 
@@ -496,7 +505,7 @@ F23.columnconfigure(0, weight=1)
 F23.columnconfigure(1, weight=1)
 
 #*************
-pat=ImageTk.PhotoImage(Image.open('Python/resources/pat2.png'))
+pat=ImageTk.PhotoImage(Image.open('resources/pat2.png'))
 patLabel=Label(F23,image=pat)
 patLabel.place(anchor=CENTER, relx=0.5, rely=0.5)
 
