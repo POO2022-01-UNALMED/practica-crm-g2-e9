@@ -11,7 +11,7 @@ class Evento:
         self.negocio = negocio
         self.descripcion = descripcion
         self.fecha = fecha
-        if (negocio.getEtapa().equals("Finalizado")):
+        if negocio.getEtapa().equals("Finalizado"):
             print("No se permiten crear mas Eventos para este negocio, ya que fue cerrado anteriormente")
         else:
             self.negocio.agregarEvento(self)
