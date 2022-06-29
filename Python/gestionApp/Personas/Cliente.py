@@ -1,5 +1,5 @@
 from random import uniform
-from Persona import Persona
+from personas import Persona
 
 class Cliente(Persona):
     
