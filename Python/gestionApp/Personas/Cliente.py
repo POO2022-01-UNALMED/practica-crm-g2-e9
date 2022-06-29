@@ -1,4 +1,6 @@
-from Python.gestionApp.Personas import Persona
+from random import uniform
+
+from Python.gestionApp.Personas.Persona import Persona
 
 
 class Cliente(Persona):
@@ -8,12 +10,12 @@ class Cliente(Persona):
     listaEventos = []
     idCounter = 0
     
-    def __init__(self, nombre, cedula, cel, correo, id, cargo, activo, probCompra ):
+    def __init__(self, nombre, cedula, cel, correo, id, cargo, activo ):
         super().__init__(nombre, cedula, cel, correo)
         self.id = id
         self.cargo = cargo
         self.activo = activo
-        self.probCompra = probCompra
+        self.probCompra = uniform(0, 0.4)
     
     @classmethod
     def getId(self): return self.id
