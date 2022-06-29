@@ -8,6 +8,7 @@ from tkinter import messagebox
 from operator import itemgetter
 import os.path
 
+
 ### Definicion
 counter_hojaDeVida = -1
 
@@ -141,6 +142,10 @@ def aa(event):
 ###
 
 
+def Entrar():
+    import ventanaPrincipal
+    
+    
 ##########################################################################
 ### root
 ##########################################################################
@@ -241,7 +246,7 @@ imagesList = [
 
 ### Boton ventana principal
 botonInit=ImageTk.PhotoImage(Image.open('Python/resources/button.png'))
-botonPrincipal = Button(P4, image=botonInit , border=0,bg="white")
+botonPrincipal = Button(P4, image=botonInit , border=0,bg="white", command=Entrar)
 botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.8)
   
 
