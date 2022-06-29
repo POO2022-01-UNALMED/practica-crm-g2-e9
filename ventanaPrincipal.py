@@ -7,6 +7,8 @@ from operator import itemgetter
 from excepciones import *
 import os
 import sys
+from tkinter import font
+
 
 sys.path.append(sys.path[0].replace('gestionMain','gestionApp'))
 
@@ -14,6 +16,7 @@ import os
 import sys
 
 sys.path.append(sys.path[0].replace('gestionMain','gestionApp'))
+
 
 
 from gestionApp.Empresa import Empresa
@@ -218,7 +221,7 @@ def setValores(frame = None, classDestino = None, menuValues = None):
             entryValues.append(menuValues[optionsCounter].get())
             messagebox.showinfo(message = str(menuValues[optionsCounter].get()), title = 'Descripcion Aplicacion')
             optionsCounter =+ 1       
-    messagebox.showinfo(message = type(entryValues), title = 'Descripcion Aplicacion')
+    messagebox.showinfo(message = type(entryValues), title = 'Descripcion Aplicacion',font="resources/fonts/Montserrat/static/Montserrat-Bold.ttf", fg="#030716")
     if len(entryValues)>0:
         funcWrapper(classDestino, entryValues)
 
@@ -244,7 +247,7 @@ def camposCrearCliente():
 
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'Crear Cliente'
+    nombreProceso['text'] = 'CREAR CLIENTE'
     descipcionProceso['text'] = 'Este proceso permite añadir un nuevo CLIENTE a la base de datos'
     
     FieldFrame(frame = F23,
@@ -259,7 +262,7 @@ def camposCrearEmpleado():
 
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'Crear Empleado'
+    nombreProceso['text'] = 'CREAR EMPLEADO'
     descipcionProceso['text'] = 'Este proceso permite añadir un nuevo EMPLEADO a la base de datos'
     
     camposCrearEmpleado = FieldFrame(frame = F23,
@@ -275,7 +278,7 @@ def camposCrearEmpresa():
 
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'Crear Empresa'
+    nombreProceso['text'] = 'CREAR EMPRESA'
     descipcionProceso['text'] = 'Este proceso permite añadir una nueva EMPRESA a la base de datos'
         
     camposCrearEmpresa = FieldFrame(frame = F23,
@@ -290,7 +293,7 @@ def camposCrearEmpresa():
 def camposCrearNegocio():
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'Crear Negocio'
+    nombreProceso['text'] = 'CREAR NEGOCIO'
     descipcionProceso['text'] = 'Este proceso permite añadir una nuevo NEGOCIO a la base de datos'
         
     camposCrearNegocio = FieldFrame(frame = F23,
@@ -311,7 +314,7 @@ def camposCrearNegocio():
 def consultarCliente():
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'Consultar Cliente'
+    nombreProceso['text'] = 'CONSULTAR CLIENTE'
     descipcionProceso['text'] = 'Este proceso permite buscar un CLIENTE a la base de datos'
     
     FieldFrame(frame = F23,
@@ -326,7 +329,7 @@ def consultarCliente():
 def consultarEmpleado():
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'Consultar Empleado'
+    nombreProceso['text'] = 'CONSULTAR EMPLEADO'
     descipcionProceso['text'] = 'Este proceso permite buscar un EMPLEADO a la base de datos'
     
     FieldFrame(frame = F23,
@@ -343,7 +346,7 @@ def consultarEmpresa():
 
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'Consultar Empresa'
+    nombreProceso['text'] = 'CONSULTAR EMPRESA'
     descipcionProceso['text'] = 'Este proceso permite consultar una EMPRESA a la base de datos'
         
     FieldFrame(frame = F23,
@@ -358,7 +361,7 @@ def consultarEmpresa():
 def consultarNegocio():
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'Consultar Negocio'
+    nombreProceso['text'] = 'CONSULTAR NEGOCIO'
     descipcionProceso['text'] = 'Este proceso permite buscar un NEGOCIO a la base de datos'
         
     FieldFrame(frame = F23,
@@ -374,7 +377,7 @@ def consultarNegocio():
 def eliminarCliente():
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'eliminar Cliente'
+    nombreProceso['text'] = 'ELIMINAR CLIENTE'
     descipcionProceso['text'] = 'Este proceso permite eliminar un CLIENTE de la base de datos'
     
     FieldFrame(frame = F23,
@@ -389,7 +392,7 @@ def eliminarCliente():
 def eliminarEmpleado():
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'Eliminar Empleado'
+    nombreProceso['text'] = 'ELIMINAR EMPLEADOS'
     descipcionProceso['text'] = 'Este proceso permite eliminar un EMPLEADO de la base de datos'
     
     FieldFrame(frame = F23,
@@ -406,7 +409,7 @@ def eliminarEmpresa():
 
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'Eliminar Empresa'
+    nombreProceso['text'] = 'ELIMINAR EMPRESA'
     descipcionProceso['text'] = 'Este proceso permite Eliminar una EMPRESA de la base de datos'
         
     FieldFrame(frame = F23,
@@ -421,7 +424,7 @@ def eliminarEmpresa():
 def eliminarNegocio():
     global nombreProceso, descipcionProceso
 
-    nombreProceso['text'] = 'Eliminar Negocio'
+    nombreProceso['text'] = 'ELIMINAR NEGOCIO'
     descipcionProceso['text'] = 'Este proceso permite eliminar un NEGOCIO de la base de datos'
         
     FieldFrame(frame = F23,
@@ -480,7 +483,7 @@ F21.rowconfigure(2, weight=8)
 F21.columnconfigure(0, weight=1)
 F21.grid_propagate(False)
 
-nombreProceso = Label(F21, text = 'Nombre Proceso',bg="#030716", fg="white")
+nombreProceso = Label(F21, text = 'NOMBRE PROCESO',bg="white",font="resources/fonts/Montserrat/static/Montserrat-Bold.ttf", fg="#030716")
 nombreProceso.grid(row = 0, column = 0)
 
 ##########################################################################
@@ -491,7 +494,7 @@ nombreProceso.grid(row = 0, column = 0)
 F22 = Frame(F21, background="white", height = 100, width = 100)
 F22.grid(row=1, column=0, sticky="news")
 
-descipcionProceso = Label(F22, text = 'Descripcion Proceso')
+descipcionProceso = Label(F22, text = 'Descripcion Proceso',font="resources/fonts/Montserrat/static/Montserrat-ExtraBold.ttf", fg="#030716")
 descipcionProceso.place(anchor=CENTER, relx=0.5, rely=0.5)
 
 l1=ImageTk.PhotoImage(Image.open('resources/l1.png'))
@@ -511,7 +514,7 @@ F23.columnconfigure(1, weight=1)
 
 #*************
 pat=ImageTk.PhotoImage(Image.open('resources/pat2.png'))
-patLabel=Label(F23,image=pat)
+patLabel=Label(F21,image=pat)
 patLabel.place(anchor=CENTER, relx=0.5, rely=0.95)
 
 ventanaPrincipal.mainloop()
