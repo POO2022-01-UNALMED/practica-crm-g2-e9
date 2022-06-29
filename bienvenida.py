@@ -93,8 +93,7 @@ def click_d():
     flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita)   )
     flechita.place(anchor=CENTER, relx=0.1, rely=0.9)
 
-def clickPrincipal():
-    pass
+
     
     #global counter_hojaDeVida, list_hojaDeVida, ind_img
     #counter_hojaDeVida+=1

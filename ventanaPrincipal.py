@@ -1,3 +1,4 @@
+from inspect import getargvalues
 import time
 from tkinter import *
 from PIL import ImageTk, Image
@@ -308,7 +309,69 @@ def camposCrearNegocio():
            deshabilitado = None,
            botones = {'Crear Negocio' : lambda: setValores(F23, Negocio, Empleado.busquedaEmpleado, Cliente.busquedaCliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
            )
+#########################################Consultas
+def consultarCliente():
+    global nombreProceso, descipcionProceso
 
+    nombreProceso['text'] = 'Consultar Cliente'
+    descipcionProceso['text'] = 'Este proceso permite buscar un CLIENTE a la base de datos'
+    
+    FieldFrame(frame = F23,
+           tituloCriterios = 'Criterios',
+           criterios = ['Ingrese Cedula del Cliente: '],
+           tituloValores = 'Valores',
+           valores = None,
+           deshabilitado = None,
+           botones = {'Consultar Cliente' : lambda:setValores(F23, Cliente.busquedaCliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           )    
+    
+def consultarEmpleado():
+    global nombreProceso, descipcionProceso
+
+    nombreProceso['text'] = 'Consultar Empleado'
+    descipcionProceso['text'] = 'Este proceso permite buscar un EMPLEADO a la base de datos'
+    
+    FieldFrame(frame = F23,
+           tituloCriterios = 'Criterios',
+           criterios = ['Ingrese Cedula del Empleado: '],
+           tituloValores = 'Valores',
+           valores = None,
+           deshabilitado = None,
+           botones = {'Consultar Empleado' : lambda:setValores(F23, Empleado.busquedaEmpleado), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           )
+
+
+def consultarEmpresa():
+
+    global nombreProceso, descipcionProceso
+
+    nombreProceso['text'] = 'Consultar Empresa'
+    descipcionProceso['text'] = 'Este proceso permite consultar una EMPRESA a la base de datos'
+        
+    FieldFrame(frame = F23,
+           tituloCriterios = 'Criterios',
+           criterios = ['Ingrese nit de la Empresa: '],
+           tituloValores = 'Valores',
+           valores = None,
+           deshabilitado = None,
+           botones = {'Consultar Empresa' : lambda: setValores(F23, Empresa.busquedaEmpresa), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           )
+
+def consultarNegocio():
+    global nombreProceso, descipcionProceso
+
+    nombreProceso['text'] = 'Consultar Negocio'
+    descipcionProceso['text'] = 'Este proceso permite buscar un NEGOCIO a la base de datos'
+        
+    FieldFrame(frame = F23,
+           tituloCriterios = 'Criterios',
+           criterios = ['Ingrese el Id del negocio'],
+           tituloValores = 'Valores',
+           valores = None,
+           deshabilitado = None,
+           botones = {'Consultar Negocio' : lambda: setValores(F23, Negocio.busquedaNegocio), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           )
+    
 
 
 
@@ -316,21 +379,28 @@ menu = Menu(ventanaPrincipal)
 ventanaPrincipal.config(menu=menu)
 
 Archivo = Menu(menu)
-menu.add_cascade(label="Archivo", menu=Archivo)
+menu.add_cascade(label="Archivo", menu = Archivo)
 Archivo.add_command(label="Aplicacion",command=funcionesAplicacion)
 Archivo.add_command(label="Salir",command=ventanaPrincipal.destroy)
 
-Procesos_Consultas = Menu(menu)
-menu.add_cascade(label="Procesos y Consultas", menu=Procesos_Consultas)
-Procesos_Consultas.add_command(label="Crear Empresa",command=camposCrearEmpresa)
-Procesos_Consultas.add_command(label="Crear Cliente",command=camposCrearCliente)
-Procesos_Consultas.add_command(label="Crear Empleado",command=camposCrearEmpleado)
-Procesos_Consultas.add_command(label="Crear Negocio",command=camposCrearNegocio)
+Procesos = Menu(menu)
+menu.add_cascade(label="Procesos", menu = Procesos)
+Procesos.add_command(label="Crear Empresa",command = camposCrearEmpresa)
+Procesos.add_command(label="Crear Cliente",command = camposCrearCliente)
+Procesos.add_command(label="Crear Empleado",command = camposCrearEmpleado)
+Procesos.add_command(label="Crear Negocio",command = camposCrearNegocio)
+
+Consultas = Menu(menu)
+menu.add_cascade(label = "Consultas", menu = Consultas )
+Consultas.add_command(label="Consultar Empresa",command = consultarEmpresa)
+Consultas.add_command(label="Consultar Cliente",command = consultarCliente)
+Consultas.add_command(label="Consultar Empleado",command = consultarEmpleado)
+Consultas.add_command(label="Consultar Negocio",command = consultarNegocio)
 
 
 Ayuda = Menu(menu)
 menu.add_cascade(label="Ayuda", menu=Ayuda)
-Ayuda.add_command(label="Acerca de",command=mostrarDescripcion)
+Ayuda.add_command(label="Acerca de",command = mostrarDescripcion)
 
 ##########################################################################
 ### Frame 2.1
