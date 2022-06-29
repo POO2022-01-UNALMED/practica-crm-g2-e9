@@ -1,10 +1,7 @@
 import math
 from tkinter import messagebox
 
-from Python.gestionApp.Personas import Persona
-
-
-
+from Python.gestionApp.personas.Persona import Persona
 
 
 class Empleado(Persona):
@@ -26,20 +23,15 @@ class Empleado(Persona):
         messagebox.showinfo(message ='EMPLEADO creada correctamente', title = 'Creacion Empleado')
         
     
-    @classmethod    
-    def getId(self): return self.id
 
-    @classmethod
     def getCargo(self): return self.cargo
-    @classmethod
     def setCargo(self,cargo):self.cargo = cargo
     
-    @classmethod
+
     def getFechaContrato(self): return self.fechaContrato
-    @classmethod
     def setFechaContrato(self,fechaContrato):self.fechaContrato = fechaContrato
     
-    @classmethod
+
     def getHabilidadVenta (self): return self.habilidadVenta
         
     @classmethod

@@ -1,4 +1,6 @@
-from Python.gestionApp.Personas import Persona
+
+
+from gestionApp.personas import Persona
 
 
 class Cliente(Persona):
@@ -8,29 +10,22 @@ class Cliente(Persona):
     listaEventos = []
     idCounter = 0
     
-    def __init__(self, nombre, cedula, cel, correo, id, cargo, activo, probCompra ):
-        super().__init__(nombre, cedula, cel, correo)
-        self.id = id
+    def __init__(self, nombre, cedula, cel, correo, cargo, activo, probCompra ):
+        super.__init__(nombre,cedula,cel,correo)
+
         self.cargo = cargo
         self.activo = activo
         self.probCompra = probCompra
-    
-    @classmethod
-    def getId(self): return self.id
-    
-    @classmethod
+
+
     def getCargo(self): return self.cargo
-    @classmethod
     def setCargo(self,cargo): self.cargo = cargo
     
-    @classmethod
     def getActivo(self): return self.activo
-    @classmethod
     def setActivo(self,activo): self.activo = activo
     
-    @classmethod
+
     def getProbCompra(self): return self.probCompra
-    @classmethod
     def setProbCompra(self,probCompra): self.probCompra = probCompra
     
     

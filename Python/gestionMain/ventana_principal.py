@@ -7,12 +7,18 @@ from operator import itemgetter
 import os
 import sys
 
-from Python.gestionApp.personas.Cliente import Cliente
+
+
+
+
 print(os.getcwd().split('\\Python')[0])
 sys.path.insert(1, os.getcwd().split('\\Python')[0])
 
 
+from Python.gestionApp.personas.Cliente import Cliente
+from Python.gestionApp.personas.Empleado import Empleado
 from Python.gestionApp.Empresa import Empresa
+
 
 ### Definicion
 app_desc = 'Esta es la descripcion de la aplicacion'
@@ -212,7 +218,7 @@ def camposCrearEmpleado():
            tituloValores = 'Valores',
            valores = None,
            deshabilitado = None,
-           botones = {'Crear Empleado' : lambda:setValores(F23, Cliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           botones = {'Crear Empleado' : lambda:setValores(F23, Empleado), 'Vaciar Campos': lambda:vaciarCampos(F23)}
            )
 
 
