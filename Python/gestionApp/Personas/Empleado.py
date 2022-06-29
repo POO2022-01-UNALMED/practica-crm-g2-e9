@@ -20,7 +20,7 @@ class Empleado(Persona):
         self.habilidadVenta = uniform(0, 0.4)
 
         Empleado._allEmpleados.append(self)
-        messagebox.showinfo(message='EMPLEADO creada correctamente', title='Creacion Empleado')
+        messagebox.showinfo(message = 'EMPLEADO creada correctamente', title = 'Creacion Empleado')
 
 
 
@@ -50,3 +50,10 @@ class Empleado(Persona):
 
     @classmethod
     def setNegociosEmpleado(cls, negocio): cls._negociosEmpleado.append(negocio)
+    
+    def busquedaEmpleado(cedula):
+        for i in range(len(Empleado.getAllEmpleados())):
+            if (Empleado.getAllEmpleados(Empleado.getCedula(i))):
+                return Empleado.getAllEmpleados(i)             
+    
+    

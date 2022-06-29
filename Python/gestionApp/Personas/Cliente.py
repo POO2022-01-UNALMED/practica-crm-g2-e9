@@ -1,5 +1,5 @@
-import sys
 from random import uniform
+
 
 from Python.gestionApp.personas.Persona import Persona
 
@@ -45,4 +45,9 @@ class Cliente(Persona):
     def getListaEventos(cls): return cls.listaEventos
     @classmethod
     def setListaEventos(cls, listaEventos): cls.listaEventos = listaEventos  
+    
+    def busquedaCliente(cedula):
+        for i in range(len(Cliente.getAllClientes())):
+            if (Cliente.getAllClientes(Cliente.getCedula(i))):
+                return Cliente.getAllClientes(i)             
     
