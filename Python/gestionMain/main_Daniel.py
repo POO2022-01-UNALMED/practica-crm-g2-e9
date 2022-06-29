@@ -71,7 +71,7 @@ def imagenesEnMovimiento():
 inicio = Tk()
 inicio.title("Trabajo Final")
 inicio.geometry("800x500")
-inicio.overrideredirect(1)
+inicio.overrideredirect(0)
 inicio.wm_attributes("-transparent")
 inicio.resizable(0, 0)
 
@@ -101,6 +101,7 @@ P1.rowconfigure(0, weight=1)
 P1.rowconfigure(1, weight=1)
 P1.columnconfigure(0, weight=1)
 
+
 ##########################################################################
 ### P2
 ##########################################################################
@@ -122,8 +123,8 @@ P3.grid_propagate(False)
 
 
 ### Mensaje de Bienvenida
-
-mensajeBienvenida = Label(P3, background="#263238", fg='#d4d4d4', text="¡Bienvenido a CRM - G2E9!", font=("Arial", 20))
+imgBienvenida=ImageTk.PhotoImage(Image.open("Python/resources/p3.png"))
+mensajeBienvenida = Label(P3, background="#ffffff",image=imgBienvenida)
 mensajeBienvenida.place(anchor=CENTER, relx=0.5, rely=0.5)
 
 ##########################################################################
