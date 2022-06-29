@@ -43,6 +43,10 @@ class Servicio:
         return cls._allServicios
 
     @classmethod
+    def setAllServicios(cls, servicios):
+        cls._allServicios = servicios
+
+    @classmethod
     def getServicios(cls):
         return cls._servicios
 

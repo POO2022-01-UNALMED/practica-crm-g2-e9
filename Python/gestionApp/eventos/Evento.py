@@ -39,8 +39,9 @@ class Evento:
     def getAllEventos(cls):
         return cls.allEventos
 
-    def setAllEventos(cls):
-        cls.allEventos
+    @classmethod
+    def setAllEventos(cls, eventos):
+        cls.allEventos = eventos
 
     def getAllEventosPendientes(cls):
         return cls.allEventosPendientes

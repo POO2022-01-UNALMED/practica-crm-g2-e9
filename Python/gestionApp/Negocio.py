@@ -68,7 +68,7 @@ class Negocio:
 
     @classmethod
     def getAllNegocios(cls):
-        return cls.allNegocios
+        return cls._allNegocios
 
     @classmethod
     def setAllNegocios(cls, allNegocios):

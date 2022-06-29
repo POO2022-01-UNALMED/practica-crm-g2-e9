@@ -4,6 +4,7 @@ from tkinter import *
 from PIL import ImageTk, Image
 from tkinter import messagebox
 from operator import itemgetter
+from excepciones import *
 
 import os
 import sys
@@ -310,6 +311,7 @@ def camposCrearNegocio():
            botones = {'Crear Negocio' : lambda: setValores(F23, Negocio, Empleado.busquedaEmpleado, Cliente.busquedaCliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
            )
 #########################################Consultas
+
 def consultarCliente():
     global nombreProceso, descipcionProceso
 
