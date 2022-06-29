@@ -51,11 +51,18 @@ class Empresa:
     def getServiciosInteres(cls): return cls.serviciosInteres
     @classmethod
     def setServiciosInteres(cls,serviciosInteres): cls.serviciosInteres = serviciosInteres
-    
-    def buscarEmpresa(nit):
+
+    @classmethod
+    def busquedaEmpresa(cls, cedula):
         for i in range(len(Empresa.getAllEmpresas())):
-            if (Empresa.getAllEmpresas(Empresa.getNit(i))):
-                return Empresa.getAllEmpresas((i))     
+            if Empresa.getAllEmpresas()[i].cedula == cedula:
+                return Empresa.getAllEmpresas()[i]
+
+    @classmethod
+    def eliminarEmpresa(cls, cedula):
+        for i in range(len(Empresa.getAllEmpresas())):
+            if Empresa.allEmpresas[i].cedula == cedula:
+                Empresa.getAllEmpresas().pop(i)
 
     def infoEmpresa(self):
         return f'\t---Informacion Empresa---  \n Nombre: {self.nombre} \n Nit: {self.nit} \n Descripcion: {self.descripcion}'

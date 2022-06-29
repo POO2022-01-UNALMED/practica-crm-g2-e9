@@ -70,7 +70,11 @@ class Negocio:
     @classmethod
     def setEventos(cls,_eventos): cls._eventos = _eventos
 
+<<<<<<< Updated upstream
     def infoNegocio(self):
         return f'\t---Informacion Negocio---  \n Empleado Encargado del Negocio: {self.empleadoEncargado} \n Cliente: {self.getCliente} \n Valor de Venta: {self.valorVenta}'
 
                
+=======
+
+>>>>>>> Stashed changes

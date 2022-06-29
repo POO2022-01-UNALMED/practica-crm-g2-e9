@@ -20,39 +20,51 @@ class Empleado(Persona):
         self.habilidadVenta = uniform(0, 0.4)
 
         Empleado._allEmpleados.append(self)
-        messagebox.showinfo(message = 'EMPLEADO creada correctamente', title = 'Creacion Empleado')
+        messagebox.showinfo(message='EMPLEADO creada correctamente', title='Creacion Empleado')
 
+    def getCargo(self):
+        return self.cargo
 
+    def setCargo(self, cargo):
+        self.cargo = cargo
 
+    def getFechaContrato(self):
+        return self.fechaContrato
 
-    def getCargo(self): return self.cargo
-    def setCargo(self, cargo): self.cargo = cargo
+    def setFechaContrato(self, fechaContrato):
+        self.fechaContrato = fechaContrato
 
-    def getFechaContrato(self): return self.fechaContrato
-    def setFechaContrato(self, fechaContrato): self.fechaContrato = fechaContrato
-
-    def getHabilidadVenta(self): return self.habilidadVenta
-
-    @classmethod
-    def getAllEmpleados(cls): return cls._allEmpleados
-
-    @classmethod
-    def setAllEmpleados(cls, allEmpleados): cls._allEmpleados = allEmpleados
+    def getHabilidadVenta(self):
+        return self.habilidadVenta
 
     @classmethod
-    def getServicios(cls): return cls._servicios
+    def getAllEmpleados(cls):
+        return cls._allEmpleados
 
     @classmethod
-    def setServicios(cls, servicios): cls._servicios = servicios
+    def setAllEmpleados(cls, allEmpleados):
+        cls._allEmpleados = allEmpleados
 
     @classmethod
-    def getNegociosEmpleado(cls): return cls._negociosEmpleado
+    def getServicios(cls):
+        return cls._servicios
 
     @classmethod
-    def setNegociosEmpleado(cls, negocio): cls._negociosEmpleado.append(negocio)
-    
-    def busquedaEmpleado(cedula):
+    def setServicios(cls, servicios):
+        cls._servicios = servicios
+
+    @classmethod
+    def getNegociosEmpleado(cls):
+        return cls._negociosEmpleado
+
+    @classmethod
+    def setNegociosEmpleado(cls, negocio):
+        cls._negociosEmpleado.append(negocio)
+
+    @classmethod
+    def busquedaEmpleado(cls, cedula):
         for i in range(len(Empleado.getAllEmpleados())):
+<<<<<<< Updated upstream
             if (Empleado.getAllEmpleados(Empleado.getCedula(i))):
                 return Empleado.getAllEmpleados(i)      
             
@@ -62,3 +74,17 @@ class Empleado(Persona):
                
     
     
+=======
+            if Empleado._allEmpleados[i].cedula == cedula:
+                return Empleado.getAllEmpleados()[i]
+
+    @classmethod
+    def eliminarEmpleado(cls, cedula):
+        for i in range(len(Empleado.getAllEmpleados())):
+            if Empleado._allEmpleados[i].cedula == cedula:
+                Empleado.getAllEmpleados().pop(i)
+
+    @property
+    def allEmpleados(self):
+        return self._allEmpleados
+>>>>>>> Stashed changes
