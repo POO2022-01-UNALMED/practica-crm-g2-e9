@@ -1,3 +1,4 @@
+from calendar import c
 from cgitb import text
 from os import stat
 import time
@@ -190,8 +191,26 @@ P5.grid_propagate(False)
 
 ### Cambio de hoja de vida
 image3=ImageTk.PhotoImage(Image.open('Python/resources/hoja.png'))
+
+s=ImageTk.PhotoImage(Image.open('Python/resources/s.png'))
+m=ImageTk.PhotoImage(Image.open('Python/resources/m.png'))
+c=ImageTk.PhotoImage(Image.open('Python/resources/c.png'))
+d=ImageTk.PhotoImage(Image.open('Python/resources/d.png'))
 hojaDeVida = Label(P5, image=image3)
-hojaDeVida.place(anchor=CENTER, relx=0.5, rely=0.5)                 
+hojaDeVida.place(anchor=CENTER, relx=0.5, rely=0.5)
+#s
+botonPrincipal = Button(P5, image=s , border=0,bg="white")
+botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.35)
+#d
+botonPrincipal = Button(P5, image=m , border=0,bg="white")
+botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.523)  
+#c
+botonPrincipal = Button(P5, image=d , border=0,bg="white")
+botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.7)  
+#m
+botonPrincipal = Button(P5, image=c , border=0,bg="white")
+botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.88)  
+#----------                 
 hojaDeVida.bind("<Button-1>", clickOn_hojaDeVida)
 
 #descripcion = Label(P5, text= 'Esta es una breve descripción\n de los integrantes del grupo :D!', font=('Arial',12))
