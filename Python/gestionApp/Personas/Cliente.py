@@ -1,5 +1,4 @@
 from random import uniform
-from Python.gestionApp.Empresa import Empresa
 
 from Python.gestionApp.personas.Persona import Persona
 
@@ -43,15 +42,6 @@ class Cliente(Persona):
     def setAllClientes(cls, allClientes):
         cls.allClientes = allClientes
 
-<<<<<<< Updated upstream
-    def getProbCompra(self): return self.probCompra
-    def setProbCompra(self,probCompra): self.probCompra = probCompra
-    
-    def getEmpresa(self): return Empresa.getNombre()
-    
-    
-=======
->>>>>>> Stashed changes
     @classmethod
     def getNegociosActivos(cls):
         return cls.negociosActivos
@@ -77,15 +67,5 @@ class Cliente(Persona):
     @classmethod
     def eliminarEmpleado(cls, cedula):
         for i in range(len(Cliente.getAllClientes())):
-<<<<<<< Updated upstream
-            if (Cliente.getAllClientes(Cliente.getCedula(i))):
-                return Cliente.getAllClientes(i)             
-    
-    def infoCliente(self):
-        return f'\t---Informacion Cliente---  \n Nombre: {self.nombre} \n Cedula: {self.cedula} \n Celular: {self.celular} \n Cargo: {self.cargo} \n Empresa: {self.getEmpresa}'
-
-        
-=======
             if Cliente.allClientes[i].cedula == cedula:
                 Cliente.getAllClientes().pop(i)
->>>>>>> Stashed changes
