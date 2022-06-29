@@ -1,6 +1,7 @@
 import math
 from random import uniform
 from tkinter import messagebox
+from excepciones import *
 
 from Python.gestionApp.personas.Persona import Persona
 
@@ -63,7 +64,14 @@ class Empleado(Persona):
 
     @classmethod
     def busquedaEmpleado(cls, cedula):
+       
         for i in range(len(Empleado.getAllEmpleados())):
+            if cedula == str:
+                try:
+                    raise ExcepcionCamposNulos()
+                except ExcepcionCamposNulos as f:
+                    f.showMessage()
+                return
             if Empleado.getAllEmpleados(Empleado.getCedula(i)):
                 return Empleado.getAllEmpleados(i)
 
@@ -73,6 +81,12 @@ class Empleado(Persona):
     @classmethod
     def eliminarEmpleado(cls, cedula):
         for i in range(len(Empleado.getAllEmpleados())):
+            if cedula == str:
+                try:
+                    raise ExcepcionCamposNulos()
+                except ExcepcionCamposNulos as f:
+                    f.showMessage()
+                return            
             if Empleado._allEmpleados[i].cedula == cedula:
                 Empleado.getAllEmpleados().pop(i)
 

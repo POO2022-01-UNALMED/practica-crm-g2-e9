@@ -1,7 +1,7 @@
 from http import client
 import re
 from random import randrange
-
+from excepciones import *
 
 class Venta:
     allVentas = []
@@ -71,14 +71,27 @@ class Venta:
         cls.allVentas = allVentas
 
     @classmethod
-    def busquedaNegocio(cls, id):
+    def busquedaVenta(cls, id):
         for i in range(len(Venta.getAllVentas())):
+            if id == str:
+                try:
+                    raise ExcepcionCamposNulos()
+                except ExcepcionCamposNulos as f:
+                    f.showMessage()
+                return            
             if Venta.getAllVentas()[i].id == id:
                 return Venta.getAllVentas()[i]
 
     @classmethod
-    def eliminarNegocio(cls, id):
+    def eliminarVenta(cls, id):
+        if id == str:
+            try:
+                raise ExcepcionCamposNulos()
+            except ExcepcionCamposNulos as f:
+                f.showMessage()
+            return
         for i in range(len(Venta.getAllVentas())):
+            
             if Venta.getAllVentas()[i].id == id:
                 Venta.getAllVentas().pop(i)
 
