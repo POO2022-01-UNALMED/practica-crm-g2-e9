@@ -34,8 +34,8 @@ def clickOn_hojaDeVida(event):
         counter_hojaDeVida = 0
     hojaDeVida.config(text = str(list_hojaDeVida[counter_hojaDeVida]))
     descripcion.config(text = str(listdesc[counter_hojaDeVida]))
-    print('./resources/bio_images/'+str((counter_hojaDeVida+1))+'_1.jpg')
-    ind_img = ImageTk.PhotoImage(Image.open('./resources/bio_images/'+str((counter_hojaDeVida+1))+'_1.jpg'))
+    print('Python/resources/bio_images'+str((counter_hojaDeVida+1))+'_1.jpg')
+    ind_img = ImageTk.PhotoImage(Image.open('Python/resources/bio_images'+str((counter_hojaDeVida+1))+'_1.jpg'))
     pan.config(image=ind_img)
 
 
@@ -61,6 +61,8 @@ def imagenesEnMovimiento():
     P4.update()
     P4.after(70, imagenesEnMovimiento)
 
+###
+
 
 ##########################################################################
 ### root
@@ -69,6 +71,8 @@ def imagenesEnMovimiento():
 inicio = Tk()
 inicio.title("Trabajo Final")
 inicio.geometry("800x500")
+inicio.overrideredirect(1)
+inicio.wm_attributes("-transparent")
 inicio.resizable(0, 0)
 
 inicio.columnconfigure(0, weight=1)
@@ -126,7 +130,7 @@ mensajeBienvenida.place(anchor=CENTER, relx=0.5, rely=0.5)
 ### P4
 ##########################################################################
 
-P4 = Frame(P1, background="#263238", width=100, height=50)
+P4 = Frame(P1, background="#AFAFAF", width=100, height=50)
 P4.grid(row=1, column=0, padx=1, pady=1,sticky="news")
 P4.grid_propagate(False)
 
@@ -156,8 +160,8 @@ imagesList = [
 
 
 ### Boton ventana principal
-
-botonPrincipal = Button(P4, text="Ir a la ventana principal")
+botonInit=ImageTk.PhotoImage(Image.open('Python/resources/button.png'))
+botonPrincipal = Button(P4, image=botonInit , border=0,bg="#AFAFAF")
 botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.9)  
 
 ##########################################################################
