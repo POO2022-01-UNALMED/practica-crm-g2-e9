@@ -374,7 +374,68 @@ def consultarNegocio():
            botones = {'Consultar Negocio' : lambda: setValores(F23, Negocio.busquedaNegocio), 'Vaciar Campos': lambda:vaciarCampos(F23)}
            )
     
+########################################Eliminacion
+def eliminarCliente():
+    global nombreProceso, descipcionProceso
 
+    nombreProceso['text'] = 'eliminar Cliente'
+    descipcionProceso['text'] = 'Este proceso permite eliminar un CLIENTE de la base de datos'
+    
+    FieldFrame(frame = F23,
+           tituloCriterios = 'Criterios',
+           criterios = ['Ingrese Cedula del Cliente: '],
+           tituloValores = 'Valores',
+           valores = None,
+           deshabilitado = None,
+           botones = {'Eliminar Cliente' : lambda:setValores(F23, Cliente.eliminarCliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           )    
+    
+def eliminarEmpleado():
+    global nombreProceso, descipcionProceso
+
+    nombreProceso['text'] = 'Eliminar Empleado'
+    descipcionProceso['text'] = 'Este proceso permite eliminar un EMPLEADO de la base de datos'
+    
+    FieldFrame(frame = F23,
+           tituloCriterios = 'Criterios',
+           criterios = ['Ingrese Cedula del Empleado: '],
+           tituloValores = 'Valores',
+           valores = None,
+           deshabilitado = None,
+           botones = {'Elimianar Empleado' : lambda:setValores(F23, Empleado.eliminarEmpleado), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           )
+
+
+def eliminarEmpresa():
+
+    global nombreProceso, descipcionProceso
+
+    nombreProceso['text'] = 'Eliminar Empresa'
+    descipcionProceso['text'] = 'Este proceso permite Eliminar una EMPRESA de la base de datos'
+        
+    FieldFrame(frame = F23,
+           tituloCriterios = 'Criterios',
+           criterios = ['Ingrese nit de la Empresa: '],
+           tituloValores = 'Valores',
+           valores = None,
+           deshabilitado = None,
+           botones = {'Eliminar Empresa' : lambda: setValores(F23, Empresa.eliminarEmpresa), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           )
+
+def eliminarNegocio():
+    global nombreProceso, descipcionProceso
+
+    nombreProceso['text'] = 'Eliminar Negocio'
+    descipcionProceso['text'] = 'Este proceso permite eliminar un NEGOCIO de la base de datos'
+        
+    FieldFrame(frame = F23,
+           tituloCriterios = 'Criterios',
+           criterios = ['Ingrese el Id del negocio: '],
+           tituloValores = 'Valores',
+           valores = None,
+           deshabilitado = None,
+           botones = {'Eliminar Negocio' : lambda: setValores(F23, Negocio.eliminarNegocio), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           )
 
 
 menu = Menu(ventanaPrincipal)
@@ -399,6 +460,12 @@ Consultas.add_command(label="Consultar Cliente",command = consultarCliente)
 Consultas.add_command(label="Consultar Empleado",command = consultarEmpleado)
 Consultas.add_command(label="Consultar Negocio",command = consultarNegocio)
 
+Eliminar = Menu(menu)
+menu.add_cascade(label = "Eliminar", menu = Eliminar )
+Eliminar.add_command(label="Eliminar Empresa",command = eliminarEmpresa)
+Eliminar.add_command(label="Eliminar Cliente",command = eliminarCliente)
+Eliminar.add_command(label="Eliminar Empleado",command = eliminarEmpleado)
+Eliminar.add_command(label="Eliminar Negocio",command = eliminarNegocio)
 
 Ayuda = Menu(menu)
 menu.add_cascade(label="Ayuda", menu=Ayuda)
