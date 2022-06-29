@@ -31,28 +31,59 @@ def mostrarDescripcion():
     messagebox.showinfo(message = app_desc, title = 'Descripcion Aplicacion')
 
 
-def Inicio(f,d):
+def Inicio(f,d,i1,i2,i3,i4):
     f.place_forget()
     d.place_forget()
+    i1.grid_forget()
+    i2.grid_forget()
+    i3.grid_forget()
+    i4.grid_forget()
       
     
     
 def click_s():
     hojaDeVida2 = Label(P5, image=ss)
     hojaDeVida2.place(anchor=CENTER, relx=0.5, rely=0.5)
-    flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita)   )
+    flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita,pan,pan2,pan3,pan4)   )
     flechita.place(anchor=CENTER, relx=0.1, rely=0.9)
+    pan = Label(P6, image=imgA1)
+    pan.grid(column=0, row=0,padx=30,pady=5)
+    pan2 = Label(P6, image=imgB1)
+    pan2.grid(column=1, row=0,padx=70,pady=5)
+    pan3 = Label(P6, image=imgC1)
+    pan3.grid(column=0, row=1,padx=30,pady=0)
+    pan4= Label(P6, image=imgD1)
+    pan4.grid(column=1, row=1,padx=70,pady=0)
+    
+    
 
 def click_m():
     hojaDeVida2 = Label(P5, image=mm)
     hojaDeVida2.place(anchor=CENTER, relx=0.5, rely=0.5)
-    flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita)   )
+    flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita,pan,pan2,pan3,pan4)   )
     flechita.place(anchor=CENTER, relx=0.1, rely=0.9)
+    pan = Label(P6, image=img1)
+    pan.grid(column=0, row=0,padx=30,pady=5)
+    pan2 = Label(P6, image=img2)
+    pan2.grid(column=1, row=0,padx=70,pady=5)
+    pan3 = Label(P6, image=img3)
+    pan3.grid(column=0, row=1,padx=30,pady=0)
+    pan4= Label(P6, image=img4)
+    pan4.grid(column=1, row=1,padx=70,pady=0)
+    
 def click_c():
     hojaDeVida2 = Label(P5, image=cc)
     hojaDeVida2.place(anchor=CENTER, relx=0.5, rely=0.5)
-    flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita)   )
+    flechita=  Button(P5, image=flecha, command = lambda: Inicio(hojaDeVida2,flechita,pan,pan2,pan3,pan4)   )
     flechita.place(anchor=CENTER, relx=0.1, rely=0.9)
+    pan = Label(P6, image=imgA)
+    pan.grid(column=0, row=0,padx=30,pady=5)
+    pan2 = Label(P6, image=imgB)
+    pan2.grid(column=1, row=0,padx=70,pady=5)
+    pan3 = Label(P6, image=imgC)
+    pan3.grid(column=0, row=1,padx=30,pady=0)
+    pan4= Label(P6, image=imgD)
+    pan4.grid(column=1, row=1,padx=70,pady=0)
 
 def click_d():
     hojaDeVida2 = Label(P5, image=dd)
@@ -177,14 +208,16 @@ mensajeBienvenida.place(anchor=CENTER, relx=0.5, rely=0.5)
 P4 = Frame(P1, background="#ffffff", width=100, height=50)
 P4.grid(row=1, column=0, padx=1, pady=1,sticky="news")
 P4.grid_propagate(False)
+rect=ImageTk.PhotoImage(Image.open('Python/resources/rect.png'))
+rectl= Label(P4, image=rect)
+rectl.place(anchor=CENTER, relx=0.5, rely=0.5)
 
+### Rueda de imagenesS
 
-### Rueda de imagenes
-
-canvas_width = 350
-canvas_height = 150
+canvas_width = 300
+canvas_height = 140
 canvas = Canvas(P4, width=canvas_width, height=canvas_height)
-canvas.grid(row=0, column=0, sticky='nsew')
+canvas.grid(row=0, column=0, padx=45,pady=17)
 
 image_height = canvas_height
 image_width = int(canvas_height*1.3)
@@ -205,8 +238,8 @@ imagesList = [
 
 ### Boton ventana principal
 botonInit=ImageTk.PhotoImage(Image.open('Python/resources/button.png'))
-botonPrincipal = Button(P4, image=botonInit , border=0,bg="#AFAFAF")
-botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.9)  
+botonPrincipal = Button(P4, image=botonInit , border=0,bg="white")
+botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.8)  
 
 ##########################################################################
 ### P5
@@ -268,17 +301,37 @@ botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.88)
 P6 = Frame(P2, background="black", width=100, height=50)
 P6.grid(row=1, column=0, padx=1, pady=1,sticky="news")
 P6.grid_propagate(False)
-img1 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/4_1.jpg'))
-img2 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/4_2.jpg'))
-img3 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/4_3.jpg'))
-img4 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/4_4.jpg'))
 
+fotos=ImageTk.PhotoImage(Image.open('Python/resources/fotos.png'))
+img1 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/ferrari.png'))
+img2 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/ferrari2.png'))
+img3 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/ferrari3.png'))
+img4 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/ferrari4.png'))
+
+
+#************************************
+imgA = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/carlos.png'))
+imgB = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/carlos2.png'))
+imgC = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/carlos3.png'))
+imgD = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/carlos4.png'))
+#***********************************
+
+#***********************************
+imgA1 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/santi.png'))
+imgB1 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/santi2.png'))
+imgC1 = ImageTk.PhotoImage(Image.open('Python/resources/bio_images/santi3.png'))
+imgD1= ImageTk.PhotoImage(Image.open('Python/resources/bio_images/santi4.png'))
+#************************************
 #pan = Label(P6, text='owo').grid(column=0, row=0)
-pan = Label(P6, image=img1)
-pan.grid(column=0, row=0)
-pan2 = Label(P6, image=img2).grid(column=1, row=0)
-pan3 = Label(P6, image=img3).grid(column=0, row=1)
-pan4 = Label(P6, image=img4).grid(column=1, row=1)
+panFo=Label(P6,image=fotos)
+panFo.place(anchor=CENTER, relx=0.5, rely=0.5)
+
+
+
+
+
+# pan3 = Label(P6, image=img3).grid(column=0, row=1)
+# pan4 = Label(P6, image=img4).grid(column=1, row=1)
 
 
 

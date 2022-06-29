@@ -54,7 +54,6 @@ if __name__ == "__main__":
 
 
 
-
     framea.pack(fill=tk.Y, side=tk.LEFT)
     frameb.pack(fill=tk.Y, side=tk.RIGHT)
 
