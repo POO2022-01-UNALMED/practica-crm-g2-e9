@@ -27,8 +27,8 @@ from gestionApp.personas.Empleado import Empleado
 
 
 ### Definicion
-app_desc = 'Esta es la descripcion de la aplicacion'
-app_func = 'Esto es lo que hace la app'
+app_desc = 'Es un software creado para administrar y analizar las interacciones con clientes, anticipar necesidades y deseos, optimizar la rentabilidad, aumentar las ventas y personalizar campañas de captación de nuevos clientes.'
+app_func = 'es un software creado para administrar y analizar las interacciones con clientes, anticipar necesidades y deseos, optimizar la rentabilidad, aumentar las ventas y personalizar campañas de captación de nuevos clientes.'
 stringVarsValues={}
 
 
