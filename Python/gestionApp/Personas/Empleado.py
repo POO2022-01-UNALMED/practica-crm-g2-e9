@@ -64,17 +64,6 @@ class Empleado(Persona):
     @classmethod
     def busquedaEmpleado(cls, cedula):
         for i in range(len(Empleado.getAllEmpleados())):
-<<<<<<< Updated upstream
-            if (Empleado.getAllEmpleados(Empleado.getCedula(i))):
-                return Empleado.getAllEmpleados(i)      
-            
-    def infoEmpleado(self):
-        return f'\t---Informacion Empleado---  \n Nombre: {self.nombre} \n Cedula: {self.cedula} \n Celular: {self.celular} \n Cargo: {self.cargo} \n Fecha Contrato: {self.fechaContrato}'
-
-               
-    
-    
-=======
             if Empleado._allEmpleados[i].cedula == cedula:
                 return Empleado.getAllEmpleados()[i]
 
@@ -87,4 +76,3 @@ class Empleado(Persona):
     @property
     def allEmpleados(self):
         return self._allEmpleados
->>>>>>> Stashed changes
