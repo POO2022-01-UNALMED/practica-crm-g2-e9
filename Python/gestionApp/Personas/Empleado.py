@@ -54,6 +54,11 @@ class Empleado(Persona):
     def busquedaEmpleado(cedula):
         for i in range(len(Empleado.getAllEmpleados())):
             if (Empleado.getAllEmpleados(Empleado.getCedula(i))):
-                return Empleado.getAllEmpleados(i)             
+                return Empleado.getAllEmpleados(i)      
+            
+    def infoEmpleado(self):
+        return f'\t---Informacion Empleado---  \n Nombre: {self.nombre} \n Cedula: {self.cedula} \n Celular: {self.celular} \n Cargo: {self.cargo} \n Fecha Contrato: {self.fechaContrato}'
+
+               
     
     

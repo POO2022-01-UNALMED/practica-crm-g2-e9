@@ -57,6 +57,10 @@ class Empresa:
             if (Empresa.getAllEmpresas(Empresa.getNit(i))):
                 return Empresa.getAllEmpresas((i))     
 
+    def infoEmpresa(self):
+        return f'\t---Informacion Empresa---  \n Nombre: {self.nombre} \n Nit: {self.nit} \n Descripcion: {self.descripcion}'
+
+                   
 
 
 

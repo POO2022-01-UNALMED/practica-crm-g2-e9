@@ -45,4 +45,9 @@ class Servicio:
     def buscarServicio(nombre):
         for i in range(len(Servicio.getAllServicios())):
             if (Servicio.getAllServicios(Servicio.getNombreServicio(i))):
-                return Servicio.getAllServicios(get(i))            
+                return Servicio.getAllServicios(get(i))     
+    
+    def infoServicio(self):
+        return f'\t---Informacion Empleado---  \n Nombre del Servicio: {self.nombreServicio} \n Valor del Producto: {self.valorProducto} \n Tipo de servicio: {self.tipo} \n Descripcion: {self.descripcion}'
+
+                          

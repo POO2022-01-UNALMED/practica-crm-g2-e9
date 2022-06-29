@@ -1,5 +1,6 @@
 
 from datetime import datetime
+from Python.gestionApp.personas.Cliente import Cliente
 
 from Python.gestionApp.personas.Empleado import Empleado
 
@@ -11,10 +12,10 @@ class Negocio:
     etapa = ""
     
     
-    def __init__ (self, empleadoEncargado, cliente, valorVenta):
+    def __init__ (self, empleadoEncargado, valorVenta):
         self.id = id
         self.empleadoEncargado = empleadoEncargado
-        self.cliente = cliente
+        self.cliente = Cliente(self)
         self.valorVenta = valorVenta
         self.fechaCreacion = datetime.now()
         Negocio._allNegocios.append(self)
@@ -24,6 +25,8 @@ class Negocio:
     def getId(self): return self.id
     
     def getEtapa(self): return self.etapa
+    
+    def getCliente(self): return self.cliente
     
     def getEmpleadoEncargado(self): return self.empleadoEncargado
     def setEmpleadoEncargado(self,empleadoEncargado): self.empleadoEncargado = empleadoEncargado
@@ -67,3 +70,7 @@ class Negocio:
     @classmethod
     def setEventos(cls,_eventos): cls._eventos = _eventos
 
+    def infoNegocio(self):
+        return f'\t---Informacion Negocio---  \n Empleado Encargado del Negocio: {self.empleadoEncargado} \n Cliente: {self.getCliente} \n Valor de Venta: {self.valorVenta}'
+
+               
