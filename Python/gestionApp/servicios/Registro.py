@@ -1,4 +1,3 @@
-from numpy import empty
 from requests import get
 from Python.gestionApp.Empresa import Empresa
 from Python.gestionApp.personas.Cliente import Cliente
@@ -22,7 +21,7 @@ class Registro:
             cliente = Cliente(nombre, emp ,cedula, cel, correo, cargo, activo)
             return cliente
         else: 
-            cliente = Cliente(nombre, cedula, cel, correo, id, cargo, activo)
+            cliente = Cliente(nombre, cedula, cel, correo, cargo, activo)
             return cliente
         
  
