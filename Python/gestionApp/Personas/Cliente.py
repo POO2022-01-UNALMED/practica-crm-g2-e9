@@ -16,6 +16,7 @@ class Cliente(Persona):
         self.cargo = cargo
         self.activo = activo
         self.probCompra = uniform(0, 0.4)
+        Cliente.allClientes.append(self)
 
     def getCargo(self):
         return self.cargo

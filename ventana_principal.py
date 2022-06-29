@@ -11,9 +11,10 @@ sys.path.append(sys.path[0].replace('gestionMain','gestionApp'))
 
 
 from Python.gestionApp.Empresa import Empresa
+from Python.gestionApp.Negocio import Negocio
 from Python.gestionApp.personas.Persona import Persona
 from Python.gestionApp.personas.Cliente import Cliente
-
+from Python.gestionApp.personas.Empleado import Empleado
 
 
 
@@ -36,7 +37,7 @@ def mostrarDescripcion():
 ### Clase Generadora
 
 class FieldFrame(Frame):
-    def __init__(self, frame = None, tituloCriterios = None, criterios = None, tituloValores = None, valores = None, deshabilitado = None, botones = None):
+    def __init__(self, frame = None, tituloCriterios = None, criterios = None, criteriosDropDowm = None, tituloValores = None, valores = None, deshabilitado = None, botones = None):
 
         if not isinstance(frame, Frame):
             raise TypeError("frame should be Frame type")
@@ -46,6 +47,10 @@ class FieldFrame(Frame):
 
         if not isinstance(criterios, list):
             raise TypeError("criterios should be list type")
+
+        if criteriosDropDowm!=None:
+            if not isinstance(criteriosDropDowm, dict):
+                raise TypeError("criterios should be dict type")
 
         if not isinstance(tituloValores, str):
             raise TypeError("tituloValores should be str type")
@@ -66,6 +71,7 @@ class FieldFrame(Frame):
         self.frame = frame
         self.tituloCriterios = tituloCriterios
         self.criterios = criterios
+        self.criteriosDropDowm = criteriosDropDowm
         self.tituloValores = tituloValores
         self.valores = valores
         self.deshabilitado = deshabilitado
@@ -92,24 +98,77 @@ class FieldFrame(Frame):
 
     def generarValores(self):
         if self.valores == None:
+            if self.criteriosDropDowm != None:
+                self.StringVars = [
+                    StringVar(self.frame)
+                    for valor in self.criterios
+                    if valor in self.criteriosDropDowm.keys()
+                ]
+                
+                stringVarsCounter = 0
+                self.camposValores = []
 
-            self.camposValores = [
-                Entry(self.frame)
-                for valor in self.criterios
-            ]
-            
+                for valor in self.criterios:
+                    if valor not in self.criteriosDropDowm.keys():
+                        self.camposValores.append(Entry(self.frame))
+                    else:
+                        if len(self.criteriosDropDowm[valor])>0:
+                            self.camposValores.append(OptionMenu(self.frame, 
+                            self.StringVars[stringVarsCounter], 
+                            *self.criteriosDropDowm[valor]))
+                            stringVarsCounter+=1
+                        else:
+                            self.camposValores.append(OptionMenu(self.frame, 
+                            self.StringVars[stringVarsCounter], 
+                            *['']))
+                            stringVarsCounter+=1
+                
+            else:
+                self.camposValores = [
+                    Entry(self.frame)
+                    for valor in self.criterios
+                ]
+
             for index, valor in enumerate(self.camposValores):
                 valor.grid(row = index, column = 1, sticky="news")
                                 
         else:
-            self.camposValores = [
-                Entry(self.frame)
-                for valor in self.valores
-            ]
+
+            if self.criteriosDropDowm != None:
+                self.StringVars = [
+                    StringVar(self.frame)
+                    for valor in self.valores
+                    if valor in self.criteriosDropDowm.keys()
+                ]
+
+            stringVarsCounter = 0
+            self.camposValores = []
+
+            for valor in self.valores:
+                if valor not in self.criteriosDropDowm.keys():
+                    self.camposValores.append(Entry(self.frame))
+                else:
+                    if len(self.criteriosDropDowm[valor])>0:
+                        self.camposValores.append(OptionMenu(self.frame, 
+                        self.StringVars[stringVarsCounter], 
+                        *self.criteriosDropDowm[valor]))
+                        stringVarsCounter+=1
+                    else:
+                        self.camposValores.append(OptionMenu(self.frame, 
+                        self.StringVars[stringVarsCounter], 
+                        *['']))
+                        stringVarsCounter+=1
+
+            else:
+                self.camposValores = [
+                    Entry(self.frame)
+                    for valor in self.valores
+                ]
             
             for index, valor in enumerate(self.camposValores):
-                valor.insert(-1, self.valores[index])
-                valor.grid(row = index, column = 1, sticky="news")
+                if valor != None:
+                    valor.insert(-1, self.valores[index])
+                    valor.grid(row = index, column = 1, sticky="news")
                 
 
     def deshabilitarIngresos(self):
@@ -156,6 +215,8 @@ def vaciarCampos(frame):
     for widget in frame.winfo_children():
         if widget.winfo_class() == 'Entry':
             widget.delete(0, 'end')
+        if widget.winfo_class() == 'OptionMenu':
+            widget.delete(0, 'end')
 
 def funcWrapper(func, args):
     func(*args)
@@ -163,28 +224,11 @@ def funcWrapper(func, args):
 def setValores(frame, classDestino):
     entryValues = []
     for widget in frame.winfo_children():
-        if widget.winfo_class() == 'Entry':
+        if widget.winfo_class() in ['Entry','OptionMenu']:
             entryValues.append(widget.get())
     funcWrapper(classDestino, entryValues)
-    
 
 
-def camposCrearEmpresa():
-
-    global nombreProceso, descipcionProceso
-
-    nombreProceso['text'] = 'Crear Empresa'
-    descipcionProceso['text'] = 'Este proceso permite añadir una nueva EMPRESA a la base de datos'
-        
-    camposCrearEmpresa = FieldFrame(frame = F23,
-           tituloCriterios = 'Criterios',
-           criterios = ['Nombre', 'Nit','Descripcion'],
-           tituloValores = 'Valores',
-           valores = None,
-           deshabilitado = None,
-           botones = {'Crear Empresa' : lambda: setValores(F23, Empresa), 'Vaciar Campos': lambda:vaciarCampos(F23)}
-           )
-    
 def camposCrearCliente():
 
     global nombreProceso, descipcionProceso
@@ -194,7 +238,7 @@ def camposCrearCliente():
     
     FieldFrame(frame = F23,
            tituloCriterios = 'Criterios',
-           criterios = ['Nombre', 'Cedula','Celular','Correo','Cargo','Activo','Probabilidad de Compra'],
+           criterios = ['Nombre', 'Cedula','Celular','Correo','Cargo','Activo'],
            tituloValores = 'Valores',
            valores = None,
            deshabilitado = None,
@@ -215,8 +259,45 @@ def camposCrearEmpleado():
            tituloValores = 'Valores',
            valores = None,
            deshabilitado = None,
-           botones = {'Crear Empleado' : lambda:setValores(F23, Cliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           botones = {'Crear Empleado' : lambda:setValores(F23, Empleado), 'Vaciar Campos': lambda:vaciarCampos(F23)}
            )
+
+
+def camposCrearEmpresa():
+
+    global nombreProceso, descipcionProceso
+
+    nombreProceso['text'] = 'Crear Empresa'
+    descipcionProceso['text'] = 'Este proceso permite añadir una nueva EMPRESA a la base de datos'
+        
+    camposCrearEmpresa = FieldFrame(frame = F23,
+           tituloCriterios = 'Criterios',
+           criterios = ['Nombre', 'Nit','Descripcion'],
+           tituloValores = 'Valores',
+           valores = None,
+           deshabilitado = None,
+           botones = {'Crear Empresa' : lambda: setValores(F23, Empresa), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           )
+    
+def camposCrearNegocio():
+    messagebox.showinfo(message = dir(OptionMenu), title = 'Descripcion Aplicacion')
+    global nombreProceso, descipcionProceso
+
+    nombreProceso['text'] = 'Crear Negocio'
+    descipcionProceso['text'] = 'Este proceso permite añadir una nuevo NEGOCIO a la base de datos'
+        
+    camposCrearNegocio = FieldFrame(frame = F23,
+           tituloCriterios = 'Criterios',
+           criterios = ['Empleado Encargado', 'Cliente','Valor Venta'],
+           criteriosDropDowm = {'Empleado Encargado': [empleado.getCedula() for empleado in Empleado.getAllEmpleados()],
+                                'Cliente': [cliente.getCedula() for cliente in Cliente.getAllClientes()]},
+           tituloValores = 'Valores',
+           valores = None,
+           deshabilitado = None,
+           botones = {'Crear Negocio' : lambda: setValores(F23, Negocio), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           )
+
+
 
 
 menu = Menu(ventanaPrincipal)
@@ -231,6 +312,9 @@ Procesos_Consultas = Menu(menu)
 menu.add_cascade(label="Procesos y Consultas", menu=Procesos_Consultas)
 Procesos_Consultas.add_command(label="Crear Empresa",command=camposCrearEmpresa)
 Procesos_Consultas.add_command(label="Crear Cliente",command=camposCrearCliente)
+Procesos_Consultas.add_command(label="Crear Empleado",command=camposCrearEmpleado)
+Procesos_Consultas.add_command(label="Crear Negocio",command=camposCrearNegocio)
+
 
 Ayuda = Menu(menu)
 menu.add_cascade(label="Ayuda", menu=Ayuda)
