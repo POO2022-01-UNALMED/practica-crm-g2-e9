@@ -8,8 +8,6 @@ from tkinter import messagebox
 from operator import itemgetter
 import os.path
 
-from ventanaPrincipal import command
-
 ### Definicion
 counter_hojaDeVida = -1
 
