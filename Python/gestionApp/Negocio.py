@@ -1,6 +1,7 @@
 from tkinter import messagebox
 from datetime import datetime
 from random import randrange
+from excepciones import *
 
 from Python.gestionApp.personas.Empleado import Empleado
 
@@ -88,12 +89,24 @@ class Negocio:
     @classmethod
     def busquedaNegocio(cls, id):
         for i in range(len(Negocio.getAllNegocios())):
+            if id == str:
+                try:
+                    raise ExcepcionCamposNulos()
+                except ExcepcionCamposNulos as f:
+                    f.showMessage()
+                return
             if Negocio.getAllNegocios()[i].id == id:
                 return Negocio.getAllNegocios()[i]
 
     @classmethod
     def eliminarNegocio(cls, id):
         for i in range(len(Negocio.getAllNegocios())):
+            if id == str:
+                try:
+                    raise ExcepcionCamposNulos()
+                except ExcepcionCamposNulos as f:
+                    f.showMessage()
+                return
             if Negocio.getAllNegocios()[i].id == id:
                 Negocio.getAllNegocios().pop(i)
 

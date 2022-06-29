@@ -1,4 +1,5 @@
 from tkinter import messagebox
+from excepciones import *
 
 class Empresa:
     
@@ -49,15 +50,27 @@ class Empresa:
     def setServiciosInteres(cls,serviciosInteres): cls.serviciosInteres = serviciosInteres
 
     @classmethod
-    def busquedaEmpresa(cls, cedula):
+    def busquedaEmpresa(cls, nit):
         for i in range(len(Empresa.getAllEmpresas())):
-            if Empresa.getAllEmpresas()[i].cedula == cedula:
+            if nit == str:
+                try:
+                    raise ExcepcionCamposNulos()
+                except ExcepcionCamposNulos as f:
+                    f.showMessage()
+                return
+            if Empresa.getAllEmpresas()[i].nit == nit:
                 return Empresa.getAllEmpresas()[i]
 
     @classmethod
-    def eliminarEmpresa(cls, cedula):
+    def eliminarEmpresa(cls, nit):
         for i in range(len(Empresa.getAllEmpresas())):
-            if Empresa.allEmpresas[i].cedula == cedula:
+            if nit == str:
+                try:
+                    raise ExcepcionCamposNulos()
+                except ExcepcionCamposNulos as f:
+                    f.showMessage()
+                return           
+            if Empresa.allEmpresas[i].nit == nit:
                 Empresa.getAllEmpresas().pop(i)
 
     def infoEmpresa(self):

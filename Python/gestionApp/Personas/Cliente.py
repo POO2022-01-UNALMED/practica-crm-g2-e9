@@ -3,6 +3,7 @@ from tkinter import messagebox
 
 from Python.gestionApp.Empresa import Empresa
 from Python.gestionApp.personas.Persona import Persona
+from excepciones import *
 
 
 class Cliente(Persona):
@@ -69,14 +70,29 @@ class Cliente(Persona):
         cls.listaEventos = listaEventos
 
     @classmethod
+    
     def busquedaCliente(cls, cedula):
+
         for i in range(len(Cliente.getAllClientes())):
+            if cedula == str:
+                try:
+                    raise ExcepcionCamposNulos()
+                except ExcepcionCamposNulos as f:
+                    f.showMessage()
+                return
             if Cliente.allClientes[i].cedula == cedula:
                 return Cliente.getAllClientes()[i]
 
     @classmethod
     def eliminarCliente(cls, cedula):
+       
         for i in range(len(Cliente.getAllClientes())):
+            if cedula == str:
+                try:
+                    raise ExcepcionCamposNulos()
+                except ExcepcionCamposNulos as f:
+                    f.showMessage()
+                return
             if (Cliente.getAllClientes(Cliente.getCedula(i))):
                 return Cliente.getAllClientes(i)   
             if Cliente.allClientes[i].cedula == cedula:
