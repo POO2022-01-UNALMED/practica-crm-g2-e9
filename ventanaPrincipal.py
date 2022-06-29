@@ -506,5 +506,10 @@ F23.grid(row=2, column=0, padx = 100, pady = 100, sticky="news")
 
 F23.columnconfigure(0, weight=1)
 F23.columnconfigure(1, weight=1)
-   
+
+#*************
+pat=ImageTk.PhotoImage(Image.open('Python/resources/pat2.png'))
+patLabel=Label(F23,image=pat)
+patLabel.place(anchor=CENTER, relx=0.5, rely=0.5)
+
 ventanaPrincipal.mainloop()
