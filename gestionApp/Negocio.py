@@ -3,6 +3,8 @@ from datetime import datetime
 from random import randrange
 from excepciones import *
 
+from gestionApp.eventos.Reunion import Reunion
+from gestionApp.eventos.Correo import Correo
 from gestionApp.personas.Empleado import Empleado
 
 
@@ -63,8 +65,11 @@ class Negocio:
                 self.fechaFinalizacion = datetime.now()
             else:
                 for i in range(len(self._eventos)):
-                    if (self._eventos.get(i)):
-                        pass
+                    if (self._eventos[i] in Reunion):
+                        timepoReuniones += (Reunion.getDuracionReunion(self._eventos[i]))
+                        numReuniones += 1
+                    elif (self._eventos[i] in Correo):
+                        tiempoLlamada += (Correo.getDuracionLlamada(self._eventos[i]))
                     # Aqui va lo que falta de la funcion definir Etapa
 
     @classmethod
