@@ -226,10 +226,10 @@ botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.35)
 botonPrincipal = Button(P5, image=m , border=0,bg="white",command=click_m)
 botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.523)  
 #c
-botonPrincipal = Button(P5, image=d , border=0,bg="white",command=click_c)
+botonPrincipal = Button(P5, image=d , border=0,bg="white",command=click_d)
 botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.7)  
 #m
-botonPrincipal = Button(P5, image=c , border=0,bg="white",command=click_d)
+botonPrincipal = Button(P5, image=c , border=0,bg="white",command=click_c)
 botonPrincipal.place(anchor=CENTER, relx=0.5, rely=0.88)  
 
 #----------                 
