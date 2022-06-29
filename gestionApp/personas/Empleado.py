@@ -89,7 +89,8 @@ class Empleado(Persona):
                 return            
             if Empleado._allEmpleados[i].cedula == cedula:
                 Empleado.getAllEmpleados().pop(i)
-
+        messagebox.showinfo(message='EMPLEADO eliminado correctamente', title='Eliminacion Empleado')
+        
     @property
     def allEmpleados(self):
         return self._allEmpleados

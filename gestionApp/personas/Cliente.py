@@ -101,7 +101,7 @@ class Cliente(Persona):
             if Cliente.allClientes[i].cedula == cedula:
                 Cliente.getAllClientes().pop(i)
 
-        
+        messagebox.showinfo(message='CLIENTE eliminado correctamente', title='Eliminacion Cliente')
     
     def infoCliente(self):
         return f'\t---Informacion Cliente---  \n Nombre: {self.nombre} \n Cedula: {self.cedula} \n Celular: {self.celular} \n Cargo: {self.cargo} \n Empresa: {self.getEmpresa}'

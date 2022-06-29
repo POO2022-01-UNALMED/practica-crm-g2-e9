@@ -118,7 +118,7 @@ class Negocio:
                 return
             if Negocio.getAllNegocios()[i].id == id:
                 Negocio.getAllNegocios().pop(i)
-
+        messagebox.showinfo(message='Negocio eliminado correctamente', title='Eliminacion Negocio')
     @classmethod
     def crear_id(cls):
         idGenerado = randrange(0, 1000, 1)

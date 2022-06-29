@@ -200,12 +200,14 @@ class FieldFrame(Frame):
 def command():
     pass
 
-def vaciarCampos(frame):
+def vaciarCampos(frame, menuValues = None,):
+    optionsCounter = 0
     for widget in frame.winfo_children():
         if widget.winfo_class() == 'Entry':
             widget.delete(0, 'end')
-        if widget.winfo_class() == 'OptionMenu':
-            widget.delete(0, 'end')
+        if (widget.winfo_class() == 'OptionMenu')  & (type(menuValues) == list):
+            menuValues[optionsCounter].set('')
+            optionsCounter =+ 1
 
 def funcWrapper(func, args):
     func(*args)
@@ -225,10 +227,11 @@ def setValores(frame = None, classDestino = None, menuValues = None, options = N
         for index, value in enumerate(entryValues):
             if index in options.keys():
                 messagebox.showinfo(message = value, title = 'Descripcion Aplicacion')
-                entryValues[index] = funcWrapper(options[index], [value])
+                entryValues[index] = funcWrapper(options[index], list(value))
                 
     if len(entryValues)>0:
         funcWrapper(classDestino, entryValues)
+        frame.update()
 
 ##########################################################################
 ### root
@@ -264,7 +267,6 @@ def camposCrearCliente():
     camposCrearCliente.crearBotones(botones = {'Crear Cliente' : lambda:setValores(frame = F23, classDestino = Cliente), 
         'Vaciar Campos': lambda:vaciarCampos(frame = F23)}
     )
-
 
 def camposCrearEmpleado():
 
@@ -315,7 +317,7 @@ def camposCrearNegocio():
                                                                         classDestino = Negocio, 
                                                                         menuValues = camposCrearNegocio.StringVars,
                                                                         options={1:Empleado.busquedaEmpleado ,2:Cliente.busquedaCliente}), 
-        'Vaciar Campos': lambda:vaciarCampos(frame = F23)}
+        'Vaciar Campos': lambda:vaciarCampos(frame = F23, menuValues = camposCrearNegocio.StringVars,)}
         )      
 #########################################Consultas
 
@@ -325,14 +327,12 @@ def consultarCliente():
     nombreProceso['text'] = 'CONSULTAR CLIENTE'
     descipcionProceso['text'] = 'Este proceso permite buscar un CLIENTE a la base de datos'
     
-    FieldFrame(frame = F23,
-           tituloCriterios = 'Criterios',
+    camposConsultarCliente = FieldFrame(frame = F23,
            criterios = ['Ingrese Cedula del Cliente: '],
-           tituloValores = 'Valores',
            valores = None,
            deshabilitado = None,
-           botones = {'Consultar Cliente' : lambda:setValores(F23, Cliente.busquedaCliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
            )    
+    camposConsultarCliente.crearBotones({'Consultar Cliente' : lambda:setValores(F23, Cliente.busquedaCliente), 'Vaciar Campos': lambda:vaciarCampos(F23)})
     
 def consultarEmpleado():
     global nombreProceso, descipcionProceso
@@ -340,15 +340,12 @@ def consultarEmpleado():
     nombreProceso['text'] = 'CONSULTAR EMPLEADO'
     descipcionProceso['text'] = 'Este proceso permite buscar un EMPLEADO a la base de datos'
     
-    FieldFrame(frame = F23,
-           tituloCriterios = 'Criterios',
+    camposConsultarEmpleado = FieldFrame(frame = F23,
            criterios = ['Ingrese Cedula del Empleado: '],
-           tituloValores = 'Valores',
            valores = None,
            deshabilitado = None,
-           botones = {'Consultar Empleado' : lambda:setValores(F23, Empleado.busquedaEmpleado), 'Vaciar Campos': lambda:vaciarCampos(F23)}
            )
-
+    camposConsultarEmpleado.crearBotones(botones = {'Consultar Empleado' : lambda:setValores(F23, Empleado.busquedaEmpleado), 'Vaciar Campos': lambda:vaciarCampos(F23)})
 
 def consultarEmpresa():
 
@@ -357,14 +354,13 @@ def consultarEmpresa():
     nombreProceso['text'] = 'CONSULTAR EMPRESA'
     descipcionProceso['text'] = 'Este proceso permite consultar una EMPRESA a la base de datos'
         
-    FieldFrame(frame = F23,
-           tituloCriterios = 'Criterios',
-           criterios = ['Ingrese nit de la Empresa: '],
-           tituloValores = 'Valores',
+    camposConsultarEmpresa = FieldFrame(frame = F23,
+           criterios = ['Ingrese nit de la Empresa'],
            valores = None,
-           deshabilitado = None,
-           botones = {'Consultar Empresa' : lambda: setValores(F23, Empresa.busquedaEmpresa), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           deshabilitado = None,    
            )
+    camposConsultarEmpresa.crearBotones(botones = {'Consultar Empresa' : lambda: setValores(F23, Empresa.busquedaEmpresa), 'Vaciar Campos': lambda:vaciarCampos(F23)})
+
 
 def consultarNegocio():
     global nombreProceso, descipcionProceso
@@ -372,15 +368,11 @@ def consultarNegocio():
     nombreProceso['text'] = 'CONSULTAR NEGOCIO'
     descipcionProceso['text'] = 'Este proceso permite buscar un NEGOCIO a la base de datos'
         
-    FieldFrame(frame = F23,
-           tituloCriterios = 'Criterios',
+    camposConsultarNegocio = FieldFrame(frame = F23,
            criterios = ['Ingrese el Id del negocio'],
-           tituloValores = 'Valores',
            valores = None,
-           deshabilitado = None,
-           botones = {'Consultar Negocio' : lambda: setValores(F23, Negocio.busquedaNegocio), 'Vaciar Campos': lambda:vaciarCampos(F23)}
-           )
-    
+           deshabilitado = None)
+    camposConsultarNegocio.crearBotones(botones = {'Consultar Negocio' : lambda: setValores(F23, Negocio.busquedaNegocio), 'Vaciar Campos': lambda:vaciarCampos(F23)})
 ########################################Eliminacion
 def eliminarCliente():
     global nombreProceso, descipcionProceso

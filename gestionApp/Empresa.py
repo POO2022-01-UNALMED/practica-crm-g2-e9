@@ -72,6 +72,7 @@ class Empresa:
                 return           
             if Empresa.allEmpresas[i].nit == nit:
                 Empresa.getAllEmpresas().pop(i)
+        messagebox.showinfo(message='EMPRESA eliminada correctamente', title='Eliminacion Empresa')
 
     def infoEmpresa(self):
         return f'\t---Informacion Empresa---  \n Nombre: {self.nombre} \n Nit: {self.nit} \n Descripcion: {self.descripcion}'
