@@ -1,7 +1,7 @@
 
 from datetime import datetime
 
-from Python.gestionApp.Personas.Empleado import Empleado
+from Python.gestionApp.personas.Empleado import Empleado
 
 
 class Negocio:
@@ -18,7 +18,6 @@ class Negocio:
         self.valorVenta = valorVenta
         self.fechaCreacion = datetime.now()
         Negocio.allNegocios.append(self)
-        self.empleado = Empleado(self)
         empleadoEncargado(Empleado.setNegociosEmpleado(self))
         self.definirEtapa()
 

@@ -7,12 +7,13 @@ from operator import itemgetter
 import os
 import sys
 
-from Python.gestionApp.personas.Cliente import Cliente
-print(os.getcwd().split('\\Python')[0])
-sys.path.insert(1, os.getcwd().split('\\Python')[0])
+sys.path.append(sys.path[0].replace('gestionMain','gestionApp'))
 
 
-from Python.gestionApp.Empresa import Empresa
+from Empresa import Empresa
+from personas.Persona import Persona
+from personas.Cliente import Cliente
+
 
 ### Definicion
 app_desc = 'Esta es la descripcion de la aplicacion'

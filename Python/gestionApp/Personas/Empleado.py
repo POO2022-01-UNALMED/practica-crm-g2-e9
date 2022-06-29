@@ -2,7 +2,7 @@ import math
 from random import uniform
 from tkinter import messagebox
 
-from Python.gestionApp.Personas.Persona import Persona
+from personas import Persona
 
 
 class Empleado(Persona):
@@ -22,22 +22,15 @@ class Empleado(Persona):
         Empleado._allEmpleados.append(self)
         messagebox.showinfo(message='EMPLEADO creada correctamente', title='Creacion Empleado')
 
-    @classmethod
-    def getId(self): return self.id
 
-    @classmethod
+
+
     def getCargo(self): return self.cargo
-
-    @classmethod
     def setCargo(self, cargo): self.cargo = cargo
 
-    @classmethod
     def getFechaContrato(self): return self.fechaContrato
-
-    @classmethod
     def setFechaContrato(self, fechaContrato): self.fechaContrato = fechaContrato
 
-    @classmethod
     def getHabilidadVenta(self): return self.habilidadVenta
 
     @classmethod
@@ -56,4 +49,4 @@ class Empleado(Persona):
     def getNegociosEmpleado(cls): return cls._negociosEmpleado
 
     @classmethod
-    def setNegociosEmpleado(cls, negociosEmpleado): cls._negociosEmpleado = negociosEmpleado
+    def setNegociosEmpleado(cls, negocio): cls._negociosEmpleado.append(negocio)

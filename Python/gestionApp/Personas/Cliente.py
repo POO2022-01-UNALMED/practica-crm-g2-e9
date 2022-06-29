@@ -1,7 +1,5 @@
 from random import uniform
-
-from Python.gestionApp.Personas.Persona import Persona
-
+from personas import Persona
 
 class Cliente(Persona):
     
@@ -17,22 +15,16 @@ class Cliente(Persona):
         self.activo = activo
         self.probCompra = uniform(0, 0.4)
     
-    @classmethod
-    def getId(self): return self.id
-    
-    @classmethod
+
+
     def getCargo(self): return self.cargo
-    @classmethod
     def setCargo(self,cargo): self.cargo = cargo
-    
-    @classmethod
+
     def getActivo(self): return self.activo
-    @classmethod
     def setActivo(self,activo): self.activo = activo
     
-    @classmethod
+
     def getProbCompra(self): return self.probCompra
-    @classmethod
     def setProbCompra(self,probCompra): self.probCompra = probCompra
     
     
@@ -54,3 +46,6 @@ class Cliente(Persona):
    
 
 
+print('---')
+print(sys.path)
+print('---')
