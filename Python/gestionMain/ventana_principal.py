@@ -15,6 +15,8 @@ from personas.Persona import Persona
 from personas.Cliente import Cliente
 
 
+
+
 ### Definicion
 app_desc = 'Esta es la descripcion de la aplicacion'
 app_func = 'Esto es lo que hace la app'

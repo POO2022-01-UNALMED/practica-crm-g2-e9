@@ -1,6 +1,5 @@
 from tkinter import messagebox
 
-from requests import get
 
 
 class Empresa:
