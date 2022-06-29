@@ -483,7 +483,7 @@ F21.rowconfigure(2, weight=8)
 F21.columnconfigure(0, weight=1)
 F21.grid_propagate(False)
 
-nombreProceso = Label(F21, text = 'NOMBRE PROCESO',bg="white",font="resources/fonts/Montserrat/static/Montserrat-Bold.ttf", fg="#030716")
+nombreProceso = Label(F21, text = 'CMR',bg="white",font="resources/fonts/Montserrat/static/Montserrat-Bold.ttf", fg="#030716")
 nombreProceso.grid(row = 0, column = 0)
 
 ##########################################################################
@@ -494,7 +494,7 @@ nombreProceso.grid(row = 0, column = 0)
 F22 = Frame(F21, background="white", height = 100, width = 100)
 F22.grid(row=1, column=0, sticky="news")
 
-descipcionProceso = Label(F22, text = 'Descripcion Proceso',font="resources/fonts/Montserrat/static/Montserrat-ExtraBold.ttf", fg="#030716")
+descipcionProceso = Label(F22, text = '--------------------------------',font="resources/fonts/Montserrat/static/Montserrat-ExtraBold.ttf", fg="#030716")
 descipcionProceso.place(anchor=CENTER, relx=0.5, rely=0.5)
 
 l1=ImageTk.PhotoImage(Image.open('resources/l1.png'))
