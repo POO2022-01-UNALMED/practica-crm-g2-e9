@@ -4,6 +4,7 @@ from requests import get
 
 
 class Empresa:
+    
     allEmpresas = []
     clientes = []
     negociosAbiertos = []
@@ -53,7 +54,10 @@ class Empresa:
     @classmethod
     def setServiciosInteres(cls,serviciosInteres): cls.serviciosInteres = serviciosInteres
     
+<<<<<<< Updated upstream
     def buscarEmpresa(nit):
         for i in range(len(Empresa.getAllEmpresas())):
             if (Empresa.getAllEmpresas(Empresa.getNit(i))):
                 return Empresa.getAllEmpresas(get(i))     
+=======
+>>>>>>> Stashed changes

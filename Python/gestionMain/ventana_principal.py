@@ -7,11 +7,10 @@ from operator import itemgetter
 import sys
 import os
 
-# insert at 1, 0 is the script path (or '' in REPL)
 sys.path.insert(1, os.getcwd().split('\\Python\\gestionMain')[0])
 
-#from Python.gestionApp.Personas.Empleado import Empleado
-#from Python.gestionApp.Personas.Cliente import Cliente
+from Python.gestionApp.Personas.Empleado import Empleado
+from Python.gestionApp.Personas.Cliente import Cliente
 from Python.gestionApp.Empresa import Empresa
 
 ### Definicion
@@ -195,7 +194,7 @@ def camposCrearCliente():
            tituloValores = 'Valores',
            valores = None,
            deshabilitado = None,
-           botones = {'Crear cliente' : lambda:setValores(F23, Cliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
+           botones = {'Crear Cliente' : lambda:setValores(F23, Cliente), 'Vaciar Campos': lambda:vaciarCampos(F23)}
            )
 
 
