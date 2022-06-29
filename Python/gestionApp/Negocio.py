@@ -13,12 +13,12 @@ class Negocio:
     
     def __init__ (self, empleadoEncargado, cliente, valorVenta):
         self.id = id
-        self.empleadoEncargado = Empleado(self)
+        self.empleadoEncargado = empleadoEncargado
         self.cliente = cliente
         self.valorVenta = valorVenta
         self.fechaCreacion = datetime.now()
         Negocio._allNegocios.append(self)
-        empleadoEncargado(Empleado.setNegociosEmpleado(self))
+        Empleado.setNegociosEmpleado(self.empleadoEncargado)
         self.definirEtapa()
 
     def getId(self): return self.id
