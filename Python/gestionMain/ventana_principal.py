@@ -1,19 +1,17 @@
 import time
-from tkinter import*
+from tkinter import *
 from PIL import ImageTk, Image
 from tkinter import messagebox
 from operator import itemgetter
 
-import sys
 import os
-
-from Python.gestionApp.personas.Cliente import Cliente
-from Python.gestionApp.Empresa import Empresa
+import sys
 
 sys.path.insert(1, os.getcwd().split('\\Python\\gestionMain')[0])
 
-
-
+#from Python.gestionApp.Personas.Empleado import Empleado
+#from Python.gestionApp.Personas.Cliente import Cliente
+from Python.gestionApp.Empresa import Empresa
 
 ### Definicion
 app_desc = 'Esta es la descripcion de la aplicacion'
